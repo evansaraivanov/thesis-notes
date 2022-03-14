@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\usepackage{musicography}
+\usepackage{enumerate}
+\usepackage{xfrac}
+\usepackage[parfill]{parskip}
+\usepackage{subcaption}
+\usepackage{float}
+
+\newcommand{\cm}{\mathbb{C}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\dvg}{\nabla\cdot}
+\newcommand{\crl}{\nabla\times}
+\newcommand{\proj}[1]{\ensuremath{{\ket{#1}\bra{#1}}}}
+\newcommand{\vect}{\text{Vect}}
+\newcommand{\smooth}{C^{\infty}}
+\newcommand{\dif}{\text{d}}
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.8}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+\newlength{\arrow}
+\settowidth{\arrow}{\scriptsize$1000$}
+\newcommand*{\myrightarrow}[1]{\xrightarrow{\mathmakebox[\arrow]{#1}}}
+\newcommand*{\TakeFourierOrnament}[1]{{%
+\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
+\newcommand*{\danger}{\TakeFourierOrnament{66}}
+\setlength{\jot}{1.5mm}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section] % the main one
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{joke}{Joke}
+% other statement types
+
+% for specifying a name
+\theoremstyle{plain} % just in case the style had changed
+\newcommand{\thistheoremname}{}
+\newtheorem{genericthm}[thm]{\thistheoremname}
+\newenvironment{namedthm}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+   \begin{genericthm}}
+  {\end{genericthm}}
+  
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{rmk}{Remark}
+\newtheorem{conj}{Conjecture}
+%\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{problem}{Problem}
+
+\title{Gauge Fields, Knots, and Gravity: Notes}
+\author{Evan Saraivanov}
+%\date{1 June, 2021}
+
+\begin{document}
+
+\begin{center}
+	\huge{Research notes}
+	
+	\small{All here is public}
+\end{center}
+
+\section{Statistics}
+\input{stats.tex}
+
+\section{Computing}
+\input{computing.tex}
+
+\section{Fields}
+\input{field.tex}
+
+\end{document}
