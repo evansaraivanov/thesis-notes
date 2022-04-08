@@ -4,6 +4,9 @@
 A sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} If the conditional distribution $X_{n+1}$ depends only on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain.
 \end{defn}
 
+\subsection{Parameter Difference Distribution}
+As discussed above, the parameter difference distribution $\mathcal{P}(\Delta\theta)$ is the convolution of the two posteriors. 
+
 \subsection{Normalizing Flows}
 The method of normalizing flows (MAF) implemented here uses Masked Autoencoders (MADE) to construct the flow. Suppose we have an input to the flow $x_i$. The output of the map is $y_i= \mu(x_{1:i-1})+\sigma(x_{1:i-1})x_i$. The $\mu$ and $\sigma$ are found using neural networks which recieve masked inputs $x_{1:i-1}=(x_1,\ldots,x_{i-1},0,\ldots,0)$. Since the input only depends on the first $i-1$ inputs, the normalizing flow is \textit{autoregressive} and the Jacobian is triangular.
 
