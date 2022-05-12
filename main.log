@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.26)  10 MAY 2022 18:02
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.4.30)  11 MAY 2022 17:21
->>>>>>> 77b68d0 (update)
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.4.30)  12 MAY 2022 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
+L3 programming layer <2022-04-10>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size10.clo
@@ -304,10 +300,10 @@ Package: physics
 
 (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-02-24 L3 programming layer (loader) 
+Package: expl3 2022-04-10 L3 programming layer (loader) 
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box53
 ))
@@ -843,228 +839,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \c@conj=\count334
 \c@cor=\count335
 \c@problem=\count336
- (./main.aux)
-\openout1 = `main.aux'.
+ (./main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
+! LaTeX Error: Missing \begin{document}.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(56.9055pt, 483.69684pt, 56.90553pt)
-* v-part:(T,H,B)=(56.9055pt, 731.23582pt, 56.90552pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=483.69684pt
-* \textheight=731.23582pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-52.36449pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 <
+      <<<<<< HEAD
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.21 <
+      <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-Package hyperref Info: Link coloring OFF on input line 76.
-(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-)
-\c@section@level=\count337
-)
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
-
-(./main.out) (./main.out)
-\@outlinefile=\write4
-\openout4 = `main.out'.
-
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
-\scratchdimen=\dimen310
-\scratchbox=\box76
-\nofMPsegments=\count339
-\nofMParguments=\count340
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count341
-\MPscratchDim=\dimen311
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks51
-) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is loaded.
-Package caption Info: End \AtBeginDocument code.
-<<<<<<< HEAD
- (./stats.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-) (./computing.tex [1
-=======
->>>>>>> 77b68d0 (update)
-
-Package pgfplots notification 'compat/show suggested version=true': you might b
-enefit from \pgfplotsset{compat=1.18} (current compat level: 1.12).
-
-(./stats.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-Underfull \hbox (badness 10000) in paragraph at lines 51--86
-
- []
-
-(./computing.tex [2] [3]
-Overfull \hbox (15.54881pt too wide) in paragraph at lines 91--92
-[][]$\OT1/cmtt/m/n/10 https : / / si . biostat . washington . edu / sites / def
-ault / files / modules / Geyer-[]Introduction % 20to % 20markov %
- []
-
-<<<<<<< HEAD
-) (./field.tex [3]
-=======
-) (./field.tex [4]
->>>>>>> 77b68d0 (update)
-Overfull \hbox (29.5107pt too wide) detected at line 15
-\OML/cmm/m/it/10 ^^NS \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[]\OT1/cmr/m/n/10 (
-\OML/cmm/m/it/10 ^^N^^^[]\OT1/cmr/m/n/10 )([]\OML/cmm/m/it/10 ^^M[][] \OT1/cmr/
-m/n/10 + [] \OML/cmm/m/it/10 d[]x[] []
- []
-
-<<<<<<< HEAD
-[4]) [5] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  B2EBFCF9CD08C2BF67E9AAAB3E00B381;1683.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 25414 strings out of 478276
- 479948 string characters out of 5853013
- 767705 words of memory out of 5000000
- 43157 multiletter control sequences out of 15000+600000
- 479166 words of font info for 66 fonts, out of 8000000 for 9000
+ 35186 strings out of 478238
+ 823121 string characters out of 5850456
+ 1242477 words of memory out of 5000000
+ 52884 multiletter control sequences out of 15000+600000
+ 471446 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,17n,118p,538b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
-=======
-[5]) [6] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8C9356A350487F93F375DB163000AE75;2126.
- ) 
-Here is how much of TeX's memory you used:
- 36386 strings out of 478238
- 848049 string characters out of 5850456
- 1262477 words of memory out of 5000000
- 53999 multiletter control sequences out of 15000+600000
- 479166 words of font info for 66 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 114i,17n,118p,725b,2026s stack positions out of 5000i,500n,10000p,200000b,80000s
->>>>>>> 77b68d0 (update)
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
-usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
-<<<<<<< HEAD
-pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (5 pages, 219361 bytes).
-PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
-/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (6 pages, 235350 bytes).
-PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 77b68d0 (update)
-
+ 114i,3n,118p,725b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
