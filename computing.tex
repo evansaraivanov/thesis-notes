@@ -94,3 +94,22 @@ The implementation in tensorflow uses \textit{bijectors} which implements a loca
 
 \url{https://www.sheffield.ac.uk/polopoly_fs/1.60510!/file/MCMC.pdf}
 \hrule
+
+Test graph
+
+  \begin{tikzpicture}
+
+    \pgfplotsset{
+      scale only axis,
+    }
+
+    \begin{axis}[
+      xlabel=$x$,
+      ylabel=$y$,
+      samples=100,
+      ]
+      \addplot[][domain=-4.5:4]{0.2*x^3-x+1};
+      \addplot[draw=red][domain=-4.5:4]{3*sin(deg(x))};
+    \end{axis}
+
+  \end{tikzpicture}

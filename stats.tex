@@ -13,4 +13,42 @@ At first these two observations contradict each other. However, by introducing a
 \[ G_{\mu\nu} - \underbrace{\Lambda g_{\mu\nu}}_{\text{new term}} = T_{\mu\nu} \]
 The constant $\Lambda$ is called the \textit{cosmological constant} which can absorb the contributions from the vacuum energy, allowing for a flat universe and non-zero vacuum energy density.
 A natural question to ask is `what is the source of the cosmological constant?'
-\subsection{$\Lambda$ CDM}
+
+\subsection{$\Lambda$CDM}
+
+\subsection{The (Affine) Geodesic Equation}
+Suppose we have a (semi-) Riemannian manifold $M$ with metric $g$ and tangent bundle $TM$. An \textit{affine connection} is a map
+\[ \Gamma (TM) \times \Gamma (TM) \rightarrow \Gamma (TM) \]
+\[ (X,Y) \rightarrow \nabla_X Y \]
+That is, it parallel transports the vector field $Y$ along the connection $\nabla$ in the direction of vector field $X$. From this, we can write the affine geodesic equation for a path $\gamma(t)$
+\[ \nabla_{\dot\gamma} \dot\gamma(t) = 0 \]
+Thus, a geodesic is a path such that its tangent vector is parallel translated. Since we observe our world with coordinates, in physics it is often more instructive to work this out in a specific set of coordinates $x^\mu$. Thus this can be written as
+\[ \ddot{\gamma}^\mu + \Gamma^{\mu}_{\rho\lambda}\dot{\gamma}^\rho \dot{\gamma}^\lambda  \]
+
+
+\subsection{The FLRW Metric and Dark Energy}
+In general, metrics allow one to attribute distances between points in a space as $d = g_{\mu\nu}x^\mu x^\nu$. 
+The `flat' metric for relativity is the \textit{Minkowski metric} given by $\text{diag}(-1,1,1,1)$, however, a metric to describe the expanding universe is given by the \textit{FLRW metric} by $d^2 = t^2-a^2(t)s^2$ with $s^2$ the standard Euclidean distance in $\mathbb{R}^3$. 
+What is immediately appearent from the FLRW metric is that spacial slices of the $d=4$ spacetime remain curvature free under the expansion of the universe describe by the scale factor $a^2(t)$.
+
+When describing the structure of the universe, I will make a few assumptions (which hold up to small perturbations):
+\begin{itemize}
+    \item Homogeneity. The cosmology describing the universe does not depend on location.
+    \item Isotropy. The cosmology describing the universe does not depend on location.
+\end{itemize}
+These two conditions for what is sometimes referred to as \textit{the cosmological principle}. In general, they don't hold on small scales, however averaging over a sufficiently large distance these assumptions give an accurate description. The isotropy condition means that the universe should have 0 net momentum, and by assumming the universe is smooth the energy-momentum tensor can be written
+\begin{equation} T^\mu_\nu = \left(
+\begin{array}{cccc}
+    -\mathcal{E} & 0 & 0 & 0 \\
+    0 & \mathcal{P} & 0 & 0 \\
+    0 & 0 & \mathcal{P} & 0 \\
+    0 & 0 & 0 & \mathcal{P}
+\end{array}
+\right)
+\end{equation}
+The usual conservation law holds
+\begin{equation}
+    \nabla_\mu T^{\mu}_{\nu} = 0 \Rightarrow \partial_t \mathcal{E} + \frac{\dot a}{a}(3\mathcal{E} + 3\mathcal{P}) = 0
+\end{equation}
+We can use the geodesic equation to examine how the energy of the massless particles evolves through time. 
+
