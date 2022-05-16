@@ -31,6 +31,25 @@ In general, metrics allow one to attribute distances between points in a space a
 The `flat' metric for relativity is the \textit{Minkowski metric} given by $\text{diag}(-1,1,1,1)$, however, a metric to describe the expanding universe is given by the \textit{FLRW metric} by $d^2 = t^2-a^2(t)s^2$ with $s^2$ the standard Euclidean distance in $\mathbb{R}^3$. 
 What is immediately appearent from the FLRW metric is that spacial slices of the $d=4$ spacetime remain curvature free under the expansion of the universe describe by the scale factor $a^2(t)$.
 
+In cosmology, there are other distances which can be more useful than the distance given by the FLRW metric. In the FLRW metric the distance between two points grows in time. We can avoid this by defining the \textit{comoving distance} in which distances remain fixed through time. If we look at a coordinate function $x^\mu$ at $t=t_0$, at a later time the coordinate function can be written as $x^\mu \rightarrow a(t) x^\mu$, thus by dividing by the scale factor $a(t)$ we can define the comoving coordinates as
+\begin{equation}
+    \chi = \int\limits^{t}_{t_0} \frac{1}{a(t')} dt'
+\end{equation}
+with the standard Minkowski metric. This can be taken a step further by determining how far light has travelled since $t=0$
+\begin{equation}
+    \eta = \int\limits^t_0 \frac{1}{a(t')}dt'
+\end{equation}
+Since we can't see anything beyond this distance, it is often called the \textit{comoving horizon}. There is one last useful distance to define, the \textit{angular distance} which is inferred by the angle subtended by two objects. This relates distances to the geometry discuss in the first section where the measured distance will be the radial distance $D$
+\begin{equation}
+    D_A = \left\{ \begin{array}{cc}
+	    R & K=0 \\
+	    R\sin(D/R) & K>0 \\
+	    R\sinh(D/R) & K<0
+    \end{array}
+    \right.
+\end{equation}
+
+
 When describing the structure of the universe, I will make a few assumptions (which hold up to small perturbations):
 \begin{itemize}
     \item Homogeneity. The cosmology describing the universe does not depend on location.
@@ -52,3 +71,18 @@ The usual conservation law holds
 \end{equation}
 We can use the geodesic equation to examine how the energy of the massless particles evolves through time. 
 
+\subsection{Einstein's Field Equation from the Bianchi Identity}
+
+\subsection{Dynamics of the FRLW Metric}
+If we examine the $00$ component of Einstein's Field Equation, the result is the \textit{first Friedman equation} (note that $\rho$ is shorthand for $\sum_i\rho_i$ and $R(G)$ to note that $R$ depends on the geometry of spaceial slices)
+\begin{equation}
+    H^2(a) + \frac{1}{a^2 R^2(G)} = \frac{8\pi G}{3}\rho
+\end{equation}
+We can interpret the second term on the left (which is spacial curvature) as some density asociated with the curvature $\rho_k$. If we divide by $\rho_{\text{crit}}$ at $z=0$ / $a=1$ we find the usual form. 
+\begin{equation}
+    \omega + \omega_k = 1 
+\end{equation}
+The second Friedman equation comes from the trace of Einstein's equation.
+\begin{equation}
+    \frac{\ddot a}{a} = -\frac{4\pi G}{3}(\rho + 3P)
+\end{equation}

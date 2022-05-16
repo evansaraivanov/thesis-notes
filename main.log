@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.4.30)  12 MAY 2022 19:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.4.30)  16 MAY 2022 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,7 +961,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (1.27606pt too wide) in paragraph at lines 52--54
+Overfull \hbox (1.27606pt too wide) in paragraph at lines 71--73
 \OT1/cmr/m/n/10 We can use the geodesic equa-tion to ex-am-ine how the en-ergy 
 of the mass-less par-ti-cles evolves through time. 
  []
@@ -972,7 +972,7 @@ Overfull \hbox (15.54881pt too wide) in paragraph at lines 91--92
 ault / files / modules / Geyer-[]Introduction % 20to % 20markov %
  []
 
-) (./field.tex [4]
+[4]) (./field.tex
 Overfull \hbox (29.5107pt too wide) detected at line 15
 \OML/cmm/m/it/10 ^^NS \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[]\OT1/cmr/m/n/10 (
 \OML/cmm/m/it/10 ^^N^^^[]\OT1/cmr/m/n/10 )([]\OML/cmm/m/it/10 ^^M[][] \OT1/cmr/
@@ -981,13 +981,13 @@ m/n/10 + [] \OML/cmm/m/it/10 d[]x[] []
 
 [5]) [6] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8C9356A350487F93F375DB163000AE75;2126.
+(rerunfilecheck)             Checksum: 84E33BAB27E19C79A66775F92B82EEDB;2662.
  ) 
 Here is how much of TeX's memory you used:
- 36386 strings out of 478238
- 848049 string characters out of 5850456
- 1262477 words of memory out of 5000000
- 53999 multiletter control sequences out of 15000+600000
+ 36396 strings out of 478238
+ 848181 string characters out of 5850456
+ 1263477 words of memory out of 5000000
+ 54001 multiletter control sequences out of 15000+600000
  479166 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,17n,118p,725b,2026s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1006,10 +1006,10 @@ e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
 /share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (6 pages, 235364 bytes).
+Output written on main.pdf (6 pages, 242170 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
