@@ -82,6 +82,10 @@ The method of normalizing flows (MAF) implemented here uses Masked Autoencoders 
 
 The implementation in tensorflow uses \textit{bijectors} which implements a local diffeomorphism between a manifold $M$ and a target manifold $N$ (which are our parameter spaces), i.e. $\phi:M\rightarrow N$ such that $\phi$ is differentiable and injective. In tensorflow it has three operations, Forward, Inverse, and log\_deg\_jacobian, which are exactly the three we want. By constructing a bijector for each masked input, the full normalizing map can be constructed.
 
+\subsection{Fisher Analysis}
+Informally, the fisher matrix is captures information from an ideal experiment. It is related to the inverse of the diagonalized covariance matrix.  Thus the fisher matrix can help us constrain cosmological parameters.
+
+
 \bigskip
 \hrule
 \textbf{\large References}
