@@ -72,6 +72,18 @@ The usual conservation law holds
 We can use the geodesic equation to examine how the energy of the massless particles evolves through time. 
 
 \subsection{Einstein's Field Equation from the Bianchi Identity}
+In a curved spacetime, conservation of energy is written
+\[ \nabla^\mu T_{\mu\nu} = 0\]
+When deriving Einstein's equation, we want to find a divergence-less tensor that depends only on the geometry. The following procedure follows closely one would to find the classical Yang-Mills equation for gauge fields. The Riemann curvature is anti-symmetric in the first two lower indices, so the Riemann tensor is like a GL(TM) valued differential 2 form, and the bianchi identity is
+\[ d_{\nabla} R = 0 \]
+Explicitely writing this becomes
+\[ \nabla_{\alpha} R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R^{\alpha}_{\gamma\alpha\delta} + \nabla_{\gamma}R^{\alpha}_{\alpha\beta\delta} = 0 \]
+\[ \nabla_{\alpha} R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R^{\alpha}_{\gamma\alpha\delta} - \nabla_{\gamma}R^{\alpha}_{\beta\alpha\delta} \]
+\[ \nabla_{\alpha}R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R_{\gamma\delta} - \nabla_{\gamma}R_{\alpha\delta} \]
+Multiplying by $g^{\beta\delta}$ and doing some relabelling/contractions of internal indices we find
+\[ \nabla^\alpha(R_{\gamma\alpha}-\frac{1}{2}g_{\gamma\alpha}R) \equiv \nabla^{\alpha}G_{\gamma\alpha} = 0 \]
+There is one more divergencless tensor, the metric tensor $g_{\mu\nu}$, so we can write
+\[ G_{\mu\nu} - \Lambda g_{\mu\nu} = 8\pi\kappa T_{\mu\nu} \]
 
 \subsection{Dynamics of the FRLW Metric}
 If we examine the $00$ component of Einstein's Field Equation, the result is the \textit{first Friedman equation} (note that $\rho$ is shorthand for $\sum_i\rho_i$ and $R(G)$ to note that $R$ depends on the geometry of spaceial slices)
