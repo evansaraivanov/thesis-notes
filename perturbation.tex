@@ -1,0 +1,16 @@
+\subsection{Scalar-Vector-Tensor Decomposition}
+Our universe, as described above, is a real valued 4 dimensional space, $\mathbb{R}^4$. Suppose that we can separate the universe into a spacial part and a temporal part $\mathbb{R}^4 \mapsto \mathbb{R} \times S$ where $S$ is some $3$-manifold. Under such a decomposition, the metric decomposes as (with comoving time as the time coordinate)
+\[ g = a^2(\tau)\left( g_{00}d\tau d\tau + g_{0i}d\tau dx^{i} + g_{ij} dx^{i}dx^{j} \right) \]
+The three parts are as follows:
+\begin{itemize}
+    \item $g_{00}$ has degrees of freedom (DOF) of a scalar. This is the scalar portion of the decomposition.
+    \item $g_{0i}$ has DOF of a vector. This is the (co)vector portion of the decomposition.
+    \item $g_{ij}$ has DOF of a rank 2 tensor. This is the tensor portion of the decomposition.
+\end{itemize}
+The metric, however, is a special case of a symmetric rank 2 tensor. For antisymmetric tensors the only change is that rather than the product $dx^\mu dx^\nu$, we need the exterior product $dx^\mu \wedge dx^\nu$. This means the temporal component/scalar component is 0 for antisymmetric tensors. Since any rank 2 tensor can be decomposed to a symmetric and an antisymmetric part, these two decompositions are sufficient for decomposing any rank 2 tensor. 
+
+We can take this even further. Note that a vector can be decomposed into a divergence part and a dual part
+\[ v^i = g^{ij}\partial_j f + g^{ij} \underbrace{w_{jk}\star (dx^{i} \wedge dx^{j})}_{\equiv \hat{w}_j} \]
+\[ \Rightarrow v^i = (\partial^j f + \hat{w}^j) \]
+Also, any rank 2 tensor can be written as the sum of a trace and a traceless part.
+
