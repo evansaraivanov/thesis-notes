@@ -100,6 +100,19 @@ Thus we need a way to emulate data vectors for a given parameter vector.
 In addition, although a markov chain explicitely only depends on the previous state, it does implicitely imply on its entire history of states. The chain only forgets its history after a certain number of steps, which is called the \textit{autocorrelation time} and is denoted $\tau$. To ensure the chain has a chance to explore the entire parameter space and generate a large enough set of independent samples, we need to determine $\tau$ for our chains.
 
 \subsection{Tension Metrics}
+In a previous DES paper, the tension metrics are the following:
+\begin{enumerate}
+    \item Bayesian evidence ratio given by
+	\[ R = \frac{\mathcal{E}_{AB}}{\mathcal{E}_A\mathcal{E}_B} \]
+	Where $A$ and $B$ are data sets. This method can be written many ways using bayes theorem, which will make it appearent that this metric depends heavily on the prior volume.
+    \item Bayesian suspiciousness. This metric attempts to remove the dependence on the prior volume by defining the suspiciousness as 
+	\[ \log S = \log R - \log I \]
+	Of particular interest here is the new value $I$ which is the information ratio, which is defined in terms of the KL divergence.
+	\[ \log I = \mathcal{D}_A + \mathcal{D}_B - \mathcal{D}_{AB} \]
+	\[ \mathcal{D} = \int \mathcal{P} \log(\frac{\mathcal{P}}{\Pi}) \]
+    \item The method of parameter difference $\Delta$ and $n_\sigma$.
+    \item Other metrics that rely on gaussianity (can perform but relying on covariance of a gaussian approximation could cause troble).
+\end{enumerate}
 \hrule
 some ideas for tension metrics.
 \begin{itemize}
