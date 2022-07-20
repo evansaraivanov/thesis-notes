@@ -111,19 +111,42 @@ In a previous DES paper, the tension metrics are the following:
 	\[ \log I = \mathcal{D}_A + \mathcal{D}_B - \mathcal{D}_{AB} \]
 	\[ \mathcal{D} = \int \mathcal{P} \log(\frac{\mathcal{P}}{\Pi}) \]
     \item The method of parameter difference $\Delta$ and $n_\sigma$.
-    \item Other metrics that rely on gaussianity (can perform but relying on covariance of a gaussian approximation could cause troble).
+    \item Parameter difference in update form. Suppose you have two data sets $A$ and $B$. The idea is to look at the difference in mean and covariance between data set $A$ and data set $A+B$.
+	\[Q_{\mathrm{UDM}} = {(\mu_A - \mu_{A+B})}^T{(C_A-C_{A+B})}^{-1}(\mu_A - \mu_{A+B}) \]
+	$Q_{\mathrm{UDM}}$ will be $\chi^2$ distributed with $\rank(C_A-C_{A+B})$ degrees of freedom.
+    \item Goodness of fit degredation. This is similar to the previous, where it looks at how the goodness of fit of the model in data set $A$ degrades after adding data set $B$. We have
+	\[ Q_{\mathrm{DMAP}} = 2\mathcal{L}_{A}(\hat{\theta}_A) + 2\mathcal{L}_B(\hat\theta_B) - 2 \mathcal{L}_{A+B}(\hat\theta_{A+B}) \]
+	with $\hat{\theta}$ being the parameter vector that maximizes the posterior, the maximum a posteriori. Again $Q_{\mathrm{DMAP}}$ is $\chi^2$ distributed. 
 \end{enumerate}
-\hrule
-some ideas for tension metrics.
-\begin{itemize}
-    \item $n_\sigma$, which I think is intuitive to understand. Parameter based
-    \item Bayesian Suspiciousness (\href{https://academic.oup.com/mnras/article/496/4/4647/5863223}{Here!}). Using hard priors, how small can we make the prior without altering the posterior? This is evidence based
-    \item And more!
-\end{itemize}
-\hrule
+
+\subsection{Metric 1: Parameter Difference}
+The idea behind this metric is simple: if two data sets largely agree, there difference posterior will be centered at 0, so the integral will be close to 0.
+To actually compute the integral we use the normalizing flow to learn the posterior and perform MCMC inegration. The integration error is determined using the Clopper-Pearson interval on the binomial distribution.
+
+\subsection{Metric 2: Eigentension}
+This metric is interesting.
+We start by diagonalizing the covariance matrix on one of our data sets.
+Then we take the ratio of the variance in the prior to the variance in the posterior and apply an ad hoc cut to determine which eigenmodes are well-measured.
+The idea is that we should not include poorly measured eigenmodes in our tension analysis because the difference is dominated by the prior rather than the data itself.
+Lastly we project the other data set onto the eigenmodes and perform the parameter difference metric on only the well-measured eigenmodes.
+
+(here is a good place to compare with metric 1)
+
+\subsection{Metric 3: Parameter Difference in Update Form}
+As discussed above, we can compute the parameter $Q_{\mathrm{UDM}}$ by
+\begin{equation}
+    Q_{\mathrm{UDM}} = {(\mu_A - \mu_{A+B})}^T{(C_A-C_{A+B})}^{-1}(\mu_A - \mu_{A+B}) 
+\end{equation}
+The difference of means is precisely the mean of the parameter difference distribution, and we are using the covariance $C_A+C_{A+B}$.
+Thus it is clear $Q_{\mathrm{UDM}}$ is $\chi^2$ distributed with degrees of freedom given by $\rank(C_A-C_{A+B})$. 
+It is clear, however, that this metric relies on the parameter difference to be gaussian distributed because of its reliance on $Q_{\mathrm{UDM}}$ being $\chi^2$ distributed. Despite this, we proceed anyway. With proper calibration this metric can be useful even for non-gaussian posteriors.
+
+\subsection{Metric 4: Goodness of Fit Degradation}
 
 \subsection{Normalizing Flow Analysis}
-One advantage of normalizing flows is its effectiveness for smaller data sets. 
+One advantage of normalizing flows is its effectiveness for smaller data sets. (talk about NF vs KDE when the data is available).
+
+
 
 \bigskip
 \hrule
@@ -142,22 +165,3 @@ Informally, the fisher matrix is captures information from an ideal experiment. 
 
 \url{https://www.sheffield.ac.uk/polopoly_fs/1.60510!/file/MCMC.pdf}
 \hrule
-
-Test graph
-
-  \begin{tikzpicture}
-
-    \pgfplotsset{
-      scale only axis,
-    }
-
-    \begin{axis}[
-      xlabel=$x$,
-      ylabel=$y$,
-      samples=100,
-      ]
-      \addplot[][domain=-4.5:4]{0.2*x^3-x+1};
-      \addplot[draw=red][domain=-4.5:4]{3*sin(deg(x))};
-    \end{axis}
-
-  \end{tikzpicture}
