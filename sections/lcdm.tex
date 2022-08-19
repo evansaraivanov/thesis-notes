@@ -1,29 +1,5 @@
-\subsection{Introduction to Cosmology}
-With Hubble's discovery of the expanding universe, there has been great efforts to understand this expansion and the evolution of this expansion (and of the universe as a whole).
-A related idea, General Relativity has described the importance of the geometry of the universe.
-There are, in general, three possible geometries:
-\begin{itemize}
-    \item A flat geometry which is equivalent to Euclidean space with zero curvature.
-    \item An open geometry with constant negative curvature (Anti-de Sitter space).
-    \item A Closed geometry with constant positive curvature (de Sitter space)
-\end{itemize}
-Given the relationship between curvature and the energy-momentum tensor given by the Einstein field equations, it seems reasonable to assume that any non-zero energy means the universe is not flat.
-Through quantum field theory (QFT) the Casimir effect shows that the vacuum has non-zero energy density, and through astronomical observation of distant galaxies it can be seen that our universe is flat.
-At first these two observations contradict each other. However, by introducing another term to the Einstein field equations, this discrepency can be resolved.
-\[ G_{\mu\nu} - \underbrace{\Lambda g_{\mu\nu}}_{\text{new term}} = T_{\mu\nu} \]
-The constant $\Lambda$ is called the \textit{cosmological constant} which can absorb the contributions from the vacuum energy, allowing for a flat universe and non-zero vacuum energy density.
-A natural question to ask is `what is the source of the cosmological constant?'
+\section{$\Lambda$CDM: The Standard Model of Cosmology}
 
-\subsection{$\Lambda$CDM}
-
-\subsection{The (Affine) Geodesic Equation}
-Suppose we have a (semi-) Riemannian manifold $M$ with metric $g$ and tangent bundle $TM$. An \textit{affine connection} is a map
-\[ \Gamma (TM) \times \Gamma (TM) \rightarrow \Gamma (TM) \]
-\[ (X,Y) \rightarrow \nabla_X Y \]
-That is, it parallel transports the vector field $Y$ along the connection $\nabla$ in the direction of vector field $X$. From this, we can write the affine geodesic equation for a path $\gamma(t)$
-\[ \nabla_{\dot\gamma} \dot\gamma(t) = 0 \]
-Thus, a geodesic is a path such that its tangent vector is parallel translated. Since we observe our world with coordinates, in physics it is often more instructive to work this out in a specific set of coordinates $x^\mu$. Thus this can be written as
-\[ \ddot{\gamma}^\mu + \Gamma^{\mu}_{\rho\lambda}\dot{\gamma}^\rho \dot{\gamma}^\lambda  \]
 
 
 \subsection{The FLRW Metric and Dark Energy}
@@ -71,21 +47,6 @@ The usual conservation law holds
 \end{equation}
 We can use the geodesic equation to examine how the energy of the massless particles evolves through time. 
 
-\subsection{Einstein's Field Equation from the Bianchi Identity}
-In a curved spacetime, conservation of energy is written
-\[ \nabla^\mu T_{\mu\nu} = 0\]
-When deriving Einstein's equation, we want to find a divergence-less tensor that depends only on the geometry. The following procedure follows closely one would to find the classical Yang-Mills equation for gauge fields. The Riemann curvature is anti-symmetric in the first two lower indices, so the Riemann tensor is like a GL(TM) valued differential 2 form, and the bianchi identity is
-\[ d_{\nabla} R = 0 \]
-Explicitely writing this becomes
-\[ \nabla_{\alpha} R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R^{\alpha}_{\gamma\alpha\delta} + \nabla_{\gamma}R^{\alpha}_{\alpha\beta\delta} = 0 \]
-\[ \nabla_{\alpha} R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R^{\alpha}_{\gamma\alpha\delta} - \nabla_{\gamma}R^{\alpha}_{\beta\alpha\delta} \]
-\[ \nabla_{\alpha}R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R_{\gamma\delta} - \nabla_{\gamma}R_{\alpha\delta} \]
-Multiplying by $g^{\beta\delta}$ and doing some relabelling/contractions of internal indices we find
-\[ \nabla^\alpha(R_{\gamma\alpha}-\frac{1}{2}g_{\gamma\alpha}R) \equiv \nabla^{\alpha}G_{\gamma\alpha} = 0 \]
-There is one more divergencless tensor, the metric tensor $g_{\mu\nu}$, so we can write
-\[ G_{\mu\nu} - \Lambda g_{\mu\nu} = 8\pi\kappa T_{\mu\nu} \]
-
-\subsection{Dynamics of the FRLW Metric}
 If we examine the $00$ component of Einstein's Field Equation, the result is the \textit{first Friedman equation} (note that $\rho$ is shorthand for $\sum_i\rho_i$ and $R(G)$ to note that $R$ depends on the geometry of spaceial slices)
 \begin{equation}
     H^2(a) + \frac{1}{a^2 R^2(G)} = \frac{8\pi G}{3}\rho

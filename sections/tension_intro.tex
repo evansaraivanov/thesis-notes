@@ -1,0 +1,124 @@
+\chapter{Tension}
+H0 and S8 tension
+\section{Tension Metrics}
+
+In a previous DES paper, the tension metrics are the following:
+\begin{enumerate}
+    \item Bayesian evidence ratio given by
+	\[ R = \frac{\mathcal{E}_{AB}}{\mathcal{E}_A\mathcal{E}_B} \]
+	Where $A$ and $B$ are data sets. This method can be written many ways using bayes theorem, which will make it appearent that this metric depends heavily on the prior volume.
+    \item Bayesian suspiciousness. This metric attempts to remove the dependence on the prior volume by defining the suspiciousness as 
+	\[ \log S = \log R - \log I \]
+	Of particular interest here is the new value $I$ which is the information ratio, which is defined in terms of the KL divergence.
+	\[ \log I = \mathcal{D}_A + \mathcal{D}_B - \mathcal{D}_{AB} \]
+	\[ \mathcal{D} = \int \mathcal{P} \log(\frac{\mathcal{P}}{\Pi}) \]
+    \item The method of parameter difference $\Delta$ and $n_\sigma$.
+    \item Parameter difference in update form. Suppose you have two data sets $A$ and $B$. The idea is to look at the difference in mean and covariance between data set $A$ and data set $A+B$.
+	\[Q_{\mathrm{UDM}} = {(\mu_A - \mu_{A+B})}^T{(C_A-C_{A+B})}^{-1}(\mu_A - \mu_{A+B}) \]
+	$Q_{\mathrm{UDM}}$ will be $\chi^2$ distributed with $\rank(C_A-C_{A+B})$ degrees of freedom.
+    \item Goodness of fit degredation. This is similar to the previous, where it looks at how the goodness of fit of the model in data set $A$ degrades after adding data set $B$. We have
+	\[ Q_{\mathrm{DMAP}} = 2\mathcal{L}_{A}(\hat{\theta}_A) + 2\mathcal{L}_B(\hat\theta_B) - 2 \mathcal{L}_{A+B}(\hat\theta_{A+B}) \]
+	with $\hat{\theta}$ being the parameter vector that maximizes the posterior, the maximum a posteriori. Again $Q_{\mathrm{DMAP}}$ is $\chi^2$ distributed. 
+\end{enumerate}
+
+\subsubsection{Metric 1: Parameter Difference}
+The idea behind this metric is simple: if two data sets largely agree, there difference posterior will be centered at 0, so the integral will be close to 0.
+To actually compute the integral we use the normalizing flow to learn the posterior and perform MCMC inegration. The integration error is determined using the Clopper-Pearson interval on the binomial distribution.
+
+\subsubsection{Metric 2: Eigentension}
+This metric is interesting.
+We start by diagonalizing the covariance matrix on one of our data sets.
+Then we take the ratio of the variance in the prior to the variance in the posterior and apply an ad hoc cut to determine which eigenmodes are well-measured.
+The idea is that we should not include poorly measured eigenmodes in our tension analysis because the difference is dominated by the prior rather than the data itself.
+Lastly we project the other data set onto the eigenmodes and perform the parameter difference metric on only the well-measured eigenmodes.
+
+(here is a good place to compare with metric 1)
+
+\subsubsection{Metric 3: Parameter Difference in Update Form}
+As discussed above, we can compute the parameter $Q_{\mathrm{UDM}}$ by
+\begin{equation}
+    Q_{\mathrm{UDM}} = {(\mu_A - \mu_{A+B})}^T{(C_A-C_{A+B})}^{-1}(\mu_A - \mu_{A+B}) 
+\end{equation}
+The difference of means is precisely the mean of the parameter difference distribution, and we are using the covariance $C_A+C_{A+B}$.
+Thus it is clear $Q_{\mathrm{UDM}}$ is $\chi^2$ distributed with degrees of freedom given by $\rank(C_A-C_{A+B})$. 
+It is clear, however, that this metric relies on the parameter difference to be gaussian distributed because of its reliance on $Q_{\mathrm{UDM}}$ being $\chi^2$ distributed. Despite this, we proceed anyway. With proper calibration this metric can be useful even for non-gaussian posteriors.
+
+\subsubsection{Metric 4: Goodness of Fit Degradation}
+
+\subsubsection{Interpreting the Results}
+
+Given some probability $P$ of a parameter shift, the following formula can give you the number of standard deviations if the probability shift comes from a gaussian distribution
+\[ n_\sigma = \sqrt{2} \text{Erf}^{-1}(P) \]
+I have a notebook using two unit gaussian priors separated by a distance $a$. This example can be computed analytically.
+\begin{equation*}
+    \begin{split}
+	\mathcal{P}(\Delta \theta) &= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} e^{-\theta^2/2} e^{-{(\theta-\Delta\theta)}^2/2}  d\theta \\
+				   &= \frac{1}{2\pi} \cdot \sqrt{\pi} e^{-{(\Delta\theta)}^2/4}\\
+				   &= \frac{1}{\sqrt{4\pi}}e^{-{(\Delta\theta)}^2/4}\\
+    \end{split}
+\end{equation*}
+The parameter difference posterior is a gaussian with standard deviation $\sqrt{2}$. The separation is fixed by $a$, hence the shift is $\mathcal{P}(a)$. Hence the shift probability is
+\[ \Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta \]
+Lets use the example $a=2$. Then $n_\sigma = 2/\sqrt{2} = \sqrt{2}$. Using this we can work backwards to find $\Delta$ from a $z$-table to find $\Delta = 0.9207 - 0.0793 = 0.8414 $. 
+
+\subsection{DES v Planck Results}
+\subsection{Building from previous results}
+\section{Computing techniques}
+\subsection{MCMC}
+
+Interestingly, MCMC algorithms have heavy analogies with statistical mechanics which are useful to demonstrate the concept. To examine this, lets first define what a Markov Chain is.
+\begin{defn}
+A sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} if the conditional distribution $X_{n+1}$ depends only on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain.
+\end{defn}
+
+
+\subsubsection{The Metropolis-Hastings Algorithm}
+Suppose we want to sample from a distribution $p(x)$. $p(x)$ can be high dimensional and is generally difficult to calculate (evidence is hard to compute since it requires integration over the entire parameter space). The goal is to use Markov Chains to sample from $p(x)$ without needing to compute the evidence. This will be represented as a path through state space until the chain reaches a stable point (stationary state).
+
+We start with a proposal distribution $g(x_n)$. Sample from the proposal distribution to find the next state $x_{n+1}$ with probability $g(x_{n+1}|x_n)$. This transition from state $n$ to state $n+1$ must follow the \textit{detailed balance condition}
+\[ p(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = p(x_{n+1}) g(x_n|x_{n+1}) A(x_{n+1} \rightarrow x_{n}) \]
+where $A$ is an \textit{acceptance probability} which I will define more precisely later. Using Bayes' Theorem on $p(x)$, the evidence cancels out on each side, and thus the detailed balance condition can be simplified to only rely on the likelihood and prior of $p(x)$, which I will denote $\pi$ and $\mathcal{L}$.
+\[ \pi(x_n)\mathcal{L}(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = \pi(x_{n+1}) \mathcal{L}(x_{n+1}) g(x_{n}|x_{n+1}) A(x_{n+1}\rightarrow x_{n}) \]
+\[ \Rightarrow \frac{A(x_n \rightarrow x_{n+1})}{A(x_{n+1}\rightarrow x_{n})} = \frac{\pi(x_{n+1}) \mathcal{L}(x_{n+1}) g(x_{n}|x_{n+1})}{\pi(x_n)\mathcal{L}(x_n) g(x_{n+1}|x_n)} \equiv R_{n,n+1} \]
+This allows us to define the acceptance probability as
+\[ A(x_n \rightarrow x_{n+1}) = \min( 1, R_{n,n+1} ) \]
+This probability is used to determine whether the chain moves to $x_{n+1}$ or stays at $x_n$. The chain converges when it reaches a stationary state.
+
+There are a few properties that can be observed for this algorithm:
+\begin{itemize}
+    \item Having an asymmetrical proposal $g(x)$ can allow for faster convergence of the chain.
+    \item The initial sampling may not accurately reflect samples for $p(x)$. This is regarded as the `burn-in' and is generally discarded from the samples.
+    \item MCMC Sampling loses sampling power for multi-modal distributions. 
+\end{itemize}
+
+\subsection{Data Emulators}
+
+Traditional methods of computing likelihoods (e.g. \textsc{cosmosis}) require an immense number of CPU hours, and since we need tens of thousands of chains, we cannot rely on these traditional methods. To accelerate likelihood computation, and thus the MCMC process, we employ emulators which are neural networks that map the cosmological parameters to data vectors. The map is highly non-linear and thus a straightforward analytic mapping is not known. The neural network architecture used is similar for each experiment.
+
+\subsubsection{LSST Emulator}
+Unfourtunatly, we do not have access to the training samples for this emulator. We can however approximate the training region. First, we must define what tempered MCMC means. As discuss in the previous section, an MCMC decides wheather to accept or reject a point based on the detailed balance condition. In our case, we want to ensure the training samples cover a wide range in the parameter space, so we can modify the posterior by raising it to a power $T$ called the tempering factor. The detailed balance condition becomes
+
+\[ \frac{A(x_n \rightarrow x_{n+1})}{A(x_{n+1}\rightarrow x_{n})} = \left[\frac{\pi(x_{n+1}) \mathcal{L}(x_{n+1})}{\pi(x_n)\mathcal{L}(x_n)}\right]^T \frac{ g(x_{n}|x_{n+1}) }{ g(x_{n+1}|x_n)} \]
+
+It is believed the samples were generated via MCMC with a posterior tempering of $0.5$. This gives us the following distribution
+
+\subsubsection{Planck $C_\ell$ Emulator}
+
+Fortunately the training samples for \textsc{cosmopower} are available for download from google drive.
+
+\subsection{Normalizing Flows}
+
+The method of normalizing flows (MAF) implemented here uses Masked Autoencoders (MADE) to construct the flow. Suppose we have an input to the flow $x_i$. The output of the map is $y_i= \mu(x_{1:i-1})+\sigma(x_{1:i-1})x_i$. The $\mu$ and $\sigma$ are found using neural networks which recieve masked inputs $x_{1:i-1}=(x_1,\ldots,x_{i-1},0,\ldots,0)$. Since the input only depends on the first $i-1$ inputs, the normalizing flow is \textit{autoregressive} and the Jacobian is triangular.
+
+The implementation in tensorflow uses \textit{bijectors} which implements a local diffeomorphism between a manifold $M$ and a target manifold $N$ (which are our parameter spaces), i.e. $\phi:M\rightarrow N$ such that $\phi$ is differentiable and injective. In tensorflow it has three operations, Forward, Inverse, and log\_deg\_jacobian, which are exactly the three we want. By constructing a bijector for each masked input, the full normalizing map can be constructed.
+
+To give a motivation, I will begin with a 2 dimensional example. In this example I used \textsc{cobaya} to generate samples from two distributions. One is a pure gaussian centered at $(1/2,1/2)$ with covariance $0.005 I$  ($I$ is the identity matrix). The other is a circle of radius 1 with points generated by a gaussian based on its distance from the circle. In other words, it is a gaussian centered at $x^2+y^2$ with a mean of $x^2+y^2=1$ and a standard deviation $0.02$.
+
+The first step is to find the parater difference distribution. Wrap the samples in the shorter chain until it is the same length as the longer chain, then take the difference of the two chains. In this example we get the following.
+
+Now we can do the normalizing flow. As a general rule-of-thumb, the network will consist $2d$ MAfs each of $2$ hidden layers with $2d$ hidden units each, with $d$ the dimension of the distribution.
+This will generally give an expressive model without introducing error from the inability to train all of the models parameters in a reasonable time. 
+These parameters are tunable to whatever the user will decide, and some experimentation with these parameters is needed to ensure the best results.
+In addition, we allow the parameters to be arbitrarily permuted between each MAF since the resulting probability of shift should be independent of parameterization.
+
+One advantage of normalizing flows is its effectiveness for smaller data sets. (talk about NF vs KDE when the data is available).
