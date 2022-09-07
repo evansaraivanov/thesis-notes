@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1660931664 "main.tex" "main.pdf" "main" 1660931664
+["pdflatex"] 1662574064 "main.tex" "main.pdf" "main" 1662574066
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -242,15 +242,15 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1658861087 2826443 1475558b74dac1fde51aad1dc5315843 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "main.aux" 1660931664 4483 dbe286216ce7e86f69270e4b7f3e06a5 "pdflatex"
-  "main.out" 1660931664 3167 a8bf620c7febd5eb0b87364ebeab7745 "pdflatex"
+  "main.aux" 1662574066 4483 fd91649e159fdae26bdb6531a88d541b "pdflatex"
+  "main.out" 1662574066 3167 a8bf620c7febd5eb0b87364ebeab7745 "pdflatex"
   "main.tex" 1660931410 2942 99bd06f4fdf4083cf13a4871dc78c5bc ""
-  "sections/cosmo_intro.tex" 1660931663 1562 5defb301a50bb1537234fdf3715dcc56 ""
+  "sections/cosmo_intro.tex" 1662145617 1592 547f6477374a1e0bfe6571c19a9cee30 ""
   "sections/experiment.tex" 1658861397 30 65bc46d4c05e43e2b4282c90afb45826 ""
-  "sections/gr.tex" 1660931663 5545 420e53a84efae5f60997536ebd9a27e1 ""
-  "sections/lcdm.tex" 1660931663 4380 c63150fbd32755061023cbc58b99844c ""
+  "sections/gr.tex" 1662145569 5849 15d2dd71976adb32b13117a0f54014b7 ""
+  "sections/lcdm.tex" 1662145135 4402 2ee3ac26312bb47505ca06895d89d3dc ""
   "sections/misc.tex" 1660931435 5734 569242df7e501cfb5e80a65e04d2375e ""
-  "sections/tension_intro.tex" 1660930803 11727 bc6730ceb77121377f8d29d1dc6209af ""
+  "sections/tension_intro.tex" 1662574064 15155 4942fa111cfd212d3079cf40c895d5b6 ""
   (generated)
   "main.aux"
   "main.log"
