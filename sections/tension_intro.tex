@@ -1,5 +1,14 @@
 \chapter{Tension}
-H0 and S8 tension
+As discussed before (where?), standard $\Lambda$CDM can be parameterized by 6 parameters, $(A_s,n_s,H_0,\tau,\Omega_b,\Omega_c)$. As usual, this is not the only parameterization of $\Lambda$CDM. $A_s$ describes the amplitude of the matter power spectrum. By integrating the matter power spectrum up to a scale of $8 h^{-1}\mathrm{Mpc}$ we can find a parameter denoted $\sigma_8$ defined as
+\begin{equation}
+\sigma_8^2 = \left.\int\limits_0^\infty P(k,r)\left(\frac{3j_1(kr)}{kr}\right)^2\frac{k^2}{2\pi^2}dk\right|_{r=8}
+\end{equation}
+which can be described as the amplitude of matter fluctuations at the scale $8 h^{-1}\mathrm{Mpc}$. In addition, we can add up all of the matter densities to get
+\begin{equation}
+\Omega_m = \sum_i \Omega_i = 1-\Omega_k
+\end{equation}
+which describes the matter density. As it turn out, measurements of the early universe (CMB and high redshift observation) and late universe (galaxy observations and low redshift observation) disagree on measurements of $H_0$ and $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$. These individual parameters are in tension between experiments, but the driving questions of this project is: how much tension is there between measurements of the entire $\Lambda$CDM parameters? Are there models that can resolve this tension? What is the best/most reliable way to measure the tension?
+
 \section{Tension Metrics}
 
 In a previous DES paper, the tension metrics are the following:
@@ -199,9 +208,9 @@ The first step is to find the parater difference distribution.
 Wrap the samples in the shorter chain until it is the same length as the longer chain, then take the difference of the two chains. 
 In this example we get the following.
 
-Now we can do the normalizing flow. As a general rule-of-thumb, the network will consist $2d$ MAfs each of $2$ hidden layers with $2d$ hidden units each, with $d$ the dimension of the distribution.
+Now we can do the normalizing flow. As a general rule-of-thumb, the network will consist $2d$ MAFs each of $2$ hidden layers with $2d$ hidden units each, with $d$ the dimension of the distribution.
 This will generally give an expressive model without introducing error from the inability to train all of the models parameters in a reasonable time. 
 These parameters are tunable to whatever the user will decide, and some experimentation with these parameters is needed to ensure the best results.
 In addition, we allow the parameters to be arbitrarily permuted between each MAF since the resulting probability of shift should be independent of parameterization.
 
-One advantage of normalizing flows is its effectiveness for smaller data sets. (talk about NF vs KDE when the data is available).
+%One advantage of normalizing flows is its effectiveness for smaller data sets. (talk about NF vs KDE when the data is available).
