@@ -3,38 +3,45 @@
 To align with my interest I will write this section from a mathematical perspective and give a physics interpretation after. In this section, I will derive Einstein's field equation. First starting with defining smooth structures on a manifold. Afterwards I move into curvature before using the Bianchi identity on the Riemann tensor to derive the equation governing General Relativity. I will also discuss some properties of Einstein's Field Equation.
 \subsection{Smooth Manifolds}
 The basic structure of our universe according to general relativity is that the universe is a smooth 4-manifold. This already contains a lot of information so lets break it down.
-To begin, we start with defining a topological manifold. Given a space $X$ with topology $\tau$, $X$ is an $n$ dimensional topological manifold if
+To begin, one starts with defining a topological manifold. Given a space $X$ with topology $\tau$, $X$ is an $n$ dimensional topological manifold if
 \begin{itemize}
 	\item $X$ is Hausdorff. For each $p,q \in X$ there exists neighborhoods $p\in U$, $q\in V$, $U,V\in \tau$ such that $U \cap V = \empty$.
 	\item $X$ is second countable. There exists a countable basis for the topology $\tau$.
 	\item $X$ is locally Euclidean. For all $U\in\tau$ there exists a homemorphism $\phi:U\rightarrow V$ such that $V\subset \mathbb{R}^n$.
 \end{itemize}
-The last condition is one that hints at a differentiable structure becuase of known calculus in $\mathbb{R}^n$. To solidify this, consider the pair $(U,\phi)$ called a chart. Given two charts $(U,\phi)$ and $(V,\psi)$ with $U\cap V \neq \empty$, we can create the transition map $\psi \circ \phi^{-1}:\phi(U\cap V) \rightarrow \psi(U\cap V)$. The two charts are smoothly compatible if $U\cap V=\empty $ or the transition map is a homeomorphism.
+The last condition is one that hints at a differentiable structure becuase of known calculus in $\mathbb{R}^n$. To solidify this, consider the pair $(U,\phi)$ called a chart. Given two charts $(U,\phi)$ and $(V,\psi)$ with $U\cap V \neq \empty$, we can create the transition map $\psi \circ \phi^{-1}:\phi(U\cap V) \rightarrow \psi(U\cap V)$. The two charts are smoothly compatible if $U\cap V= \emptyset $ or the transition map is a homeomorphism.
+
+Manifolds are a generalization of surfaces to arbitrary dimension. To make this a true generalization one needs a way to compute derivatives on a manifold. Let $M$ be a manifold with $x\in M$ and let $\gamma:(-\epsilon,\epsilon)\rightarrow M$ be a curve on $M$ with $\gamma(0)=x$. A tangent vector of $M$ is the equivalence class of curves, $[\gamma(t)]$, with equal $\gamma'(0)$. The tangent space of $M$ at $x$, denoted $T_xM$ is the set of all tangent vectors at $x$. The tangent bundle of $M$ is the disjoint union of all tangent spaces of $M$, denonted $TM = \bigsqcup\limits_{x\in M} T_xM$. The tangent bundle is constructed as a trivial bundle, so one can easily define $(T_xM,x)$ as fibers of the bundle and a projection $\pi:TM \rightarrow M$ with $\pi(T_xM,x)\rightarrow x$. Thus sections take $x$ to the tangent space at $x$.
+
+With this structure, one can now infinitessimaly take a vector in a tangent space and transport it to an adjacent tangent space, thus giving rise to the differential structure seeked in the previous paragraph. Given a vector field $v$ on $M$, $D_v$ is a connection on $M$ if the following properties hold
+
+Usual definition of vector field: a function $v:C^\infty(M) \rightarrow C^\infty(M)$
 
 \subsection{Curvature}
-\subsection{Einstein's Field Equation}
-
-Suppose we have a (semi-) Riemannian manifold $M$ with metric $g$ and tangent bundle $TM$. An \textit{affine connection} is a map
+Suppose one have a (semi-) Riemannian manifold $M$ with metric $g$ and tangent bundle $TM$. An \textit{affine connection} is a map
 \begin{equation}
 	\nabla : \Gamma (TM) \times \Gamma (TM) \rightarrow \Gamma (TM)
 \end{equation}
 \begin{equation}
 	(X,Y) \mapsto \nabla_X Y
 \end{equation}
-That is, it parallel transports the vector field $Y$ along the connection $\nabla$ in the direction of vector field $X$. From this, we can write the affine geodesic equation for a path $\gamma(t)$
+That is, it parallel transports the vector field $Y$ along the connection $\nabla$ in the direction of vector field $X$. From this, one can write the affine geodesic equation for a path $\gamma(t)$
 \begin{equation}
 	\nabla_{\dot\gamma} \dot\gamma(t) = 0
 \end{equation}
-Thus, a geodesic is a path such that its tangent vector is parallel translated. Since we observe our world with coordinates, in physics it is often more instructive to work this out in a specific set of coordinates $x^\mu$. Thus this can be written as
+Thus, a geodesic is a path such that its tangent vector is parallel translated. Since one observes their world with coordinates, in physics it is often more instructive to work this out in a specific set of coordinates $x^\mu$. Thus this can be written as
 \begin{equation}
 	\ddot{\gamma}^\mu + \Gamma^{\mu}_{\rho\lambda}\dot{\gamma}^\rho \dot{\gamma}^\lambda 
 \end{equation}
 
+In general, affine connections have three components: a curvature component, a torsion component, and a \textit{metricity} component. 
+
+\subsection{Einstein's Field Equation}
 In a curved spacetime, conservation of energy is written
 \begin{equation}
 	\nabla^\mu T_{\mu\nu} = 0
 \end{equation}
-When deriving Einstein's equation, we want to find a divergence-less tensor that depends only on the geometry. The following procedure follows closely one would to find the classical Yang-Mills equation for gauge fields. The Riemann curvature is anti-symmetric in the first two lower indices, so the Riemann tensor is like a GL(TM) valued differential 2 form, and the bianchi identity is
+When deriving Einstein's equation, one wants to find a divergence-less tensor that depends only on the geometry. The following procedure follows closely one would to find the classical Yang-Mills equation for gauge fields. The Riemann curvature is anti-symmetric in the first two lower indices, so the Riemann tensor is like a GL(TM) valued differential 2 form, and the bianchi identity is
 \begin{equation}
 	d_{\nabla} R = 0
 \end{equation}
@@ -42,11 +49,11 @@ Explicitely writing this becomes
 \[ \nabla_{\alpha} R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R^{\alpha}_{\gamma\alpha\delta} + \nabla_{\gamma}R^{\alpha}_{\alpha\beta\delta} = 0 \]
 \[ \nabla_{\alpha} R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R^{\alpha}_{\gamma\alpha\delta} - \nabla_{\gamma}R^{\alpha}_{\beta\alpha\delta} \]
 \[ \nabla_{\alpha}R^{\alpha}_{\beta\gamma\delta} + \nabla_{\beta}R_{\gamma\delta} - \nabla_{\gamma}R_{\alpha\delta} \]
-Multiplying by $g^{\beta\delta}$ and doing some relabelling/contractions of internal indices we find
+Multiplying by $g^{\beta\delta}$ and doing some relabelling/contractions of internal indices one finds
 \begin{equation}
 	\nabla^\alpha(R_{\gamma\alpha}-\frac{1}{2}g_{\gamma\alpha}R) \equiv \nabla^{\alpha}G_{\gamma\alpha} = 0
 \end{equation}
-There is one more divergencless tensor, the metric tensor $g_{\mu\nu}$, so we can write
+There is one more divergencless tensor, the metric tensor $g_{\mu\nu}$, so one can write
 \begin{equation}
 	G_{\mu\nu} - \Lambda g_{\mu\nu} = 8\pi\kappa T_{\mu\nu}
 \end{equation}
@@ -54,7 +61,7 @@ There is one more divergencless tensor, the metric tensor $g_{\mu\nu}$, so we ca
 \subsection{Gauge Choice}
 \subsection{Scalar-Vector-Tensor Decomposition}
 
-Our universe, as described above, is a real valued 4 dimensional space, $\mathbb{R}^4$. Suppose that we can separate the universe into a spacial part and a temporal part $\mathbb{R}^4 \mapsto \mathbb{R} \times S$ where $S$ is some $3$-manifold. Under such a decomposition, the metric decomposes as (with comoving time as the time coordinate)
+Our universe, as described above, is a real valued 4 dimensional space, $\mathbb{R}^4$. Suppose that one can separate the universe into a spacial part and a temporal part $\mathbb{R}^4 \mapsto \mathbb{R} \times S$ where $S$ is some $3$-manifold. Under such a decomposition, the metric decomposes as (with comoving time as the time coordinate)
 \begin{equation}
 	g = a^2(\tau)\left( g_{00}d\tau d\tau + g_{0i}d\tau dx^{i} + g_{ij} dx^{i}dx^{j} \right)
 \end{equation}
@@ -64,9 +71,9 @@ The three parts are as follows:
     \item $g_{0i}$ has DOF of a vector. This is the (co)vector portion of the decomposition.
     \item $g_{ij}$ has DOF of a rank 2 tensor. This is the tensor portion of the decomposition.
 \end{itemize}
-The metric, however, is a special case of a symmetric rank 2 tensor. For antisymmetric tensors the only change is that rather than the product $dx^\mu dx^\nu$, we need the exterior product $dx^\mu \wedge dx^\nu$. This means the temporal component/scalar component is 0 for antisymmetric tensors. Since any rank 2 tensor can be decomposed to a symmetric and an antisymmetric part, these two decompositions are sufficient for decomposing any rank 2 tensor. 
+The metric, however, is a special case of a symmetric rank 2 tensor. For antisymmetric tensors the only change is that rather than the product $dx^\mu dx^\nu$, one needs the exterior product $dx^\mu \wedge dx^\nu$. This means the temporal component/scalar component is 0 for antisymmetric tensors. Since any rank 2 tensor can be decomposed to a symmetric and an antisymmetric part, these two decompositions are sufficient for decomposing any rank 2 tensor. 
 
-We can take this even further. Note that a vector can be decomposed into a divergence part and a dual part
+One can take this even further. Note that a vector can be decomposed into a divergence part and a dual part
 \begin{equation} 
 	v^i = g^{ij}\partial_j f + g^{ij} \underbrace{w_{jk}\star (dx^{i} \wedge dx^{j})}_{\equiv \hat{w}_j}
 \end{equation}
