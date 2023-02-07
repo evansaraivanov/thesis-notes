@@ -1,78 +1,23 @@
-\chapter{Multifield Dark Energy}
-So I don't keep having to look at this
-\begin{defn}
-Given a semi-riemannian manifold $M$ with metric $g$, the christoffel symbols are given by
-$$ \nabla_a\partial_b = \Gamma^c_{ab}\partial_c $$
-$$ \partial_ag_{bc} + \partial_bg_{ca} - \partial_cg_{ab} = 2g_{dc}\Gamma^d_{ab} $$
-\end{defn}
-Consider a metric of the form diag$(-1,a^2(t))$, so its determinant is $-a^6$.
-The action is
-$$ S=\int d^4x \sqrt{-g} \left[ \frac{1}{2}M_{p}^2 R -\frac{1}{2}\gamma_{ab}\partial_\mu\phi^a\partial^\mu\phi^b - V(\phi)+\mathcal{L}_m \right] $$
-I only want to describe a homogeneous background, so the field is only a function of time. The action becomes
-$$ S=\int d^4x \sqrt{-g} \left[ \frac{1}{2}M_{p}^2 R -\frac{1}{2}\gamma_{ab}\dot\phi^a\dot\phi^b - V(\phi)+\mathcal{L}_m \right] $$
-Varying the field gives
-$$ \delta S = \int d^4x \sqrt{-g}\left[ - \frac{1}{2}\partial_a(\gamma_{bc})\dot\phi^b\dot\phi^c - \frac{1}{2}\gamma_{ab}\frac{d}{dt}(\delta\phi^a)\dot\phi^b - \partial_aV\delta\phi^a \right] $$
-$$ \delta S = -\frac{1}{2}(\delta\phi^a)(\sqrt{-g}\gamma_{ab}\dot\phi^b + \int d^4x \sqrt{-g}\left[ -\frac{1}{2}\gamma(\nabla_a\partial_b,\partial_c)\dot\phi^b,\dot\phi^c -\frac{1}{2}\gamma(\partial_b,\nabla_a\partial_c)\dot\phi^b\dot\phi^c + 3\frac{\dot a}{a}\gamma_{ab}\delta\phi^a\dot\phi^b + \gamma_{ab}\delta\phi^a\ddot\phi^b -V_a\delta\phi^a \right] $$
-$$ \delta S = -\int d^4x \sqrt{-g}\left[ \frac{1}{2}\Gamma_{ab}^d\gamma_{dc}\dot\phi^b\dot\phi^c + \frac{1}{2}\Gamma_{ac}^d\gamma_{bd}\dot\phi^b\dot\phi^c + 3H\gamma_{ab}\dot\phi^b + \gamma_{ab}\ddot\phi^b + V_a  \right] $$
-Multiply everything by $\gamma^{aa}$. Now lets do some reshuffling of the indices.
-$$ \gamma^{aa}\Gamma^d_{ab}\gamma_{dc}\dot\phi^b\dot\phi^c $$
-$$ a\leftrightarrow d$$
-$$ \gamma^{ad}\Gamma^a_{db}\gamma_{ac}\dot\phi^b\dot\phi^c $$
-$$ b\leftrightarrow d$$
-$$ \gamma^{ad}\Gamma^a_{bd}\gamma_{ac}\dot\phi^b\dot\phi^c $$
-$$ \gamma^{ab}\Gamma^a_{bd}\gamma_{ac}\dot\phi^d\dot\phi^c $$
-$$ c\leftrightarrow d$$
-$$ \gamma^{ab}\Gamma^a_{bc}\gamma_{ad}\dot\phi^d\dot\phi^c = \Gamma_{bc}^a \dot\phi^b\dot\phi^c $$
-and
-$$ \gamma^{aa} \Gamma^d_{ac}\gamma_{bd}\dot\phi^b\dot\phi^c $$
-$$ a\leftrightarrow d$$
-$$ \gamma^{ad} \Gamma^a_{dc}\gamma_{ba}\dot\phi^b\dot\phi^c $$
-$$ b\leftrightarrow d$$
-$$ \gamma^{ab} \Gamma^a_{bc}\gamma_{da}\dot\phi^d\dot\phi^c = \Gamma_{bc}^a\dot\phi^b\dot\phi^c $$
-Thus the equation of motion is found,
-$$ \ddot\phi^a + \Gamma_{bc}^a\dot\phi^b\dot\phi^c +3H\dot\phi^a + V^a = 0 $$
-$$ D_t\dot\phi^a+3H\dot\phi^a + V^a = 0 $$
+% from gr.tex
+The isotropy condition means that the universe should have 0 net momentum, and by assumming the universe is smooth the energy-momentum tensor can be written
 
-The riemann curvature is
-$$ R^\alpha_{\beta\gamma\delta} = \partial_\beta\Gamma^\alpha_{\gamma\delta} - \partial_\gamma\Gamma^\alpha_{\beta\delta}+\Gamma^\sigma_{\gamma\delta}\Gamma^\alpha_{\beta\sigma} - \Gamma^\sigma_{\beta\delta}\Gamma^\alpha_{\gamma\sigma} $$
-So the Ricci curvature tensor is
-$$ R_{\beta\delta} = R^\alpha_{\beta\alpha\delta} = \partial_\beta\Gamma^\alpha_{\alpha\delta} - \partial_\alpha\Gamma^\alpha_{\beta\delta}+\Gamma^\sigma_{\alpha\delta}\Gamma^\alpha_{\beta\sigma} - \Gamma^\sigma_{\beta\delta}\Gamma^\alpha_{\alpha\sigma} $$
-And the Ricci scalar curvature is
-$$ R = R_{\beta}^{\beta} = g^{\beta\delta}R_{\beta\delta} =
-g^{\beta\delta}\partial_\beta\Gamma^\alpha_{\alpha\delta} -
-g^{\beta\delta}\partial_\alpha\Gamma^\alpha_{\beta\delta}
-+g^{\beta\delta}\Gamma^\sigma_{\alpha\delta}\Gamma^\alpha_{\beta\sigma} -
-g^{\beta\delta}\Gamma^\sigma_{\beta\delta}\Gamma^\alpha_{\alpha\sigma} $$
-Since the fields only depend on time, we only need to consider the temporal component of the Ricci curvature tensor, so
-$$ R_{tt} = \partial_t \Gamma^{\alpha}_{\alpha t} - \partial_\alpha\Gamma^{\alpha}_{tt}
-+ \Gamma^{\sigma}_{\alpha t}\Gamma^{\alpha}_{t \sigma} - \Gamma^{\sigma}_{tt}\Gamma^{\alpha}_{\alpha\sigma} $$
-From the definition of the christoffel symbols, and noting $ g = g(t)$ and $g$ is diagonal, we have $\partial_t g_{aa} = 2g_{ba}\Gamma^b_{ta}$, thus
-the second term is necessarily 0 since $\partial_t g_{tt} = 0$. The first term is non-zero for $\alpha = 1,2,3$, in which it equals 
-$$ \frac{1}{2}\partial_t (1/a^2 \partial_t a^2) = \partial_t(\dot a / a) = -3\ddot a /a + 3\dot a^2 /a^2 $$
-The third term is non-zero for $\alpha = \sigma$, In which case we get 
-$$ \frac{3}{4a^4}(\partial_t (a^2))^2 =  -3\dot a^2/a^2  $$
-The last term is vanishes since the temporal component of the metric is constant. Thus we find
-$$ R_{tt} = 3\frac{\ddot a}{a}$$
-Now, if we consider spatial components of the Ricci curvature, we find that the first term now vanishes, the second term is equal to $ -\ddot a/a - \dot a^2/a^2$, the thrid term is 0, and the last term is $-\dot a^2/a^2$, so the spacial components are
-$$ R_{xx} = -\ddot a  a - 2\dot a^2$$
-Thus the Ricci curvature scalar is
-$$ 6\ddot a/a + 6\dot a^2/a^2 $$
-Hence the einstein equation gives
-$$ -3H^2 =  $$
-I need to write out the indices better if I want to get the signs correct.
+\begin{equation} T^\mu_\nu = \left(
+\begin{array}{cccc}
+    -\mathcal{E} & 0 & 0 & 0 \\
+    0 & \mathcal{P} & 0 & 0 \\
+    0 & 0 & \mathcal{P} & 0 \\
+    0 & 0 & 0 & \mathcal{P}
+\end{array}
+\right)
+\end{equation}
 
-\hrule
-$$ \partial_ag_{bc} + \partial_bg_{ca} - \partial_cg_{ab} = 2g_{dc}\Gamma^d_{ab} $$
+The usual conservation law holds
 
-\hrule
-Considering the way this acts on the coordinate vector field $\partial_\alpha$, 
-$$ R\partial_\alpha =
-g^{\beta\delta}\partial_\beta\Gamma^\alpha_{\alpha\delta}\partial_\alpha -
-g^{\beta\delta}\partial_\alpha\Gamma^\alpha_{\beta\delta}\partial_\alpha
-+g^{\beta\delta}\Gamma^\sigma_{\alpha\delta}\Gamma^\alpha_{\beta\sigma}\partial_\alpha -
-g^{\beta\delta}\Gamma^\sigma_{\beta\delta}\Gamma^\alpha_{\alpha\sigma} \partial_\alpha $$
-$$ R\partial_\alpha =
-g^{\beta\delta}\partial_\beta \nabla_\alpha\partial_\delta -
-g^{\beta\delta}\partial_\alpha \nabla_\beta\partial_\delta
-+g^{\beta\delta}\Gamma^\sigma_{\alpha\delta} \nabla_\beta\partial_\sigma -
-g^{\beta\delta}\Gamma^\sigma_{\beta\delta} \nabla_\alpha \partial_\sigma $$
+\begin{equation}
+    \nabla_\mu T^{\mu}_{\nu} = 0 \Rightarrow \partial_t \mathcal{E} + \frac{\dot a}{a}(3\mathcal{E} + 3\mathcal{P}) = 0
+\end{equation}
+
+We can use the geodesic equation to examine how the energy of the massless particles evolves through time. 
+%-----------------------------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------------------------------------

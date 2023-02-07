@@ -25,6 +25,7 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{pgfplots}
+\usepackage{tikz}
 \pgfplotsset{compat=1.12}
 \usepgfplotslibrary{fillbetween}
 
@@ -36,6 +37,7 @@
 \newcommand{\vect}{\text{Vect}}
 \newcommand{\smooth}{C^{\infty}}
 \newcommand{\dif}{\text{d}}
+\DeclareMathOperator{\aext}{\hspace{2pt}\lrcorner\hspace{2pt}}
 
 \makeatletter
 \newcommand*\bigcdot{\mathpalette\bigcdot@{.8}}
@@ -45,7 +47,7 @@
 \settowidth{\arrow}{\scriptsize$1000$}
 \newcommand*{\myrightarrow}[1]{\xrightarrow{\mathmakebox[\arrow]{#1}}}
 \newcommand*{\TakeFourierOrnament}[1]{{%
-\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
+\fon`'tencoding{U}\fontfamily{futs}\selectfont\char#1}}
 \newcommand*{\danger}{\TakeFourierOrnament{66}}
 \setlength{\jot}{1.5mm}
 
@@ -53,6 +55,7 @@
 \newtheorem{thm}{Theorem}[section] % the main one
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{joke}{Joke}
+\newtheorem{qn}{Question}
 % other statement types
 
 % for specifying a name
@@ -83,11 +86,10 @@
 
 \input{sections/cosmo_intro.tex}
 \input{sections/gr.tex}
-\input{sections/lcdm.tex}
 \input{sections/experiment.tex}
 \input{sections/tension_intro.tex}
-\input{sections/methods.tex}
+\input{sections/gg_split.tex}
 %\newpage
-%\input{sections/misc.tex}
+\input{sections/misc.tex}
 
 \end{document}
