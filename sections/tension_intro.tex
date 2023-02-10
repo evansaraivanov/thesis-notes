@@ -1,16 +1,56 @@
-\chapter{Tension}
-As discussed before (where?), standard $\Lambda$CDM can be parameterized by 6 parameters, $(A_s,n_s,H_0,\tau,\Omega_b,\Omega_c)$. As usual, this is not the only parameterization of $\Lambda$CDM. $A_s$ describes the amplitude of the matter power spectrum. By integrating the matter power spectrum up to a scale of $8 h^{-1}\mathrm{Mpc}$ we can find a parameter denoted $\sigma_8$ defined as
+\chapter{Computing Techniques}
+The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? Its clear from the complexity of the calculations that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, its clear that this computation involves conditional probability densities, thus we can use Bayes' theorem to help us determine the parameters.
+
+\section{Markov Chain Monte Carlo}
+Markov chains are a step process in which the next step only depends on the current step. Formally, a
+sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} if the conditional distribution $X_{n+1}$ depends only on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain. This is a very abstract definition, however Markov chains play a regular role in daily life. For example, weather patterns form Markov chains, or the order of words in a sentence. The key here is that, if it rains one day, how likely is it to rain the next day? Or given a word, what is the most probable next word? For a cosmological application, the key is to start with some set of parameters, and slowly move towards the most probable set of parameters.
+
+Bayes' theorem states
 \begin{equation}
-\sigma_8^2 = \left.\int\limits_0^\infty P(k,r)\left(\frac{3j_1(kr)}{kr}\right)^2\frac{k^2}{2\pi^2}dk\right|_{r=8}
+	P(x|y) = \frac{P(y|x) P(x)}{P(y)}
 \end{equation}
-which can be described as the amplitude of matter fluctuations at the scale $8 h^{-1}\mathrm{Mpc}$. In addition, we can add up all of the matter densities to get
+Lets set $x=\theta$, the cosmological parameters, and $y=d$, the data vector representing the $3\times 2$ correlation functions. Then
 \begin{equation}
-\Omega_m = \sum_i \Omega_i = 1-\Omega_k
+	P(\theta|d) = \frac{P(d|\theta) P(\theta)}{P(d)}
 \end{equation}
-which describes the matter density. As it turn out, measurements of the early universe (CMB and high redshift observation) and late universe (galaxy observations and low redshift observation) disagree on measurements of $H_0$ and $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$. These individual parameters are in tension between experiments, but the driving questions of this project is: how much tension is there between measurements of the entire $\Lambda$CDM parameters? Are there models that can resolve this tension? What is the best/most reliable way to measure the tension?
+The left hand side is typically called the \textit{posterior}, while $P(d|\theta)$ is called the likelihood, $P(\theta)$ the prior, and $P(d)$ the evidence. In cosmological notation, this is usually written
+\begin{equation}
+	\mathcal{P}(\theta) = \frac{\mathcal{L}(\theta) \Pi(\theta)}{\int\mathcal{E}(\theta)d\theta}
+\end{equation}
+The evidence is typically very difficult to compute. One must be able to compute an integral of a complicated function over the entire parameter space (it is possible via techniques such as nested sampling, however these usually take a very long time). Thus, with a given likelihood and prior, its not feasible to compute the posterior exactly. Markov chain Monte Carlo (MCMC) describes a random technique that can generate samples from the posterior without computing the evidence.
+\subsection{The Metropolis-Hastings Algorithm}
+The Metropolis-Hastings algorithm is the most common algorithm for doing MCMC. Suppose we want to sample from a distribution $p(x)$. We start with a proposal distribution $g(x_n)$. 
+Sample from the proposal distribution to find the next state $x_{n+1}$ with probability $g(x_{n+1}|x_n)$. 
+This transition from state $n$ to state $n+1$ must follow the \textit{detailed balance condition}
+\begin{equation}
+	p(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = p(x_{n+1}) g(x_n|x_{n+1}) A(x_{n+1} \rightarrow x_{n})
+\end{equation}
+where $A$ is an \textit{acceptance probability} which I will define more precisely later. 
+Using Bayes' Theorem on $p(x)$, the evidence cancels out on each side, 
+and thus the detailed balance condition can be simplified to only rely on the likelihood and prior of $p(x)$, 
+which I will denote $\pi$ and $\mathcal{L}$.
+\begin{equation}
+	\pi(x_n)\mathcal{L}(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = \pi(x_{n+1}) \mathcal{L}(x_{n+1}) g(x_{n}|x_{n+1}) A(x_{n+1}\rightarrow x_{n})
+\end{equation}
+\begin{equation}
+	\Rightarrow \frac{A(x_n \rightarrow x_{n+1})}{A(x_{n+1}\rightarrow x_{n})} = \frac{\pi(x_{n+1}) \mathcal{L}(x_{n+1}) g(x_{n}|x_{n+1})}{\pi(x_n)\mathcal{L}(x_n) g(x_{n+1}|x_n)} \equiv R_{n,n+1}
+\end{equation}
+This allows us to define the acceptance probability as
+\begin{equation}
+	A(x_n \rightarrow x_{n+1}) = \min( 1, R_{n,n+1} )
+\end{equation}
+This probability is used to determine whether the chain moves to $x_{n+1}$ or stays at $x_n$. The chain converges when it reaches a stationary state.
+
+There are a few properties that can be observed for this algorithm:
+\begin{itemize}
+    \item Having an asymmetrical proposal $g(x)$ can allow for faster convergence of the chain.
+    \item The initial sampling may not accurately reflect samples for $p(x)$. 
+    This is regarded as the `burn-in' and is generally discarded from the samples.
+    \item MCMC Sampling loses sampling power for multi-modal distributions. 
+\end{itemize}
 
 \section{Tension Metrics}
-To evaluate the difference between two posteriors, we establish \textit{tension metrics} which quantify the difference between the posteriors.
+Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, futher increasing the complexity. There are many metrics used to measure tension, each with different assumptions and consequences.
 
 \subsection{Metric 1: Parameter Difference}
 The main idea of this metric is that if two data sets largely agree, there difference posterior will be centered at 0, so mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
@@ -22,8 +62,7 @@ Thus we can approximate the tension as the volume of the posterior contours with
 \begin{equation}
     \mathrm{PTE} = \int\limits_{\mathcal{P}(\Delta\theta)>\mathcal{P}(0)}\mathcal{P}(\Delta\theta) d\Delta\theta
 \end{equation}
-
-To actually compute the integral we use the normalizing flow to learn the posterior and perform MCMC inegration. The integration error is determined using the Clopper-Pearson interval on the binomial distribution.
+This has the benifit of only requiring independent parameter sampling. It makes no assumption of the gaussianity of the posterior or the likelihood. The difficulty here, however, is acutally determining $\mathcal{P}(\theta)$. There are multiple methods used, the most novel of which is discussed later.
 
 \subsection{Metric 2: Parameter Difference in Update Form}
 As discussed above, we can compute the parameter $Q_{\mathrm{UDM}}$ by
@@ -76,7 +115,7 @@ The idea is that one should not include poorly measured eigenmodes in our tensio
 	\end{equation}
 \end{itemize}
 
-\subsection{Interpreting the Results}
+\subsubsection{Interpreting the Results}
 Given some probability $P$ of a parameter shift, the following formula can give you the number of standard deviations if the probability shift comes from a gaussian distribution
 \begin{equation}
 	n_\sigma = \sqrt{2} \text{Erf}^{-1}(P)
@@ -97,75 +136,6 @@ Thus we can compare the analytic result to the computational result for each of 
 
 \subsection{DES v Planck Results}
 A subset of these excersizes have been performed previously by the Dark Energy Survey (DES) against the planck results.
-
-\subsection{Building from previous results}
-
-
-\section{Markov Chain Monte Carlo}
-
-Interestingly, MCMC algorithms have heavy analogies with statistical mechanics which are useful to demonstrate the concept. To examine this, lets first define what a Markov Chain is.
-\begin{defn}
-A sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} if the conditional distribution $X_{n+1}$ depends only on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain.
-\end{defn}
-
-
-\subsection{The Metropolis-Hastings Algorithm}
-Suppose we want to sample from a distribution $p(x)$. $p(x)$ can be high dimensional and is generally difficult to calculate (evidence is hard to compute since it requires integration over the entire parameter space). 
-The goal is to use Markov Chains to sample from $p(x)$ without needing to compute the evidence. 
-This will be represented as a path through state space until the chain reaches a stable point (stationary state).
-
-We start with a proposal distribution $g(x_n)$. 
-Sample from the proposal distribution to find the next state $x_{n+1}$ with probability $g(x_{n+1}|x_n)$. 
-This transition from state $n$ to state $n+1$ must follow the \textit{detailed balance condition}
-\begin{equation}
-	p(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = p(x_{n+1}) g(x_n|x_{n+1}) A(x_{n+1} \rightarrow x_{n})
-\end{equation}
-where $A$ is an \textit{acceptance probability} which I will define more precisely later. 
-Using Bayes' Theorem on $p(x)$, the evidence cancels out on each side, 
-and thus the detailed balance condition can be simplified to only rely on the likelihood and prior of $p(x)$, 
-which I will denote $\pi$ and $\mathcal{L}$.
-\begin{equation}
-	\pi(x_n)\mathcal{L}(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = \pi(x_{n+1}) \mathcal{L}(x_{n+1}) g(x_{n}|x_{n+1}) A(x_{n+1}\rightarrow x_{n})
-\end{equation}
-\begin{equation}
-	\Rightarrow \frac{A(x_n \rightarrow x_{n+1})}{A(x_{n+1}\rightarrow x_{n})} = \frac{\pi(x_{n+1}) \mathcal{L}(x_{n+1}) g(x_{n}|x_{n+1})}{\pi(x_n)\mathcal{L}(x_n) g(x_{n+1}|x_n)} \equiv R_{n,n+1}
-\end{equation}
-This allows us to define the acceptance probability as
-\begin{equation}
-	A(x_n \rightarrow x_{n+1}) = \min( 1, R_{n,n+1} )
-\end{equation}
-This probability is used to determine whether the chain moves to $x_{n+1}$ or stays at $x_n$. The chain converges when it reaches a stationary state.
-
-There are a few properties that can be observed for this algorithm:
-\begin{itemize}
-    \item Having an asymmetrical proposal $g(x)$ can allow for faster convergence of the chain.
-    \item The initial sampling may not accurately reflect samples for $p(x)$. 
-    This is regarded as the `burn-in' and is generally discarded from the samples.
-    \item MCMC Sampling loses sampling power for multi-modal distributions. 
-\end{itemize}
-
-\section{Data Emulators}
-
-Traditional methods of computing likelihoods (e.g. \textsc{cosmosis}) require an immense number of CPU hours, and since we need tens of thousands of chains, we cannot rely on these traditional methods. 
-To accelerate likelihood computation, and thus the MCMC process, we employ emulators which are neural networks that map the cosmological parameters to data vectors. 
-The map is highly non-linear and thus a straightforward analytic mapping is not known. 
-The neural network architecture used is similar for each experiment.
-
-\subsection{LSST Emulator}
-Unfourtunatly, we do not have access to the training samples for this emulator. 
-We can however approximate the training region. First, we must define what tempered MCMC means. 
-As discuss in the previous section, an MCMC decides wheather to accept or reject a point based on the detailed balance condition. 
-In our case, we want to ensure the training samples cover a wide range in the parameter space, so we can modify the posterior by raising it to a power $T$ called the tempering factor. 
-The detailed balance condition becomes
-
-\begin{equation}
-	\frac{A(x_n \rightarrow x_{n+1})}{A(x_{n+1}\rightarrow x_{n})} = \left[\frac{\pi(x_{n+1}) \mathcal{L}(x_{n+1})}{\pi(x_n)\mathcal{L}(x_n)}\right]^T \frac{ g(x_{n}|x_{n+1}) }{ g(x_{n+1}|x_n)} 
-\end{equation}
-
-It is believed the samples were generated via MCMC with a posterior tempering of $0.5$. 
-This gives us the following distribution
-
-\subsection{Planck $C_\ell$ Emulator}
 
 Fortunately the training samples for \textsc{cosmopower} are available for download from google drive.
 
@@ -208,11 +178,4 @@ This can be solved by $\gamma^i(t) = \int\limits_{U\subset X}v^i(\gamma(t))\text
 
 Autoregressive models have serval pitfalls that we would like to avoid in this project. The main one is that autoregressive models are sensitive to the order of the input, however our result does not have any dependence. 
 
-%\subsubsection{A 2D Example of Normalizing Flows}
-%To give a motivation, I will begin with a 2 dimensional example. In this example I used \textsc{cobaya} to generate samples from two distributions. One is a pure gaussian centered at $(1/2,1/2)$ with covariance $0.005 I$ ($I$ is the identity matrix). The other is a circle of radius 1 with points generated by a gaussian based on its distance from the circle. In other words, it is a gaussian centered at $x^2+y^2$ with a mean of $x^2+y^2=1$ and a standard deviation $0.02$.
-
-%The first step is to find the parater difference distribution. Wrap the samples in the shorter chain until it is the same length as the longer chain, then take the difference of the two chains. In this example we get the following.
-
-%Now we can do the normalizing flow. As a general rule-of-thumb, the network will consist $2d$ MAFs each of $2$ hidden layers with $2d$ hidden units each, with $d$ the dimension of the distribution. This will generally give an expressive model without introducing error from the inability to train all of the models parameters in a reasonable time. These parameters are tunable to whatever the user will decide, and some experimentation with these parameters is needed to ensure the best results. In addition, we allow the parameters to be arbitrarily permuted between each MAF since the resulting probability of shift should be independent of parameterization.
-
-%One advantage of normalizing flows is its effectiveness for smaller data sets. (talk about NF vs KDE when the data is available).
+The integration error is determined using the Clopper-Pearson interval on the binomial distribution.

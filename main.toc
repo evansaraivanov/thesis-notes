@@ -1,48 +1,52 @@
-\contentsline {chapter}{\numberline {1}Cosmology}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Introduction}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}General Relativity}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Smooth Manifolds}{2}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Curvature}{3}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Einstein's Field Equation}{3}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}$\Lambda $CDM: The Standard Model of Cosmology}{4}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}The FLRW Metric and Dark Energy}{4}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Perturbations of the FLRW Metric}{5}{subsection.1.3.2}%
-\contentsline {chapter}{\numberline {2}Connecting to Experiments: Weak Lensing and the Cosmic Microwave Background}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Weak Lensing}{6}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}The Linear Matter Power Spectrum}{6}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Galaxy Density}{7}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Galaxy Shear}{8}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Weak Lensing Correlation Functions}{10}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Systematics}{10}{subsection.2.1.5}%
-\contentsline {subsubsection}{Photometric Redshift Uncertainty}{10}{section*.2}%
-\contentsline {subsubsection}{Intrinsic Alignment of Galaxies}{11}{section*.3}%
-\contentsline {subsubsection}{Galaxy Bias}{11}{section*.4}%
-\contentsline {subsubsection}{Shear Calibration}{11}{section*.5}%
-\contentsline {subsubsection}{Point Mass}{11}{section*.6}%
-\contentsline {subsubsection}{Lensing Magnification}{11}{section*.7}%
-\contentsline {section}{\numberline {2.2}CMB}{12}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}TT,TE,EE Power Spcetra}{12}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Systematics}{12}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}Tension}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Tension Metrics}{13}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Metric 1: Parameter Difference}{13}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Metric 2: Parameter Difference in Update Form}{14}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Metric 3: Goodness of Fit Degradation}{14}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Metric 4: Eigentension}{14}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Evidence-Based Metrics}{14}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Interpreting the Results}{15}{subsection.3.1.6}%
-\contentsline {subsection}{\numberline {3.1.7}DES v Planck Results}{15}{subsection.3.1.7}%
-\contentsline {subsection}{\numberline {3.1.8}Building from previous results}{15}{subsection.3.1.8}%
-\contentsline {section}{\numberline {3.2}Markov Chain Monte Carlo}{15}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}The Metropolis-Hastings Algorithm}{15}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Data Emulators}{16}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}LSST Emulator}{16}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Planck $C_\ell $ Emulator}{16}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Normalizing Flows}{16}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Approximating Tension Between LSST and Planck}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Noise Realizations of the Data}{18}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Data Emulators}{18}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Results}{18}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Tension From Shifted Cosmologies}{18}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Approximated s8}{18}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Results}{18}{subsection.4.2.2}%
+\contentsline {chapter}{List of Figures}{vii}{chapter*.2}%
+\contentsline {chapter}{\numberline {}{Acknowledgements}}{viii}{section*.3}%
+\contentsline {chapter}{\numberline {1}General Relativity and Cosmology}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Einstein's Field Equation}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Cosmology}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Cosmic Constituents of the Universe}{8}{subsection.1.3.1}%
+\contentsline {subsubsection}{Radiation}{8}{section*.8}%
+\contentsline {subsubsection}{Baryons}{8}{section*.9}%
+\contentsline {subsubsection}{Dark Matter}{8}{section*.10}%
+\contentsline {subsubsection}{Neutrinos}{9}{section*.11}%
+\contentsline {subsubsection}{Dark Energy}{9}{section*.12}%
+\contentsline {chapter}{\numberline {2}Weak Lensing and the Cosmic Microwave Background}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Weak Lensing}{10}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}The Linear Matter Power Spectrum}{10}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Galaxy Density}{12}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Galaxy Shear}{13}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Weak Lensing Correlation Functions}{16}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Systematics}{17}{subsection.2.1.5}%
+\contentsline {subsubsection}{Photometric Redshift Uncertainty}{17}{section*.13}%
+\contentsline {subsubsection}{Intrinsic Alignment of Galaxies}{18}{section*.14}%
+\contentsline {subsubsection}{Galaxy Bias}{18}{section*.15}%
+\contentsline {subsubsection}{Shear Calibration}{19}{section*.16}%
+\contentsline {subsubsection}{Point Mass}{19}{section*.17}%
+\contentsline {subsubsection}{Lensing Magnification}{19}{section*.18}%
+\contentsline {section}{\numberline {2.2}CMB}{19}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}TT Power Spectrum}{20}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}TE and EE Power Spectra}{21}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Other Parameters}{23}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Tensions Between Weak Lensing and CMB}{23}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Computing Techniques}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Markov Chain Monte Carlo}{24}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}The Metropolis-Hastings Algorithm}{25}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Tension Metrics}{26}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Metric 1: Parameter Difference}{26}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Metric 2: Parameter Difference in Update Form}{27}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Metric 3: Goodness of Fit Degradation}{27}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Metric 4: Eigentension}{28}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Evidence-Based Metrics}{28}{subsection.3.2.5}%
+\contentsline {subsubsection}{Interpreting the Results}{29}{section*.22}%
+\contentsline {subsection}{\numberline {3.2.6}DES v Planck Results}{29}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}Normalizing Flows}{30}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Growth-Geometry Split in DES-Y3}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Split Matter Power Spectrum}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Data and Analysis Pipeline}{33}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}DES Parameter Priors}{33}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Results}{36}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Data Emulators}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Neural Networks}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Architecture Choices}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Results}{37}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Application to Tension Calibration}{37}{section.5.4}%

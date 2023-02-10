@@ -1,7 +1,129 @@
-\chapter{Approximating Tension Between LSST and Planck}
-\section{Noise Realizations of the Data}
-\subsection{Data Emulators}
-\subsection{Results}
-\section{Tension From Shifted Cosmologies}
-\subsection{Approximated s8}
-\subsection{Results}
+\chapter{Growth-Geometry Split in DES-Y3}
+Parameter splitting is a common method used to attempt to resolve the tensions discussed in the previous chapter. The idea is to split a parameter and choose analysis settings that restrict each split parameter to describe specific cosmological effects. One of these splits is a growth-geometry split, where we split the relative matter density $\Omega_m$ and the dark energy equation of state $w$ into two parameters. The growth parameter is designed to describe the late-time growth of structure and the geometry parameter designed to describe the background evolution. After splitting the parameters, one can do an analysis to determine how the tension changes and if the split parameters have distinct values from each other. This chapter describes the growth geometry split in $\Omega_m$ and $w$ in DES-Y1.
+\section{Split Matter Power Spectrum}
+Since the matter density $\Omega_m$ is split into two parameters, $\Omega_m^{\text{growth}}$ and $\Omega_m^{\text{geo}}$, single growth factor and a single matter power spectrum; these are split as well. From equation (eq), the linear matter power spectrum is proportional to the square of the linear growth factor $D_+(z(a)) = G(z)/(1+z)$, so the growth and geometry power spectra are related by
+\begin{equation}
+	P^L_{\text{split}}(k,z) = P^L_{\text{geo}}(k,z) \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2
+\end{equation}
+which means $\sigma_8$ is also split according to
+\begin{equation}
+	\sigma_{8,\text{split}}^2 = \sigma_{8,\text{geo}}^2 \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2
+\end{equation}
+
+In this analysis, however, we want to go beyond linear scales. To do this, we use the Euclid Emulator to emulate the non-linear matter power spectrum. This is done by computing a boost factor
+\begin{equation}
+	P(k,z) = P^L(k,z) \times B(k,z)
+\end{equation}
+\section{Data and Analysis Pipeline}
+\subsection{DES Parameter Priors}
+This analysis is done on data from the Dark Energy Survery (DES), both year 1 (Y1) and year 3 (Y3), combined with CMB data. The cosmological parameters of interest and there priors are given in table (table).
+\begin{table}
+\centering
+\begin{tabular}{lr}
+	\hline
+	parameter & prior \\
+	\hline\hline
+	$\Omega_m^{\text{geo}}$    & $\mathcal{U}(0.1,0.9)$   \\
+	$w^{\mathrm{geo}}$         & $\mathcal{U}(-3,-0.01)$  \\
+	$\mathcal{A}_s\times10^9$  & $\mathcal{U}(1.7,2.5)$   \\
+	$n_s$                      & $\mathcal{U}(0.92,1.0)$  \\
+	$H_0$                      & $\mathcal{U}(61,73)$     \\
+	$\tau$                     & $\mathcal{U}(0.01,0.8)$  \\
+	$\Omega_m^{\text{growth}}$ & $\mathcal{U}(0.24,0.4)$  \\
+	$w^{\mathrm{growth}}$      & $\mathcal{U}(-1.7,-0.7)$ \\
+	\hline
+\end{tabular}
+\caption{Summary of cosmological parameters and their priors.}
+\end{table}
+The priors on ($\Omega_m^{\text{geo}}$, $w^{\mathrm{geo}}$, $\mathcal{A}_s\times10^9$, $n_s$, $H_0$) are taken from the Euclid Emulator prior. $\tau$ is only included in chains that also contain CMB data.
+\begin{table}
+\centering
+\begin{tabular}{lr} % 
+\hline
+DES-Y3 Systematics Parameter &  Prior \\
+\hline\hline
+\textbf{Linear Galaxy bias} \\
+$ b_g^i(i \in [1,5])$ &  Flat(0.8, 3.0) \\
+\hline
+\textbf{Intrinsic Alignment (TATT)} \\
+$A_{1}$ &  Flat(-5, 5) \\
+$A_{2}$ &  Flat(-5, 5) \\
+$\eta_{1}$ &  Flat(-5, 5) \\
+$\eta_{2}$ &  Flat(-5, 5) \\
+$b_{TA}$ &  Flat(0 , 2) \\
+\hline
+\textbf{Source photo-z} \\
+$\Delta z_{\mathrm{s}}^{1} \times 10^{2}$ &   Gauss(0, 1.8) \\
+$\Delta z_{\mathrm{s}}^{2} \times 10^{2}$ &   Gauss(0, 1.5) \\
+$\Delta z_{\mathrm{s}}^{3} \times 10^{2}$ &   Gauss(0, 1.1)\\
+$\Delta z_{\mathrm{s}}^{4} \times 10^{2}$ &   Gauss(0, 1.7)\\
+\hline
+\textbf{Lens photo-z}\\
+$\Delta z_{\mathrm{1}}^{1} \times 10^{2}$ &   Gauss(0.6, 0.4)  \\
+$\Delta z_{\mathrm{1}}^{2} \times 10^{2}$ &   Gauss(0.1, 0.3)  \\
+$\Delta z_{\mathrm{1}}^{3} \times 10^{2}$ &   Gauss(0.4, 0.3)\\
+$\Delta z_{\mathrm{1}}^{4} \times 10^{2}$ &   Gauss(-0.2, 0.5)\\
+$\Delta z_{\mathrm{1}}^{5} \times 10^{2}$ &   Gauss(-0.7, 0.1)\\
+\hline
+\textbf{Multiplicative shear calibration} \\
+$m_{1} \times 10^2$ &   Gauss(-0.6, 0.9)\\
+$m_{2} \times 10^2$ &   Gauss(-2.0, 0.8)\\
+$m_{3} \times 10^2$ &   Gauss(-2.4, 0.8)\\
+$m_{4} \times 10^2$ &   Gauss(-3.7, 0.8)\\
+\hline
+\textbf{Lens magnification} \\
+$C_{\mathrm{1}}^1 \times 10^2$ &   Fixed (0.63)\\
+$C_{\mathrm{1}}^2 \times 10^2$ &   Fixed (-3.04)\\
+$C_{\mathrm{1}}^3 \times 10^2$ &   Fixed (-1.33)\\
+$C_{\mathrm{1}}^4 \times 10^2$ &   Fixed (2.50)\\
+$C_{\mathrm{1}}^5 \times 10^2$ &   Fixed (1.93)\\
+\hline
+\textbf{Point mass marginalization} \\
+$B_i(i \in [1,5])$  & Flat(-5, 5) \\
+\hline
+\end{tabular}
+\caption{Summary of Priors on DES-Y3 systematics parameters discussed in ()}
+\label{table:prior_choices_Y3}
+\end{table}
+\begin{table}
+\centering
+\begin{tabular}{lr}  
+\hline
+DES-Y1 Systematics Parameters &  Prior \\
+\hline
+\hline
+\textbf{Linear Galaxy bias} \\
+$ b_g^i(i \in [1,5])$ &  Flat(0.8, 3.0) \\
+\hline
+\textbf{Intrinsic Alignment (NLA)} \\
+$A_{1}$ &  Flat(-5, 5) \\
+$A_{2}$ &  Flat(-5, 5) \\
+\hline
+\textbf{Source photo-z} \\
+$\Delta z_{\mathrm{s}}^{1} \times 10^{2}$ & Gauss(-0.1, 1.6) \\
+$\Delta z_{\mathrm{s}}^{2} \times 10^{2}$ & Gauss(-0.19, 1.3) \\
+$\Delta z_{\mathrm{s}}^{3} \times 10^{2}$ & Gauss(0.9, 1.1)\\
+$\Delta z_{\mathrm{s}}^{4} \times 10^{2}$ & Gauss(-1.8, 2.2)\\
+\hline
+\textbf{Lens photo-z}\\
+$\Delta z_{\mathrm{1}}^{1} \times 10^{2}$ & Gauss(0.8, 0.7) \\
+$\Delta z_{\mathrm{1}}^{2} \times 10^{2}$ & Gauss(-0.5, 0.7)  \\
+$\Delta z_{\mathrm{1}}^{3} \times 10^{2}$ & Gauss(0.6, 0.6)\\
+$\Delta z_{\mathrm{1}}^{i} \times 10^{2} (i \in [4,5]) $ &   Gauss(0, 0.01)\\
+\hline
+\textbf{Multiplicative shear calibration} \\
+$m_{i} \times 10^2 (i \in [1,4])$ &   Gauss(1.2, 2.3)\\
+\hline
+\end{tabular}
+\caption{Summary of Priors on DES-Y1 systematics parameters discussed in ()}
+\label{table:prior_choices_Y1}
+\end{table}
+The external data sets used are
+\begin{itemize}
+	\item CMBP: The Planck CMB TTTEEE power spectra together with the non-linear low-$\ell$ EE power spectrum.
+	\item SNIa: Pantheon Type Ia supernova
+	\item BBN: We use a derived constraint on $100\Omega_bh^2$ from Big Bang Nucleosynthesis as
+	\item BAO: 
+\end{itemize}
+
+\section{Results}

@@ -1,4 +1,4 @@
-\chapter{Connecting to Experiments: Weak Lensing and the Cosmic Microwave Background}
+\chapter{Weak Lensing and the Cosmic Microwave Background}
 
 \section{Weak Lensing}
 
@@ -344,8 +344,51 @@ As discussed in (section), the intrinsic shape of galaxies also gets magnified. 
 %Additionally, DES added a non-physical parameter called $X_{\text{lens}}$ to resolve an inconsistency between two lensing samples, RedMaGiC and MagLim. In this thesis, we only consider $X_{\text{\lens}}=1$
 
 \section{CMB}
-\subsection{TT,TE,EE Power Spcetra}
-\subsection{Systematics}
+Although CMB data is not used very much in this thesis, it is worth discussing the measurements qualitatively. They consensus among physicists and astronomers that the universe beyond the horizon was a hot, dense plasma. As such, the mean free path of photons were much shorter than they are today, thus compton scattering dominated photon dynamics in the early universe. As the universe cooled, atoms began to form. in a process called recombination. During this time, the universe was still opaque as photons scattered on the newly formed atoms. As the universe began to expand, the mean free path of photons increased and inter-atomic interactions decreased, meaning the atoms could be ionized by absorbing free photons in a process called reionization. The absorption of the photons caused the universe to become transparent. One can compute the optical depth of this transition from opaque to transparent as
+\begin{equation}
+	T = T_0(1-e^{-\tau_{\mathrm{rei}}})
+\end{equation}
+$\tau_{\mathrm{rei}}$ concludes the introduction of cosmological parameters. $\tau_{\mathrm{rei}}$ can only be determined from CMB and is usually fixed in weak lensing analysis.
+
+The CMB is a black body, meaning the intensity of the light can be used to determine the temperature according to the black body equation where $I \propto T^4$. The temperature, along with the $E$-mode polarization, give three possible two point correlation functions: $TT$, $TE$, and $EE$.
+\subsection{TT Power Spectrum}
+\begin{figure}
+    \centering
+    \includegraphics[width=12cm]{plots/Planck_TT.png}
+    \caption{Planck TT power spectrum}
+    \label{fig:planck_tt}
+\end{figure}
+The TT power spectrum measures the anisotropies of the temperature field. Thus, its better to think of it as the deviation from the mean temperature. There are some prominent features of this spectrum worth discussing. The first is the oscillations, known as baryon acoustic oscillations. The second is the overall downward trend from large to small scales. This is generally due to diffusion of light through the early universe, and is given the name diffusion damping.
+
+Now one can observe qualitatively how the cosmological parameters will affect the TT power spectrum. First, lest consider $\Omega_b$, the baryon density. If the density is increased, there should be an increase in compton scattering and decrease in the mean free path of photons, meaning the large scale anisotropy will be larger. Inversly, a reduction in the baryon density would decrease the large scale anisotropy. This is typically observed as the height of the first peak in the TT power spectrum. There will also be a small change in the peak position due to the change in the sound horizon. The height of the second peak, however, decreases. This is due to the increased pressure, which drives down the overall temperature fluctuations, resulting every other peak changing in opposite directions.
+
+Next is to consider a change is $\Omega_c$. The dominant effect from changing $\Omega_c$ comes from the integrated Sachs-Wolfe (ISW) effect, which is an additional gravitational redshift that occurs between the time of reionization and now. Since the evolution of dark matter structure is slow, increasing $\Omega_c$ reduces the ISW effect, thus reducing the anisotropy and causing an overall downward shift in the TT power spectrum.
+
+The remaining parameters are considered in unison: $\mathcal{A}_s$, $n_s$, and $\tau_{\mathrm{rei}}$. Naturally, $\tau_{\mathrm{rei}}$ will have an overall suppression effect, The higher the anisotropy, the higher the suppresion, thus resulting in strong suppresion at large scales and weak suppresion at small scales. The amplitude and spectral index enter the power spectrum in a similar way they did for weak lensing. Thus the effect of $\mathcal{A}_s$ and $n_s$ can look identitical to changes in $\tau_\mathrm{rei}$.
+
+Finally is a consideration of $H_0$, arguably the most simple case. $H_0$ affects the expansion rate of the universe, thus a larger expansion rate will shift the position of th peaks in the power spectrum. Increases in $H_0$ will shift the peaks to smaller scales (found by backpropagating $H_0$ through time), and invsersly, lowering $H_0$ will shift the peaks to larger scales.
+\subsection{TE and EE Power Spectra}
+\begin{figure}
+    \centering
+    \includegraphics[width=12cm]{plots/planck_TE.png}
+    \caption{Planck TE power spectrum}
+    \label{fig:planck_te}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=12cm]{plots/planck_EE.png}
+    \caption{Planck EE power spectrum}
+    \label{fig:planck_ee}
+\end{figure}
+The other two power spectra are shown in figures (figs). The main consideration with these two power spectra is to observe the way it breaks the degeneracy between $\tau_\mathrm{rei}$ and $\mathcal{A}_s,n_s$. In the TT case,  $\tau_{\mathrm{rei}}$ suppreses the power spectrum as it suppreses the fraction of light that reaches an observer. Howver, the additional scattering actual causes anisotropies in the polarization power spectrum to increase. Thus the effects of $\mathcal{A}_s$ and $\tau_\mathrm{rei}$ are similar in the TT power spectrum but opposite in the $EE$ power spectrum. Thus, one needs all 3 power spectra to reliably infer the cosmological parameters.
+\section{Other Parameters}
+\begin{equation}
+\sigma_8^2 = \left.\int\limits_0^\infty P(k,r)\left(\frac{3j_1(kr)}{kr}\right)^2\frac{k^2}{2\pi^2}dk\right|_{r=8}
+\end{equation}
+$S_8 = \sigma_8\sqrt{\Omega_m/0.3}$
+which can be described as the amplitude of matter fluctuations at the scale $8 h^{-1}\mathrm{Mpc}$.
+\section{Tensions Between Weak Lensing and CMB}
+As seen, there are a total of five parameters needed to describe $\Lambda$CDM in weak lensing: $\Omega_m$, $\Omega_b$, $H_0$, $\mathcal{A}_s$, and $n_s$. The reality is, however, that CMB measurements of some of these parameters differ between the parameters measured from weak lensing. The most famous discrepancy is the $H_0$ tension (fig). Weak lensing measurements are significantly higher than CMB measurements; a nearly $5\sigma$ difference. The other famous tension is the $S_8$ tension at about a $3\sigma$ difference. There have been extensive efforts to propose a model that can resolve these tensions (modified gravity, early dark energy, quintessence, etc.). The next two chapters will explore how to compute these tensions and demonstrate a proposed consistency test.
 
 
 

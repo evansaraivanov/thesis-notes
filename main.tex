@@ -1,13 +1,14 @@
-\documentclass{report}
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={8.5in,11in},
- left=1in,
- right=1in,
- top=1in,
- bottom=1in,
- }
+\newcommand{\pubyear}[1]{#1}
+\documentclass[master,bottom,nosig]{usbthesis}
+% \usepackage{geometry}
+%  \geometry{
+%  a4paper,
+%  total={8.5in,11in},
+%  left=1in,
+%  right=1in,
+%  top=1in,
+%  bottom=1in,
+%  }
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{braket}
@@ -26,30 +27,48 @@
 \usepackage{float}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{afterpage}
+\usepackage{hhline}
+\usepackage{url}
+%\usepackage{indentfirst}
+\usepackage{footmisc} % provides \footref and \mpfootnotemark commands
+\usepackage{xspace}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{pdfpages}
+\usepackage[nottoc]{tocbibind}
+\hyphenation{put words here which LaTeX does not hy-phen-ate pro-per-ly}
+\usepackage{pgfplots}
 \pgfplotsset{compat=1.12}
 \usepgfplotslibrary{fillbetween}
 
-\newcommand{\cm}{\mathbb{C}}
-\newcommand{\re}{\mathbb{R}}
-\newcommand{\dvg}{\nabla\cdot}
-\newcommand{\crl}{\nabla\times}
-\newcommand{\proj}[1]{\ensuremath{{\ket{#1}\bra{#1}}}}
-\newcommand{\vect}{\text{Vect}}
-\newcommand{\smooth}{C^{\infty}}
-\newcommand{\dif}{\text{d}}
-\DeclareMathOperator{\aext}{\hspace{2pt}\lrcorner\hspace{2pt}}
+% \newcommand{\cm}{\mathbb{C}}
+% \newcommand{\re}{\mathbb{R}}
+% \newcommand{\dvg}{\nabla\cdot}
+% \newcommand{\crl}{\nabla\times}
+% \newcommand{\proj}[1]{\ensuremath{{\ket{#1}\bra{#1}}}}
+% \newcommand{\vect}{\text{Vect}}
+% \newcommand{\smooth}{C^{\infty}}
+% \newcommand{\dif}{\text{d}}
+% \DeclareMathOperator{\aext}{\hspace{2pt}\lrcorner\hspace{2pt}}
 
-\makeatletter
-\newcommand*\bigcdot{\mathpalette\bigcdot@{.8}}
-\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
-\makeatother
-\newlength{\arrow}
-\settowidth{\arrow}{\scriptsize$1000$}
-\newcommand*{\myrightarrow}[1]{\xrightarrow{\mathmakebox[\arrow]{#1}}}
-\newcommand*{\TakeFourierOrnament}[1]{{%
-\fon`'tencoding{U}\fontfamily{futs}\selectfont\char#1}}
-\newcommand*{\danger}{\TakeFourierOrnament{66}}
-\setlength{\jot}{1.5mm}
+% \makeatletter
+% \newcommand*\bigcdot{\mathpalette\bigcdot@{.8}}
+% \newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+% \makeatother
+% \newlength{\arrow}
+% \settowidth{\arrow}{\scriptsize$1000$}
+% \newcommand*{\myrightarrow}[1]{\xrightarrow{\mathmakebox[\arrow]{#1}}}
+% \newcommand*{\TakeFourierOrnament}[1]{{%
+% \fon`'tencoding{U}\fontfamily{futs}\selectfont\char#1}}
+% \newcommand*{\danger}{\TakeFourierOrnament{66}}
+% \setlength{\jot}{1.5mm}
 
 \theoremstyle{definition}
 \newtheorem{thm}{Theorem}[section] % the main one
@@ -75,21 +94,67 @@
 \newtheorem{cor}{Corollary}
 \newtheorem{problem}{Problem}
 
-\title{Thesis Notes}
-\author{Evan Saraivanov}
-\date{\today}
+\author{Evan Saraivanov}%
+\title{Title}%
+
+\month{Month}
+\pubyear{2023}%
+\program{Physics}%
+\director{Director}{title,affil}%
+%\chairman{Name of Chairman}{Professor, Department of Physics and Astronomy}%
+\chairman{Chairman}{title,affil}%
+%\fstmember{Name of Member}{Professor, Department of Physics and Astronomy}%
+\fstmember{Member}{title,affil}%
+%\outmember{Name of Outside Member}{Position}{Institution}%
+\outmember{Name of Outside Member}{Position}{Institution}%
+\dean{The Dean}%
 
 \begin{document}
 
-\maketitle
-\tableofcontents
+\singlespacing %
+\pagenumbering{roman} %
+\maketitle %
+\makeapproval %
+
+\begin{abstract}
+Abstract.
+\end{abstract}
+\tableofcontents %
+\listoffigures %
+%
+%\listoftables %
+%
+\begin{acknowledgements}
+Acknowledgements
+\end{acknowledgements}
+\pagestyle{thesis}
+\newpage
+\pagenumbering{arabic}
 
 \input{sections/cosmo_intro.tex}
-\input{sections/gr.tex}
 \input{sections/experiment.tex}
 \input{sections/tension_intro.tex}
 \input{sections/gg_split.tex}
-%\newpage
-\input{sections/misc.tex}
+\input{sections/emulators.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{unsrtnat}{}
+\renewcommand{\baselinestretch}{1}
+\normalsize
+
+\clearpage
+\newpage
+\phantomsection%
+\addcontentsline{toc}{chapter}{\numberline{}{Bibliography}}%
+\bibliography{BibFileThesis}
+
+\clearpage
+\newpage
+
+\appendix
+\include{sections/appendixSdkr}
+%\include{sections/appendixNOON}
 
 \end{document}
+
+
