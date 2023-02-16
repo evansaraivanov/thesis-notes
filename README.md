@@ -1,3 +1,3 @@
-# notes
+# Masters Thesis
 
-Contains my personal notes in cosmology and computing.
+Contains my thesis :)
