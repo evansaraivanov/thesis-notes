@@ -9,10 +9,10 @@ In (year) Einstein published his first paper on special relativity. In special r
     g = \text{diag}(-1,1,1,1)
 \end{equation}
 This space is typically called \textit{Minkowski space} (thus the notation $\mathbb{M}^4$). Distances under this metric are called the \textit{proper time} interval, denoted $\tau$.
-\begin{equation}
+\begin{equation}\label{eq:proper-time}
     -d\tau^2 = -dt^2 + dx^2 + dy^2 + dz^2
 \end{equation}
-Proper time represents the amount of time it that passes for an observer travelling on a path with 0 displacement. Naturally, then, this quantity should be invariant, even for an observer in a different reference frame. For such an observer, the time that elapses will be different from $\tau$, and will be accounted for by the spatial displacement. The set of transformations that leave $\tau$ invariant are the Lorentz transformations.
+Proper time represents the amount of time it that passes for an observer travelling on a path with 0 spatial displacement. Naturally, this quantity should be invariant even for an observer in a different reference frame. For such an observer, the time that elapses will be different from $\tau$, and will be accounted for by the spatial displacement as seen by equation~\ref{eq:proper-time}. The set of transformations that leave $\tau$ invariant are the Lorentz transformations.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -58,15 +58,15 @@ Lets suppose we have two observers, one is in an inertial frame with coordinates
 \begin{equation}
     \frac{d^2x^\mu}{d\tau^2} = 0
 \end{equation} 
-we can look at how this changes for the observer in a non-inertial frame.
-\begin{equation}
+We can look at how this changes for the observer in a non-inertial frame.
+\begin{equation}\label{eq:sr-curves}
     \frac{d^2x'^\lambda}{d\tau^2}+\underbrace{\frac{\partial x'^\lambda}{\partial x^\rho}\frac{\partial^2 x^\rho}{\partial x'^\mu \partial x'^\nu}}_{\equiv \Gamma_{\mu\nu}^\lambda} \frac{d x'^\mu}{d \tau} \frac{d x'^\nu}{d \tau} = 0
 \end{equation}
-This equation looks suspiciously like the geodesic equation from differential geometry. The exception is we have defined the `Chirstoffel symbol' here, which is not the most general form of the Christoffel symbols. This does give motivation for how to search for a compatible theory of gravity. However, this does provide a clear link between gravity and geometry. 
+Equation~\ref{eq:sr-curves} looks suspiciously like the geodesic equation from differential geometry. The exception is we have defined the `Chirstoffel symbol' here, which is not the most general form of the Christoffel symbols. This does give motivation for how to search for a compatible theory of gravity. However, this does provide a clear link between gravity and geometry. 
 \section{Einstein's Field Equation}
 Christoffel symbols take a very general form, where they signify the failure of partial derivatives to commute. This failure results from curvature of the space itself. As said in the previous section, special relativity promotes the classical $\mathbb{R}^3$ space to $\mathbb{M}^4$. However, we now need to allow curved space, not simply minkowski space. So lets take an arbitrary semi-Riemannian 4-manifold $M$. In very loose terms, a manifold is a locally euclidean space, which is a sufficient definition for this application.
 
-Naturally, computing derivatives are difficult on curved surfaces. To start, derivatives give tangent vectors, thus taking the set of all possible tangent vectors of a curve at point $p\in M$ gives us the tangent space at $p$, denoted $T_pM$. The generalization of the derivative is called a \textit{connection}, which tells one how to connect the tangent spaces at different points infinitessimally (figure). Although beyond the scope of this these, it is worth noting that, due to the holonomy of curved surfaces, this will generally depend on the path taken.
+Naturally, computing derivatives are difficult on curved surfaces. To start, derivatives give tangent vectors, thus taking the set of all possible tangent vectors of a curve at point $p\in M$ gives us the tangent space at $p$, denoted $T_pM$. The generalization of the derivative is called a \textit{connection}~\cite{baez_john_gauge_1994}, which tells one how to connect the tangent spaces at different points infinitessimally (figure~\ref{fig:parallel_transport}). Although beyond the scope of this thesis, it is worth noting that, due to the holonomy of curved surfaces, this will generally depend on the path taken.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -88,6 +88,7 @@ Naturally, computing derivatives are difficult on curved surfaces. To start, der
         \draw[->,thick] (0.6,-1) -- (1,-0.75);
     \end{tikzpicture}
     \caption{Example of parallel transport along a connection on a sphere. }
+    \label{fig:parallel_transport}
 \end{figure}
 In general relativity, a very special connection is use called the \textit{Levi-Civita connection}, denoted $\nabla$, which is torsionless and metric preserving. More precisely, for all vector fields $u,v,w$ on $M$
 \begin{equation}
@@ -127,14 +128,26 @@ Additionally, the metric itself is divergenceless. Putting these all together gi
 \end{equation}
 
 \section{Cosmology}
-We can see in Einstein's equation the constant $\Lambda$, called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where cold dark matter acts as a cosmological constant. 
+We can see in Einstein's equation the constant $\Lambda$, called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps and forms halos) and dark energy acts as the cosmological constant ~\cite{scott_dodelson_modern_2021}.
 
 When discussing $\Lambda$CDM (or cosmology in general), there are two main assumptions that are made on a global scale:
 \begin{itemize}
     \item The universe is homogeneous. That is, there is no preferred location in the universe.
     \item The universe is isotropic. That is, there is no preferred direction of the universe.
 \end{itemize}
-Both of these assumptions should sound strange; Our universe is clearly does not follow these assumptions. If we look into the night sky, we can see regions of densly packed stars and galaxies and other regions with no stars or galaxies, violating the assumption of homogeneity (figure). On the other hand, if one observes the temperature of the cosmic microwave background (CMB), one finds there is an angle dependence of the observed temperature (figure), violating the assumption of isotropy.
+Both of these assumptions should sound strange; Our universe is clearly does not follow these assumptions. If we look into the night sky, we can see regions of densly packed stars and galaxies and other regions with no stars or galaxies, violating the assumption of homogeneity (figure~\ref{fig:galaxy_map}). On the other hand, if one observes the temperature of the cosmic microwave background (CMB), one finds there is an angle dependence of the observed temperature (figure~\ref{fig:cmb_tt_map}), violating the assumption of isotropy. To reconsile this, the metric will be modified by perturbations. In this thesis, only scalar perturbations are considered.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\textwidth]{plots/opo0220a.jpg}
+    \caption{An image of galaxies from the James Webb Space Telescope, showing regions of high matter density and regions of low matter density.}
+    \label{fig:galaxy_map}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\textwidth]{plots/Planck_CMB.jpg}
+    \caption{CMB TT power spectrum, emphasizing the scale of anisotropies.}
+    \label{fig:cmb_tt_map}
+\end{figure}
 
 With Edwin Hubble's discovery of the expanding universe, any metric assigned to the universe must include homogeneous spatial expansion. Together with the above assumptions results in the FLRW metric.
 \begin{equation}

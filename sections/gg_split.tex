@@ -15,7 +15,7 @@ In this analysis, however, we want to go beyond linear scales. To do this, we us
 \end{equation}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=8cm]{plots/Pk.pdf}
+	\includegraphics[width=0.75\textwidth]{plots/Pk.pdf}
 	\caption{Non-linear power spectrum from Euclid emulator. When either the geometry or growth parameters are varied, the other is kept fixed at $\Omega^X=0.3$.}
 	\label{fig:pk}
 \end{figure}
@@ -129,7 +129,7 @@ To understand these choices of priors, we consider the following combinations:
 To compute the linear matter power spectrum we use \textsc{CAMB} Boltzmann code, which is capable of solving the linear Boltzmann equation and computing transfer functions. For going beyond linear scales, we use the Euclid emulator, a fast neural network based emulator for Halofit. Previous DES studies used Halofit itself, a full N-body simulation to determine the non-linear evolution of dark matter. A baseline comparison between the Euclid emulator and Halofit was done (figure~\ref{fig:euc_v_halo})
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=8cm]{plots/halo_vs_emu.pdf}
+	\includegraphics[width=0.75\textwidth]{plots/halo_vs_emu.pdf}
 	\caption{Relative difference between Euclid emulator and Halofit.}
 	\label{fig:euc_v_halo}
 \end{figure}

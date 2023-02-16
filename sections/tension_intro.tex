@@ -91,10 +91,7 @@ This metric differs from the others by restricting our parameters to ones that a
 	\item Project the other data set onto the eigenmodes.
 	\item Compute the tension using one of the previous methods.
 \end{enumerate}
-The idea is that one should not include poorly measured eigenmodes in our tension analysis because the difference is dominated by the prior rather than the likelihood or data.
-
-(here is a good place to compare with other metrics)
-
+The idea is that one should not include poorly measured eigenmodes in our tension analysis because the difference is dominated by the prior rather than the likelihood.
 \subsection{Evidence-Based Metrics}
 \begin{itemize}
 	\item Bayesian evidence ratio given by
@@ -114,7 +111,6 @@ The idea is that one should not include poorly measured eigenmodes in our tensio
 		\mathcal{D} = \int \mathcal{P} \log(\frac{\mathcal{P}}{\Pi})
 	\end{equation}
 \end{itemize}
-
 \subsubsection{Interpreting the Results}
 Given some probability $P$ of a parameter shift, the following formula can give you the number of standard deviations if the probability shift comes from a gaussian distribution
 \begin{equation}
@@ -132,13 +128,11 @@ The parameter difference posterior is a gaussian with standard deviation $\sqrt{
 \begin{equation}
 	\Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta
 \end{equation}
-Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. (DO THIS FOR THE NEW METRICS, NOT JUST NF).
-
+Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate.
 \subsection{DES v Planck Results}
 A subset of these excersizes have been performed previously by the Dark Energy Survey (DES) against the planck results~\cite{lemos_assessing_2021}.
 
 \section{Normalizing Flows}
-
 The method of normalizing flows (MAF) implemented here uses Masked Autoencoders (MADE) to construct the flow. 
 Suppose we have an input to the flow $x_i$. 
 The output of the map is $y_i= \mu(x_{1:i-1})+\sigma(x_{1:i-1})x_i$. 

@@ -97,7 +97,7 @@ Finally, we have a choice to make in the activation function. This is the chance
 Thus, a neural network is, in simple terms, an optimization problem. The issue, however, is that neural networks generally have a large number of parameters (thousands, millions, even billions!), so this optimization is difficult in practice. Also, what may appear as a simple loss function in terms of the output can become an extremely complicated (and importantly, non-monotonic) function of $\alpha_i$.
 
 The general method of optimization is called \textit{gradient descent}. The strategy is the following:
-\begin{itemize}
+\begin{enumerate}
 	\item Define an initial set of parameters $\alpha_{i,\mathrm{init}}$.
 	\item Split the training data into $n$ batches
 	\item Generate a new set of parameters for each batch, centered around $\alpha_{i,\mathrm{init}}$, denoted $\alpha^{n}_{i}$.
@@ -105,7 +105,7 @@ The general method of optimization is called \textit{gradient descent}. The stra
 	\item Compute the gradient of the neural network.
 	\item Update the parameters according to the gradient.
 	\item Repeat until gradient is 0.
-\end{itemize}
+\end{enumerate}
 This simple algorithm has one glaring flaw, it is prone to getting stuck in local minima. Ideally, we want to search for the global minimum for the loss function. The way around this is to add some stochasticity to the gradient descent so that the network does not simply search for zero gradient. Instead, the parameters are updated probabilistically from the gradient.
 
 The gradient is usually computed using \textit{backpropagation}, in which the gradient is computed at each layer and the total gradient is computed according to the chain rule. This presents an issue: if the gradient is small at each layer, the gradient will be small on the order of $\epsilon^{n}$, where $n$ is the number of layers. This can lead to a misleading gradient that appearently vanishes, or a gradient that explodes to large values. This is the problem of \textit{vanishing gradients}, and we will discuss ways to avoid this in the next section.

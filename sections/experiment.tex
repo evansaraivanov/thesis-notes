@@ -1,14 +1,14 @@
 \chapter{Weak Lensing and the Cosmic Microwave Background}
-
 \section{Weak Lensing}
-
 In general, contemporary weak lensing surveys measure the light emmited from galaxies in two components: galaxy position and galaxy shear. In the following sections the theoretical base for cosmological weak lensing surveys are described. However, before discussing the two relevant observables, one needs to formalize the concept of weak lensing.
-
-Weak lensing occurs when light travels with curved trajectories. Contrary to the purely Newtonian approach to gravity, in General Relativity light travels along geodesics with vanishing infinitessimal distances. Thus the time a photon has travelled is given by
-
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{plots/hubble_weak_lensing.png}
+	\caption{Image of weak lensing taken by the Hubble Space Telescope.}
+	\label{fig:weak_lensing}
+\end{figure}
 \subsection{The Linear Matter Power Spectrum}
-
-As we have seen before, we consider deviations from the FLRW metric using the scalar fields $\Phi$ and $\Psi$. In the absence of anisotropic stress, $\Phi=-\Psi$. Throughout time in the universe, we consider there to be three distinct epochs/regions:
+As we have seen before, we consider deviations from the FLRW metric using the scalar fields $\Phi$ and $\Psi$. In the absence of anisotropic stress, $\Phi=-\Psi$. Throughout time in the universe, we consider there to be three distinct epochs/regions~\cite{scott_dodelson_modern_2021}:
 \begin{itemize}
 	\item The super-horizon region, or the region before inflation where radiation dominates
 	\item The horizon-crossing region, or the region during inflation where the universe transfers from radiation to matter domination
@@ -70,53 +70,7 @@ To complete this discussion, we will make some approximations. We will only cons
 \begin{equation}
  	C_g(l) =\int \frac{1}{\chi^2}W^2(\chi)P_g(k=(l+1/2)/\chi,\eta) d\chi
 \end{equation} 
-% One of the observables considered in weak lensing surveys is galaxy position. In this case, various physical effects will alter the observed redshift for a given galaxy, thus affecting our distance measurements. We will consider the following two:
-% \begin{itemize}
-% 	\item Inaccurate modelling of the distance-redshift relation. This involves incorrect calibration of $a(t)$, the scale factor. This manifests as a correction to the comoving distance, denoted $\delta\chi$.
-% 	\item Additional redshift doppler shifts. This manifests as a correction to the reshift-distnace relation involving the galaxy's perculiar velocity along the line of sight given by
-% 	\begin{equation}
-% 	 	1+z = \frac{1}{a}(1+u_\parallel) \,
-% 	\end{equation} 
-% 	To linear order, the correction is given by $\partial_{u_\parallel} x|_{u_\parallel=0} u_{\parallel} = \frac{u_\parallel}{aH} $
-% \end{itemize}
-% Thus the total correction is
-% \begin{equation}
-% 	x_{\text{obs}} = x + \left( \frac{u_\parallel}{aH} + \delta\chi \right)\hat{n}
-% \end{equation}
-% Naturally, we can convert between the observed and true positions via the jacobian of the transformation.
-% \begin{equation}
-% 	\begin{split}
-% 		d^3x_{\text{obs}} &= x_{\text{obs}}^2dx_{\text{obs}}d\Omega \\
-% 		d^3x &= x^2dxd\Omega \\
-% 		J &= \frac{dx}{dx_{\text{obs}}} \frac{x^2}{x^2_{\text{obs}}} \\
-% 		\frac{dx}{dx_{\text{obs}}} &= 1 - \frac{d\delta\chi}{dx}\frac{dx}{dx_\text{obs}} - \frac{1}{aH}\frac{\partial u_\parallel}{dx}\frac{dx}{dx_{\text{obs}}} \\
-% 		\frac{dx}{dx_{\text{obs}}} &= \left( 1 + \frac{d\delta\chi}{dx} + \frac{1}{aH}\frac{\partial u_\parallel}{dx} \right)^{-1} \\
-% 		J &= \left( 1 + \frac{d\delta\chi}{dx} + \frac{1}{aH}\frac{\partial u_\parallel}{dx} \right)^{-1} 
-% 			\left( x + \frac{\delta\chi}{x} + \frac{1}{aHx}\frac{\partial u_\parallel}{\partial x} \right)^{-2}
-% 	\end{split}
-% \end{equation}
-% \begin{equation}
-% 	\frac{d}{dx}\delta\chi = \frac{d\delta\chi}{dz}\frac{dz}{dx} = H\left(\frac{1}{H}-\frac{1}{H_{\text{fid}}}\right) = -\frac{1}{H_{\text{fid}}} \delta H
-% \end{equation}
-% The observed galaxy number density is related to the mean number density by the galaxy density contrast field
-% \begin{equation}
-% 	n = \bar n (1+\delta(x))
-% \end{equation}
-
-
-
-
 \subsection{Galaxy Shear}
-% As a reminder, Christoffel symbols in perturbed spacetime to first order in the perturbations $\Psi$ and $\Phi$
-% \begin{equation}
-% 	\begin{split}
-% 		\Gamma^{0}_{00} =& \dot\Psi \\
-% 		\Gamma^{i}_{00} =& \frac{1}{a^2}\partial^i\Psi \\
-% 		\Gamma^{i}_{j0} =& \delta_{ij}(H+\dot\Phi) \\
-% 		\Gamma^{0}_{ij} =& \delta_{ij}a^2(H+2H(\Phi-\Psi)+\dot\Phi) \\
-% 		\Gamma^{i}_{jk} =& [\delta_{ij}\partial_k + \delta_{ik}\partial_j - \delta_{jk}\partial_i]\Phi
-% 	\end{split}
-% \end{equation}
 Photons move on null geodesics, thus $d\chi = -d\eta$, where $\eta$ is the conformal time and $\chi$ is the conformal distance. This tells us that $dx^i/d\chi = -dx^i/d\eta = -a dx^i/dt = -a dx^i/d\lambda d\lambda/dt = -a/P^0 P^\mu = -a / E * p/a \hat{p}^i = -\hat{p}^i$ (for photons and other massless particles).
 Thus, under lensing, the difference between the observed and true positions within the source plane is given by
 \begin{equation}
@@ -214,7 +168,7 @@ Finally, since $x^i=\chi\theta^i$, we have $\partial_i = \partial_{\theta^i}/\ch
 		\psi_L(\theta) =& 2\int\limits_0^\chi \frac{1}{\chi'}\Phi(\chi') \left(1-\frac{\chi'}{\chi}\right) d\chi'
 	\end{split}
 \end{equation}
-This result is great, but it's not very experimentally illuminating. Similar to the galaxy vs matter power spectrum, the absence of the observation of dark matter means we cannot reliably determine the potential $\Phi$. Again, an attempt to relate the lensing potential to some property of galaxies can give us a measureable quantity. Lensing distorts the shape of the galaxies (assuming they are all perfectly elliptical). Define the galaxy shape tensor by
+This result is great, but it's not very experimentally illuminating. Similar to the galaxy vs matter power spectrum, the absence of the observation of dark matter means we cannot reliably determine the potential $\Phi$. Again, an attempt to relate the lensing potential to some property of galaxies can give us a measureable quantity. Lensing distorts the shape of the galaxies (see figure~\ref{fig:weak_lensing}), where we assume all galaxies are elliptical. Define the galaxy shape tensor by
 \begin{equation}
 	q_{ij} \equiv \frac{1}{F}\int I\theta^i\theta^j d\theta^i d\theta^j
 \end{equation}
@@ -381,14 +335,26 @@ Finally is a consideration of $H_0$, arguably the most simple case. $H_0$ affect
     \label{fig:planck_ee}
 \end{figure}
 The other two power spectra are shown in figures (figs). The main consideration with these two power spectra is to observe the way it breaks the degeneracy between $\tau_\mathrm{rei}$ and $\mathcal{A}_s,n_s$. In the TT case,  $\tau_{\mathrm{rei}}$ suppreses the power spectrum as it suppreses the fraction of light that reaches an observer. Howver, the additional scattering actual causes anisotropies in the polarization power spectrum to increase. Thus the effects of $\mathcal{A}_s$ and $\tau_\mathrm{rei}$ are similar in the TT power spectrum but opposite in the $EE$ power spectrum. Thus, one needs all 3 power spectra to reliably infer the cosmological parameters.
-\section{Other Parameters}
-\begin{equation}
-\sigma_8^2 = \left.\int\limits_0^\infty P(k,r)\left(\frac{3j_1(kr)}{kr}\right)^2\frac{k^2}{2\pi^2}dk\right|_{r=8}
-\end{equation}
-$S_8 = \sigma_8\sqrt{\Omega_m/0.3}$
-which can be described as the amplitude of matter fluctuations at the scale $8 h^{-1}\mathrm{Mpc}$.
 \section{Tensions Between Weak Lensing and CMB}
-As seen, there are a total of five parameters needed to describe $\Lambda$CDM in weak lensing: $\Omega_m$, $\Omega_b$, $H_0$, $\mathcal{A}_s$, and $n_s$. The reality is, however, that CMB measurements of some of these parameters differ between the parameters measured from weak lensing. The most famous discrepancy is the $H_0$ tension (fig). Weak lensing measurements are significantly higher than CMB measurements; a nearly $5\sigma$ difference. The other famous tension is the $S_8$ tension at about a $3\sigma$ difference. There have been extensive efforts to propose a model that can resolve these tensions (modified gravity, early dark energy, quintessence, etc.). The next two chapters will explore how to compute these tensions and demonstrate a proposed consistency test.
+As seen, there are a total of five parameters needed to describe $\Lambda$CDM in weak lensing: $\Omega_m$, $\Omega_b$, $H_0$, $\mathcal{A}_s$, and $n_s$. This parameterization is not unique. Another common parameter, which tracks $\mathcal{A_s}$, is $\sigma_8$
+\begin{equation}
+	\sigma_8^2 = \left.\int\limits_0^\infty P(k,r)\left(\frac{3j_1(kr)}{kr}\right)^2\frac{k^2}{2\pi^2}dk\right|_{r=8}
+\end{equation}
+which can be described as the amplitude of matter fluctuations at the scale $8 h^{-1}\mathrm{Mpc}$. With this parameter instead of $\mathcal{A}_s$, weak lensing gives string constraints on $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$. 
+
+The reality is, however, that CMB measurements of some of these parameters differ between the parameters measured from weak lensing. The most famous discrepancy is the $H_0$ tension (figure~\ref{fig:h0_tension}). Weak lensing measurements are significantly higher than CMB measurements; a nearly $5\sigma$ difference. The other famous tension is the $S_8$ tension at about a $3\sigma$ difference (figure~\ref{fig:s8_tension}). There have been extensive efforts to propose a model that can resolve these tensions (modified gravity, early dark energy, quintessence, etc.), but as of now no model is able to simultaneously resolve both tensions. For example, early dark energy resolves the $H_0$ tension, but the $S_8$ tension tends to either remain the same or increase. The remaining chapters will explore how to compute these tensions and demonstrate a proposed consistency test.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{plots/h0_tension.jpg}
+	\caption{Measurements of $H_0$ from different experiements.}
+	\label{fig:h0_tension}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{plots/s8_tension.jpg}
+	\caption{Measurements of $S_8$ from different experiements.}
+	\label{fig:s8_tension}
+\end{figure}
 
 
 
