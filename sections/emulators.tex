@@ -1,5 +1,374 @@
 \chapter{Data Emulators}
+As can be seen from the growth-geometry split analysis, a great amount of time and computing resources are needed to do a comprehensive analysis of novel cosmological models and exteionsions to $\Lambda$CDM. There are a growing number of proposed extension theories, and more data sets that can test them. One of the ways to improve the efficiency of data and theory analysis is to create a faster way to compute data vectors when doing MCMC sampling. In this chapter, I will describe how one can use neural networks (NN) to learn this mapping, bypassing the need for expensive programs such as Comsolike.
 \section{Neural Networks}
+Although the term `neural network' is almost synonymous with magic in the modern world, the concept is very natural from elementary mathematics. We start with the most basic example: linear regression. 
+
+In linear regression, one considers a model of the form $y=mx+b$. The goal is to find the values of $m$ and $b$ that minimizes the square of the residual
+\begin{equation}
+	L(y_{i,\mathrm{truth}},y_{i,\mathrm{model}}) = (y_{i,\mathrm{truth}} - y_{i,\mathrm{model}})^2\,.
+\end{equation}
+In this very special case, there is an analytic way to minimize $L$, but in general that is highly non-trivial. Additionally, there are much more complicated data sets one would want to model, such as data vectors in cosmological surveys. The remaining question is: how does one intelligentally generalize this type of model to more complicated ones?
+
+We have a tool that can do this already: the brain! The brain is a large system of cells called neurons. Each neuron is connected to others by a synapse, and after accumulating a large enough electric charge, the neuron will activate, sending the electric signal to a connected neuron. 
+
+Using this, lets try to construct a general model. We start with the neurons
+\begin{figure}[th]
+	\centering
+	\begin{tikzpicture}
+		\draw (-2,0) circle (5pt);
+		\draw (0,0) circle (5pt);
+		\draw (2,0) circle (5pt);
+		\draw (1,1.41) circle (5pt);
+		\draw (-1,1.41) circle (5pt);
+		\draw (1,-1.41) circle (5pt);
+		\draw (-1,-1.41) circle (5pt);
+	\end{tikzpicture}
+	\caption{Arrangement of neurons.}
+	\label{fig:neurons}
+\end{figure}
+Now we add in the synapses, the connections between neurons. In general, not every neuron is connected to each other. It should be noted, along each synapse is an activation function. Rather than having a threshold potential like a real synapse, NNs use functions that represent the activation of the neuron. Also, each synapse has a weight that represents the strength of the connection.
+\begin{figure}[th]
+	\centering
+	\begin{tikzpicture}
+		\draw (-2,0) -- (0,0);
+		\draw (-1,1.41) -- (0,0);
+		\draw (-1,1.41) -- (-2,0);
+		\draw (-1,-1.41) -- (-2,0);
+		\draw (-1,-1.41) -- (1,-1.41);
+		\draw (2,0) -- (1,-1.41);
+		\draw (1,1.41) -- (-1,1.41);
+		\draw (1,1.41) -- (1,-1.41);
+		\draw (2,0) -- (-1,-1.41);
+		\draw (0,0) -- (1,-1.41);
+		\draw (0,0) -- (1,1.41);
+		\draw (0,0) -- (2,0);
+		\draw (-1,1.41) -- (2,0);
+		\draw (1,1.41) -- (-2,0);
+		\draw[fill=white] (-2,0) circle (5pt);
+		\draw[fill=white] (0,0) circle (5pt);
+		\draw[fill=white] (2,0) circle (5pt);
+		\draw[fill=white] (1,1.41) circle (5pt);
+		\draw[fill=white] (-1,1.41) circle (5pt);
+		\draw[fill=white] (1,-1.41) circle (5pt);
+		\draw[fill=white] (-1,-1.41) circle (5pt);
+	\end{tikzpicture}
+	\caption{Neurons with synapses.}
+	\label{fig:neurons_synapse}
+\end{figure}
+Next, we define which neurons receive an external signal, and which give a signal to the outside. These act as our input and output.
+\begin{figure}[th]
+	\centering
+	\begin{tikzpicture}
+		\draw (-2,0) -- (0,0);
+		\draw (-1,1.41) -- (0,0);
+		\draw (-1,1.41) -- (-2,0);
+		\draw (-1,-1.41) -- (-2,0);
+		\draw (-1,-1.41) -- (1,-1.41);
+		\draw (2,0) -- (1,-1.41);
+		\draw (1,1.41) -- (-1,1.41);
+		\draw (1,1.41) -- (1,-1.41);
+		\draw (2,0) -- (-1,-1.41);
+		\draw (0,0) -- (1,-1.41);
+		\draw (0,0) -- (1,1.41);
+		\draw (0,0) -- (2,0);
+		\draw (-1,1.41) -- (2,0);
+		\draw (1,1.41) -- (-2,0);
+		\draw (-3,0) -- (-2,0);
+		\draw (-3,0) node[anchor=east] {In};
+		\draw (1,1.41) -- (2,2.41);
+		\draw (2,0) -- (3,0);
+		\draw (3,0) node[anchor=west] {Out};
+		\draw (2,2.41) node[anchor=south west] {Out};
+		\draw[fill=white] (-2,0) circle (5pt);
+		\draw[fill=white] (0,0) circle (5pt);
+		\draw[fill=white] (2,0) circle (5pt);
+		\draw[fill=white] (1,1.41) circle (5pt);
+		\draw[fill=white] (-1,1.41) circle (5pt);
+		\draw[fill=white] (1,-1.41) circle (5pt);
+		\draw[fill=white] (-1,-1.41) circle (5pt);
+	\end{tikzpicture}
+	\caption{Neurons, synapses, and IO.}
+	\label{fig:neurons_synapse_io}
+\end{figure}
+Finally, we have a choice to make in the activation function. This is the chance to greatly increse the modelling capability of NNs. As we will see in the future, the only requirement is that the function is continuous, thus we can use non-linear activation functions, allowing modelling of highly non-linear outputs. The goal is to define a loss function function that we want to minimize (in the linear regression, the loss is the square of the residual). The loss function is a function of the output of the NN, and the output is parameterized by the parameters of the NN. Thus, if $y=\phi(\alpha_i,x)$ represents the output of the neural network with parameters $\alpha_i$ and input $x$, the loss function is, in fact, parameterized by the neural network as well.
+\begin{equation}
+	L(y) = L(\phi(\alpha_i,x)) = \mathfrak{L}(\alpha_i,x)
+\end{equation}
+Thus, a neural network is, in simple terms, an optimization problem. The issue, however, is that neural networks generally have a large number of parameters (thousands, millions, even billions!), so this optimization is difficult in practice. Also, what may appear as a simple loss function in terms of the output can become an extremely complicated (and importantly, non-monotonic) function of $\alpha_i$.
+
+The general method of optimization is called \textit{gradient descent}. The strategy is the following:
+\begin{itemize}
+	\item Define an initial set of parameters $\alpha_{i,\mathrm{init}}$.
+	\item Split the training data into $n$ batches
+	\item Generate a new set of parameters for each batch, centered around $\alpha_{i,\mathrm{init}}$, denoted $\alpha^{n}_{i}$.
+	\item Compute the loss for each batch.
+	\item Compute the gradient of the neural network.
+	\item Update the parameters according to the gradient.
+	\item Repeat until gradient is 0.
+\end{itemize}
+This simple algorithm has one glaring flaw, it is prone to getting stuck in local minima. Ideally, we want to search for the global minimum for the loss function. The way around this is to add some stochasticity to the gradient descent so that the network does not simply search for zero gradient. Instead, the parameters are updated probabilistically from the gradient.
+
+The gradient is usually computed using \textit{backpropagation}, in which the gradient is computed at each layer and the total gradient is computed according to the chain rule. This presents an issue: if the gradient is small at each layer, the gradient will be small on the order of $\epsilon^{n}$, where $n$ is the number of layers. This can lead to a misleading gradient that appearently vanishes, or a gradient that explodes to large values. This is the problem of \textit{vanishing gradients}, and we will discuss ways to avoid this in the next section.
+
+The last issue to mention is that, given a large number of parameters, its possible to fit the training data very well, but the model is not able to fit external data sets. This is called \textit{overfitting}. There are many strategies to resolve this. The two we will use is dropout and L2 regularization. Dropout randomly sets a fraction of the weights to zero, meaning the NN will not be able to rely on individual neurons to get a reliable output. This ensures the full network is being used. L2 regularization penalizes the model for learning large weights, which again means the model relies on particular neurons. This is accomplished by modifying the loss function by adding the L2 norm of the network.
+\begin{equation}
+	L(y) \mapsto L(y)+\sum_i \alpha_i^2
+\end{equation}
+In summary, a NN is a directed graph, where each edge has a weight and an activation function, and each node has a value that it passes along to the edge. The inputs are propagated to the output, and the goal is to minimize the loss of the output. Its important to pick a smart loss function depending on ones needs from the NN and a smart activation function depending on the values of each node. The loss function is minimized using stochastic gradient descent. It is important to also implement strategies to avoid overfitting on the training data by penalizing the model for relying to heavily on certain regions of the graph.
 \section{Architecture Choices}
+As discussed before, the weights, activation functions, and connections are choices we can make for a neural network. Together, they comprise the archtecture. In this section we will discuss the architecture choices we have made.
+
+Before discussing the graph architecture, we want to highlight the choice of activation function. Before giving any data to the neural network, we do some preprocessing to the data. The first thing we do is normalize the input and output. The input is the cosmological parameters, which we process each parameter to follow a normal distribution.
+\begin{equation}
+	x^i = \frac{\theta^i - \bar\theta^i}{\sigma_i}
+\end{equation}
+The output is the cosmic shear data vector. We prepreocess this by diagonalizing and normalizing each component.
+\begin{equation}
+	y^i = \frac{ (P^{-1}d)^i }{\sqrt{(PCP^{-1})^{ii}}}
+\end{equation}
+Where $C$ is the covariance of the data and $P$ the change of basis matrix to the eigenbasis of $C$. This generally means we will have a lot of negative parameters, and the input and output are both symmetric about 0, thus we choose to use an antisymmetric activation function so that the symmetry around 0 can be preserved. In our case, we use $\tanh(x)$. Additionally, all of these NNs are feedforward sequential models. Sequential means we separate the neurons into layers, and feedforward means the data moves only from layer $n$ to layer $n+1$ and never backwards.
+\subsection{Multi-Layer Perceptron}
+The first graph architecture we study in the multi-layer perceptron (the name is adopted from convolutional neural networks `percieving' image features). In this architecture a node in a given layer is connected to every node in the following layer, so this network is called `simply connected'.
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,2) node[anchor=south] {In};
+		\draw (-0.5,2) -- (-2,1);
+		\draw (-0.5,2) -- (-1,1);
+		\draw (-0.5,2) -- (0,1);
+		\draw (-0.5,2) -- (1,1);
+		\draw (-0.5,2) -- (2,1);
+		\draw (0.5,2) -- (-2,1);
+		\draw (0.5,2) -- (-1,1);
+		\draw (0.5,2) -- (0,1);
+		\draw (0.5,2) -- (1,1);
+		\draw (0.5,2) -- (2,1);
+		%1-2
+		\draw (-2,1) -- (-2,0);
+		\draw (-2,1) -- (-1,0);
+		\draw (-2,1) -- (0,0);
+		\draw (-2,1) -- (1,0);
+		\draw (-2,1) -- (2,0);
+		\draw (-1,1) -- (-2,0);
+		\draw (-1,1) -- (-1,0);
+		\draw (-1,1) -- (0,0);
+		\draw (-1,1) -- (1,0);
+		\draw (-1,1) -- (2,0);
+		\draw (0,1) -- (-2,0);
+		\draw (0,1) -- (-1,0);
+		\draw (0,1) -- (0,0);
+		\draw (0,1) -- (1,0);
+		\draw (0,1) -- (2,0);
+		\draw (1,1) -- (-2,0);
+		\draw (1,1) -- (-1,0);
+		\draw (1,1) -- (0,0);
+		\draw (1,1) -- (1,0);
+		\draw (1,1) -- (2,0);
+		\draw (2,1) -- (-2,0);
+		\draw (2,1) -- (-1,0);
+		\draw (2,1) -- (0,0);
+		\draw (2,1) -- (1,0);
+		\draw (2,1) -- (2,0);
+		%2-3
+		\draw (-2,0) -- (-1,-1);
+		\draw (-2,0) -- (0,-1);
+		\draw (-2,0) -- (1,-1);
+		\draw (-1,0) -- (-1,-1);
+		\draw (-1,0) -- (0,-1);
+		\draw (-1,0) -- (1,-1);
+		\draw (0,0) -- (-1,-1);
+		\draw (0,0) -- (0,-1);
+		\draw (0,0) -- (1,-1);
+		\draw (1,0) -- (-1,-1);
+		\draw (1,0) -- (0,-1);
+		\draw (1,0) -- (1,-1);
+		\draw (2,0) -- (-1,-1);
+		\draw (2,0) -- (0,-1);
+		\draw (2,0) -- (1,-1);
+		\draw (0,-1) node[anchor=north] {Out};
+		%layer in to 1
+		\draw[fill=white] (-0.5,2) circle (5pt);
+		\draw[fill=white] (0.5,2) circle (5pt);
+		\draw[fill=white] (-2,1) circle (5pt);
+		\draw[fill=white] (-1,1) circle (5pt);
+		\draw[fill=white] (0,1) circle (5pt);
+		\draw[fill=white] (1,1) circle (5pt);
+		\draw[fill=white] (2,1) circle (5pt);
+		\draw[fill=white] (-2,0) circle (5pt);
+		\draw[fill=white] (-1,0) circle (5pt);
+		\draw[fill=white] (0,0) circle (5pt);
+		\draw[fill=white] (1,0) circle (5pt);
+		\draw[fill=white] (2,0) circle (5pt);
+		\draw[fill=white] (-1,-1) circle (5pt);
+		\draw[fill=white] (0,-1) circle (5pt);
+		\draw[fill=white] (1,-1) circle (5pt);
+	\end{tikzpicture}
+	\caption{A multi-layer perceptron.}
+	\label{fig:mlp}
+\end{figure}
+\subsection{Residual Network}
+As mentioned above, there is an issue of vanishing gradients with deep neural networks. One way we can avoid this is by changing the quantity we want to model. Note that, if the model weights approach 0, gradients can vanish, but we can avoid this by adding the input to the output. Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer parameterized by $\beta_i$ so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
+\begin{equation}
+	\phi(\alpha_i,\chi(\beta_i,x)) = \psi(\alpha_i,\beta_i,x)+\chi(\beta_i,x)
+\end{equation}
+This section of the model is going to attempt to learn
+\begin{equation}
+	\psi(\alpha_i,\beta_i,x)-\chi(\beta_i,x)
+\end{equation}
+This allows gradients with respect to the parameters $\beta_i$ to propagate to the output without the multiplication by the gradients of $\alpha_i$, which usually solves the vanishing gradient problem. This is called a \textit{residual neural network} (ResNet).
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,2.75) node {\footnotesize $\chi(\beta_i,x)$};
+		\draw (-2,2.5) -- (2,2.5) -- (2,3) -- (-2,3) -- (-2,2.5);
+		\draw (-1.5,2.5) -- (-1.5,2);
+		\draw (-0.5,2.5) -- (-0.5,2);
+		\draw (0.5,2.5) -- (0.5,2);
+		\draw (1.5,2.5) -- (1.5,2);
+		%in
+		\draw (-1.5,2) -- (-1.5,1);
+		\draw (-1.5,2) -- (-0.5,1);
+		\draw (-1.5,2) -- (0.5,1);
+		\draw (-1.5,2) -- (1.5,1);
+		\draw (-0.5,2) -- (-1.5,1);
+		\draw (-0.5,2) -- (-0.5,1);
+		\draw (-0.5,2) -- (0.5,1);
+		\draw (-0.5,2) -- (1.5,1);
+		\draw (0.5,2) -- (-1.5,1);
+		\draw (0.5,2) -- (-0.5,1);
+		\draw (0.5,2) -- (0.5,1);
+		\draw (0.5,2) -- (1.5,1);
+		\draw (1.5,2) -- (-1.5,1);
+		\draw (1.5,2) -- (-0.5,1);
+		\draw (1.5,2) -- (0.5,1);
+		\draw (1.5,2) -- (1.5,1);
+		%%% hidden
+		\draw (-1.5,1) -- (-1.5,0);
+		\draw (-1.5,1) -- (-0.5,0);
+		\draw (-1.5,1) -- (0.5,0);
+		\draw (-1.5,1) -- (1.5,0);
+		\draw (-0.5,1) -- (-1.5,0);
+		\draw (-0.5,1) -- (-0.5,0);
+		\draw (-0.5,1) -- (0.5,0);
+		\draw (-0.5,1) -- (1.5,0);
+		\draw (0.5,1) -- (-1.5,0);
+		\draw (0.5,1) -- (-0.5,0);
+		\draw (0.5,1) -- (0.5,0);
+		\draw (0.5,1) -- (1.5,0);
+		\draw (1.5,1) -- (-1.5,0);
+		\draw (1.5,1) -- (-0.5,0);
+		\draw (1.5,1) -- (0.5,0);
+		\draw (1.5,1) -- (1.5,0);
+		%%%
+		\draw (-1.5,-0.5) -- (-1.5,0);
+		\draw (-0.5,-0.5) -- (-0.5,0);
+		\draw (0.5,-0.5) -- (0.5,0);
+		\draw (1.5,-0.5) -- (1.5,0);
+		%%%
+		\draw (-2,-0.5) -- (2,-0.5) -- (2,-1) -- (-2,-1) -- (-2,-0.5);
+		\draw (-2,-2) -- (2,-2) -- (2,-2.5) -- (-2,-2.5) -- (-2,-2);
+		\draw (0,-0.75) node {\footnotesize $\psi(\alpha_i,\beta_i,x)$};
+		\draw (0,-1) -- (0,-2);
+		\draw (2,2.75) to[out=0,in=90] (3,1.75) -- (3,-0.5) to[out=-90,in=0] (2,-1.5) -- (0,-1.5);
+		\draw (0,-2.25) node {\footnotesize $\phi(\alpha_i,\chi(\beta_j,x))$};
+		\draw (3,0.83) node[anchor=west] {\footnotesize $\chi(\beta_i,x)$};
+		%layer in to 1
+		\draw[fill=white] (-1.5,2) circle (5pt);
+		\draw[fill=white] (-0.5,2) circle (5pt);
+		\draw[fill=white] (0.5,2) circle (5pt);
+		\draw[fill=white] (1.5,2) circle (5pt);
+		\draw[fill=white] (-1.5,1) circle (5pt);
+		\draw[fill=white] (-0.5,1) circle (5pt);
+		\draw[fill=white] (0.5,1) circle (5pt);
+		\draw[fill=white] (1.5,1) circle (5pt);
+		\draw[fill=white] (-1.5,0) circle (5pt);
+		\draw[fill=white] (-0.5,0) circle (5pt);
+		\draw[fill=white] (0.5,0) circle (5pt);
+		\draw[fill=white] (1.5,0) circle (5pt);
+		\draw[fill=white] (0,-1.5) circle (5pt);
+		\draw (0,-1.5) node {\footnotesize{$+$}};
+	\end{tikzpicture}
+	\caption{A residual block.}
+	\label{fig:resblock}
+\end{figure}
+\subsection{Bottlenecked Residual Network}
+The ResNet allows us to create much deeper networks, but the number of parameters stays the same as the linear model, making ResNets difficult to train (and especially the minimum of two linear layers. We can make a small modification to the ResNet that can resolve this, where there is an additional layer and the number of dimensions reduces in the middle (figure~\ref{fig:resbottle-block}). This forces the neural network to prioritize certain features and ignore ones that are not as necessary. Due to the shape this architecture makes, its referred to as a \textit{bottlenecked residual network} (ResBottle).
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\draw (1.5,1) -- (0.5,0);
+		\draw (1.5,1) -- (-0.5,0);
+		\draw (0.5,1) -- (0.5,0);
+		\draw (0.5,1) -- (-0.5,0);
+		\draw (-0.5,1) -- (0.5,0);
+		\draw (-0.5,1) -- (-0.5,0);
+		\draw (-1.5,1) -- (0.5,0);
+		\draw (-1.5,1) -- (-0.5,0);
+		\draw (-0.5,0) -- (-0.5,-1);
+		\draw (-0.5,0) -- (0.5,-1);
+		\draw (0.5,0) -- (-0.5,-1);
+		\draw (0.5,0) -- (0.5,-1);
+		\draw (1.5,-2) -- (0.5,-1);
+		\draw (1.5,-2) -- (-0.5,-1);
+		\draw (0.5,-2) -- (0.5,-1);
+		\draw (0.5,-2) -- (-0.5,-1);
+		\draw (-0.5,-2) -- (0.5,-1);
+		\draw (-0.5,-2) -- (-0.5,-1);
+		\draw (-1.5,-2) -- (0.5,-1);
+		\draw (-1.5,-2) -- (-0.5,-1);
+		%%%
+		\draw (-1.5,1.5) -- (-1.5,1);
+		\draw (-0.5,1.5) -- (-0.5,1);
+		\draw (0.5,1.5) -- (0.5,1);
+		\draw (1.5,1.5) -- (1.5,1);
+		\draw (-1.5,-2.5) -- (-1.5,-2);
+		\draw (-0.5,-2.5) -- (-0.5,-2);
+		\draw (0.5,-2.5) -- (0.5,-2);
+		\draw (1.5,-2.5) -- (1.5,-2);
+		\draw (-2,-2.5) -- (2,-2.5) -- (2,-3) -- (-2,-3) -- (-2,-2.5);
+		\draw (-2,1.5) -- (2,1.5) -- (2,2) -- (-2,2) -- (-2,1.5);
+		%%%
+		\draw (0,-4) -- (0,-3);
+		\draw (-2,-4.5) -- (2,-4.5) -- (2,-4) -- (-2,-4) -- (-2,-4.5);
+		%%%
+		\draw[fill=white] (1.5,1) circle (5pt);
+		\draw[fill=white] (0.5,1) circle (5pt);
+		\draw[fill=white] (-0.5,1) circle (5pt);
+		\draw[fill=white] (-1.5,1) circle (5pt);
+		%%%
+		\draw[fill=white] (0.5,0) circle (5pt);
+		\draw[fill=white] (-0.5,0) circle (5pt);
+		%%%
+		\draw[fill=white] (0.5,-1) circle (5pt);
+		\draw[fill=white] (-0.5,-1) circle (5pt);
+		%%%
+		\draw[fill=white] (1.5,-2) circle (5pt);
+		\draw[fill=white] (0.5,-2) circle (5pt);
+		\draw[fill=white] (-0.5,-2) circle (5pt);
+		\draw[fill=white] (-1.5,-2) circle (5pt);
+		%%%
+		\draw (2,1.75) to[out=0,in=90] (3,0.75) -- (3,-2.5) to[out=-90,in=0] (2,-3.5) -- (0,-3.5);
+		\draw[fill=white] (0,-3.5) circle (5pt);
+		\draw (0,-3.5) node {\footnotesize $+$};
+		\draw (0,1.75) node {\footnotesize $\chi(\beta_i,x)$};
+		\draw (0,-2.75) node {\footnotesize $\psi(\alpha_i,\beta_j,x)$};
+		\draw (0,-4.25) node {\footnotesize $\phi(\alpha_i, \chi(\beta_j,x))$};
+		\draw (3,-1.12) node[anchor=west] {\footnotesize $\chi(\beta_i,x)$};
+	\end{tikzpicture}
+	\caption{A bottlenecked residual block.}
+	\label{fig:resbottle-block}
+\end{figure}
+In the examples drawn (figures~\ref{fig:resblock} and~\ref{fig:resbottle-block}), there are 40 parameters in the ResNet, but only 28 parameters in the ResBottle. This allows us to either simplify the model, add more layers, or make the layers much wider without blowing up the number of parameters that need to be trained.
 \section{Results}
+We present the results in two sections: the first will be about the training and testing results, and the second comparing between a cocoa chain and an emulated chain. For training and testing, we use the "train, validate, test" approach. We generate three completely independent chains, one is only for training the model, and is a high temperature chain with data well beyond the expected range. The second is used to validate that the model is not overfitting as the training proceeds. The last set is another high temperature chain (but not as high as the training) which is used to test the model as if it were being used as normal. The testing involves reintroducing specific analysis choices such as the scale cut.
+
+When deciding on which model to use, we want to look at several aspects:
+\begin{itemize}
+	\item The number of parameters. The more parameters we have, the longer it takes to train, and the longer it takes to evaluate. This will make it difficult for groups without top-of-the-line equipment.
+	\item The $\Delta\chi^2$ between the emulator and accepted computational methods. Many experiments have a $\chi^2$ requirement for their emulators; for example DES requires $\Delta\chi^2<0.3$ between any approximations and Cosmolike.
+	\item Generalizability. As we increase the volume covered in the parameter space, which models are able to keep up with the growing modelling volume? Which models can handle more input parameters (which many models need, such as early dark energy with $\sim10$ extra parameters).
+\end{itemize}
+These get analyzed on the test data set.
+\subsection{Training and Testing}
+\subsection{Running Full Chains}
 \section{Application to Tension Calibration}

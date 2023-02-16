@@ -8,4 +8,21 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Planck EE power spectrum\relax }}{22}{figure.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear power spectrum from Euclid emulator. When either the geometry or growth parameters are varied, the other is kept fixed at $\Omega ^X=0.3$.\relax }}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Effect of changing growth and geometry parameters on $\sigma _8(z)$.\relax }}{34}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Relative difference between Euclid emulator and Halofit.\relax }}{37}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Cosmic shear, 2x2pt combinations, and 3x2pt posteriors for DES-Y3 with the ALL prior.\relax }}{38}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparison of DES-Y1 and DES-Y3 posteriors.\relax }}{39}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Split postiors for DES-Y3 3x2pt and ALL prior.\relax }}{40}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces DES-Y1 and DES-Y3 posteriors for 2-point correlation functions.\relax }}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{42}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces $w$CDM posteriors.\relax }}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{43}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{43}{figure.caption.35}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arrangement of neurons.\relax }}{45}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Neurons with synapses.\relax }}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Neurons, synapses, and IO.\relax }}{46}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces A multi-layer perceptron.\relax }}{49}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces A residual block.\relax }}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces A bottlenecked residual block.\relax }}{50}{figure.caption.41}%
