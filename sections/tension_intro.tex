@@ -171,3 +171,11 @@ This can be solved by $\gamma^i(t) = \int\limits_{U\subset X}v^i(\gamma(t))\text
 Autoregressive models have serval pitfalls that we would like to avoid in this project. The main one is that autoregressive models are sensitive to the order of the input, however our result does not have any dependence. 
 
 The integration error is determined using the Clopper-Pearson interval on the binomial distribution.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth]{plots/t0_gauss.png}
+	\includegraphics[width=0.65\textwidth]{plots/flow_param.png}
+	\includegraphics[width=0.6\textwidth]{plots/t=1.png}
+	\caption{An example of normalizing flow as the transformation is `turned on'. The non-gaussian distribution (bottom) is mapped to a gaussian distribution (top).}
+	\label{fig:NF}
+\end{figure}
