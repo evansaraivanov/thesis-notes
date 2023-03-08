@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.26)  16 FEB 2023 12:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.26)  8 MAR 2023 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,25 +982,25 @@ ts.decorations.softclip.code.tex))
  (./main.aux (./sections/appendixSdkr.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-Package hyperref Info: Link coloring OFF on input line 112.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+Package hyperref Info: Link coloring OFF on input line 109.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1014,9 +1014,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 112.
-LaTeX Info: Redefining \pageref on input line 112.
-LaTeX Info: Redefining \nameref on input line 112.
+LaTeX Info: Redefining \ref on input line 109.
+LaTeX Info: Redefining \pageref on input line 109.
+LaTeX Info: Redefining \nameref on input line 109.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -1061,16 +1061,16 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) [0
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (36.13501pt too wide) in paragraph at lines 117--117
+Overfull \hbox (36.13501pt too wide) in paragraph at lines 114--114
  [][] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 117
+LaTeX Font Info:    Trying to load font information for U+msa on input line 114
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 117
+LaTeX Font Info:    Trying to load font information for U+msb on input line 114
 .
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1086,15 +1086,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `main.toc'.
 
  [6] (./main.lof
-Overfull \hbox (0.10492pt too wide) in paragraph at lines 2--2
+Overfull \hbox (8.27751pt too wide) in paragraph at lines 2--2
+ [][] [][]\OT1/cmr/m/n/12 Observer freely falling with par-ti-cles ex-pe-ri-enc
+e tidal forces within 
+ []
+
+
+Overfull \hbox (0.10492pt too wide) in paragraph at lines 3--3
  [][] [][]\OT1/cmr/m/n/12 Definition of proper time (bold line) vs. co-or-di-na
 te time (dashed 
  []
 
 
-Overfull \hbox (8.27751pt too wide) in paragraph at lines 3--3
- [][] [][]\OT1/cmr/m/n/12 Observer freely falling with par-ti-cles ex-pe-ri-enc
-e tidal forces within 
+Overfull \hbox (3.92775pt too wide) in paragraph at lines 6--6
+ [][] [][]\OT1/cmr/m/n/12 CMB TT power spec-trum, em-pha-siz-ing the scale of a
+nisotropies [[]].[] [][]  
  []
 
 [7
@@ -1112,67 +1118,68 @@ Chapter 1.
 
 
 ] [2] [3] [4]
-<plots/opo0220a.jpg, id=419, 1027.84pt x 1027.84pt>
-File: plots/opo0220a.jpg Graphic file (type jpg)
-<use plots/opo0220a.jpg>
-Package pdftex.def Info: plots/opo0220a.jpg  used on input line 141.
-(pdftex.def)             Requested size: 298.11374pt x 298.11302pt.
+<plots/weic2305a.jpg, id=417, 963.6pt x 733.0587pt>
+File: plots/weic2305a.jpg Graphic file (type jpg)
+<use plots/weic2305a.jpg>
+Package pdftex.def Info: plots/weic2305a.jpg  used on input line 143.
+(pdftex.def)             Requested size: 298.11374pt x 226.78723pt.
 <plots/Planck_CMB.jpg, id=420, 1927.2pt x 963.6pt>
 File: plots/Planck_CMB.jpg Graphic file (type jpg)
 <use plots/Planck_CMB.jpg>
-Package pdftex.def Info: plots/Planck_CMB.jpg  used on input line 147.
+Package pdftex.def Info: plots/Planck_CMB.jpg  used on input line 149.
 (pdftex.def)             Requested size: 298.11374pt x 149.04768pt.
- [5] [6 <./plots/opo0220a.jpg>] [7 <./plots/Planck_CMB.jpg>]
-Overfull \hbox (8.44167pt too wide) in paragraph at lines 190--191
+ [5] [6 <./plots/weic2305a.jpg>] [7 <./plots/Planck_CMB.jpg>]
+Overfull \hbox (8.44167pt too wide) in paragraph at lines 192--193
 []\OT1/cmr/m/n/12 The sec-ond Fried-man equa-tion comes from the trace of Ein-s
 tein's equa-tion. 
  []
 
-[8] [9]) (./sections/experiment.tex [10]
+[8]) (./sections/experiment.tex [9]
 Chapter 2.
-<plots/hubble_weak_lensing.png, id=475, 1345.025pt x 521.95pt>
+<plots/hubble_weak_lensing.png, id=462, 1345.025pt x 521.95pt>
 File: plots/hubble_weak_lensing.png Graphic file (type png)
 <use plots/hubble_weak_lensing.png>
 Package pdftex.def Info: plots/hubble_weak_lensing.png  used on input line 6.
 (pdftex.def)             Requested size: 397.485pt x 154.24469pt.
-[11
+[10
 
- <./plots/hubble_weak_lensing.png>] [12] [13] [14] [15] [16] [17] [18]
-[19] [20]
-<plots/Planck_TT.png, id=570, 826.08624pt x 615.29875pt>
+ <./plots/hubble_weak_lensing.png>] [11] [12] [13] [14] [15] [16] [17]
+[18] [19]
+<plots/Planck_TT.png, id=566, 826.08624pt x 615.29875pt>
 File: plots/Planck_TT.png Graphic file (type png)
 <use plots/Planck_TT.png>
-Package pdftex.def Info: plots/Planck_TT.png  used on input line 311.
+Package pdftex.def Info: plots/Planck_TT.png  used on input line 319.
 (pdftex.def)             Requested size: 341.43306pt x 254.31146pt.
- [21] [22 <./plots/Planck_TT.png>]
-<plots/planck_TE.png, id=584, 734.745pt x 513.92pt>
+ [20] [21 <./plots/Planck_TT.png>]
+<plots/planck_TE.png, id=582, 734.745pt x 513.92pt>
 File: plots/planck_TE.png Graphic file (type png)
 <use plots/planck_TE.png>
-Package pdftex.def Info: plots/planck_TE.png  used on input line 327.
+Package pdftex.def Info: plots/planck_TE.png  used on input line 335.
 (pdftex.def)             Requested size: 341.43306pt x 238.82132pt.
-<plots/planck_EE.png, id=585, 733.74126pt x 513.92pt>
+<plots/planck_EE.png, id=583, 733.74126pt x 513.92pt>
 File: plots/planck_EE.png Graphic file (type png)
 <use plots/planck_EE.png>
-Package pdftex.def Info: plots/planck_EE.png  used on input line 333.
+Package pdftex.def Info: plots/planck_EE.png  used on input line 341.
 (pdftex.def)             Requested size: 341.43306pt x 239.14284pt.
 
-Overfull \hbox (32.29881pt too wide) in paragraph at lines 338--338
+Overfull \hbox (32.29881pt too wide) in paragraph at lines 346--346
 []\OT1/cmr/bx/n/17.28 Tensions Be-tween Weak Lens-ing and CMB 
  []
 
-[23 <./plots/planck_TE.png>]
-<plots/h0_tension.jpg, id=593, 972.63374pt x 1387.1825pt>
+[22] [23 <./plots/planck_TE.png> <./plots/planck_EE.png>]
+<plots/h0_tension.jpg, id=597, 972.63374pt x 1387.1825pt>
 File: plots/h0_tension.jpg Graphic file (type jpg)
 <use plots/h0_tension.jpg>
-Package pdftex.def Info: plots/h0_tension.jpg  used on input line 348.
+Package pdftex.def Info: plots/h0_tension.jpg  used on input line 356.
 (pdftex.def)             Requested size: 298.11374pt x 425.17497pt.
-<plots/s8_tension.jpg, id=594, 180.99478pt x 186.7508pt>
+<plots/s8_tension.jpg, id=598, 180.99478pt x 186.7508pt>
 File: plots/s8_tension.jpg Graphic file (type jpg)
 <use plots/s8_tension.jpg>
-Package pdftex.def Info: plots/s8_tension.jpg  used on input line 354.
+Package pdftex.def Info: plots/s8_tension.jpg  used on input line 362.
 (pdftex.def)             Requested size: 298.11374pt x 307.63538pt.
-) (./sections/tension_intro.tex [24 <./plots/planck_EE.png>] [25 <./plots/h0_te
-nsion.jpg>] [26 <./plots/s8_tension.jpg>]
+)
+(./sections/tension_intro.tex [24] [25 <./plots/h0_tension.jpg>] [26 <./plots/s
+8_tension.jpg>]
 Chapter 3.
 [27
 
@@ -1190,42 +1197,53 @@ cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 g\OT1/cmr/m/n
 L/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )
  []
 
-[28] [29]
-Overfull \hbox (14.84796pt too wide) in paragraph at lines 67--67
-[]\OT1/cmr/bx/n/14.4 Metric 2: Pa-ram-e-ter Dif-fer-ence in Up-date Form 
- []
+[28] [29] [30] [31] [32]
 
-[30] [31] [32] [33]) (./sections/gg_split.tex [34]
+LaTeX Warning: Reference `figure' on page 33 undefined on input line 137.
+
+[33]
+<plots/t=1.png, id=684, 752.8125pt x 556.0775pt>
+File: plots/t=1.png Graphic file (type png)
+<use plots/t=1.png>
+Package pdftex.def Info: plots/t=1.png  used on input line 176.
+(pdftex.def)             Requested size: 357.73407pt x 264.24986pt.
+<plots/3d_flow.png, id=685, 323.0469pt x 290.5254pt>
+File: plots/3d_flow.png Graphic file (type png)
+<use plots/3d_flow.png>
+Package pdftex.def Info: plots/3d_flow.png  used on input line 182.
+(pdftex.def)             Requested size: 357.73407pt x 321.73338pt.
+) (./sections/gg_split.tex [34] [35 <./plots/t=1.png>] [36 <./plots/3d_flow.png
+>]
 Chapter 4.
-[35
+[37
 
 ]
-<plots/Pk.pdf, id=674, 558.88799pt x 425.44633pt>
+<plots/Pk.pdf, id=712, 558.88799pt x 425.44633pt>
 File: plots/Pk.pdf Graphic file (type pdf)
 <use plots/Pk.pdf>
 Package pdftex.def Info: plots/Pk.pdf  used on input line 18.
 (pdftex.def)             Requested size: 298.11374pt x 226.93964pt.
-<plots/sigma8.pdf, id=676, 542.82799pt x 404.45384pt>
+<plots/sigma8.pdf, id=714, 542.82799pt x 404.45384pt>
 File: plots/sigma8.pdf Graphic file (type pdf)
 <use plots/sigma8.pdf>
 Package pdftex.def Info: plots/sigma8.pdf  used on input line 26.
-(pdftex.def)             Requested size: 178.86703pt x 133.27267pt.
-<plots/sigma8_w.pdf, id=677, 542.82799pt x 404.45384pt>
+(pdftex.def)             Requested size: 194.76982pt x 145.12189pt.
+<plots/sigma8_w.pdf, id=715, 542.82799pt x 404.45384pt>
 File: plots/sigma8_w.pdf Graphic file (type pdf)
 <use plots/sigma8_w.pdf>
 Package pdftex.def Info: plots/sigma8_w.pdf  used on input line 31.
-(pdftex.def)             Requested size: 178.86703pt x 133.27267pt.
- [36 <./plots/Pk.pdf>] [37 <./plots/sigma8.pdf> <./plots/sigma8_w.pdf
+(pdftex.def)             Requested size: 194.76982pt x 145.12189pt.
+ [38 <./plots/Pk.pdf>] [39 <./plots/sigma8.pdf> <./plots/sigma8_w.pdf
 
 pdfTeX warning: pdflatex (file ./plots/sigma8_w.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
->] [38]
-<plots/halo_vs_emu.pdf, id=831, 421.30525pt x 269.84814pt>
+>] [40]
+<plots/halo_vs_emu.pdf, id=870, 421.30525pt x 269.84814pt>
 File: plots/halo_vs_emu.pdf Graphic file (type pdf)
 <use plots/halo_vs_emu.pdf>
 Package pdftex.def Info: plots/halo_vs_emu.pdf  used on input line 132.
 (pdftex.def)             Requested size: 298.11374pt x 190.95117pt.
-
+ [41]
 Overfull \hbox (99.55753pt too wide) in paragraph at lines 140--141
 \OT1/cmr/m/n/12 best-fit pa-ram-e-ters with-out lens-ing, $(\OMS/cmsy/m/n/12 A[
 ] ^^B \OT1/cmr/m/n/12 10[]\OML/cmm/m/it/12 ; n[]; H[]; \OT1/cmr/m/n/12 
@@ -1237,99 +1255,175 @@ L/cmm/m/it/12 :\OT1/cmr/m/n/12 32\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m
  :\OT1/cmr/m/n/12 049)$,
  []
 
-[39]
-<plots/plot36_S8.pdf, id=837, 342.86308pt x 344.0793pt>
+<plots/plot36_S8.pdf, id=876, 342.86308pt x 344.0793pt>
 File: plots/plot36_S8.pdf Graphic file (type pdf)
 <use plots/plot36_S8.pdf>
 Package pdftex.def Info: plots/plot36_S8.pdf  used on input line 153.
 (pdftex.def)             Requested size: 298.11374pt x 299.1838pt.
-<plots/plot31v3.pdf, id=838, 342.51434pt x 343.97751pt>
+<plots/plot31v3.pdf, id=877, 342.51434pt x 343.97751pt>
 File: plots/plot31v3.pdf Graphic file (type pdf)
 <use plots/plot31v3.pdf>
 Package pdftex.def Info: plots/plot31v3.pdf  used on input line 159.
 (pdftex.def)             Requested size: 298.11374pt x 299.39447pt.
-<plots/plot204_v2.pdf, id=841, 342.54941pt x 344.1624pt>
+[42 <./plots/halo_vs_emu.pdf>]
+<plots/plot204_v2.pdf, id=934, 342.54941pt x 344.1624pt>
 File: plots/plot204_v2.pdf Graphic file (type pdf)
 <use plots/plot204_v2.pdf>
 Package pdftex.def Info: plots/plot204_v2.pdf  used on input line 168.
 (pdftex.def)             Requested size: 298.11374pt x 299.52914pt.
-<plots/plot208_v3.pdf, id=842, 342.54941pt x 344.1624pt>
+<plots/plot208_v3.pdf, id=935, 342.54941pt x 344.1624pt>
 File: plots/plot208_v3.pdf Graphic file (type pdf)
 <use plots/plot208_v3.pdf>
 Package pdftex.def Info: plots/plot208_v3.pdf  used on input line 175.
 (pdftex.def)             Requested size: 178.86703pt x 179.70593pt.
-<plots/plot208_v2.pdf, id=843, 342.54941pt x 344.1624pt>
+<plots/plot208_v2.pdf, id=936, 342.54941pt x 344.1624pt>
 File: plots/plot208_v2.pdf Graphic file (type pdf)
 <use plots/plot208_v2.pdf>
 Package pdftex.def Info: plots/plot208_v2.pdf  used on input line 180.
 (pdftex.def)             Requested size: 178.86703pt x 179.70593pt.
-<plots/plot_1d_resultv5.pdf, id=845, 708.36494pt x 508.82097pt>
+<plots/plot_1d_resultv5.pdf, id=938, 708.36494pt x 508.82097pt>
 File: plots/plot_1d_resultv5.pdf Graphic file (type pdf)
 <use plots/plot_1d_resultv5.pdf>
 Package pdftex.def Info: plots/plot_1d_resultv5.pdf  used on input line 190.
 (pdftex.def)             Requested size: 397.485pt x 285.5201pt.
- [40 <./plots/halo_vs_emu.pdf>] [41 <./plots/plot36_S8.pdf>]
-<plots/plot205v2.pdf, id=964, 347.16664pt x 345.31708pt>
+ [43 <./plots/plot36_S8.pdf>]
+<plots/plot205v2.pdf, id=1003, 347.16664pt x 345.31708pt>
 File: plots/plot205v2.pdf Graphic file (type pdf)
 <use plots/plot205v2.pdf>
 Package pdftex.def Info: plots/plot205v2.pdf  used on input line 202.
 (pdftex.def)             Requested size: 178.86703pt x 177.91667pt.
-<plots/plot209.pdf, id=965, 347.16664pt x 345.31708pt>
+<plots/plot209.pdf, id=1004, 347.16664pt x 345.31708pt>
 File: plots/plot209.pdf Graphic file (type pdf)
 <use plots/plot209.pdf>
 Package pdftex.def Info: plots/plot209.pdf  used on input line 207.
 (pdftex.def)             Requested size: 178.86703pt x 177.91667pt.
-<plots/plot_1d_resultv6.pdf, id=966, 818.19305pt x 617.10548pt>
+<plots/plot_1d_resultv6.pdf, id=1005, 818.19305pt x 617.10548pt>
 File: plots/plot_1d_resultv6.pdf Graphic file (type pdf)
 <use plots/plot_1d_resultv6.pdf>
 Package pdftex.def Info: plots/plot_1d_resultv6.pdf  used on input line 216.
 (pdftex.def)             Requested size: 397.485pt x 299.79486pt.
- [42 <./plots/plot31v3.pdf>]
-<plots/internal_tension_v4.pdf, id=1024, 628.90231pt x 586.23956pt>
+ [44 <./plots/plot31v3.pdf>] [45 <./plots/plot204_v2.pdf>]
+<plots/internal_tension_v4.pdf, id=1107, 628.90231pt x 586.23956pt>
 File: plots/internal_tension_v4.pdf Graphic file (type pdf)
 <use plots/internal_tension_v4.pdf>
 Package pdftex.def Info: plots/internal_tension_v4.pdf  used on input line 227.
 
 (pdftex.def)             Requested size: 178.86703pt x 166.73114pt.
-<plots/internal_tension_wcdm.pdf, id=1025, 628.90231pt x 586.23956pt>
+<plots/internal_tension_wcdm.pdf, id=1108, 628.90231pt x 586.23956pt>
 File: plots/internal_tension_wcdm.pdf Graphic file (type pdf)
 <use plots/internal_tension_wcdm.pdf>
 Package pdftex.def Info: plots/internal_tension_wcdm.pdf  used on input line 23
 2.
 (pdftex.def)             Requested size: 178.86703pt x 166.73114pt.
- [43 <./plots/plot204_v2.pdf>]) (./sections/emulators.tex [44 <./plots/plot208_
-v3.pdf> <./plots/plot208_v2.pdf>] [45 <./plots/plot_1d_resultv5.pdf> <./plots/p
-lot205v2.pdf> <./plots/plot209.pdf>] [46 <./plots/plot_1d_resultv6.pdf> <./plot
-s/internal_tension_v4.pdf> <./plots/internal_tension_wcdm.pdf>]
+) (./sections/emulators.tex [46 <./plots/plot208_v3.pdf> <./plots/plot208_v2.pd
+f>] [47 <./plots/plot_1d_resultv5.pdf>]
+[48 <./plots/plot205v2.pdf> <./plots/plot209.pdf> <./plots/plot_1d_resultv6.pdf
+>] [49 <./plots/internal_tension_v4.pdf> <./plots/internal_tension_wcdm.pdf>]
 Chapter 5.
-[47
+[50
 
 ]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 95.
 
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [48]
-[49] [50] [51] [52] [53]) [54] (./main.bbl) [55
+) [51]
+[52] [53] [54] [55] [56]
+<plots/losses_resnet_3_256.pdf, id=1533, 462.52798pt x 346.89601pt>
+File: plots/losses_resnet_3_256.pdf Graphic file (type pdf)
+<use plots/losses_resnet_3_256.pdf>
+Package pdftex.def Info: plots/losses_resnet_3_256.pdf  used on input line 378.
+
+(pdftex.def)             Requested size: 357.73407pt x 268.3123pt.
+<plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf, id=1535, 462.52798pt x 346.
+89601pt>
+File: plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf Graphic file (type pdf)
+
+<use plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf>
+Package pdftex.def Info: plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf  use
+d on input line 385.
+(pdftex.def)             Requested size: 357.73407pt x 268.3123pt.
+ [57]
+<plots/model_table_mlp.pdf, id=1540, 316.84937pt x 314.89418pt>
+File: plots/model_table_mlp.pdf Graphic file (type pdf)
+<use plots/model_table_mlp.pdf>
+Package pdftex.def Info: plots/model_table_mlp.pdf  used on input line 395.
+(pdftex.def)             Requested size: 194.76982pt x 193.56987pt.
+<plots/model_table_resnet.pdf, id=1541, 316.84937pt x 314.89418pt>
+File: plots/model_table_resnet.pdf Graphic file (type pdf)
+<use plots/model_table_resnet.pdf>
+Package pdftex.def Info: plots/model_table_resnet.pdf  used on input line 400.
+(pdftex.def)             Requested size: 194.76982pt x 193.56987pt.
+<plots/model_table_resbottle.pdf, id=1542, 600.36325pt x 268.6775pt>
+File: plots/model_table_resbottle.pdf Graphic file (type pdf)
+<use plots/model_table_resbottle.pdf>
+Package pdftex.def Info: plots/model_table_resbottle.pdf  used on input line 40
+5.
+(pdftex.def)             Requested size: 357.73407pt x 160.09673pt.
+<plots/avg_chi2_v_n_params_new.pdf, id=1543, 462.52798pt x 346.89601pt>
+File: plots/avg_chi2_v_n_params_new.pdf Graphic file (type pdf)
+<use plots/avg_chi2_v_n_params_new.pdf>
+Package pdftex.def Info: plots/avg_chi2_v_n_params_new.pdf  used on input line 
+414.
+(pdftex.def)             Requested size: 357.73407pt x 268.3123pt.
+
+
+LaTeX Warning: Reference `section' on page 58 undefined on input line 419.
+
+
+LaTeX Warning: Reference `figure' on page 58 undefined on input line 421.
+
+
+LaTeX Warning: Reference `section' on page 58 undefined on input line 421.
+
+[58 <./plots/losses_resnet_3_256.pdf>]) [59 <./plots/cosmic_shear_resnet_nlayer
+_3_intdim_256.pdf>] [60 <./plots/model_table_mlp.pdf> <./plots/model_table_resn
+et.pdf
+
+pdfTeX warning: pdflatex (file ./plots/model_table_resnet.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+> <./plots/model_table_resbottle.pdf
+
+pdfTeX warning: pdflatex (file ./plots/model_table_resbottle.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+>] [61 <./plots/avg_chi2_v_n_params_new.pdf>] (./main.bbl [62
 
 
 ]
+Underfull \hbox (badness 1430) in paragraph at lines 97--105
+[]\OT1/cmr/m/n/12 Niall Mac-Crann, Jonathan Blazek, Bhu-vnesh Jain, and Elis-a-
+beth
+ []
+
+[63]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
+19.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 219.
+ [64])
+[65]
 \openout2 = `sections/appendixSdkr.aux'.
 
 
 No file sections/appendixSdkr.tex.
 (./main.aux (./sections/appendixSdkr.aux))
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 71701D879F5CAB820475AD2B05DC0390;8676.
+(rerunfilecheck)             Checksum: 0C2CC64160476F86FFEB0DA89990CF18;7559.
  ) 
 Here is how much of TeX's memory you used:
- 38174 strings out of 478268
- 881263 string characters out of 5846347
- 1253499 words of memory out of 5000000
- 55369 multiletter control sequences out of 15000+600000
- 489318 words of font info for 101 fonts, out of 8000000 for 9000
+ 38334 strings out of 478268
+ 885361 string characters out of 5846347
+ 1254499 words of memory out of 5000000
+ 55494 multiletter control sequences out of 15000+600000
+ 489487 words of font info for 102 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
- 114i,17n,118p,1037b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,17n,118p,1238b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1347,13 +1441,14 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
 22/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (64 pages, 6922808 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2022/t
+exmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (74 pages, 8483815 bytes).
 PDF statistics:
- 1638 PDF objects out of 1728 (max. 8388607)
- 970 compressed objects within 10 object streams
- 281 named destinations out of 1000 (max. 500000)
+ 1992 PDF objects out of 2073 (max. 8388607)
+ 1119 compressed objects within 12 object streams
+ 304 named destinations out of 1000 (max. 500000)
  550 words of extra memory for PDF output out of 10000 (max. 10000000)
 

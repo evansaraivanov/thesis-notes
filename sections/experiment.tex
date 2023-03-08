@@ -1,10 +1,10 @@
-\chapter{Weak Lensing and the Cosmic Microwave Background}
+\chapter{Measurement of Weak Lensing and the Cosmic Microwave Background}
 \section{Weak Lensing}
 In general, contemporary weak lensing surveys measure the light emmited from galaxies in two components: galaxy position and galaxy shear. In the following sections the theoretical base for cosmological weak lensing surveys are described. However, before discussing the two relevant observables, one needs to formalize the concept of weak lensing.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{plots/hubble_weak_lensing.png}
-	\caption{Image of weak lensing taken by the Hubble Space Telescope.}
+	\caption{Image of weak lensing taken by the Hubble Space Telescope~\cite{hubble_lensing}.}
 	\label{fig:weak_lensing}
 \end{figure}
 \subsection{The Linear Matter Power Spectrum}
@@ -39,9 +39,9 @@ This together with the Poisson equation for the matter density contrast field gi
 \begin{equation}
 	\delta_m(k) = \frac{2}{5}\frac{k^2}{\Omega_mH_0^2}\mathcal{R}(k)T(k,a)D_+(a)
 \end{equation}
-The power spectrum of an observable is defined as the two-point correlation function of the observable.
+The power spectrum of an observable is defined as the two-point correlation function of the observable in Fourier space.
 \begin{equation}
-	P_\mathcal{O} = \langle \mathcal{O}\mathcal{O} \rangle
+	P_\mathcal{O}(k) = \langle \mathcal{O}(k)\mathcal{O}(k) \rangle
 \end{equation}
 Thus the linear matter power spectrum (because we restricted the matter density contrast field to linear order terms in the perturbation) is given by
 \begin{equation}
@@ -249,7 +249,7 @@ As we discussed in the galaxy density section, to perform the computation one mu
 \end{equation}
 The shift $\Delta z$ must be determined before one can compute the galaxy clustering and galaxy lensing correlation functions.
 \subsubsection{Intrinsic Alignment of Galaxies}
-As can be seen in figure (fig), galaxy shapes are not completely random. In the absence of lensing, there is still some non-zero correlation between the shapes. This is referred to as Intrinsic Alignment. There are two models of intrinsic alignment that will be considered in this thesis: the Tidal Alignment Tidal Torquing (TATT) model and the Non-linear Alignment (NLA) model. The TATT depends on the tidal tensor $s_{ij}$ which contains the information about tidal forces due to non-uniform gravitational fields. Tidal forces are a source of intrinsic alignment and shear (figure). The model is given by
+As can be seen in figure (fig), galaxy shapes are not completely random. In the absence of lensing, there is still some non-zero correlation between the shapes. This is referred to as Intrinsic Alignment. There are two models of intrinsic alignment that will be considered in this thesis: the Tidal Alignment Tidal Torquing (TATT) model~\cite{krause_dark_2021,blazek_beyond_2019} and the Non-linear Alignment (NLA) model. The TATT depends on the tidal tensor $s_{ij}$ which contains the information about tidal forces due to non-uniform gravitational fields. Tidal forces are a source of intrinsic alignment and shear (figure). The model is given by
 \begin{equation}
 	\gamma_{ij}^I = \underbrace{C_1s_{ij}}_{\text{tidal alignment}}+
 	\underbrace{b_{TA}C_1(\delta_m\times s_{ij})}_{\text{density weighting}}+
@@ -292,6 +292,14 @@ Observed shear is not a completely astrophysical phenomenon. For example, a majo
 \end{equation}
 where $i$ and $j$ denote the source and lens bin respectively. The multiplicative shear calibration is also a fast parameter.
 \subsubsection{Point Mass}
+Currently, we are unable to model the contribution of small scales to the tangential shear~\cite{maccrann_controlling_2020}. The tangential shear can be written in terms of the surface mass density $\Sigma$ in the tangential direction
+\begin{equation}
+	\gamma_t(R/D_A) = \frac{\bar\Sigma(0,R) - \Sigma(R)}{\Sigma_\mathrm{crit}} = \frac{\Delta\Sigma(R)}{\Sigma_\mathrm{crit}}
+\end{equation}
+We can only model the tangential shear to $r_\mathrm{min}$, which allows us to write the point mass contribution (named for the $R^{-2}$ dependence) as
+\begin{equation}
+	\Delta\Sigma(R) = \Delta\Sigma^{\mathrm{model}}(R) + \frac{B}{R^2}
+\end{equation}
 \subsubsection{Lensing Magnification}
 As discussed in (section), the intrinsic shape of galaxies also gets magnified. This effect is introduced as a parmeter $C_l^i$ and is fixed experimentally.
 

@@ -128,7 +128,7 @@ The output is the cosmic shear data vector. We prepreocess this by diagonalizing
 \end{equation}
 Where $C$ is the covariance of the data and $P$ the change of basis matrix to the eigenbasis of $C$. This generally means we will have a lot of negative parameters, and the input and output are both symmetric about 0, thus we choose to use an antisymmetric activation function so that the symmetry around 0 can be preserved. In our case, we use $\tanh(x)$. Additionally, all of these NNs are feedforward sequential models. Sequential means we separate the neurons into layers, and feedforward means the data moves only from layer $n$ to layer $n+1$ and never backwards.
 \subsection{Multi-Layer Perceptron}
-The first graph architecture we study in the multi-layer perceptron (the name is adopted from convolutional neural networks `percieving' image features). In this architecture a node in a given layer is connected to every node in the following layer, so this network is called `simply connected'.
+The first graph architecture we study in the multi-layer perceptron (the name is adopted from convolutional neural networks `percieving' image features). In this architecture a node in a given layer is connected to every node in the following layer, so this network is called `simply connected' (figure~\ref{fig:mlp}).
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
@@ -207,7 +207,7 @@ The first graph architecture we study in the multi-layer perceptron (the name is
 	\label{fig:mlp}
 \end{figure}
 \subsection{Residual Network}
-As mentioned above, there is an issue of vanishing gradients with deep neural networks. One way we can avoid this is by changing the quantity we want to model. Note that, if the model weights approach 0, gradients can vanish, but we can avoid this by adding the input to the output. Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer parameterized by $\beta_i$ so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
+As mentioned above, there is an issue of vanishing gradients with deep neural networks. One way we can avoid this is by changing the quantity we want to model. Note that, if the model weights approach 0, gradients can vanish, but we can avoid this by adding the input to the output (figure~\ref{fig:resblock}). Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer parameterized by $\beta_i$ so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
 \begin{equation}
 	\phi(\alpha_i,\chi(\beta_i,x)) = \psi(\alpha_i,\beta_i,x)+\chi(\beta_i,x)
 \end{equation}
@@ -292,7 +292,7 @@ This allows gradients with respect to the parameters $\beta_i$ to propagate to t
 	\label{fig:resblock}
 \end{figure}
 \subsection{Bottlenecked Residual Network}
-The ResNet allows us to create much deeper networks, but the number of parameters stays the same as the linear model, making ResNets difficult to train (and especially the minimum of two linear layers. We can make a small modification to the ResNet that can resolve this, where there is an additional layer and the number of dimensions reduces in the middle (figure~\ref{fig:resbottle-block}). This forces the neural network to prioritize certain features and ignore ones that are not as necessary. Due to the shape this architecture makes, its referred to as a \textit{bottlenecked residual network} (ResBottle).
+The ResNet allows us to create much deeper networks, but the number of parameters stays the same as the linear model, making ResNets difficult to train (and especially the minimum of two linear layers. We can make a small modification to the ResNet that can resolve this, where there is an additional layer and the number of dimensions reduces in the middle (figure~\ref{fig:resbottle-block}). This forces the neural network to prioritize certain features and ignore ones that are not as necessary. Due to the shape this architecture makes, its referred to as a \textit{bottlenecked residual network} (ResBottle) (figure~\ref{fig:resbottle-block}).
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
@@ -368,7 +368,65 @@ When deciding on which model to use, we want to look at several aspects:
 	\item The $\Delta\chi^2$ between the emulator and accepted computational methods. Many experiments have a $\chi^2$ requirement for their emulators; for example DES requires $\Delta\chi^2<0.3$ between any approximations and Cosmolike.
 	\item Generalizability. As we increase the volume covered in the parameter space, which models are able to keep up with the growing modelling volume? Which models can handle more input parameters (which many models need, such as early dark energy with $\sim10$ extra parameters).
 \end{itemize}
-These get analyzed on the test data set.
+These get analyzed on the test data set. Because of the second point above, we define the loss function as the difference in $\chi^2$ between the emulator and cosmolike. This allows us to capture the covariances in the data.
 \subsection{Training and Testing}
-\subsection{Running Full Chains}
+We train the emulator by using a rough Guassian approximation on the cosmological parameters. The benefit is that running MCMC chains on a simple gaussian without the need for cosmolike is extremely fast. Given the samples, the data vector calculation is trivially parallelizable, so the entire process is significantly faster than running an MCMC in cosmolike. 
+
+First, we examine the training and validation loss at each epoch. The training loss is the average loss of all baches in an epoch. Figure~\ref{fig:train_loss_resnet} displays the training loss of a ResNet model with 3 ResNet blocks and 256 neurons in each hidden layer. In this case, we can see a consistent decline in both the training and validation loss. Additionally, we can see the points where the learning rate decreases (see epoch 50 and epoch 85 in figure~\ref{fig:train_loss_resnet}) which occur when validation loss plateus, following the expected behaviour. This demonstrates that we are likely not overfitting the training data.
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/losses_resnet_3_256.pdf}
+	\caption{Loss of a ResNet model with 3 ResNet blocks and 256 neurons in each layer.}
+	\label{fig:train_loss_resnet}
+\end{figure}
+Using a trained model, we evaluate $\Delta\chi^2$ on the test data, a $T=8$ gaussian approximated chain (figure~\ref{fig:testing_loss}). As we can see, our model is able to generalize well to a $T=8$ chain. 
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf}
+	\caption{Testing loss on a $T=8$ chain.}
+	\label{fig:testing_loss}
+\end{figure}
+
+Additionally, we can test how high of a temperature we can train on and still get satisfactory performance.
+
+\begin{figure}[tb]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{plots/model_table_mlp.pdf}
+		\caption{MLP average loss}
+		\label{fig:mlp_table}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{plots/model_table_resnet.pdf}
+		\caption{ResNet average loss}
+		\label{fig:resnet_table}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.9\textwidth}
+		\includegraphics[width=\textwidth]{plots/model_table_resbottle.pdf}
+		\caption{ResBottle average loss}
+		\label{fig:resbottle_table}
+	\end{subfigure}
+	\label{fig:model_tables}
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/avg_chi2_v_n_params_new.pdf}
+	\caption{Average $\chi^2$ as a function of the number of parameters for each architecture.}
+	\label{fig:avg_chi2_nparams}
+\end{figure}
 \section{Application to Tension Calibration}
+As mentioned in section~\ref{section}, tension metrics require calibration between experiments. In this section, I will apply the use of emulators to do a first study of tension metric error. By shifting the parameters and generating noise realizations on the data, we can get a sense of how the error in the data propagates to error in the tension. This will provide additional information as to which tension metrics perform best, as well as adding context to how tension may vary given new measurements. Additionally, given that $n_\sigma=0$ means no tension, the error are tension metrics will allow us to gauge how reasonable it may be for the tension to be resolved by additional identical measurements.
+
+I will be shifting the LSST fiducial cosmology to $\pm5\sigma$ in both the $\sigma_8$ and $\Omega_m$ directions (figure~\ref{figure}). At each of these shifts, I will compute 1000 noise realizations on LSST cosmic shear using the data covariance. Finally, the tension will be computed using the methods described in section~\ref{section}.
+
+I chose to use the ResNet model with 3 ResBlocks and $256$ neurons in each hidden layer. This model provides good stability in the predictions, and is sufficiently small that running chains on the noise realizations is tractable.
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,26 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{ESA, NASA, James Webb Space Telescope}()]{webb_clusters}
+{ESA, NASA, James Webb Space Telescope}.
+\newblock Webb uncovers new details in pandora’s cluste.
+\newblock URL \url{https://esawebb.org/images/weic2305a/}.
+
+\bibitem[{ESA and Planck collaboration}()]{planck_CMB}
+{ESA and Planck collaboration}.
+\newblock Planck cmb.
+\newblock URL
+  \url{https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB}.
+
+\bibitem[{NASA, ESA, and J. Lotz and the HFF Team}()]{hubble_lensing}
+{NASA, ESA, and J. Lotz and the HFF Team}.
+\newblock Hubble lensing, release id: 2017-20.
+\newblock URL
+  \url{https://hubblesite.org/contents/news-releases/2017/news-2017-20.html}.
 
 \bibitem[{Baez, John} and {Muniain, Javier}(1994)]{baez_john_gauge_1994}
 {Baez, John} and {Muniain, Javier}.
@@ -18,5 +35,201 @@
 \newblock \emph{Modern {Cosmology}}.
 \newblock Academic Press, 2021.
 \newblock ISBN 978-0-12-815948-4.
+
+\bibitem[Krause et~al.(2021)Krause, Fang, Pandey, Secco, Alves, Huang, Blazek,
+  Prat, Zuntz, Eifler, MacCrann, DeRose, Crocce, Porredon, Jain, Troxel,
+  Dodelson, Huterer, Liddle, Leonard, Amon, Chen, Elvin-Poole, Ferté, Muir,
+  Park, Samuroff, Brandao-Souza, Weaverdyck, Zacharegkas, Rosenfeld, Campos,
+  Chintalapati, Choi, Di~Valentino, Doux, Herner, Lemos, Mena-Fernández,
+  Omori, Paterno, Rodriguez-Monroy, Rogozenski, Rollins, Troja, Tutusaus,
+  Wechsler, Abbott, Aguena, Allam, Andrade-Oliveira, Annis, Bacon, Baxter,
+  Bechtol, Bernstein, Brooks, Buckley-Geer, Burke, Rosell, Kind, Carretero,
+  Castander, Cawthon, Chang, Costanzi, da~Costa, Pereira, De~Vicente, Desai,
+  Diehl, Doel, Everett, Evrard, Ferrero, Flaugher, Fosalba, Frieman,
+  García-Bellido, Gaztanaga, Gerdes, Giannantonio, Gruen, Gruendl, Gschwend,
+  Gutierrez, Hartley, Hinton, Hollowood, Honscheid, Hoyle, Huff, James, Kuehn,
+  Kuropatkin, Lahav, Lima, Maia, Marshall, Martini, Melchior, Menanteau,
+  Miquel, Mohr, Morgan, Myles, Palmese, Paz-Chinchón, Petravick, Pieres,
+  Malagón, Sanchez, Scarpine, Schubnell, Serrano, Sevilla-Noarbe, Smith,
+  Soares-Santos, Suchyta, Tarle, Thomas, To, Varga, and
+  Weller]{krause_dark_2021}
+E.~Krause, X.~Fang, S.~Pandey, L.~F. Secco, O.~Alves, H.~Huang, J.~Blazek,
+  J.~Prat, J.~Zuntz, T.~F. Eifler, N.~MacCrann, J.~DeRose, M.~Crocce,
+  A.~Porredon, B.~Jain, M.~A. Troxel, S.~Dodelson, D.~Huterer, A.~R. Liddle,
+  C.~D. Leonard, A.~Amon, A.~Chen, J.~Elvin-Poole, A.~Ferté, J.~Muir, Y.~Park,
+  S.~Samuroff, A.~Brandao-Souza, N.~Weaverdyck, G.~Zacharegkas, R.~Rosenfeld,
+  A.~Campos, P.~Chintalapati, A.~Choi, E.~Di~Valentino, C.~Doux, K.~Herner,
+  P.~Lemos, J.~Mena-Fernández, Y.~Omori, M.~Paterno, M.~Rodriguez-Monroy,
+  P.~Rogozenski, R.~P. Rollins, A.~Troja, I.~Tutusaus, R.~H. Wechsler, T.~M.~C.
+  Abbott, M.~Aguena, S.~Allam, F.~Andrade-Oliveira, J.~Annis, D.~Bacon,
+  E.~Baxter, K.~Bechtol, G.~M. Bernstein, D.~Brooks, E.~Buckley-Geer, D.~L.
+  Burke, A.~Carnero Rosell, M.~Carrasco Kind, J.~Carretero, F.~J. Castander,
+  R.~Cawthon, C.~Chang, M.~Costanzi, L.~N. da~Costa, M.~E.~S. Pereira,
+  J.~De~Vicente, S.~Desai, H.~T. Diehl, P.~Doel, S.~Everett, A.~E. Evrard,
+  I.~Ferrero, B.~Flaugher, P.~Fosalba, J.~Frieman, J.~García-Bellido,
+  E.~Gaztanaga, D.~W. Gerdes, T.~Giannantonio, D.~Gruen, R.~A. Gruendl,
+  J.~Gschwend, G.~Gutierrez, W.~G. Hartley, S.~R. Hinton, D.~L. Hollowood,
+  K.~Honscheid, B.~Hoyle, E.~M. Huff, D.~J. James, K.~Kuehn, N.~Kuropatkin,
+  O.~Lahav, M.~Lima, M.~A.~G. Maia, J.~L. Marshall, P.~Martini, P.~Melchior,
+  F.~Menanteau, R.~Miquel, J.~J. Mohr, R.~Morgan, J.~Myles, A.~Palmese,
+  F.~Paz-Chinchón, D.~Petravick, A.~Pieres, A.~A.~Plazas Malagón, E.~Sanchez,
+  V.~Scarpine, M.~Schubnell, S.~Serrano, I.~Sevilla-Noarbe, M.~Smith,
+  M.~Soares-Santos, E.~Suchyta, G.~Tarle, D.~Thomas, C.~To, T.~N. Varga, and
+  J.~Weller.
+\newblock Dark {Energy} {Survey} {Year} 3 {Results}: {Multi}-{Probe} {Modeling}
+  {Strategy} and {Validation}, May 2021.
+\newblock URL \url{http://arxiv.org/abs/2105.13548}.
+\newblock arXiv:2105.13548 [astro-ph].
+
+\bibitem[Blazek et~al.(2019)Blazek, MacCrann, Troxel, and
+  Fang]{blazek_beyond_2019}
+Jonathan Blazek, Niall MacCrann, M.~A. Troxel, and Xiao Fang.
+\newblock Beyond linear galaxy alignments.
+\newblock \emph{Phys. Rev. D}, 100\penalty0 (10):\penalty0 103506, November
+  2019.
+\newblock ISSN 2470-0010, 2470-0029.
+\newblock \doi{10.1103/PhysRevD.100.103506}.
+\newblock URL \url{http://arxiv.org/abs/1708.09247}.
+\newblock arXiv:1708.09247 [astro-ph].
+
+\bibitem[MacCrann et~al.(2020)MacCrann, Blazek, Jain, and
+  Krause]{maccrann_controlling_2020}
+Niall MacCrann, Jonathan Blazek, Bhuvnesh Jain, and Elisabeth Krause.
+\newblock Controlling and leveraging small-scale information in tomographic
+  galaxy–galaxy lensing.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  491\penalty0 (4):\penalty0 5498--5509, February 2020.
+\newblock ISSN 0035-8711, 1365-2966.
+\newblock \doi{10.1093/mnras/stz2761}.
+\newblock URL \url{https://academic.oup.com/mnras/article/491/4/5498/5586592}.
+
+\bibitem[Raveri and Doux(2021)]{raveri_non-gaussian_2021}
+Marco Raveri and Cyrille Doux.
+\newblock Non-{Gaussian} estimates of tensions in cosmological parameters.
+\newblock \emph{Phys. Rev. D}, 104\penalty0 (4):\penalty0 043504, August 2021.
+\newblock ISSN 2470-0010, 2470-0029.
+\newblock \doi{10.1103/PhysRevD.104.043504}.
+\newblock URL \url{http://arxiv.org/abs/2105.03324}.
+\newblock arXiv:2105.03324 [astro-ph].
+
+\bibitem[Tobias()]{tobias_metropolis-hastings_nodate}
+Justin~L Tobias.
+\newblock The {Metropolis}-{Hastings} {Algorithm}.
+
+\bibitem[Zhao(2021)]{zhao_bayesian_2021}
+Boyang Zhao.
+\newblock Bayesian inference using {Markov} {Chain} {Monte} {Carlo} with
+  {Python} (from scratch and with {PyMC3}), January 2021.
+\newblock URL \url{https://boyangzhao.github.io/posts/mcmc-bayesian-inference}.
+
+\bibitem[Helsby()]{helsby_monte_nodate}
+Jennifer Helsby.
+\newblock Monte {Carlo} {Markov} {Chains}: {A} {Brief} {Introduction} and
+  {Implementation}.
+\newblock \penalty0 (5).
+
+\bibitem[Lemos et~al.(2021)Lemos, Raveri, Campos, Park, Chang, Weaverdyck,
+  Huterer, Liddle, Blazek, Cawthon, Choi, DeRose, Dodelson, Doux, Gatti, Gruen,
+  Harrison, Krause, Lahav, MacCrann, Muir, Prat, Rau, Rollins, Samuroff, Zuntz,
+  Hartley, Hoyle, Sevilla-Noarbe, Troxel, Aguena, Allam, Annis, Avila, Bacon,
+  Bernstein, Bertin, Brooks, Burke, Rosell, Kind, Carretero, Conselice,
+  Costanzi, Crocce, Pereira, De~Vicente, Desai, Diehl, Doel, Eckert, Eifler,
+  Elvin-Poole, Everett, Evrard, Ferrero, Ferté, Flaugher, Fosalba, Frieman,
+  García-Bellido, Gaztanaga, Gerdes, Giannantonio, Gruendl, Gschwend,
+  Gutierrez, Hinton, Hollowood, Honscheid, Huff, James, Jarvis, Lima, Maia,
+  March, Marshall, Martini, Melchior, Menanteau, Miquel, Mohr, Morgan, Myles,
+  Ogando, Palmese, Pandey, Paz-Chinchón, Plazas, Rodriguez-Monroy, Roodman,
+  Sanchez, Scarpine, Schubnell, Secco, Serrano, Smith, Soares-Santos, Suchyta,
+  Swanson, Tarle, Thomas, To, Varga, Weller, and Wester]{lemos_assessing_2021}
+P.~Lemos, M.~Raveri, A.~Campos, Y.~Park, C.~Chang, N.~Weaverdyck, D.~Huterer,
+  A.~R. Liddle, J.~Blazek, R.~Cawthon, A.~Choi, J.~DeRose, S.~Dodelson,
+  C.~Doux, M.~Gatti, D.~Gruen, I.~Harrison, E.~Krause, O.~Lahav, N.~MacCrann,
+  J.~Muir, J.~Prat, M.~M. Rau, R.~P. Rollins, S.~Samuroff, J.~Zuntz, W.~G.
+  Hartley, B.~Hoyle, I.~Sevilla-Noarbe, M.~A. Troxel, M.~Aguena, S.~Allam,
+  J.~Annis, S.~Avila, D.~Bacon, G.~M. Bernstein, E.~Bertin, D.~Brooks, D.~L.
+  Burke, A.~Carnero Rosell, M.~Carrasco Kind, J.~Carretero, C.~Conselice,
+  M.~Costanzi, M.~Crocce, M.~E.~S. Pereira, J.~De~Vicente, S.~Desai, H.~T.
+  Diehl, P.~Doel, K.~Eckert, T.~F. Eifler, J.~Elvin-Poole, S.~Everett, A.~E.
+  Evrard, I.~Ferrero, A.~Ferté, B.~Flaugher, P.~Fosalba, J.~Frieman,
+  J.~García-Bellido, E.~Gaztanaga, D.~W. Gerdes, T.~Giannantonio, R.~A.
+  Gruendl, J.~Gschwend, G.~Gutierrez, S.~R. Hinton, D.~L. Hollowood,
+  K.~Honscheid, E.~M. Huff, D.~J. James, M.~Jarvis, M.~Lima, M.~A.~G. Maia,
+  M.~March, J.~L. Marshall, P.~Martini, P.~Melchior, F.~Menanteau, R.~Miquel,
+  J.~J. Mohr, R.~Morgan, J.~Myles, R.~L.~C. Ogando, A.~Palmese, S.~Pandey,
+  F.~Paz-Chinchón, A.~A. Plazas, M.~Rodriguez-Monroy, A.~Roodman, E.~Sanchez,
+  V.~Scarpine, M.~Schubnell, L.~F. Secco, S.~Serrano, M.~Smith,
+  M.~Soares-Santos, E.~Suchyta, M.~E.~C. Swanson, G.~Tarle, D.~Thomas, C.~To,
+  T.~N. Varga, J.~Weller, and W.~Wester.
+\newblock Assessing tension metrics with {Dark} {Energy} {Survey} and {Planck}
+  data.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  505\penalty0 (4):\penalty0 6179--6194, July 2021.
+\newblock ISSN 0035-8711, 1365-2966.
+\newblock \doi{10.1093/mnras/stab1670}.
+\newblock URL \url{http://arxiv.org/abs/2012.09554}.
+\newblock arXiv:2012.09554 [astro-ph].
+
+\bibitem[Germain et~al.(2015)Germain, Gregor, Murray, and
+  Larochelle]{germain_made_2015}
+Mathieu Germain, Karol Gregor, Iain Murray, and Hugo Larochelle.
+\newblock {MADE}: {Masked} {Autoencoder} for {Distribution} {Estimation}, June
+  2015.
+\newblock URL \url{http://arxiv.org/abs/1502.03509}.
+\newblock arXiv:1502.03509 [cs, stat].
+
+\bibitem[Papamakarios et~al.(2018)Papamakarios, Pavlakou, and
+  Murray]{papamakarios_masked_2018}
+George Papamakarios, Theo Pavlakou, and Iain Murray.
+\newblock Masked {Autoregressive} {Flow} for {Density} {Estimation}, June 2018.
+\newblock URL \url{http://arxiv.org/abs/1705.07057}.
+\newblock arXiv:1705.07057 [cs, stat].
+
+\bibitem[Muir et~al.(2021)Muir, Baxter, Miranda, Doux, Ferté, Leonard,
+  Huterer, Jain, Lemos, Raveri, Nadathur, Campos, Chen, Dodelson, Elvin-Poole,
+  Lee, Secco, Troxel, Weaverdyck, Zuntz, Brout, Choi, Crocce, Davis, Gruen,
+  Krause, Lidman, MacCrann, Möller, Prat, Ross, Sako, Samuroff, Sáchez,
+  Scolnic, Zhang, Abbott, Aguena, Allam, Annis, Avila, Bacon, Bertin, Bhargava,
+  Bridle, Brooks, Burke, Rosell, Kind, Carretero, Cawthon, Costanzi, da~Costa,
+  Pereira, Desai, Diehl, Dietrich, Doel, Estrada, Everett, Evrard, Ferrero,
+  Flaugher, Frieman, García-Bellido, Giannantonio, Gruendl, Gschwend,
+  Gutierrez, Hinton, Hollowood, Honscheid, Hoyle, James, Jeltema, Kuehn,
+  Kuropatkin, Lahav, Lima, Maia, Menanteau, Miquel, Morgan, Myles, Palmese,
+  Paz-Chinchón, Plazas, Romer, Roodman, Sanchez, Scarpine, Serrano,
+  Sevilla-Noarbe, Smith, Suchyta, Swanson, Tarle, Thomas, To, Tucker, Varga,
+  Weller, and Wilkinson]{muir_y1_2021}
+J.~Muir, E.~Baxter, V.~Miranda, C.~Doux, A.~Ferté, C.~D. Leonard, D.~Huterer,
+  B.~Jain, P.~Lemos, M.~Raveri, S.~Nadathur, A.~Campos, A.~Chen, S.~Dodelson,
+  J.~Elvin-Poole, S.~Lee, L.~F. Secco, M.~A. Troxel, N.~Weaverdyck, J.~Zuntz,
+  D.~Brout, A.~Choi, M.~Crocce, T.~M. Davis, D.~Gruen, E.~Krause, C.~Lidman,
+  N.~MacCrann, A.~Möller, J.~Prat, A.~J. Ross, M.~Sako, S.~Samuroff,
+  C.~Sáchez, D.~Scolnic, B.~Zhang, T.~M.~C. Abbott, M.~Aguena, S.~Allam,
+  J.~Annis, S.~Avila, D.~Bacon, E.~Bertin, S.~Bhargava, S.~L. Bridle,
+  D.~Brooks, D.~L. Burke, A.~Carnero Rosell, M.~Carrasco Kind, J.~Carretero,
+  R.~Cawthon, M.~Costanzi, L.~N. da~Costa, M.~E.~S. Pereira, S.~Desai, H.~T.
+  Diehl, J.~P. Dietrich, P.~Doel, J.~Estrada, S.~Everett, A.~E. Evrard,
+  I.~Ferrero, B.~Flaugher, J.~Frieman, J.~García-Bellido, T.~Giannantonio,
+  R.~A. Gruendl, J.~Gschwend, G.~Gutierrez, S.~R. Hinton, D.~L. Hollowood,
+  K.~Honscheid, B.~Hoyle, D.~J. James, T.~Jeltema, K.~Kuehn, N.~Kuropatkin,
+  O.~Lahav, M.~Lima, M.~A.~G. Maia, F.~Menanteau, R.~Miquel, R.~Morgan,
+  J.~Myles, A.~Palmese, F.~Paz-Chinchón, A.~A. Plazas, A.~K. Romer,
+  A.~Roodman, E.~Sanchez, V.~Scarpine, S.~Serrano, I.~Sevilla-Noarbe, M.~Smith,
+  E.~Suchyta, M.~E.~C. Swanson, G.~Tarle, D.~Thomas, C.~To, D.~L. Tucker, T.~N.
+  Varga, J.~Weller, and R.~D. Wilkinson.
+\newblock {DES} {Y1} results: {Splitting} growth and geometry to test
+  \${\textbackslash}{Lambda}\${CDM}.
+\newblock \emph{Phys. Rev. D}, 103\penalty0 (2):\penalty0 023528, January 2021.
+\newblock ISSN 2470-0010, 2470-0029.
+\newblock \doi{10.1103/PhysRevD.103.023528}.
+\newblock URL \url{http://arxiv.org/abs/2010.05924}.
+\newblock arXiv:2010.05924 [astro-ph].
+
+\bibitem[Zhong et~al.(2023)Zhong, Saraivanov, Miranda, Xu, Eifler, and
+  Krause]{zhong_growth_2023}
+Kunhao Zhong, Evan Saraivanov, Vivian Miranda, Jiachuan Xu, Tim Eifler, and
+  Elisabeth Krause.
+\newblock Growth and {Geometry} {Split} in {Light} of the {DES}-{Y3} {Survey},
+  January 2023.
+\newblock URL \url{http://arxiv.org/abs/2301.03694}.
+\newblock arXiv:2301.03694 [astro-ph].
 
 \end{thebibliography}

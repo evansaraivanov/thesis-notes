@@ -4,61 +4,55 @@
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Einstein's Field Equation}{3}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Cosmology}{5}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Cosmic Constituents of the Universe}{9}{subsection.1.3.1}%
-\contentsline {subsubsection}{Radiation}{9}{section*.10}%
-\contentsline {subsubsection}{Baryons}{9}{section*.11}%
-\contentsline {subsubsection}{Dark Matter}{10}{section*.12}%
-\contentsline {subsubsection}{Neutrinos}{10}{section*.13}%
-\contentsline {subsubsection}{Dark Energy}{10}{section*.14}%
-\contentsline {chapter}{\numberline {2}Weak Lensing and the Cosmic Microwave Background}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Weak Lensing}{11}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}The Linear Matter Power Spectrum}{12}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Galaxy Density}{13}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Galaxy Shear}{14}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Weak Lensing Correlation Functions}{17}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Systematics}{18}{subsection.2.1.5}%
-\contentsline {subsubsection}{Photometric Redshift Uncertainty}{19}{section*.16}%
-\contentsline {subsubsection}{Intrinsic Alignment of Galaxies}{19}{section*.17}%
-\contentsline {subsubsection}{Galaxy Bias}{20}{section*.18}%
-\contentsline {subsubsection}{Shear Calibration}{20}{section*.19}%
-\contentsline {subsubsection}{Point Mass}{20}{section*.20}%
-\contentsline {subsubsection}{Lensing Magnification}{20}{section*.21}%
-\contentsline {section}{\numberline {2.2}CMB}{21}{section.2.2}%
+\contentsline {chapter}{\numberline {2}Measurement of Weak Lensing and the Cosmic Microwave Background}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Weak Lensing}{10}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}The Linear Matter Power Spectrum}{11}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Galaxy Density}{12}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Galaxy Shear}{13}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Weak Lensing Correlation Functions}{16}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Systematics}{17}{subsection.2.1.5}%
+\contentsline {subsubsection}{Photometric Redshift Uncertainty}{18}{section*.11}%
+\contentsline {subsubsection}{Intrinsic Alignment of Galaxies}{18}{section*.12}%
+\contentsline {subsubsection}{Galaxy Bias}{19}{section*.13}%
+\contentsline {subsubsection}{Shear Calibration}{19}{section*.14}%
+\contentsline {subsubsection}{Point Mass}{19}{section*.15}%
+\contentsline {subsubsection}{Lensing Magnification}{20}{section*.16}%
+\contentsline {section}{\numberline {2.2}CMB}{20}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}TT Power Spectrum}{21}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}TE and EE Power Spectra}{23}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Tensions Between Weak Lensing and CMB}{23}{section.2.3}%
+\contentsline {subsection}{\numberline {2.2.2}TE and EE Power Spectra}{22}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Tensions Between Weak Lensing and CMB}{22}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Computing Techniques}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Markov Chain Monte Carlo}{27}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}The Metropolis-Hastings Algorithm}{28}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Tension Metrics}{29}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Metric 1: Parameter Difference}{29}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Metric 2: Parameter Difference in Update Form}{30}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Metric 3: Goodness of Fit Degradation}{30}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Metric 4: Eigentension}{31}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Evidence-Based Metrics}{31}{subsection.3.2.5}%
-\contentsline {subsubsection}{Interpreting the Results}{32}{section*.27}%
-\contentsline {subsection}{\numberline {3.2.6}DES v Planck Results}{32}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.1}Parameter-based Metrics}{29}{subsection.3.2.1}%
+\contentsline {subsubsection}{Metric 1: Parameter Difference}{29}{section*.22}%
+\contentsline {subsubsection}{Metric 2: Parameter Difference in Update Form}{30}{section*.23}%
+\contentsline {subsubsection}{Metric 3: Goodness of Fit Degradation}{30}{section*.24}%
+\contentsline {subsubsection}{Metric 4: Eigentension}{31}{section*.25}%
+\contentsline {subsection}{\numberline {3.2.2}Evidence-Based Metrics}{31}{subsection.3.2.2}%
+\contentsline {subsubsection}{Interpreting the Results}{32}{section*.26}%
+\contentsline {subsection}{\numberline {3.2.3}DES v Planck Results}{32}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Normalizing Flows}{33}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Growth-Geometry Split in DES-Y3}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Split Matter Power Spectrum}{35}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Data and Analysis Pipeline}{37}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}DES Parameter Priors}{37}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Software Pipeline}{39}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Pipeline Validation on Synthetic Data}{40}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Results}{41}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}LCDM}{41}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}wCDM}{42}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Tension Analysis}{43}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Conclusion}{44}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Data Emulators}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Neural Networks}{47}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Architecture Choices}{50}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Multi-Layer Perceptron}{51}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Residual Network}{51}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Bottlenecked Residual Network}{53}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Results}{53}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Training and Testing}{54}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Running Full Chains}{54}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Application to Tension Calibration}{54}{section.5.4}%
-\contentsline {chapter}{\hbox to\@tempdima {\hfil }{Bibliography}}{55}{section*.47}%
-\contentsline {chapter}{Bibliography}{55}{chapter*.48}%
+\contentsline {chapter}{\numberline {4}Growth-Geometry Split in DES-Y3}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Split Matter Power Spectrum}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Data and Analysis Pipeline}{39}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}DES Parameter Priors}{39}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Software Pipeline}{41}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Pipeline Validation on Synthetic Data}{42}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Results}{43}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}LCDM}{43}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}wCDM}{45}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Tension Analysis}{45}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Conclusion}{46}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Data Emulators}{50}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Neural Networks}{50}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Architecture Choices}{53}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Multi-Layer Perceptron}{54}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Residual Network}{54}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Bottlenecked Residual Network}{56}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Results}{56}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Training and Testing}{57}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Application to Tension Calibration}{58}{section.5.4}%
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }{Bibliography}}{62}{section*.52}%
+\contentsline {chapter}{Bibliography}{62}{chapter*.53}%

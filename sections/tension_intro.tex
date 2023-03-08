@@ -13,13 +13,13 @@ Lets set $x=\theta$, the cosmological parameters, and $y=d$, the data vector rep
 \begin{equation}
 	P(\theta|d) = \frac{P(d|\theta) P(\theta)}{P(d)}
 \end{equation}
-The left hand side is typically called the \textit{posterior}, while $P(d|\theta)$ is called the likelihood, $P(\theta)$ the prior, and $P(d)$ the evidence. In cosmological notation, this is usually written
+The left hand side is typically called the \textit{posterior}, while $P(d|\theta)$ is called the likelihood, $P(\theta)$ the prior, and $P(d)$ the evidence. In cosmological notation~\cite{raveri_non-gaussian_2021}, this is usually written
 \begin{equation}
-	\mathcal{P}(\theta) = \frac{\mathcal{L}(\theta) \Pi(\theta)}{\int\mathcal{E}(\theta)d\theta}
+	\mathcal{P}(\theta) = \frac{\mathcal{L}(\theta) \Pi(\theta)}{\mathcal{E}}
 \end{equation}
-The evidence is typically very difficult to compute. One must be able to compute an integral of a complicated function over the entire parameter space (it is possible via techniques such as nested sampling, however these usually take a very long time). Thus, with a given likelihood and prior, its not feasible to compute the posterior exactly. Markov chain Monte Carlo (MCMC) describes a random technique that can generate samples from the posterior without computing the evidence.
+The evidence is typically very difficult to compute. One must be able to compute an integral of a complicated function over the entire parameter space (it is possible via techniques such as nested sampling, however these usually take a very long time). Thus, with a given likelihood and prior, its not feasible to compute the posterior exactly. Markov chain Monte Carlo (MCMC) describes a probabalistic technique that can generate samples from the posterior only using the likelihood and prior and without computing the evidence.
 \subsection{The Metropolis-Hastings Algorithm}
-The Metropolis-Hastings algorithm is the most common algorithm for doing MCMC. Suppose we want to sample from a distribution $p(x)$. We start with a proposal distribution $g(x_n)$. 
+The Metropolis-Hastings algorithm~\cite{tobias_metropolis-hastings_nodate,zhao_bayesian_2021,helsby_monte_nodate} is the most common algorithm for doing MCMC. Suppose we want to sample from a distribution $p(x)$. We start with a proposal distribution $g(x_n)$. 
 Sample from the proposal distribution to find the next state $x_{n+1}$ with probability $g(x_{n+1}|x_n)$. 
 This transition from state $n$ to state $n+1$ must follow the \textit{detailed balance condition}
 \begin{equation}
@@ -50,9 +50,9 @@ There are a few properties that can be observed for this algorithm:
 \end{itemize}
 
 \section{Tension Metrics}
-Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, futher increasing the complexity. There are many metrics used to measure tension, each with different assumptions and consequences.
-
-\subsection{Metric 1: Parameter Difference}
+Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, futher increasing the complexity. There are many metrics used to measure tension~\cite{lemos_assessing_2021}, each with different assumptions and consequences.
+\subsection{Parameter-based Metrics}
+\subsubsection{Metric 1: Parameter Difference}
 The main idea of this metric is that if two data sets largely agree, there difference posterior will be centered at 0, so mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
 Define $\Delta\theta = \theta_A - \theta_B$. Under this reparameterization the two posteriors are $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_A-\Delta\theta)$. If the posteriors are independent one can marginalize over $\theta_A$ to get the parameter difference distribution.
 \begin{equation}
@@ -64,7 +64,7 @@ Thus we can approximate the tension as the volume of the posterior contours with
 \end{equation}
 This has the benifit of only requiring independent parameter sampling. It makes no assumption of the gaussianity of the posterior or the likelihood. The difficulty here, however, is acutally determining $\mathcal{P}(\theta)$. There are multiple methods used, the most novel of which is discussed later.
 
-\subsection{Metric 2: Parameter Difference in Update Form}
+\subsubsection{Metric 2: Parameter Difference in Update Form}
 As discussed above, we can compute the parameter $Q_{\mathrm{UDM}}$ by
 \begin{equation}
     Q_{\mathrm{UDM}} = {(\mu_A - \mu_{A+B})}^T{(C_A-C_{A+B})}^{-1}(\mu_A - \mu_{A+B}) 
@@ -73,7 +73,7 @@ The difference of means is precisely the mean of the parameter difference distri
 Thus it is clear $Q_{\mathrm{UDM}}$ is $\chi^2$ distributed with degrees of freedom given by $\rank(C_A-C_{A+B})$. 
 It is clear, however, that this metric relies on the parameter difference to be gaussian distributed because of its reliance on $Q_{\mathrm{UDM}}$ being $\chi^2$ distributed. Despite this, we proceed anyway. With proper calibration this metric can be useful even for non-gaussian posteriors.
 
-\subsection{Metric 3: Goodness of Fit Degradation}
+\subsubsection{Metric 3: Goodness of Fit Degradation}
 For this metric, first find the \textit{maximum a posteriori}, the point $\hat\theta$ that maximimizes the posterior. Then compute the likelihood $\mathcal{L}(\hat\theta)$. Lastly compute the difference in likelihoods between the sum of chain $A$ and $B$ and the joint chain $A+B$
 \begin{equation}
 	Q_{\mathrm{DMAP}} = 2\mathcal{L}_A(\hat\theta_A) + 2\mathcal{L}_B(\hat\theta_B) - 2\mathcal{L}_{A+B}(\hat\theta_{A+B})
@@ -83,7 +83,7 @@ $Q_{\mathrm{DMAP}}$ is again $\chi^2$-distributed. Interesting part here is how 
 	d = N-\mathrm{tr}(C_\Pi^{-1}C_\mathcal{P})
 \end{equation}
 
-\subsection{Metric 4: Eigentension}
+\subsubsection{Metric 4: Eigentension}
 This metric differs from the others by restricting our parameters to ones that are well-measured. We do this as follows:
 \begin{enumerate}
 	\item Diagonalize the covariance matrix on one of our data sets.
@@ -128,12 +128,15 @@ The parameter difference posterior is a gaussian with standard deviation $\sqrt{
 \begin{equation}
 	\Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta
 \end{equation}
-Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate.
+Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. In practice, this integral is computed with Monte-Carlo integration, where the error is evaluated using the Clopper-Pearson interval on the binomial distribution.
 \subsection{DES v Planck Results}
-A subset of these excersizes have been performed previously by the Dark Energy Survey (DES) against the planck results~\cite{lemos_assessing_2021}.
-
+A subset of these excersizes have been performed previously by the Dark Energy Survey (DES) against the planck results. In~\cite{lemos_assessing_2021}, Lemos et. al. generates an a-priori tension on the cosmological parameters by shifting the DES fiducial cosmology along $\sigma_8$ and $\Omega_m$. They appoximate the a-priori tension using the gaussian approximation,
+\begin{equation}
+	\delta\theta = \sqrt{\mathrm{var}(\theta_{\mathrm{DES}}) + \mathrm{var}(\theta_{\mathrm{Planck}})}\,.
+\end{equation}
+They then compute the tension metrics and compare to the a-priori gaussian tension. The main result demonstrates what the resulting tension is from a fixed shift along a single parameter. Their result is presented in this thesis in figure~\ref{figure}. An additional note is that gaussian tension tends to underestimate the tension presented in other metrics, highlighting the importance of capturing non-gaussianities.
 \section{Normalizing Flows}
-The method of normalizing flows (MAF) implemented here uses Masked Autoencoders (MADE) to construct the flow. 
+The method of normalizing flows (MAF) implemented here uses Masked Autoencoders (MADE) to construct the flow~\cite{germain_made_2015,papamakarios_masked_2018,raveri_non-gaussian_2021}. 
 Suppose we have an input to the flow $x_i$. 
 The output of the map is $y_i= \mu(x_{1:i-1})+\sigma(x_{1:i-1})x_i$. 
 The $\mu$ and $\sigma$ are found using neural networks which recieve masked inputs $x_{1:i-1}=(x_1,\ldots,x_{i-1},0,\ldots,0)$. 
@@ -156,7 +159,7 @@ The next question one may have is `what do flows have to do with this?' Above, t
 Suppose $v:X \rightarrow TX$ is a vector field on $X$ and $x \in X$. Then for any $\epsilon>0$ there exists a unique function $f:B[-\epsilon,\epsilon]\rightarrow X$ such that $f$ is an integral curve of with infinitessimal generator $v$ and with $f(0) = x$.  
 \end{prop}
 \begin{proof}
-Of course, given a vector $v_x:U\rightarrow T_x X$ with $x\in U$, for it to be in the tangent space $T_pX$ it must have a curve with $f(0)=x$ and $f'(0)=v_x$. This follows from the definition of $T_xX$.
+Given a vector $v_x:U\rightarrow T_x X$ with $x\in U$, for it to be in the tangent space $T_pX$ it must have a curve with $f(0)=x$ and $f'(0)=v_x$. This follows from the definition of $T_xX$.
 
 Suppose there are two such curves, $\alpha$ and $\beta$ both mapping from $I=(-\epsilon,\epsilon)$ to $X$ and with $\alpha(0) = x = \beta(0)$ and both with $\alpha'(0) = v_x = \beta'(0)$. Then they both solve the system of autonomous ODE's for $i=1,\dots,n$
 \begin{equation}
@@ -167,15 +170,16 @@ Suppose there are two such curves, $\alpha$ and $\beta$ both mapping from $I=(-\
 \end{equation}
 This can be solved by $\gamma^i(t) = \int\limits_{U\subset X}v^i(\gamma(t))\text{vol.}$. Since $v$ is a tangent vector field, there exists a curve $\phi$ with $\phi' = v$, so the solution is $\gamma^i(t) = \phi^i(t)+C^i$. The integration constants are fixed by the initial condition $C^i=-c^i$, hence any two functions satisfying this system of ODE's, including $\alpha$ and $\beta$, are equivalent for all $t\in I$.
 \end{proof}
-
-Autoregressive models have serval pitfalls that we would like to avoid in this project. The main one is that autoregressive models are sensitive to the order of the input, however our result does not have any dependence. 
-
-The integration error is determined using the Clopper-Pearson interval on the binomial distribution.
+Autoregressive models have serval pitfalls that we would like to avoid in this project. Namely, autoregressive models are sensitive to the order of the input, however our result does not have any dependence. 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\textwidth]{plots/t0_gauss.png}
-	\includegraphics[width=0.65\textwidth]{plots/flow_param.png}
-	\includegraphics[width=0.6\textwidth]{plots/t=1.png}
-	\caption{An example of normalizing flow as the transformation is `turned on'. The non-gaussian distribution (bottom) is mapped to a gaussian distribution (top).}
+	\includegraphics[width=0.9\textwidth]{plots/t=1.png}
+	\caption{An example non-Gaussian distribution (non-zero skewness).}
+	\label{fig:non-gauss}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/3d_flow.png}
+	\caption{An example of normalizing flow as the transformation is `turned on', represented by the parameter $\lambda$. The non-Gaussian distribution at $\lambda=0$ is transformed into the Gaussian distribution at $\lambda=1$.}
 	\label{fig:NF}
 \end{figure}

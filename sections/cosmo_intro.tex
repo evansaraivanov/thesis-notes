@@ -1,12 +1,34 @@
 \chapter{General Relativity and Cosmology}
 \section{Motivation}
-With Einstein's formulation of special relativity came a beautiful expansion of physics into the high energy and large scale regime. A postulate of special relativity was that light is a universal speed limit, and with this postulate a plethora of established physical theories became problematic. Fortunately for theories such as electromagnetism no incompatibilities were introduced. However, for gravity this was not the case. The gravitational field had no wave equation to establish a speed of propagation, meaning changes to the gravitational field were felt instantaneously globally. Attempts to reconcile this, such as using a retarded propagator or promoting the newtonian potential to a scalar field theory, proved incapable of correcting for relativity. Never-the-less, Newtonian gravity has stood the test of time to be accurate in the non-relativistic limit. Thus any theory of gravity should reduce to the Newtonian theory for speeds $v \ll c$.
+With Einstein's formulation of special relativity came a beautiful expansion of physics into the high energy and large scale regime. A postulate of special relativity was that light is a universal speed limit, and with this postulate a plethora of established physical theories became problematic. Fortunately for theories such as electromagnetism no incompatibilities were introduced. However, for gravity this was not the case. The gravitational field had no wave equation to establish a speed of propagation, meaning changes to the gravitational field were felt instantaneously globally. Attempts to reconcile this, such as using a retarded propagator or promoting the newtonian potential to a scalar field theory, proved incapable of correcting for special relativitistic effects. Never-the-less, Newtonian gravity has stood the test of time to be accurate in the non-relativistic limit. Thus any theory of gravity should reduce to the Newtonian theory for speeds $v \ll c$.
 
-The famous thought experiment of an Einstein elevator demonstrates a striking inconsistency within Newtonian gravity. Consider an observer freely falling in a spherical gravitational field. With nothing to look at, this person would not be able to determine they were in a gravitational field rather than just linearly accelerating. Now suppose this observer has point particles nearby, one to each side, one above, and one below (fig.). What the observer will see is the particles below and above them will move farther away because the gravitiational force scales as $1/r^2$. They will see the particles to the side of them moving towards them due to the spherical symmetry of the gravitational field. These fictitious forces are referred to as the tidal forces, as they also give rise to the seen twice per day on earth. This interesting thought experiment shows how freely falling reference frames are not inertial frames, the first inconsistency recognized by Einstein. 
+The famous thought experiment of an Einstein elevator demonstrates a striking inconsistency within Newtonian gravity. Consider an observer freely falling in a spherical gravitational field. With nothing to look at, this person would not be able to determine they were in a gravitational field rather than just linearly accelerating (this is the equivalence principle). Now suppose this observer has point particles nearby, one to each side, one above, and one below (fig~\ref{fig:tidal_forces}). What the observer will see is the particles below and above them will move farther away because the gravitiational force scales as $1/r^2$. They will see the particles to the side of them moving towards them due to the spherical symmetry of the gravitational field. These fictitious forces are referred to as the tidal forces, as they also give rise to the seen twice per day on earth. This interesting thought experiment shows how freely falling reference frames are not inertial frames, the first inconsistency recognized by Einstein. 
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \draw (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+        \draw[fill=black] (0,0.3) circle (1pt);
+        \draw (0,0.3) -- (0,0.15);
+        \draw (0,0.15) -- (0.05,0);
+        \draw (0,0.15) -- (-0.05,0);
+        \draw (0,0.25) -- (0.05,0.15);
+        \draw (0,0.25) -- (-0.05,0.15);
+        \draw[fill=black] (-0.8,0) circle (1pt);
+        \draw[fill=black] (0.8,0) circle (1pt);
+        \draw[fill=black] (0,0.8) circle (1pt);
+        \draw[fill=black] (0,-0.8) circle (1pt);
+        \draw[->] (0,-0.8) -- (0,-0.95);
+        \draw[->] (0,0.8) -- (0,0.95);
+        \draw[->] (-0.8,0) -- (-0.65,0);
+        \draw[->] (0.8,0) -- (0.65,0);
+    \end{tikzpicture}
+    \caption{Observer freely falling with particles experience tidal forces within the observers reference frame.}
+    \label{fig:tidal_forces}
+\end{figure}
 
-In (year) Einstein published his first paper on special relativity. In special relativity, physical space is enhanced to a four dimensional space, typically denoted $\mathbb{M}^4$ or $\mathbb{R}^{3,1}$. Setting $c=1$ (which is done in the rest of this thesis), the metric is given by
+In the early 1900s, Einstein published his first paper on special relativity. In special relativity, physical space is enhanced to a four dimensional space, typically denoted $\mathbb{M}^4$ or $\mathbb{R}^{3,1}$. Setting $c=1$ (which is done in the rest of this thesis), the metric is given by
 \begin{equation}
-    g = \text{diag}(-1,1,1,1)
+    g = \mathrm{diag}(-1,1,1,1)
 \end{equation}
 This space is typically called \textit{Minkowski space} (thus the notation $\mathbb{M}^4$). Distances under this metric are called the \textit{proper time} interval, denoted $\tau$.
 \begin{equation}\label{eq:proper-time}
@@ -33,28 +55,8 @@ Proper time represents the amount of time it that passes for an observer travell
     \end{tikzpicture}
     \caption{Definition of proper time (bold line) vs. coordinate time (dashed line).}
 \end{figure}
+
 Lets suppose we have two observers, one is in an inertial frame with coordinates $x$ and the other is in a non-inertial frame with coordinates $x'$. These coordinates are related $x = x(x')$. In the inertial frame, the equations of motion are given by 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \draw (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-        \draw[fill=black] (0,0.3) circle (1pt);
-        \draw (0,0.3) -- (0,0.15);
-        \draw (0,0.15) -- (0.05,0);
-        \draw (0,0.15) -- (-0.05,0);
-        \draw (0,0.25) -- (0.05,0.15);
-        \draw (0,0.25) -- (-0.05,0.15);
-        \draw[fill=black] (-0.8,0) circle (1pt);
-        \draw[fill=black] (0.8,0) circle (1pt);
-        \draw[fill=black] (0,0.8) circle (1pt);
-        \draw[fill=black] (0,-0.8) circle (1pt);
-        \draw[->] (0,-0.8) -- (0,-0.95);
-        \draw[->] (0,0.8) -- (0,0.95);
-        \draw[->] (-0.8,0) -- (-0.65,0);
-        \draw[->] (0.8,0) -- (0.65,0);
-    \end{tikzpicture}
-    \caption{Observer freely falling with particles experience tidal forces within the observers reference frame.}
-\end{figure}
 \begin{equation}
     \frac{d^2x^\mu}{d\tau^2} = 0
 \end{equation} 
@@ -64,9 +66,9 @@ We can look at how this changes for the observer in a non-inertial frame.
 \end{equation}
 Equation~\ref{eq:sr-curves} looks suspiciously like the geodesic equation from differential geometry. The exception is we have defined the `Chirstoffel symbol' here, which is not the most general form of the Christoffel symbols. This does give motivation for how to search for a compatible theory of gravity. However, this does provide a clear link between gravity and geometry. 
 \section{Einstein's Field Equation}
-Christoffel symbols take a very general form, where they signify the failure of partial derivatives to commute. This failure results from curvature of the space itself. As said in the previous section, special relativity promotes the classical $\mathbb{R}^3$ space to $\mathbb{M}^4$. However, we now need to allow curved space, not simply minkowski space. So lets take an arbitrary semi-Riemannian 4-manifold $M$. In very loose terms, a manifold is a locally euclidean space, which is a sufficient definition for this application.
+Christoffel symbols take a very general form, where they signify the failure of derivatives to commute. This failure results from curvature of the space itself. As said in the previous section, special relativity promotes the classical $\mathbb{R}^3$ space to $\mathbb{M}^4$. However, we now need to allow curved space, not simply minkowski space. So lets take an arbitrary semi-Riemannian 4-manifold $M$. In very loose terms, a manifold is a locally euclidean space, which is a sufficient definition for this application.
 
-Naturally, computing derivatives are difficult on curved surfaces. To start, derivatives give tangent vectors, thus taking the set of all possible tangent vectors of a curve at point $p\in M$ gives us the tangent space at $p$, denoted $T_pM$. The generalization of the derivative is called a \textit{connection}~\cite{baez_john_gauge_1994}, which tells one how to connect the tangent spaces at different points infinitessimally (figure~\ref{fig:parallel_transport}). Although beyond the scope of this thesis, it is worth noting that, due to the holonomy of curved surfaces, this will generally depend on the path taken.
+Naturally, computing derivatives on curved surfaces is non-trivial as there is no way to compare tangent vectors at two different points of a manifold. One can, however, use the fact that derivatives give tangent vectors and look at a single point $p\in M$ to construct the tangent space, denoted $T_pM$, which is the set of all tangent vectors at $p$. The generalization of the derivative is called a \textit{connection}~\cite{baez_john_gauge_1994}, which tells one how to connect the tangent spaces at different points infinitessimally (figure~\ref{fig:parallel_transport}). Although beyond the scope of this thesis, it is worth noting that, due to the holonomy of curved surfaces, this will generally depend on the path taken.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -90,7 +92,7 @@ Naturally, computing derivatives are difficult on curved surfaces. To start, der
     \caption{Example of parallel transport along a connection on a sphere. }
     \label{fig:parallel_transport}
 \end{figure}
-In general relativity, a very special connection is use called the \textit{Levi-Civita connection}, denoted $\nabla$, which is torsionless and metric preserving. More precisely, for all vector fields $u,v,w$ on $M$
+In general relativity, a very special connection is used called the \textit{Levi-Civita connection}, denoted $\nabla$, which is torsionless and metric preserving. That is, for all vector fields $u,v,w$ on $M$
 \begin{equation}
     \begin{split}
         u g(v,w) =& g(\nabla_u v, w)+g(v,\nabla_uw) \,,\quad \text{(metric preserving)} \\
@@ -102,7 +104,7 @@ The only remaining geometric property for the Levi-Civita connection is curvatur
 \begin{equation}
     \nabla_\mu\partial_\nu = \Gamma^{\rho}_{\mu\nu}\partial_\rho\,.
 \end{equation}
-In this case, the partials here are refering to the basis of vector fields on $M$.Additionally this curvature has a special name as well, the \textit{Riemann curvature}, a type (3,1) tensor defined by
+In this case, the partials here are refering to the basis of vector fields on $M$. Additionally this curvature has a special name as well, the \textit{Riemann curvature}, a type (3,1) tensor defined by
 \begin{equation}
     R(u,v)w = (\nabla_u\nabla_v-\nabla_v\nabla_u - \nabla_{[u,v]})w
 \end{equation}
@@ -110,7 +112,7 @@ or in coordinate form by
 \begin{equation}
     R_{\mu\nu\rho}^\sigma  = \nabla_\mu \Gamma^\sigma_{\nu\rho} - \nabla_\nu\Gamma^{\sigma}_{\mu\rho}
 \end{equation}
-To emphasize the elegance of Einstein's equation, its convinient to note write the Riemann curvature as a matrix valued differential 2-form $\mathcal{R}$ and the christoffel symbols as a matrix valued differential 1-form $\mathcal{G}$ (differential forms are antisymmetric covariant tensors). With this notion, its easy to see the Bianchi identity for $\mathcal{R}$ with respect to the Levi-Civita connection is
+To emphasize the elegance of Einstein's equation, it is convinient to write the Riemann curvature as a matrix valued differential 2-form $\mathcal{R}$ and the christoffel symbols as a matrix valued differential 1-form $\mathcal{G}$~\cite{baez_john_gauge_1994} (differential forms are antisymmetric covariant tensors). With this notion, its easy to see the Bianchi identity for $\mathcal{R}$ with respect to the Levi-Civita connection is
 \begin{equation}
     d_{\nabla}\mathcal{R} = \nabla_{[\tau}R^\sigma_{\mu\nu]\rho} = 0
 \end{equation}
@@ -138,31 +140,31 @@ When discussing $\Lambda$CDM (or cosmology in general), there are two main assum
 Both of these assumptions should sound strange; Our universe is clearly does not follow these assumptions. If we look into the night sky, we can see regions of densly packed stars and galaxies and other regions with no stars or galaxies, violating the assumption of homogeneity (figure~\ref{fig:galaxy_map}). On the other hand, if one observes the temperature of the cosmic microwave background (CMB), one finds there is an angle dependence of the observed temperature (figure~\ref{fig:cmb_tt_map}), violating the assumption of isotropy. To reconsile this, the metric will be modified by perturbations. In this thesis, only scalar perturbations are considered.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{plots/opo0220a.jpg}
-    \caption{An image of galaxies from the James Webb Space Telescope, showing regions of high matter density and regions of low matter density.}
+    \includegraphics[width=0.75\textwidth]{plots/weic2305a.jpg}
+    \caption{An image of galaxies from the James Webb Space Telescope, showing regions of high matter density and regions of low matter density~\cite{webb_clusters}.}
     \label{fig:galaxy_map}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{plots/Planck_CMB.jpg}
-    \caption{CMB TT power spectrum, emphasizing the scale of anisotropies.}
+    \caption{CMB TT power spectrum, emphasizing the scale of anisotropies~\cite{planck_CMB}.}
     \label{fig:cmb_tt_map}
 \end{figure}
 
 With Edwin Hubble's discovery of the expanding universe, any metric assigned to the universe must include homogeneous spatial expansion. Together with the above assumptions results in the FLRW metric.
 \begin{equation}
-    g = \text{diag}(-1,a^2,a^2,a^2)
+    g = \mathrm{diag}(-1,a^2,a^2,a^2)
 \end{equation}
 To perturb this metric around a homogenous universe, it requires two fields. The first, denoted $\Psi$, is the newtonian gravitational potential. Because newtonian gravity works in the non-relativistic limit, it enters the time component of the metric. The second field, denoted $\Phi$, represents spatial curvature perturbations. The perturbed metric is given by
 \begin{equation}
-    g = \text{diag}(-1-2\Psi,a^2(1-2\Phi),a^2(1-2\Phi),a^2(1-2\Phi))
+    g = \mathrm{diag}(-1-2\Psi,a^2(1-2\Phi),a^2(1-2\Phi),a^2(1-2\Phi))
 \end{equation}
 By computing the Christoffel symbols, one finds
 \begin{equation}
     \begin{split}
-        \Gamma^i_{00} = \frac{1}{a^2}\partial_i\Psi \\
-        \Gamma^i_{0j} = \delta_{ij}(H+\dot\Phi) \\
-        \Gamma^i_{jk} = (\delta_{ij} \partial_k + \delta_{ik}\partial_j - \delta_{jk}\partial_i)\Phi
+        \Gamma^i_{00} =& \frac{1}{a^2}\partial_i\Psi \\
+        \Gamma^i_{0j} =& \delta_{ij}(H+\dot\Phi) \\
+        \Gamma^i_{jk} =& (\delta_{ij} \partial_k + \delta_{ik}\partial_j - \delta_{jk}\partial_i)\Phi
     \end{split}
 \end{equation}
 Given Einstein's field equations and the perturbed FLRW metic, one can find the Friedman equations. The first comes from the 00 component of Einstein's field equations.
@@ -175,11 +177,11 @@ What can be done with this is to convert the curvature $k$ and the cosmological 
 \end{equation}
 and the critical density is defined by the density associated with $H_0$,
 \begin{equation}
-    H_0^2 \equiv \frac{8\pi G}{3}\rho_{\text{crit}}
+    H_0^2 \equiv \frac{8\pi G}{3}\rho_{\mathrm{crit}}
 \end{equation}
-Whats neat about this formulation with is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\text{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\text{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\text{crit}}$, the universe is flat. If we define the relative densities by
+Whats neat about this formulation with is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If we define the relative densities by
 \begin{equation}
-    \Omega_i = \frac{\rho_i}{\rho_\text{crit}}
+    \Omega_i = \frac{\rho_i}{\rho_\mathrm{crit}}
 \end{equation}
 The relation becomes
 \begin{equation}
@@ -217,36 +219,36 @@ This relates distances to the geometry discuss in the first section where the me
     \end{array}
     \right.
 \end{equation}
-\subsection{Cosmic Constituents of the Universe}
-While we have made sense of the curvature density $\Omega_k$, there is still this mysterious $\Omega$ we see, which is a sum over other objects comprising the universe. Each of these objects are classified by their energy-momentum tensor and equation of state, defined by
-\begin{equation}
-    w_s = \frac{\mathcal{P}_s}{\rho_s}
-\end{equation}
-where $\mathcal{P}$ is the pressure and $\rho$ the density
-\subsubsection{Radiation}
-Radiation is defined to have 0 rest mass, and thus its energy-momentum is given by
-\begin{equation}
-    T = \text{diag}(\rho_\gamma, \rho_\gamma/3, \rho_\gamma/3, \rho_\gamma/3)
-\end{equation}
-(this can also be derived from Bose-Einstein statistics) Thus it has an equation of state $w_\gamma=1/3$. 
+% \subsection{Cosmic Constituents of the Universe}
+% While we have made sense of the curvature density $\Omega_k$, there is still this mysterious $\Omega$ we see, which is a sum over other objects comprising the universe. Each of these objects are classified by their energy-momentum tensor and equation of state, defined by
+% \begin{equation}
+%     w_s = \frac{\mathcal{P}_s}{\rho_s}
+% \end{equation}
+% where $\mathcal{P}$ is the pressure and $\rho$ the density
+% \subsubsection{Radiation}
+% Radiation is defined to have 0 rest mass, and thus its energy-momentum is given by
+% \begin{equation}
+%     T = \mathrm{diag}(\rho_\gamma, \rho_\gamma/3, \rho_\gamma/3, \rho_\gamma/3)
+% \end{equation}
+% (this can also be derived from Bose-Einstein statistics). Thus it has an equation of state $w_\gamma=1/3$. 
 
-At one point, before recombination, radiation was the dominant component of the universe. As the universe cooled, the radiation was absorbed by the atoms forming until matter was the dominant. This formed the CMB which we measure today. Additionally, the CMB forms a nice black body, and thus the temperature can be found by measuring the emitted frequencies.
-\subsubsection{Baryons}
-Baryons are all non-relativistic particles which interact electromagnetically (so it excludes dark matter, but includes nuclei, electrons, etc.). Thus, its energy-momentum is given by
-\begin{equation}
-    T = \text{diag}(\rho_b,0,0,0)
-\end{equation}
-so its equation of state is given by $w=0$.
-\subsubsection{Dark Matter}
-Dark matter has the same energy-momentum as baryons, and thus the same equation of state. The main reason for the separation between Baryons and dark matter is that, experimentally, we can see baryons directly by imaging, but we cannot see dark matter. We can, however, see the gravitational effects of dark matter.
-\subsubsection{Neutrinos}
-Neutrinos are a special type of matter. They are relativistic $w=1/3$ but not radiation. Their energy-momentum can be computed the same way as for photons, but using Fermi-Dirac statistics. The density is thus
-\begin{equation}
-    \rho_\nu = \frac{21}{8}\left(\frac{T_\nu}{T}\right)^4\rho_\gamma
-\end{equation}
-\subsubsection{Dark Energy}
-Dark energy is a special component of the universe. It is like a cosmological constant, and thus the energy momentum tensor is
-\begin{equation}
-    T = \text{diag}(\rho_\Lambda,-\rho_\Lambda,-\rho_\Lambda,-\rho_\Lambda)
-\end{equation}
-as such, its equation of state is $w=-1$
+% At one point, before recombination, radiation was the dominant component of the universe. As the universe cooled, the radiation was absorbed by the atoms forming until matter was the dominant. This formed the CMB which we measure today. Additionally, the CMB forms a nice black body, and thus the temperature can be found by measuring the emitted frequencies.
+% \subsubsection{Baryons}
+% Baryons are all non-relativistic particles which interact electromagnetically (so it excludes dark matter, but includes nuclei, electrons, etc.). Thus, its energy-momentum is given by
+% \begin{equation}
+%     T = \mathrm{diag}(\rho_b,0,0,0)
+% \end{equation}
+% so its equation of state is given by $w=0$.
+% \subsubsection{Dark Matter}
+% Dark matter has the same energy-momentum as baryons, and thus the same equation of state. The main reason for the separation between Baryons and dark matter is that, experimentally, we can see baryons directly by imaging, but we cannot see dark matter. We can, however, see the gravitational effects of dark matter.
+% \subsubsection{Neutrinos}
+% Neutrinos are a special type of matter. They are relativistic, so the equation of state is $w=1/3$, but they are not radiation. Their energy-momentum can be computed the same way as for photons, but using Fermi-Dirac statistics. The density is thus.
+% \begin{equation}
+%     \rho_\nu = \frac{21}{8}\left(\frac{T_\nu}{T}\right)^4\rho_\gamma
+% \end{equation}
+% \subsubsection{Dark Energy}
+% Dark energy is a special component of the universe. It is like a cosmological constant, and thus the energy momentum tensor is
+% \begin{equation}
+%     T = \mathrm{diag}(\rho_\Lambda,-\rho_\Lambda,-\rho_\Lambda,-\rho_\Lambda)
+% \end{equation}
+% as such, its equation of state is $w=-1$.

@@ -1,5 +1,5 @@
 \chapter{Growth-Geometry Split in DES-Y3}
-Parameter splitting is a common method used to attempt to resolve the tensions discussed in the previous chapter. The idea is to split a parameter and choose analysis settings that restrict each split parameter to describe specific cosmological effects. One of these splits is a growth-geometry split, where we split the relative matter density $\Omega_m$ and the dark energy equation of state $w$ into two parameters. The growth parameter is designed to describe the late-time growth of structure and the geometry parameter designed to describe the background evolution. After splitting the parameters, one can do an analysis to determine how the tension changes and if the split parameters have distinct values from each other. This chapter describes the growth geometry split in $\Omega_m$ and $w$ in DES-Y1.
+Parameter splitting is a common method used to attempt to resolve the tensions discussed in the previous chapter. The idea is to split a parameter and choose analysis settings that restrict each split parameter to describe specific cosmological effects. One of these splits is a growth-geometry split, where we split the relative matter density $\Omega_m$ and the dark energy equation of state $w$ into two parameters. The growth parameter is designed to describe the late-time growth of structure and the geometry parameter designed to describe the background evolution. After splitting the parameters, one can do an analysis to determine how the tension changes and if the split parameters have distinct values from each other. This chapter describes the growth geometry split in $\Omega_m$ and $w$ in DES-Y1~\cite{muir_y1_2021} and DES-Y3. These results are also available in a paper written by Kunhao Zhong, another Masters student, and myself, on arXiv~\cite{zhong_growth_2023} and are pending publication to Physical Review.
 \section{Split Matter Power Spectrum}
 Since the matter density $\Omega_m$ is split into two parameters, $\Omega_m^{\text{growth}}$ and $\Omega_m^{\text{geo}}$, single growth factor and a single matter power spectrum; these are split as well. From equation (eq), the linear matter power spectrum is proportional to the square of the linear growth factor $D_+(z(a)) = G(z)/(1+z)$, so the growth and geometry power spectra are related by
 \begin{equation}
@@ -22,12 +22,12 @@ In this analysis, however, we want to go beyond linear scales. To do this, we us
 While the growth parameters are scale independent, there is a crossing for the geometry parameters. This is due to the enhanced gravitational effects for higher $\Omega_m^{\mathrm{geo}}$, or supressed gravitational effects for lower $\Omega_m^\mathrm{geo}$. From this, one can predict that the value of $\sigma_8$ will change, the change being larger for $\Omega_m^\mathrm{geo}$ than $\Omega_m^\mathrm{growth}$, and increases in either $\Omega_m$ will increase $\sigma_8$. We see this is true in figure~\ref{fig:sigma8_l}
 \begin{figure}[ht]
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
+	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{plots/sigma8.pdf}
 		\caption{$\Lambda$CDM split.}
 		\label{fig:sigma8_l}
 	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
+	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{plots/sigma8_w.pdf}
 		\caption{$w$CDM split.}
 		\label{fig:sigma8_w}
