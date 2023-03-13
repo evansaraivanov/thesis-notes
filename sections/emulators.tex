@@ -359,6 +359,97 @@ The ResNet allows us to create much deeper networks, but the number of parameter
 	\label{fig:resbottle-block}
 \end{figure}
 In the examples drawn (figures~\ref{fig:resblock} and~\ref{fig:resbottle-block}), there are 40 parameters in the ResNet, but only 28 parameters in the ResBottle. This allows us to either simplify the model, add more layers, or make the layers much wider without blowing up the number of parameters that need to be trained.
+\subsection{Attention}
+This will be the most complicated model to test. If we look at the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors is separated into redshift bins, and within each redshift bin are bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs we encounter everyday that use sequences: chatbots! The basis for this is usually attention networks~\cite{attention_is_all_you_need}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
+
+suppose we are given a sequence of input vectors, $x=(x_1,x_2,\ldots,x_n)$, then we can construct dot products of the $x_i$ and use them as coefficients for the output.
+\begin{equation}
+	y_k = (x_i \cdot x_j)x_k
+\end{equation}
+We can introduce generalize the dot product using linear transformations. That is, we can introduce the transformation matrices $W_Q$, $W_K$, $W_V$. Let $q_i = W_Q x_i$, $k_i = W_K x_i$, and $v_i = W_V x_i$. Then we can also write a dot product as 
+\begin{equation}
+	y_k = (q_i^T k_j)v_k
+\end{equation}
+Finally, we can introduce a non-linearity, which also keeps the outputs sequence $y$ normalized. By introducing the \textit{softmax} function.
+\begin{equation}
+	y_k = \mathrm{softmax}(q_i^T k_j / \sqrt{d})v_k
+\end{equation}
+where the softmax function is an exponential normalization given by
+\begin{equation}
+	\mathrm{softmax}(W)_i = \frac{e^{w_i}}{e^{\sum_i{w_i}}}
+\end{equation}
+and $d$ is the embedding dimension (i.e $W_K\in \mathbb{R}^{d_x\times d}$).
+We allow the linear matrices $W_Q$, $W_K$, and $W_V$ to contain learnable components. We then pass each output $y_i$ to its own mlp. We aslo keep the skip connections describe in the residual network section. The attention together with the MLPs and skip connections is called a transformer block, drawn in figure~\ref{fig:attention}.
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		%%curved skip lines
+		\draw (8,2.5) to[out=0,in=90] (9,1.5) -- (9,-3.5) to[out=-90,in=0] (8,-4.5) -- (4.75,-4.5);
+		\draw (8,-5.5) to[out=0,in=90] (9,-6.5) -- (9,-8.5) to[out=-90,in=0] (8,-9.5) -- (4.75,-9.5);
+		%%input
+		\draw (0,2) -- (8,2) -- (8,3) -- (0,3) -- (0,2);
+		\draw (4,2.5) node {\footnotesize $x=(x_1,x_2,\dots,x_n)$};
+		%%next!
+		%\draw (1,4) node[anchor=south] {\footnotesize $x_i$};
+		\draw (1,2) -- (1,1.5);
+		\draw (1,1) node {\footnotesize $W_Q$};
+		\draw (0,1.5) -- (0,0.5) -- (2,0.5) -- (2,1.5) -- (0,1.5);
+		%\draw (4,4) node[anchor=south] {\footnotesize $x_j$};
+		\draw (4,2) -- (4,1.5);
+		\draw (4,1) node {\footnotesize $W_K$};
+		\draw (3,1.5) -- (3,0.5) -- (5,0.5) -- (5,1.5) -- (3,1.5);
+		%%next!
+		\draw (1,0.5) -- (1,0);
+		\draw (4,0.5) -- (4,0);
+		\draw (5,-1) -- (0,-1) -- (0,0) -- (5,0) --  (5,-1);
+		\draw (2.5,-0.5) node {\footnotesize $q_i^T k_j$};
+		%%next!
+		%\draw (7,4) node[anchor=south] {\footnotesize $x_k$};
+		\draw (7,2) -- (7,1.5);
+		\draw (7,1) node {\footnotesize $W_V$};
+		\draw (6,1.5) -- (6,0.5) -- (8,0.5) -- (8,1.5) -- (6,1.5);
+		%%next!
+		\draw (2.5,-1) -- (2.5,-1.5);
+		\draw (1.5,-1.5) -- (1.5,-2.5) -- (3.5,-2.5) -- (3.5,-1.5) -- (1.5,-1.5);
+		\draw (2.5,-2) node {\footnotesize softmax};
+		%%next!
+		\draw (7,0.5) -- (7,-3);
+		\draw (2.5,-2.5) -- (2.5,-3);
+		\draw (1.5,-3) -- (1.5,-4) -- (8,-4) -- (8,-3) -- (1.5,-3);
+		\draw (4.75,-3.5) node {\footnotesize $\mathrm{softmax}(q_i^T k_j)v_k$};
+		%%skips!
+		\draw (4.75,-4) -- (4.75,-5);
+		\draw[fill=white] (4.75,-4.5) circle (5pt);
+		\draw (4.75,-4.5) node {\footnotesize $+$};
+		%mlps
+		\draw (1.5,-5) -- (1.5,-6) -- (8,-6) -- (8,-5) -- (1.5,-5);
+		\draw (4.75,-5.5) node {\footnotesize $\mathrm{softmax}(q_i^T k_j)v_k + x_k$};
+		\draw (2,-6) -- (2,-6.5);
+		\draw (1.5,-6.5) -- (1.5,-7.5) -- (2.5,-7.5) -- (2.5,-6.5) -- (1.5,-6.5);
+		\draw (2,-7) node {\footnotesize MLP};
+		\draw (3.5,-6) -- (3.5,-6.5);
+		\draw (3,-6.5) -- (3,-7.5) -- (4,-7.5) -- (4,-6.5) -- (3,-6.5);
+		\draw (3.5,-7) node {\footnotesize MLP};
+		\draw (5.5,-7) node {$\hdots$};
+		\draw (7.5,-6) -- (7.5,-6.5);
+		\draw (7,-6.5) -- (7,-7.5) -- (8,-7.5) -- (8,-6.5) -- (7,-6.5);
+		\draw (7.5,-7) node {\footnotesize MLP};
+		%%last skip
+		\draw (7.5,-7.5) -- (7.5,-8);
+		\draw (3.5,-7.5) -- (3.5,-8);
+		\draw (2,-7.5) -- (2,-8);
+		\draw (1.5,-8) -- (1.5,-9) -- (8,-9) -- (8,-8) -- (1.5,-8);
+		\draw (4.75,-8.5) node {\footnotesize $\mathcal{F}(\mathrm{softmax}(q_i^T k_j)v_k + x_k)$};
+		\draw (4.75,-9) -- (4.75,-10);
+		\draw (1.5,-10) -- (1.5,-11) -- (8,-11) -- (8,-10) -- (1.5,-10);
+		\draw[fill=white] (4.75,-9.5) circle (5pt);
+		\draw (4.75,-9.5) node {\footnotesize $+$};
+		\draw (4.75,-10.5) node {\footnotesize $y = \mathcal{F}(\mathrm{softmax}(q_i^T k_j)v_k + x_k)+x_k$};
+	\end{tikzpicture}
+	\caption{A transformer block}
+	\label{fig:attention}
+\end{figure}
+
 \section{Results}
 We present the results in two sections: the first will be about the training and testing results, and the second comparing between a cocoa chain and an emulated chain. For training and testing, we use the "train, validate, test" approach. We generate three completely independent chains, one is only for training the model, and is a high temperature chain with data well beyond the expected range. The second is used to validate that the model is not overfitting as the training proceeds. The last set is another high temperature chain (but not as high as the training) which is used to test the model as if it were being used as normal. The testing involves reintroducing specific analysis choices such as the scale cut.
 

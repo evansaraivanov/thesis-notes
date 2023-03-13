@@ -22,6 +22,47 @@
 \newblock URL
   \url{https://hubblesite.org/contents/news-releases/2017/news-2017-20.html}.
 
+\bibitem[Lemos et~al.(2021)Lemos, Raveri, Campos, Park, Chang, Weaverdyck,
+  Huterer, Liddle, Blazek, Cawthon, Choi, DeRose, Dodelson, Doux, Gatti, Gruen,
+  Harrison, Krause, Lahav, MacCrann, Muir, Prat, Rau, Rollins, Samuroff, Zuntz,
+  Hartley, Hoyle, Sevilla-Noarbe, Troxel, Aguena, Allam, Annis, Avila, Bacon,
+  Bernstein, Bertin, Brooks, Burke, Rosell, Kind, Carretero, Conselice,
+  Costanzi, Crocce, Pereira, De~Vicente, Desai, Diehl, Doel, Eckert, Eifler,
+  Elvin-Poole, Everett, Evrard, Ferrero, Ferté, Flaugher, Fosalba, Frieman,
+  García-Bellido, Gaztanaga, Gerdes, Giannantonio, Gruendl, Gschwend,
+  Gutierrez, Hinton, Hollowood, Honscheid, Huff, James, Jarvis, Lima, Maia,
+  March, Marshall, Martini, Melchior, Menanteau, Miquel, Mohr, Morgan, Myles,
+  Ogando, Palmese, Pandey, Paz-Chinchón, Plazas, Rodriguez-Monroy, Roodman,
+  Sanchez, Scarpine, Schubnell, Secco, Serrano, Smith, Soares-Santos, Suchyta,
+  Swanson, Tarle, Thomas, To, Varga, Weller, and Wester]{lemos_assessing_2021}
+P.~Lemos, M.~Raveri, A.~Campos, Y.~Park, C.~Chang, N.~Weaverdyck, D.~Huterer,
+  A.~R. Liddle, J.~Blazek, R.~Cawthon, A.~Choi, J.~DeRose, S.~Dodelson,
+  C.~Doux, M.~Gatti, D.~Gruen, I.~Harrison, E.~Krause, O.~Lahav, N.~MacCrann,
+  J.~Muir, J.~Prat, M.~M. Rau, R.~P. Rollins, S.~Samuroff, J.~Zuntz, W.~G.
+  Hartley, B.~Hoyle, I.~Sevilla-Noarbe, M.~A. Troxel, M.~Aguena, S.~Allam,
+  J.~Annis, S.~Avila, D.~Bacon, G.~M. Bernstein, E.~Bertin, D.~Brooks, D.~L.
+  Burke, A.~Carnero Rosell, M.~Carrasco Kind, J.~Carretero, C.~Conselice,
+  M.~Costanzi, M.~Crocce, M.~E.~S. Pereira, J.~De~Vicente, S.~Desai, H.~T.
+  Diehl, P.~Doel, K.~Eckert, T.~F. Eifler, J.~Elvin-Poole, S.~Everett, A.~E.
+  Evrard, I.~Ferrero, A.~Ferté, B.~Flaugher, P.~Fosalba, J.~Frieman,
+  J.~García-Bellido, E.~Gaztanaga, D.~W. Gerdes, T.~Giannantonio, R.~A.
+  Gruendl, J.~Gschwend, G.~Gutierrez, S.~R. Hinton, D.~L. Hollowood,
+  K.~Honscheid, E.~M. Huff, D.~J. James, M.~Jarvis, M.~Lima, M.~A.~G. Maia,
+  M.~March, J.~L. Marshall, P.~Martini, P.~Melchior, F.~Menanteau, R.~Miquel,
+  J.~J. Mohr, R.~Morgan, J.~Myles, R.~L.~C. Ogando, A.~Palmese, S.~Pandey,
+  F.~Paz-Chinchón, A.~A. Plazas, M.~Rodriguez-Monroy, A.~Roodman, E.~Sanchez,
+  V.~Scarpine, M.~Schubnell, L.~F. Secco, S.~Serrano, M.~Smith,
+  M.~Soares-Santos, E.~Suchyta, M.~E.~C. Swanson, G.~Tarle, D.~Thomas, C.~To,
+  T.~N. Varga, J.~Weller, and W.~Wester.
+\newblock Assessing tension metrics with {Dark} {Energy} {Survey} and {Planck}
+  data.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  505\penalty0 (4):\penalty0 6179--6194, July 2021.
+\newblock ISSN 0035-8711, 1365-2966.
+\newblock \doi{10.1093/mnras/stab1670}.
+\newblock URL \url{http://arxiv.org/abs/2012.09554}.
+\newblock arXiv:2012.09554 [astro-ph].
+
 \bibitem[{Baez, John} and {Muniain, Javier}(1994)]{baez_john_gauge_1994}
 {Baez, John} and {Muniain, Javier}.
 \newblock \emph{Gauge {Fields}, {Knots}, and {Gravity}}, volume Vol 4 of
@@ -127,47 +168,6 @@ Jennifer Helsby.
 \newblock Monte {Carlo} {Markov} {Chains}: {A} {Brief} {Introduction} and
   {Implementation}.
 \newblock \penalty0 (5).
-
-\bibitem[Lemos et~al.(2021)Lemos, Raveri, Campos, Park, Chang, Weaverdyck,
-  Huterer, Liddle, Blazek, Cawthon, Choi, DeRose, Dodelson, Doux, Gatti, Gruen,
-  Harrison, Krause, Lahav, MacCrann, Muir, Prat, Rau, Rollins, Samuroff, Zuntz,
-  Hartley, Hoyle, Sevilla-Noarbe, Troxel, Aguena, Allam, Annis, Avila, Bacon,
-  Bernstein, Bertin, Brooks, Burke, Rosell, Kind, Carretero, Conselice,
-  Costanzi, Crocce, Pereira, De~Vicente, Desai, Diehl, Doel, Eckert, Eifler,
-  Elvin-Poole, Everett, Evrard, Ferrero, Ferté, Flaugher, Fosalba, Frieman,
-  García-Bellido, Gaztanaga, Gerdes, Giannantonio, Gruendl, Gschwend,
-  Gutierrez, Hinton, Hollowood, Honscheid, Huff, James, Jarvis, Lima, Maia,
-  March, Marshall, Martini, Melchior, Menanteau, Miquel, Mohr, Morgan, Myles,
-  Ogando, Palmese, Pandey, Paz-Chinchón, Plazas, Rodriguez-Monroy, Roodman,
-  Sanchez, Scarpine, Schubnell, Secco, Serrano, Smith, Soares-Santos, Suchyta,
-  Swanson, Tarle, Thomas, To, Varga, Weller, and Wester]{lemos_assessing_2021}
-P.~Lemos, M.~Raveri, A.~Campos, Y.~Park, C.~Chang, N.~Weaverdyck, D.~Huterer,
-  A.~R. Liddle, J.~Blazek, R.~Cawthon, A.~Choi, J.~DeRose, S.~Dodelson,
-  C.~Doux, M.~Gatti, D.~Gruen, I.~Harrison, E.~Krause, O.~Lahav, N.~MacCrann,
-  J.~Muir, J.~Prat, M.~M. Rau, R.~P. Rollins, S.~Samuroff, J.~Zuntz, W.~G.
-  Hartley, B.~Hoyle, I.~Sevilla-Noarbe, M.~A. Troxel, M.~Aguena, S.~Allam,
-  J.~Annis, S.~Avila, D.~Bacon, G.~M. Bernstein, E.~Bertin, D.~Brooks, D.~L.
-  Burke, A.~Carnero Rosell, M.~Carrasco Kind, J.~Carretero, C.~Conselice,
-  M.~Costanzi, M.~Crocce, M.~E.~S. Pereira, J.~De~Vicente, S.~Desai, H.~T.
-  Diehl, P.~Doel, K.~Eckert, T.~F. Eifler, J.~Elvin-Poole, S.~Everett, A.~E.
-  Evrard, I.~Ferrero, A.~Ferté, B.~Flaugher, P.~Fosalba, J.~Frieman,
-  J.~García-Bellido, E.~Gaztanaga, D.~W. Gerdes, T.~Giannantonio, R.~A.
-  Gruendl, J.~Gschwend, G.~Gutierrez, S.~R. Hinton, D.~L. Hollowood,
-  K.~Honscheid, E.~M. Huff, D.~J. James, M.~Jarvis, M.~Lima, M.~A.~G. Maia,
-  M.~March, J.~L. Marshall, P.~Martini, P.~Melchior, F.~Menanteau, R.~Miquel,
-  J.~J. Mohr, R.~Morgan, J.~Myles, R.~L.~C. Ogando, A.~Palmese, S.~Pandey,
-  F.~Paz-Chinchón, A.~A. Plazas, M.~Rodriguez-Monroy, A.~Roodman, E.~Sanchez,
-  V.~Scarpine, M.~Schubnell, L.~F. Secco, S.~Serrano, M.~Smith,
-  M.~Soares-Santos, E.~Suchyta, M.~E.~C. Swanson, G.~Tarle, D.~Thomas, C.~To,
-  T.~N. Varga, J.~Weller, and W.~Wester.
-\newblock Assessing tension metrics with {Dark} {Energy} {Survey} and {Planck}
-  data.
-\newblock \emph{Monthly Notices of the Royal Astronomical Society},
-  505\penalty0 (4):\penalty0 6179--6194, July 2021.
-\newblock ISSN 0035-8711, 1365-2966.
-\newblock \doi{10.1093/mnras/stab1670}.
-\newblock URL \url{http://arxiv.org/abs/2012.09554}.
-\newblock arXiv:2012.09554 [astro-ph].
 
 \bibitem[Germain et~al.(2015)Germain, Gregor, Murray, and
   Larochelle]{germain_made_2015}

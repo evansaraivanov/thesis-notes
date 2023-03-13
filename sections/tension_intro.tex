@@ -131,10 +131,18 @@ The parameter difference posterior is a gaussian with standard deviation $\sqrt{
 Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. In practice, this integral is computed with Monte-Carlo integration, where the error is evaluated using the Clopper-Pearson interval on the binomial distribution.
 \subsection{DES v Planck Results}
 A subset of these excersizes have been performed previously by the Dark Energy Survey (DES) against the planck results. In~\cite{lemos_assessing_2021}, Lemos et. al. generates an a-priori tension on the cosmological parameters by shifting the DES fiducial cosmology along $\sigma_8$ and $\Omega_m$. They appoximate the a-priori tension using the gaussian approximation,
-\begin{equation}
-	\delta\theta = \sqrt{\mathrm{var}(\theta_{\mathrm{DES}}) + \mathrm{var}(\theta_{\mathrm{Planck}})}\,.
+\begin{equation}\label{eq:a-priori}
+	\chi^2 = \delta\theta (C_\mathrm{DES}+C_\mathrm{Planck})\delta\theta
 \end{equation}
-They then compute the tension metrics and compare to the a-priori gaussian tension. The main result demonstrates what the resulting tension is from a fixed shift along a single parameter. Their result is presented in this thesis in figure~\ref{figure}. An additional note is that gaussian tension tends to underestimate the tension presented in other metrics, highlighting the importance of capturing non-gaussianities.
+where $\delta\theta$ is $(\sigma_8,\Omega_m)$ and $C$ the coviariance of DES and Planck respectively.
+
+They then compute the tension metrics and compare to the a-priori gaussian tension. The main result demonstrates what the resulting tension is from a fixed shift along a single parameter. Their result is presented in this thesis in figure~\ref{fig:planck_des_tension}. An additional note is that gaussian tension tends to underestimate the tension presented in other metrics, highlighting the importance of capturing non-gaussianities.
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/planck_des_result.png}
+	\caption{Result of tension metrics between Planck and DES (figure 6 in~\cite{lemos_assessing_2021}). A-priori tension is the gaussian approximation described in equation~\ref{eq:a-priori}.}
+	\label{fig:planck_des_tension}
+\end{figure}
 \section{Normalizing Flows}
 The method of normalizing flows (MAF) implemented here uses Masked Autoencoders (MADE) to construct the flow~\cite{germain_made_2015,papamakarios_masked_2018,raveri_non-gaussian_2021}. 
 Suppose we have an input to the flow $x_i$. 

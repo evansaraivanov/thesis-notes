@@ -64,7 +64,7 @@ We can look at how this changes for the observer in a non-inertial frame.
 \begin{equation}\label{eq:sr-curves}
     \frac{d^2x'^\lambda}{d\tau^2}+\underbrace{\frac{\partial x'^\lambda}{\partial x^\rho}\frac{\partial^2 x^\rho}{\partial x'^\mu \partial x'^\nu}}_{\equiv \Gamma_{\mu\nu}^\lambda} \frac{d x'^\mu}{d \tau} \frac{d x'^\nu}{d \tau} = 0
 \end{equation}
-Equation~\ref{eq:sr-curves} looks suspiciously like the geodesic equation from differential geometry. The exception is we have defined the `Chirstoffel symbol' here, which is not the most general form of the Christoffel symbols. This does give motivation for how to search for a compatible theory of gravity. However, this does provide a clear link between gravity and geometry. 
+Equation~\ref{eq:sr-curves} looks suspiciously like the geodesic equation from differential geometry. The exception is we have defined the `Chirstoffel symbol' here, which is not the most general form of the Christoffel symbols. This does give motivation for how to search for a compatible theory of gravity by providing a clear link between gravity and geometry. 
 \section{Einstein's Field Equation}
 Christoffel symbols take a very general form, where they signify the failure of derivatives to commute. This failure results from curvature of the space itself. As said in the previous section, special relativity promotes the classical $\mathbb{R}^3$ space to $\mathbb{M}^4$. However, we now need to allow curved space, not simply minkowski space. So lets take an arbitrary semi-Riemannian 4-manifold $M$. In very loose terms, a manifold is a locally euclidean space, which is a sufficient definition for this application.
 
@@ -120,7 +120,7 @@ Where the brackets denote antisymmetric permutations of the indices. Working thr
 \begin{equation}
     \nabla^\mu G_{\mu\nu} = 0\quad G_{\mu\nu} = R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R
 \end{equation}
-Where $R$ and $R_\mu\nu$ are the Ricci scalar and Ricci tensor found by contracting indices in the Riemann tensor. This looks familiar to the conservation of energy equation
+Where $R$ and $R_{\mu\nu}$ are the Ricci scalar and Ricci tensor found by contracting indices in the Riemann tensor. This looks familiar to the conservation of energy equation
 \begin{equation}
     \nabla^\mu T_{\mu\nu}=0
 \end{equation}
@@ -130,7 +130,7 @@ Additionally, the metric itself is divergenceless. Putting these all together gi
 \end{equation}
 
 \section{Cosmology}
-We can see in Einstein's equation the constant $\Lambda$, called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps and forms halos) and dark energy acts as the cosmological constant ~\cite{scott_dodelson_modern_2021}.
+We can see in Einstein's equation the constant $\Lambda$, called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps to form halos) and dark energy acts as the cosmological constant~\cite{scott_dodelson_modern_2021}.
 
 When discussing $\Lambda$CDM (or cosmology in general), there are two main assumptions that are made on a global scale:
 \begin{itemize}
@@ -179,7 +179,7 @@ and the critical density is defined by the density associated with $H_0$,
 \begin{equation}
     H_0^2 \equiv \frac{8\pi G}{3}\rho_{\mathrm{crit}}
 \end{equation}
-Whats neat about this formulation with is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If we define the relative densities by
+The desirable property of this formulation is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If we define the relative densities by
 \begin{equation}
     \Omega_i = \frac{\rho_i}{\rho_\mathrm{crit}}
 \end{equation}
@@ -187,38 +187,33 @@ The relation becomes
 \begin{equation}
     \Omega + \Omega_k = 1 
 \end{equation}
-Meaning if the non-curvature relative densities are less than 1, then the universe is curved with sign equal to the sign of $\Omega_k$.
-
-The second Friedman equation comes from the trace of Einstein's equation.
-\begin{equation}
-    \frac{\ddot a}{a} = -\frac{4\pi G}{3}(\rho + 3P)
-\end{equation}
-In cosmology, there are other distances which can be more useful than the distance given by the FLRW metric. 
-In the FLRW metric the distance between two points grows in time. 
-We can avoid this by defining the \textit{comoving distance} in which distances remain fixed through time. 
-If we look at a coordinate function $x^\mu$ at $t=t_0$, at a later time the coordinate function can be written as $x^\mu \rightarrow a(t) x^\mu$, thus by dividing by the scale factor $a(t)$ we can define the comoving coordinates as
-
-\begin{equation}
-    \chi = \int\limits^{t}_{t_0} \frac{1}{a(t')} dt'
-\end{equation}
-
-with the standard Minkowski metric. This can be taken a step further by determining how far light has travelled since $t=0$
-\begin{equation}
-    \eta = \int\limits^t_0 \frac{1}{a(t')}dt'
-\end{equation}
-
-Since we can't see anything beyond this distance, it is often called the \textit{comoving horizon}. 
-There is one last useful distance to define, the \textit{angular distance} which is inferred by the angle subtended by two objects. 
-This relates distances to the geometry discuss in the first section where the measured distance will be the radial distance $D$
-
+Meaning if the non-curvature relative densities are less than 1, then the universe is curved with sign equal to the sign of $\Omega_k$. This relates to the way we determine distances in the universe~\ref{figure}. The corresponding distance is called the \textit{angular distance}, which relates the angle subtended by two rays to the distance between them. By figure~\ref{figure}, this depends on the geometry of the universe.
 \begin{equation}
     D_A = \left\{ \begin{array}{cc}
         R & K=0 \\
         R\sin(D/R) & K>0 \\
         R\sinh(D/R) & K<0
     \end{array}
-    \right.
+    \right.\,.
 \end{equation}
+The second Friedman equation comes from the trace of Einstein's equation.
+\begin{equation}
+    \frac{\ddot a}{a} = -\frac{4\pi G}{3}(\rho + 3P)
+\end{equation}
+In cosmology, there are other distances which can be more useful than the distance given by the FLRW metric. In the FLRW metric the distance between two points grows in time. 
+We can avoid this by defining the \textit{comoving distance} in which distances remain fixed through time. 
+If we look at a coordinate function $x^\mu$ at $t=t_0$, at a later time the coordinate function can be written as $x^\mu \rightarrow a(t) x^\mu$, thus by dividing by the scale factor $a(t)$ we can define the comoving coordinates as
+\begin{equation}
+    \chi = \int\limits^{t}_{t_0} \frac{1}{a(t')} dt'
+\end{equation}
+with the standard Minkowski metric. This can be taken a step further by determining how far light has travelled since $t=0$
+\begin{equation}
+    \eta = \int\limits^t_0 \frac{1}{a(t')}dt'
+\end{equation}
+Since we can't see anything beyond this distance, it is often called the \textit{comoving horizon}. 
+
+This chapter provides a breif overview of the relevant pieces of cosmology that will be used throughout the rest of this thesis. In the next two chapters, we will use these pieces to see how we can measure cosmological parameters from cosmological surveys. The fourth chapter will be a study on a parameter splitting technique, which provides a model independent consistency check in $\Lambda$CDM. The fifth chapter provides a study of applying neural networks to cosmological analysis, and a scientific application to the evaluation of cosmological tensions.
+
 % \subsection{Cosmic Constituents of the Universe}
 % While we have made sense of the curvature density $\Omega_k$, there is still this mysterious $\Omega$ we see, which is a sum over other objects comprising the universe. Each of these objects are classified by their energy-momentum tensor and equation of state, defined by
 % \begin{equation}

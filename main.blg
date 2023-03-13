@@ -12,6 +12,7 @@ Repeated entry---line 445 of file bib.bib
  : @misc{germain_made_2015
  :                        ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "attention_is_all_you_need"
 Warning--empty year in webb_clusters
 Warning--empty year in planck_CMB
 Warning--empty year in hubble_lensing
@@ -24,7 +25,7 @@ Warning--empty year in helsby_monte_nodate
 Warning--empty year in helsby_monte_nodate
 You've used 17 entries,
             2481 wiz_defined-function locations,
-            662 strings with 13152 characters,
+            663 strings with 13177 characters,
 and the built_in function-call counts, 14388 in all, are:
 = -- 505
 > -- 2235
