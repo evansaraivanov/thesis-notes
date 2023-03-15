@@ -4,38 +4,6 @@ The top-level auxiliary file: main.aux
 The style file: unsrtnat.bst
 A level-1 auxiliary file: sections/appendixSdkr.aux
 Database file #1: bib.bib
-Repeated entry---line 522 of file bib.bib
- : @book{baez_john_gauge_1994
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 532 of file bib.bib
- : @book{scott_dodelson_modern_2021
- :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 562 of file bib.bib
- : @misc{krause_dark_2021
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 578 of file bib.bib
- : @article{blazek_beyond_2019
- :                            ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 599 of file bib.bib
- : @article{muir_y1_2021
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 620 of file bib.bib
- : @article{tobias_metropolis-hastings_nodate
- :                                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 627 of file bib.bib
- : @article{helsby_monte_nodate
- :                             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 635 of file bib.bib
- : @misc{papamakarios_masked_2018
- :                               ,
-I'm skipping whatever remains of this entry
 Warning--empty year in webb_clusters
 Warning--empty year in planck_CMB
 Warning--empty year in hubble_lensing
@@ -89,4 +57,4 @@ warning$ -- 12
 while$ -- 63
 width$ -- 0
 write$ -- 412
-(There were 8 error messages)
+(There were 12 warnings)

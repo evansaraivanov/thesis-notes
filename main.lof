@@ -9,10 +9,10 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Planck TT power spectrum\relax }}{21}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Planck TE power spectrum\relax }}{23}{figure.caption.18}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Planck EE power spectrum\relax }}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Measurements of $H_0$ from different experiements.\relax }}{25}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Measurements of $S_8$ from different experiements.\relax }}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Measurements of $H_0$ from different experiments.\relax }}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Measurements of $S_8$ from different experiments.\relax }}{26}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Result of tension metrics between Planck and DES (figure 6 in\nobreakspace {}\cite {lemos_assessing_2021}). A-priori tension is the gaussian approximation described in equation\nobreakspace {}\ref {eq:a-priori}.\relax }}{33}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Result of tension metrics between Planck and DES (figure 6 in\nobreakspace {}\cite {lemos_assessing_2021}). A-priori tension is the Gaussian approximation described in equation\nobreakspace {}\ref {eq:a-priori}.\relax }}{33}{figure.caption.26}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces An example non-Gaussian distribution (non-zero skewness).\relax }}{35}{figure.caption.27}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces An example of normalizing flow as the transformation is `turned on', represented by the parameter $\lambda $. The non-Gaussian distribution at $\lambda =0$ is transformed into the Gaussian distribution at $\lambda =1$.\relax }}{36}{figure.caption.28}%
 \addvspace {10\p@ }
@@ -21,7 +21,7 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Relative difference between Euclid emulator and Halofit.\relax }}{42}{figure.caption.33}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Cosmic shear, 2x2pt combinations, and 3x2pt posteriors for DES-Y3 with the ALL prior.\relax }}{43}{figure.caption.34}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Comparison of DES-Y1 and DES-Y3 posteriors.\relax }}{44}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Split postiors for DES-Y3 3x2pt and ALL prior.\relax }}{45}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Split posteriors for DES-Y3 3x2pt and ALL prior.\relax }}{45}{figure.caption.36}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces DES-Y1 and DES-Y3 posteriors for 2-point correlation functions.\relax }}{46}{figure.caption.37}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{47}{figure.caption.38}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces $w$CDM posteriors.\relax }}{48}{figure.caption.39}%
