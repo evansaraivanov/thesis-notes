@@ -1,6 +1,6 @@
 \chapter{Measurement of Weak Lensing and the Cosmic Microwave Background}
 \section{Weak Lensing}
-In general, contemporary weak lensing surveys measure the light emmited from galaxies in two components: galaxy position and galaxy shear. In the following sections the theoretical base for cosmological weak lensing surveys are described. However, before discussing the two relevant observables, one needs to formalize the concept of weak lensing.
+In general, contemporary weak lensing surveys measure the light emitted from galaxies in two components: galaxy position and galaxy shear. In the following sections the theoretical base for cosmological weak lensing surveys are described. However, before discussing the two relevant observables, one needs to formalize the concept of weak lensing.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{plots/hubble_weak_lensing.png}
@@ -10,7 +10,7 @@ In general, contemporary weak lensing surveys measure the light emmited from gal
 \subsection{The Linear Matter Power Spectrum}
 As we have seen before, we consider deviations from the FLRW metric using the scalar fields $\Phi$ and $\Psi$. In the absence of anisotropic stress, $\Phi=-\Psi$, which we will assume here for demonstration (one can use codes such as CAMB or CLASS to do computations including anisotropy if desired). 
 
-Throughout time in the universe, we consider there to be three distinct epochs/regions~\cite{scott_dodelson_modern_2021}:
+Throughout time in the universe, we consider there to be three distinct epochs or regions~\cite{scott_dodelson_modern_2021}:
 \begin{itemize}
 	\item The super-horizon region, or the region before inflation where radiation dominates
 	\item The horizon-crossing region, or the region during inflation where the universe transfers from radiation to matter domination
@@ -18,7 +18,7 @@ Throughout time in the universe, we consider there to be three distinct epochs/r
 \end{itemize}
 Additionally, the formation of matter inhomogeneity comes from gravitational instability, the idea that primordial curvature perturbations in the super-horizon grew to form small matter density contrasts which grew in size after crossing the horizon. After the rate of inflation slowed, gravitational forces caused clusters of matter to become the galaxies and clusters we see today.
 
-This gives us a blueprint for writing the matter power spectrum. We have the primordial curvature perturbation $\mathcal{R}$ which source the inital matter inhomogeneity that formed late-time large scale structure. Thus, we can write it as
+This gives us a blueprint for writing the matter power spectrum. We have the primordial curvature perturbation $\mathcal{R}$ which source the initial matter inhomogeneity that formed late-time large scale structure. Thus, we can write it as
 \begin{equation}
 	\mathcal{R} = \frac{5}{3}\Phi_{\text{large-scale}}(k,a_{\text{late}})
 \end{equation} 
@@ -60,7 +60,7 @@ In practice, we cannot measure the matter power spectrum. Dark matter prohibits 
 		P_g(k,a) &= (b_1)^2P_m^L(k,a)
 	\end{split}
 \end{equation}
-Realistically, in galaxy surveys we do not have access to exact reshifts for each observed galaxy. Rather, an image is taken of the sky in multiple color bands from which the redshift is determined. This procedure is called photometric redshift. To account for this, one can attempt to redefine the galaxy power spectrum. First, we define the distribution of distances as
+Realistically, in galaxy surveys we do not have access to exact redshifts for each observed galaxy. Rather, an image is taken of the sky in multiple color bands from which the redshift is determined. This procedure is called photometric redshift. To account for this, one can attempt to redefine the galaxy power spectrum. First, we define the distribution of distances as
 \begin{equation}
 	W(\chi) = \frac{1}{N_g}\frac{dN_g}{d\chi}
 \end{equation}
@@ -68,7 +68,7 @@ The procedure for determining this distribution will be discussed in section (se
 \begin{equation}
 	\Delta_g = \int\limits_0^\infty W(\chi)\delta_g(x,\tau)d\chi
 \end{equation}
-To complete this discussion, we will make some approximations. We will only consider small scales for which $\sin(\theta)\sim \theta \sim 1/l$ where $l$ is the Fourier conjugate of $\theta$. Second is the limber approximation, which states that, as long as the galaxy power spectrum $P_g$ slowly varies over the region $\Delta k \sim 1/l\chi$, we approximate is as a constant. These approximations greatly simplify the integrals required when computing power spectrum of Fourier transformed $\Delta_g$. This power spectrum is called the angular power spectrum. Taking into account the approximations above and computing the fourier transfrom, one finds an angular power spectrum of
+To complete this discussion, we will make some approximations. We will only consider small scales for which $\sin(\theta)\sim \theta \sim 1/l$ where $l$ is the Fourier conjugate of $\theta$. Second is the limber approximation, which states that, as long as the galaxy power spectrum $P_g$ slowly varies over the region $\Delta k \sim 1/l\chi$, we approximate is as a constant. These approximations greatly simplify the integrals required when computing power spectrum of Fourier transformed $\Delta_g$. This power spectrum is called the angular power spectrum. Taking into account the approximations above and computing the Fourier transform, one finds an angular power spectrum of
 \begin{equation}
  	C_g(l) =\int \frac{1}{\chi^2}W^2(\chi)P_g(k=(l+1/2)/\chi,\eta) d\chi
 \end{equation} 
@@ -170,7 +170,7 @@ Finally, since $x^i=\chi\theta^i$, we have $\partial_i = \partial_{\theta^i}/\ch
 		\psi_L(\theta) =& 2\int\limits_0^\chi \frac{1}{\chi'}\Phi(\chi') \left(1-\frac{\chi'}{\chi}\right) d\chi'
 	\end{split}
 \end{equation}
-This result is great, but it's not very experimentally illuminating. Similar to the galaxy vs matter power spectrum, the absence of the observation of dark matter means we cannot reliably determine the potential $\Phi$. Again, an attempt to relate the lensing potential to some property of galaxies can give us a measureable quantity. Lensing distorts the shape of the galaxies (see figure~\ref{fig:weak_lensing}), where we assume all galaxies are elliptical. Define the galaxy shape tensor by
+This result is great, but it's not very experimentally illuminating. Similar to the galaxy vs matter power spectrum, the absence of the observation of dark matter means we cannot reliably determine the potential $\Phi$. Again, an attempt to relate the lensing potential to some property of galaxies can give us a measurable quantity. Lensing distorts the shape of the galaxies (see figure~\ref{fig:weak_lensing}), where we assume all galaxies are elliptical. Define the galaxy shape tensor by
 \begin{equation}
 	q_{ij} \equiv \frac{1}{F}\int I\theta^i\theta^j d\theta^i d\theta^j
 \end{equation}
@@ -183,7 +183,7 @@ This integral is symmetric under $i \leftrightarrow j$. Writing this as a matrix
 	\end{array}
 	\right)
 \end{equation}
-Shape distortion specifically occurs when the deflection angle is not constant across a galaxy. Thus we can look at the tranformation tensor as
+Shape distortion specifically occurs when the deflection angle is not constant across a galaxy. Thus we can look at the transformation tensor as
 \begin{equation}
 	A_{ij} \equiv \frac{\partial \theta^i_S}{\partial\theta^j} = \left( 
 	\begin{array}{cc}
@@ -221,7 +221,7 @@ The first correlation function is the autocorrelation of galaxy density, called 
 \begin{equation}
 	w_g(\theta) = \mathcal{F}(C_g(l)) = \frac{1}{2\pi}\int\limits_0^\infty l C_g(l) J_0(l\theta)dl
 \end{equation}
-Where $J_0$ is the 0-th Bessel function and $\mathcal{F}$ denotes the fourier transform.
+Where $J_0$ is the 0-th Bessel function and $\mathcal{F}$ denotes the Fourier transform.
 
 Next is the shear autocorrelation. In this case, there are two components of shear: the tangential shear $\gamma_+$ and the cross shear $\gamma_\times$. The cross correlation $\langle \gamma_+ \gamma_\times \rangle$ vanishes, so we are left with combinations
 \begin{equation}
@@ -245,7 +245,7 @@ The correlation function $\langle \Delta_g\gamma_\times\rangle$ vanishes in an i
 \subsection{Systematics}
 Up to now, we have neglected any systematics of the weak lensing observables. There are two distinct types of systematics that will be discussed in this section: The ones which affect the calculation of the correlation functions, and ones which affect the correlation functions after they have been computed. The latter type are usually referred two as `fast' parameters, and we will see why in the next chapter. In the meantime here is an explanation of the relevant systematics.
 \subsubsection{Photometric Redshift Uncertainty}
-As we discussed in the galaxy density section, to perform the computation one must determine the redshift distrubution $W(\chi)$. This is a highly non-trivial task. To model the uncertainty in this distribution, one applies a constant shift to the redshift of observed galaxies.
+As we discussed in the galaxy density section, to perform the computation one must determine the redshift distribution $W(\chi)$. This is a highly non-trivial task. To model the uncertainty in this distribution, one applies a constant shift to the redshift of observed galaxies.
 \begin{equation}
 	n_g(z) \mapsto n_g(z+\Delta z)
 \end{equation}
@@ -285,7 +285,7 @@ Galaxy bias is the first of many `fast' parameters. Since the bias is constant, 
 \end{equation}
 where $i$ here denotes the redshift bin
 \subsubsection{Shear Calibration}
-Observed shear is not a completely astrophysical phenomenon. For example, a major source of additional shear comes from the observation lense iteself, where the observed galaxy shape is given by the true galaxy shape convolved with the point spread function of the lense~\cite{hirata_shear_2003,gillis_effects_2019}. This is usually modelled as a multiplicative correction to the shear componenets.
+Observed shear is not a completely astrophysical phenomenon. For example, a major source of additional shear comes from the observation lens iteself, where the observed galaxy shape is given by the true galaxy shape convolved with the point spread function of the lens~\cite{hirata_shear_2003,gillis_effects_2019}. This is usually modelled as a multiplicative correction to the shear components.
 \begin{equation}
 	\begin{split}
 		\xi^{ij}_{\pm} =& (1+m^i)(1+m^j) \xi^{ij}_{\pm} \\
@@ -308,7 +308,7 @@ As discussed in (section), the intrinsic shape of galaxies also gets magnified. 
 %Additionally, DES added a non-physical parameter called $X_{\text{lens}}$ to resolve an inconsistency between two lensing samples, RedMaGiC and MagLim. In this thesis, we only consider $X_{\text{\lens}}=1$
 
 \section{CMB}
-Although CMB data is not used very much in this thesis, it is worth discussing the measurements qualitatively. They consensus among physicists and astronomers that the universe beyond the horizon was a hot, dense plasma. As such, the mean free path of photons were much shorter than they are today, thus compton scattering dominated photon dynamics in the early universe. As the universe cooled, atoms began to form. in a process called recombination. During this time, the universe was still opaque as photons scattered on the newly formed atoms. As the universe began to expand, the mean free path of photons increased and inter-atomic interactions decreased, meaning the atoms could be ionized by absorbing free photons in a process called reionization. The absorption of the photons caused the universe to become transparent. One can compute the optical depth of this transition from opaque to transparent as
+Although CMB data is not used very much in this thesis, it is worth discussing the measurements qualitatively. They consensus among physicists and astronomers that the universe beyond the horizon was a hot, dense plasma. As such, the mean free path of photons were much shorter than they are today, thus Compton scattering dominated photon dynamics in the early universe. As the universe cooled, atoms began to form. in a process called recombination. During this time, the universe was still opaque as photons scattered on the newly formed atoms. As the universe began to expand, the mean free path of photons increased and inter-atomic interactions decreased, meaning the atoms could be ionized by absorbing free photons in a process called reionization. The absorption of the photons caused the universe to become transparent. One can compute the optical depth of this transition from opaque to transparent as
 \begin{equation}
 	T = T_0(1-e^{-\tau_{\mathrm{rei}}})
 \end{equation}
@@ -324,13 +324,13 @@ The CMB is a black body, meaning the intensity of the light can be used to deter
 \end{figure}
 The TT power spectrum measures the anisotropies of the temperature field. Thus, its better to think of it as the deviation from the mean temperature. There are some prominent features of this spectrum worth discussing. The first is the oscillations, known as baryon acoustic oscillations. The second is the overall downward trend from large to small scales. This is generally due to diffusion of light through the early universe, and is given the name diffusion damping.
 
-Now one can observe qualitatively how the cosmological parameters will affect the TT power spectrum. First, lest consider $\Omega_b$, the baryon density. If the density is increased, there should be an increase in compton scattering and decrease in the mean free path of photons, meaning the large scale anisotropy will be larger. Inversly, a reduction in the baryon density would decrease the large scale anisotropy. This is typically observed as the height of the first peak in the TT power spectrum. There will also be a small change in the peak position due to the change in the sound horizon. The height of the second peak, however, decreases. This is due to the increased pressure, which drives down the overall temperature fluctuations, resulting every other peak changing in opposite directions.
+Now one can observe qualitatively how the cosmological parameters will affect the TT power spectrum. First, lest consider $\Omega_b$, the baryon density. If the density is increased, there should be an increase in Compton scattering and decrease in the mean free path of photons, meaning the large scale anisotropy will be larger. Inversely, a reduction in the baryon density would decrease the large scale anisotropy. This is typically observed as the height of the first peak in the TT power spectrum. There will also be a small change in the peak position due to the change in the sound horizon. The height of the second peak, however, decreases. This is due to the increased pressure, which drives down the overall temperature fluctuations, resulting every other peak changing in opposite directions.
 
 Next is to consider a change is $\Omega_c$. The dominant effect from changing $\Omega_c$ comes from the integrated Sachs-Wolfe (ISW) effect, which is an additional gravitational redshift that occurs between the time of reionization and now. Since the evolution of dark matter structure is slow, increasing $\Omega_c$ reduces the ISW effect, thus reducing the anisotropy and causing an overall downward shift in the TT power spectrum.
 
-The remaining parameters are considered in unison: $\mathcal{A}_s$, $n_s$, and $\tau_{\mathrm{rei}}$. Naturally, $\tau_{\mathrm{rei}}$ will have an overall suppression effect, The higher the anisotropy, the higher the suppresion, thus resulting in strong suppresion at large scales and weak suppresion at small scales. The amplitude and spectral index enter the power spectrum in a similar way they did for weak lensing. Thus the effect of $\mathcal{A}_s$ and $n_s$ can look identitical to changes in $\tau_\mathrm{rei}$.
+The remaining parameters are considered in unison: $\mathcal{A}_s$, $n_s$, and $\tau_{\mathrm{rei}}$. Naturally, $\tau_{\mathrm{rei}}$ will have an overall suppression effect, The higher the anisotropy, the higher the suppression, thus resulting in strong suppression at large scales and weak suppression at small scales. The amplitude and spectral index enter the power spectrum in a similar way they did for weak lensing. Thus the effect of $\mathcal{A}_s$ and $n_s$ can look identical to changes in $\tau_\mathrm{rei}$.
 
-Finally is a consideration of $H_0$, arguably the most simple case. $H_0$ affects the expansion rate of the universe, thus a larger expansion rate will shift the position of th peaks in the power spectrum. Increases in $H_0$ will shift the peaks to smaller scales (found by backpropagating $H_0$ through time), and invsersly, lowering $H_0$ will shift the peaks to larger scales.
+Finally is a consideration of $H_0$, arguably the most simple case. $H_0$ affects the expansion rate of the universe, thus a larger expansion rate will shift the position of th peaks in the power spectrum. Increases in $H_0$ will shift the peaks to smaller scales (found by propagating $H_0$ backward through time), and invsersely, lowering $H_0$ will shift the peaks to larger scales.
 \subsection{TE and EE Power Spectra}
 \begin{figure}
     \centering
@@ -344,8 +344,8 @@ Finally is a consideration of $H_0$, arguably the most simple case. $H_0$ affect
     \caption{Planck EE power spectrum}
     \label{fig:planck_ee}
 \end{figure}
-The other two power spectra are shown in figures~\ref{fig:planck_te} and~\ref{fig:planck_ee}. The main consideration with these two power spectra is to observe the way it breaks the degeneracy between $\tau_\mathrm{rei}$ and $\mathcal{A}_s,n_s$. In the TT case,  $\tau_{\mathrm{rei}}$ suppreses the power spectrum as it suppreses the fraction of light that reaches an observer. Howver, the additional scattering actual causes anisotropies in the polarization power spectrum to increase. Thus the effects of $\mathcal{A}_s$ and $\tau_\mathrm{rei}$ are similar in the TT power spectrum but opposite in the $EE$ power spectrum. Thus, one needs all 3 power spectra to reliably infer the cosmological parameters.
-\section{Tensions Between Weak Lensing and CMB}
+The other two power spectra are shown in figures~\ref{fig:planck_te} and~\ref{fig:planck_ee}. The main consideration with these two power spectra is to observe the way it breaks the degeneracy between $\tau_\mathrm{rei}$ and $\mathcal{A}_s,n_s$. In the TT case,  $\tau_{\mathrm{rei}}$ suppresses the power spectrum as it suppresses the fraction of light that reaches an observer. However, the additional scattering actual causes anisotropies in the polarization power spectrum to increase. Thus the effects of $\mathcal{A}_s$ and $\tau_\mathrm{rei}$ are similar in the TT power spectrum but opposite in the $EE$ power spectrum. Thus, one needs all 3 power spectra to reliably infer the cosmological parameters.
+\section{Tensions Between Weak Lensing and the CMB}
 As seen, there are a total of five parameters needed to describe $\Lambda$CDM in weak lensing: $\Omega_m$, $\Omega_b$, $H_0$, $\mathcal{A}_s$, and $n_s$. This parameterization is not unique. Another common parameter, which tracks $\mathcal{A_s}$, is $\sigma_8$
 \begin{equation}
 	\sigma_8^2 = \left.\int\limits_0^\infty P(k,r)\left(\frac{3j_1(kr)}{kr}\right)^2\frac{k^2}{2\pi^2}dk\right|_{r=8}
@@ -356,13 +356,13 @@ The reality is, however, that CMB measurements of some of these parameters diffe
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{plots/h0_tension.jpg}
-	\caption{Measurements of $H_0$ from different experiements.}
+	\caption{Measurements of $H_0$ from different experiments.}
 	\label{fig:h0_tension}
 \end{figure}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{plots/s8_tension.jpg}
-	\caption{Measurements of $S_8$ from different experiements.}
+	\caption{Measurements of $S_8$ from different experiments.}
 	\label{fig:s8_tension}
 \end{figure}
 

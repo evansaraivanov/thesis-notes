@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.26)  15 MAR 2023 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.26)  15 MAR 2023 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1150,13 +1150,14 @@ Package pdftex.def Info: plots/hubble_weak_lensing.png  used on input line 6.
 (pdftex.def)             Requested size: 397.485pt x 154.24469pt.
 [10
 
- <./plots/hubble_weak_lensing.png>]
-Overfull \hbox (82.53532pt too wide) in paragraph at lines 13--14
-[]\OT1/cmr/m/n/12 Throughout time in the uni-verse, we con-sider there to be th
-ree dis-tinct epochs/regions [[]]: 
+ <./plots/hubble_weak_lensing.png>] [11] [12] [13] [14] [15] [16]
+Overfull \hbox (0.84196pt too wide) in paragraph at lines 223--225
+\OT1/cmr/m/n/12 Where $\OML/cmm/m/it/12 J[]$ \OT1/cmr/m/n/12 is the 0-th Bessel
+ func-tion and $\OMS/cmsy/m/n/12 F$ \OT1/cmr/m/n/12 de-notes the Fourier trans-
+form. 
  []
 
-[11] [12] [13] [14] [15] [16] [17] [18] [19]
+[17] [18] [19]
 <plots/Planck_TT.png, id=594, 826.08624pt x 615.29875pt>
 File: plots/Planck_TT.png Graphic file (type png)
 <use plots/Planck_TT.png>
@@ -1173,12 +1174,7 @@ File: plots/planck_EE.png Graphic file (type png)
 <use plots/planck_EE.png>
 Package pdftex.def Info: plots/planck_EE.png  used on input line 343.
 (pdftex.def)             Requested size: 341.43306pt x 239.14284pt.
-
-Overfull \hbox (32.29881pt too wide) in paragraph at lines 348--348
-[]\OT1/cmr/bx/n/17.28 Tensions Be-tween Weak Lens-ing and CMB 
- []
-
-[22] [23 <./plots/planck_TE.png> <./plots/planck_EE.png>]
+ [22] [23 <./plots/planck_TE.png> <./plots/planck_EE.png>]
 <plots/h0_tension.jpg, id=628, 972.63374pt x 1387.1825pt>
 File: plots/h0_tension.jpg Graphic file (type jpg)
 <use plots/h0_tension.jpg>
@@ -1189,28 +1185,13 @@ File: plots/s8_tension.jpg Graphic file (type jpg)
 <use plots/s8_tension.jpg>
 Package pdftex.def Info: plots/s8_tension.jpg  used on input line 364.
 (pdftex.def)             Requested size: 298.11374pt x 307.63538pt.
-)
-(./sections/tension_intro.tex [24] [25 <./plots/h0_tension.jpg>] [26 <./plots/s
-8_tension.jpg>]
+) (./sections/tension_intro.tex [24] [25 <./plots/h0_tension.jpg>] [26 <./plots
+/s8_tension.jpg>]
 Chapter 3.
 [27
 
-]
-Overfull \hbox (9.08742pt too wide) detected at line 34
-[][][]\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 
-)\OMS/cmsy/m/n/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OML/c
-mm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j\OML/cmm/m/i
-t/12 x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[
-] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^
-^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 L\OT1/
-cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 g\OT1/cmr/m/n
-/12 (\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 
-)\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ! \OM
-L/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )
- []
-
-[28] [29] [30] [31] [32]
-Overfull \hbox (5.92749pt too wide) in paragraph at lines 136--138
+] [28] [29] [30] [31] [32]
+Overfull \hbox (5.92749pt too wide) in paragraph at lines 139--141
 \OT1/cmr/m/n/12 where $\OML/cmm/m/it/12 ^^N^^R$ \OT1/cmr/m/n/12 is $(\OML/cmm/m
 /it/12 ^^[[]; \OT1/cmr/m/n/12 
 [])$ and $\OML/cmm/m/it/12 C$ \OT1/cmr/m/n/12 the coviari-ance of DES and Planc
@@ -1220,35 +1201,35 @@ k re-spec-tively.
 <plots/planck_des_result.png, id=709, 760.8425pt x 360.34625pt>
 File: plots/planck_des_result.png Graphic file (type png)
 <use plots/planck_des_result.png>
-Package pdftex.def Info: plots/planck_des_result.png  used on input line 142.
+Package pdftex.def Info: plots/planck_des_result.png  used on input line 145.
 (pdftex.def)             Requested size: 357.73407pt x 169.43423pt.
 [33 <./plots/planck_des_result.png>] [34]
-<plots/t=1.png, id=731, 752.8125pt x 556.0775pt>
+<plots/t=1.png, id=732, 752.8125pt x 556.0775pt>
 File: plots/t=1.png Graphic file (type png)
 <use plots/t=1.png>
-Package pdftex.def Info: plots/t=1.png  used on input line 184.
+Package pdftex.def Info: plots/t=1.png  used on input line 187.
 (pdftex.def)             Requested size: 357.73407pt x 264.24986pt.
-<plots/3d_flow.png, id=732, 323.0469pt x 290.5254pt>
+<plots/3d_flow.png, id=733, 323.0469pt x 290.5254pt>
 File: plots/3d_flow.png Graphic file (type png)
 <use plots/3d_flow.png>
-Package pdftex.def Info: plots/3d_flow.png  used on input line 190.
+Package pdftex.def Info: plots/3d_flow.png  used on input line 193.
 (pdftex.def)             Requested size: 357.73407pt x 321.73338pt.
 ) (./sections/gg_split.tex [35 <./plots/t=1.png>] [36 <./plots/3d_flow.png>]
 Chapter 4.
 [37
 
 ]
-<plots/Pk.pdf, id=751, 558.88799pt x 425.44633pt>
+<plots/Pk.pdf, id=752, 558.88799pt x 425.44633pt>
 File: plots/Pk.pdf Graphic file (type pdf)
 <use plots/Pk.pdf>
 Package pdftex.def Info: plots/Pk.pdf  used on input line 18.
 (pdftex.def)             Requested size: 298.11374pt x 226.93964pt.
-<plots/sigma8.pdf, id=753, 542.82799pt x 404.45384pt>
+<plots/sigma8.pdf, id=754, 542.82799pt x 404.45384pt>
 File: plots/sigma8.pdf Graphic file (type pdf)
 <use plots/sigma8.pdf>
 Package pdftex.def Info: plots/sigma8.pdf  used on input line 26.
 (pdftex.def)             Requested size: 194.76982pt x 145.12189pt.
-<plots/sigma8_w.pdf, id=754, 542.82799pt x 404.45384pt>
+<plots/sigma8_w.pdf, id=755, 542.82799pt x 404.45384pt>
 File: plots/sigma8_w.pdf Graphic file (type pdf)
 <use plots/sigma8_w.pdf>
 Package pdftex.def Info: plots/sigma8_w.pdf  used on input line 31.
@@ -1258,87 +1239,78 @@ Package pdftex.def Info: plots/sigma8_w.pdf  used on input line 31.
 pdfTeX warning: pdflatex (file ./plots/sigma8_w.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
 >] [40]
-<plots/halo_vs_emu.pdf, id=909, 421.30525pt x 269.84814pt>
+<plots/halo_vs_emu.pdf, id=910, 421.30525pt x 269.84814pt>
 File: plots/halo_vs_emu.pdf Graphic file (type pdf)
 <use plots/halo_vs_emu.pdf>
 Package pdftex.def Info: plots/halo_vs_emu.pdf  used on input line 132.
 (pdftex.def)             Requested size: 298.11374pt x 190.95117pt.
  [41]
-Overfull \hbox (99.55753pt too wide) in paragraph at lines 140--141
-\OT1/cmr/m/n/12 best-fit pa-ram-e-ters with-out lens-ing, $(\OMS/cmsy/m/n/12 A[
-] ^^B \OT1/cmr/m/n/12 10[]\OML/cmm/m/it/12 ; n[]; H[]; \OT1/cmr/m/n/12 
-[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 
-[]) = (2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 101\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12
- 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 965\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 67\OM
-L/cmm/m/it/12 :\OT1/cmr/m/n/12 32\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m
-/it/12 :\OT1/cmr/m/n/12 317\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12
- :\OT1/cmr/m/n/12 049)$,
- []
-
-<plots/plot36_S8.pdf, id=916, 342.86308pt x 344.0793pt>
+<plots/plot36_S8.pdf, id=917, 342.86308pt x 344.0793pt>
 File: plots/plot36_S8.pdf Graphic file (type pdf)
 <use plots/plot36_S8.pdf>
-Package pdftex.def Info: plots/plot36_S8.pdf  used on input line 153.
+Package pdftex.def Info: plots/plot36_S8.pdf  used on input line 155.
 (pdftex.def)             Requested size: 298.11374pt x 299.1838pt.
-<plots/plot31v3.pdf, id=917, 342.51434pt x 343.97751pt>
+<plots/plot31v3.pdf, id=918, 342.51434pt x 343.97751pt>
 File: plots/plot31v3.pdf Graphic file (type pdf)
 <use plots/plot31v3.pdf>
-Package pdftex.def Info: plots/plot31v3.pdf  used on input line 159.
+Package pdftex.def Info: plots/plot31v3.pdf  used on input line 161.
 (pdftex.def)             Requested size: 298.11374pt x 299.39447pt.
-[42 <./plots/halo_vs_emu.pdf>]
-<plots/plot204_v2.pdf, id=974, 342.54941pt x 344.1624pt>
+ [42 <./plots/halo_vs_emu.pdf>]
+<plots/plot204_v2.pdf, id=976, 342.54941pt x 344.1624pt>
 File: plots/plot204_v2.pdf Graphic file (type pdf)
 <use plots/plot204_v2.pdf>
-Package pdftex.def Info: plots/plot204_v2.pdf  used on input line 168.
+Package pdftex.def Info: plots/plot204_v2.pdf  used on input line 170.
 (pdftex.def)             Requested size: 298.11374pt x 299.52914pt.
-<plots/plot208_v3.pdf, id=975, 342.54941pt x 344.1624pt>
+<plots/plot208_v3.pdf, id=977, 342.54941pt x 344.1624pt>
 File: plots/plot208_v3.pdf Graphic file (type pdf)
 <use plots/plot208_v3.pdf>
-Package pdftex.def Info: plots/plot208_v3.pdf  used on input line 175.
+Package pdftex.def Info: plots/plot208_v3.pdf  used on input line 177.
 (pdftex.def)             Requested size: 178.86703pt x 179.70593pt.
-<plots/plot208_v2.pdf, id=976, 342.54941pt x 344.1624pt>
+<plots/plot208_v2.pdf, id=978, 342.54941pt x 344.1624pt>
 File: plots/plot208_v2.pdf Graphic file (type pdf)
 <use plots/plot208_v2.pdf>
-Package pdftex.def Info: plots/plot208_v2.pdf  used on input line 180.
+Package pdftex.def Info: plots/plot208_v2.pdf  used on input line 182.
 (pdftex.def)             Requested size: 178.86703pt x 179.70593pt.
-<plots/plot_1d_resultv5.pdf, id=978, 708.36494pt x 508.82097pt>
+<plots/plot_1d_resultv5.pdf, id=980, 708.36494pt x 508.82097pt>
 File: plots/plot_1d_resultv5.pdf Graphic file (type pdf)
 <use plots/plot_1d_resultv5.pdf>
-Package pdftex.def Info: plots/plot_1d_resultv5.pdf  used on input line 190.
+Package pdftex.def Info: plots/plot_1d_resultv5.pdf  used on input line 192.
 (pdftex.def)             Requested size: 397.485pt x 285.5201pt.
  [43 <./plots/plot36_S8.pdf>]
-<plots/plot205v2.pdf, id=1042, 347.16664pt x 345.31708pt>
+<plots/plot205v2.pdf, id=1044, 347.16664pt x 345.31708pt>
 File: plots/plot205v2.pdf Graphic file (type pdf)
 <use plots/plot205v2.pdf>
-Package pdftex.def Info: plots/plot205v2.pdf  used on input line 202.
+Package pdftex.def Info: plots/plot205v2.pdf  used on input line 204.
 (pdftex.def)             Requested size: 178.86703pt x 177.91667pt.
-<plots/plot209.pdf, id=1043, 347.16664pt x 345.31708pt>
+<plots/plot209.pdf, id=1045, 347.16664pt x 345.31708pt>
 File: plots/plot209.pdf Graphic file (type pdf)
 <use plots/plot209.pdf>
-Package pdftex.def Info: plots/plot209.pdf  used on input line 207.
+Package pdftex.def Info: plots/plot209.pdf  used on input line 209.
 (pdftex.def)             Requested size: 178.86703pt x 177.91667pt.
-<plots/plot_1d_resultv6.pdf, id=1044, 818.19305pt x 617.10548pt>
+<plots/plot_1d_resultv6.pdf, id=1046, 818.19305pt x 617.10548pt>
 File: plots/plot_1d_resultv6.pdf Graphic file (type pdf)
 <use plots/plot_1d_resultv6.pdf>
-Package pdftex.def Info: plots/plot_1d_resultv6.pdf  used on input line 216.
+Package pdftex.def Info: plots/plot_1d_resultv6.pdf  used on input line 218.
 (pdftex.def)             Requested size: 397.485pt x 299.79486pt.
- [44 <./plots/plot31v3.pdf>] [45 <./plots/plot204_v2.pdf>]
-<plots/internal_tension_v4.pdf, id=1146, 628.90231pt x 586.23956pt>
+
+[44 <./plots/plot31v3.pdf>] [45 <./plots/plot204_v2.pdf>]
+<plots/internal_tension_v4.pdf, id=1148, 628.90231pt x 586.23956pt>
 File: plots/internal_tension_v4.pdf Graphic file (type pdf)
 <use plots/internal_tension_v4.pdf>
-Package pdftex.def Info: plots/internal_tension_v4.pdf  used on input line 227.
+Package pdftex.def Info: plots/internal_tension_v4.pdf  used on input line 229.
 
 (pdftex.def)             Requested size: 178.86703pt x 166.73114pt.
-<plots/internal_tension_wcdm.pdf, id=1147, 628.90231pt x 586.23956pt>
+<plots/internal_tension_wcdm.pdf, id=1149, 628.90231pt x 586.23956pt>
 File: plots/internal_tension_wcdm.pdf Graphic file (type pdf)
 <use plots/internal_tension_wcdm.pdf>
 Package pdftex.def Info: plots/internal_tension_wcdm.pdf  used on input line 23
-2.
+4.
 (pdftex.def)             Requested size: 178.86703pt x 166.73114pt.
-) (./sections/emulators.tex [46 <./plots/plot208_v3.pdf> <./plots/plot208_v2.pd
-f>] [47 <./plots/plot_1d_resultv5.pdf>]
-[48 <./plots/plot205v2.pdf> <./plots/plot209.pdf> <./plots/plot_1d_resultv6.pdf
->] [49 <./plots/internal_tension_v4.pdf> <./plots/internal_tension_wcdm.pdf>]
+)
+(./sections/emulators.tex [46 <./plots/plot208_v3.pdf> <./plots/plot208_v2.pdf>
+] [47 <./plots/plot_1d_resultv5.pdf>] [48 <./plots/plot205v2.pdf> <./plots/plot
+209.pdf> <./plots/plot_1d_resultv6.pdf>] [49 <./plots/internal_tension_v4.pdf> 
+<./plots/internal_tension_wcdm.pdf>]
 Chapter 5.
 [50
 
@@ -1349,13 +1321,13 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 95.
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [51]
 [52] [53] [54] [55] [56] [57]
-<plots/losses_resnet_3_256.pdf, id=1589, 462.52798pt x 346.89601pt>
+<plots/losses_resnet_3_256.pdf, id=1591, 462.52798pt x 346.89601pt>
 File: plots/losses_resnet_3_256.pdf Graphic file (type pdf)
 <use plots/losses_resnet_3_256.pdf>
 Package pdftex.def Info: plots/losses_resnet_3_256.pdf  used on input line 469.
 
 (pdftex.def)             Requested size: 357.73407pt x 268.3123pt.
-<plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf, id=1591, 462.52798pt x 346.
+<plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf, id=1593, 462.52798pt x 346.
 89601pt>
 File: plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf Graphic file (type pdf)
 
@@ -1363,23 +1335,23 @@ File: plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf Graphic file (type pdf)
 Package pdftex.def Info: plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf  use
 d on input line 476.
 (pdftex.def)             Requested size: 357.73407pt x 268.3123pt.
-<plots/model_table_mlp.pdf, id=1592, 316.84937pt x 314.89418pt>
+<plots/model_table_mlp.pdf, id=1594, 316.84937pt x 314.89418pt>
 File: plots/model_table_mlp.pdf Graphic file (type pdf)
 <use plots/model_table_mlp.pdf>
 Package pdftex.def Info: plots/model_table_mlp.pdf  used on input line 486.
 (pdftex.def)             Requested size: 194.76982pt x 193.56987pt.
-<plots/model_table_resnet.pdf, id=1593, 316.84937pt x 314.89418pt>
+<plots/model_table_resnet.pdf, id=1595, 316.84937pt x 314.89418pt>
 File: plots/model_table_resnet.pdf Graphic file (type pdf)
 <use plots/model_table_resnet.pdf>
 Package pdftex.def Info: plots/model_table_resnet.pdf  used on input line 491.
 (pdftex.def)             Requested size: 194.76982pt x 193.56987pt.
-<plots/model_table_resbottle.pdf, id=1594, 600.36325pt x 268.6775pt>
+<plots/model_table_resbottle.pdf, id=1596, 600.36325pt x 268.6775pt>
 File: plots/model_table_resbottle.pdf Graphic file (type pdf)
 <use plots/model_table_resbottle.pdf>
 Package pdftex.def Info: plots/model_table_resbottle.pdf  used on input line 49
 6.
 (pdftex.def)             Requested size: 357.73407pt x 160.09673pt.
-<plots/avg_chi2_v_n_params_new.pdf, id=1595, 462.52798pt x 346.89601pt>
+<plots/avg_chi2_v_n_params_new.pdf, id=1597, 462.52798pt x 346.89601pt>
 File: plots/avg_chi2_v_n_params_new.pdf Graphic file (type pdf)
 <use plots/avg_chi2_v_n_params_new.pdf>
 Package pdftex.def Info: plots/avg_chi2_v_n_params_new.pdf  used on input line 
@@ -1445,13 +1417,13 @@ No file sections/appendixSdkr.tex.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CEB0094ED4F63CCF576AA56ED1971044;7854.
+(rerunfilecheck)             Checksum: 79AE00433A2FC5A653578A9AF00C980B;7877.
  ) 
 Here is how much of TeX's memory you used:
- 38416 strings out of 478268
- 887144 string characters out of 5846347
- 1254499 words of memory out of 5000000
- 55554 multiletter control sequences out of 15000+600000
+ 38418 strings out of 478268
+ 887178 string characters out of 5846347
+ 1253499 words of memory out of 5000000
+ 55555 multiletter control sequences out of 15000+600000
  489487 words of font info for 102 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
  114i,17n,118p,1403b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1478,10 +1450,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2022/t
 exmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (79 pages, 8612192 bytes).
+Output written on main.pdf (79 pages, 8614683 bytes).
 PDF statistics:
- 2094 PDF objects out of 2487 (max. 8388607)
- 1207 compressed objects within 13 object streams
- 325 named destinations out of 1000 (max. 500000)
+ 2096 PDF objects out of 2487 (max. 8388607)
+ 1209 compressed objects within 13 object streams
+ 326 named destinations out of 1000 (max. 500000)
  571 words of extra memory for PDF output out of 10000 (max. 10000000)
 

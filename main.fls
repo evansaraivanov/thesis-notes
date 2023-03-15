@@ -1431,6 +1431,7 @@ INPUT ./plots/planck_des_result.png
 INPUT plots/planck_des_result.png
 INPUT ./plots/planck_des_result.png
 INPUT ./plots/planck_des_result.png
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT ./plots/t=1.png
 INPUT ./plots/t=1.png
 INPUT plots/t=1.png
@@ -1469,7 +1470,6 @@ INPUT ./plots/sigma8_w.pdf
 INPUT plots/sigma8_w.pdf
 INPUT ./plots/sigma8_w.pdf
 INPUT ./plots/sigma8_w.pdf
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT ./plots/halo_vs_emu.pdf
 INPUT ./plots/halo_vs_emu.pdf
 INPUT plots/halo_vs_emu.pdf
