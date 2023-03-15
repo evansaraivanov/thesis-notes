@@ -51,7 +51,7 @@ There are a few properties that can be observed for this algorithm:
 
 \section{Tension Metrics}
 Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, futher increasing the complexity. There are many metrics used to measure tension~\cite{lemos_assessing_2021}, each with different assumptions and consequences.
-\subsection{Parameter-based Metrics}
+\subsection{Parameter-based Metrics}\label{sec:tenion_metrics}
 \subsubsection{Metric 1: Parameter Difference}
 The main idea of this metric is that if two data sets largely agree, there difference posterior will be centered at 0, so mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
 Define $\Delta\theta = \theta_A - \theta_B$. Under this reparameterization the two posteriors are $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_A-\Delta\theta)$. If the posteriors are independent one can marginalize over $\theta_A$ to get the parameter difference distribution.
@@ -129,7 +129,7 @@ The parameter difference posterior is a gaussian with standard deviation $\sqrt{
 	\Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta
 \end{equation}
 Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. In practice, this integral is computed with Monte-Carlo integration, where the error is evaluated using the Clopper-Pearson interval on the binomial distribution.
-\subsection{DES v Planck Results}
+\subsection{DES v Planck Results}\label{sec:planck_DES_tenion}
 A subset of these excersizes have been performed previously by the Dark Energy Survey (DES) against the planck results. In~\cite{lemos_assessing_2021}, Lemos et. al. generates an a-priori tension on the cosmological parameters by shifting the DES fiducial cosmology along $\sigma_8$ and $\Omega_m$. They appoximate the a-priori tension using the gaussian approximation,
 \begin{equation}\label{eq:a-priori}
 	\chi^2 = \delta\theta (C_\mathrm{DES}+C_\mathrm{Planck})\delta\theta
