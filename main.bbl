@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -77,6 +77,16 @@ P.~Lemos, M.~Raveri, A.~Campos, Y.~Park, C.~Chang, N.~Weaverdyck, D.~Huterer,
 \newblock Academic Press, 2021.
 \newblock ISBN 978-0-12-815948-4.
 
+\bibitem[Troxel and Ishak(2015)]{troxel_intrinsic_2015}
+M.A. Troxel and Mustapha Ishak.
+\newblock The intrinsic alignment of galaxies and its impact on weak
+  gravitational lensing in an era of precision cosmology.
+\newblock \emph{Physics Reports}, 558:\penalty0 1--59, February 2015.
+\newblock ISSN 03701573.
+\newblock \doi{10.1016/j.physrep.2014.11.001}.
+\newblock URL
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0370157314003974}.
+
 \bibitem[Krause et~al.(2021)Krause, Fang, Pandey, Secco, Alves, Huang, Blazek,
   Prat, Zuntz, Eifler, MacCrann, DeRose, Crocce, Porredon, Jain, Troxel,
   Dodelson, Huterer, Liddle, Leonard, Amon, Chen, Elvin-Poole, Ferté, Muir,
@@ -133,16 +143,106 @@ Jonathan Blazek, Niall MacCrann, M.~A. Troxel, and Xiao Fang.
 \newblock URL \url{http://arxiv.org/abs/1708.09247}.
 \newblock arXiv:1708.09247 [astro-ph].
 
+\bibitem[Hirata and Seljak(2003)]{hirata_shear_2003}
+Christopher~M. Hirata and Uros Seljak.
+\newblock Shear calibration biases in weak lensing surveys.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  343\penalty0 (2):\penalty0 459--480, August 2003.
+\newblock ISSN 0035-8711, 1365-2966.
+\newblock \doi{10.1046/j.1365-8711.2003.06683.x}.
+\newblock URL \url{http://arxiv.org/abs/astro-ph/0301054}.
+\newblock arXiv:astro-ph/0301054.
+
+\bibitem[Gillis and Taylor(2019)]{gillis_effects_2019}
+Bryan~R. Gillis and A.~N. Taylor.
+\newblock The {Effects} of {Calibration} on the {Bias} of {Shear}
+  {Measurements}.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  482\penalty0 (1):\penalty0 402--415, January 2019.
+\newblock ISSN 0035-8711, 1365-2966.
+\newblock \doi{10.1093/mnras/sty2637}.
+\newblock URL \url{http://arxiv.org/abs/1809.09540}.
+\newblock arXiv:1809.09540 [astro-ph].
+
 \bibitem[MacCrann et~al.(2020)MacCrann, Blazek, Jain, and
   Krause]{maccrann_controlling_2020}
 Niall MacCrann, Jonathan Blazek, Bhuvnesh Jain, and Elisabeth Krause.
 \newblock Controlling and leveraging small-scale information in tomographic
-  galaxy–galaxy lensing.
+  galaxy-galaxy lensing.
 \newblock \emph{Monthly Notices of the Royal Astronomical Society},
   491\penalty0 (4):\penalty0 5498--5509, February 2020.
 \newblock ISSN 0035-8711, 1365-2966.
 \newblock \doi{10.1093/mnras/stz2761}.
-\newblock URL \url{https://academic.oup.com/mnras/article/491/4/5498/5586592}.
+\newblock URL \url{http://arxiv.org/abs/1903.07101}.
+\newblock arXiv:1903.07101 [astro-ph].
+
+\bibitem[Amon et~al.(2022)Amon, Gruen, Troxel, MacCrann, Dodelson, Choi, Doux,
+  Secco, Samuroff, Krause, Cordero, Myles, DeRose, Wechsler, Gatti,
+  Navarro-Alsina, Bernstein, Jain, Blazek, Alarcon, Ferté, Raveri, Lemos,
+  Campos, Prat, Sánchez, Jarvis, Alves, Andrade-Oliveira, Baxter, Bechtol,
+  Becker, Bridle, Camacho, Campos, Rosell, Kind, Cawthon, Chang, Chen,
+  Chintalapati, Crocce, Davis, Diehl, Drlica-Wagner, Eckert, Eifler,
+  Elvin-Poole, Everett, Fang, Fosalba, Friedrich, Giannini, Gruendl, Harrison,
+  Hartley, Herner, Huang, Huff, Huterer, Kuropatkin, Leget, Liddle, McCullough,
+  Muir, Pandey, Park, Porredon, Refregier, Rollins, Roodman, Rosenfeld, Ross,
+  Rykoff, Sanchez, Sevilla-Noarbe, Sheldon, Shin, Troja, Tutusaus, Varga,
+  Weaverdyck, Yanny, Yin, Zhang, Zuntz, Aguena, Allam, Annis, Bacon, Bertin,
+  Bhargava, Brooks, Buckley-Geer, Burke, Carretero, Costanzi, da~Costa,
+  Pereira, De~Vicente, Desai, Dietrich, Doel, Ferrero, Flaugher, Frieman,
+  García-Bellido, Gaztanaga, Gerdes, Giannantonio, Gschwend, Gutierrez,
+  Hinton, Hollowood, Honscheid, Hoyle, James, Kron, Kuehn, Lahav, Lima, Lin,
+  Maia, Marshall, Martini, Melchior, Menanteau, Miquel, Mohr, Morgan, Ogando,
+  Palmese, Paz-Chinchón, Petravick, Pieres, Malagón, Romer, Sanchez,
+  Scarpine, Schubnell, Serrano, Smith, Soares-Santos, Suchyta, Tarle, Thomas,
+  To, and Weller]{amon_dark_2022}
+A.~Amon, D.~Gruen, M.~A. Troxel, N.~MacCrann, S.~Dodelson, A.~Choi, C.~Doux,
+  L.~F. Secco, S.~Samuroff, E.~Krause, J.~Cordero, J.~Myles, J.~DeRose, R.~H.
+  Wechsler, M.~Gatti, A.~Navarro-Alsina, G.~M. Bernstein, B.~Jain, J.~Blazek,
+  A.~Alarcon, A.~Ferté, M.~Raveri, P.~Lemos, A.~Campos, J.~Prat, C.~Sánchez,
+  M.~Jarvis, O.~Alves, F.~Andrade-Oliveira, E.~Baxter, K.~Bechtol, M.~R.
+  Becker, S.~L. Bridle, H.~Camacho, A.~Campos, A.~Carnero Rosell, M.~Carrasco
+  Kind, R.~Cawthon, C.~Chang, R.~Chen, P.~Chintalapati, M.~Crocce, C.~Davis,
+  H.~T. Diehl, A.~Drlica-Wagner, K.~Eckert, T.~F. Eifler, J.~Elvin-Poole,
+  S.~Everett, X.~Fang, P.~Fosalba, O.~Friedrich, G.~Giannini, R.~A. Gruendl,
+  I.~Harrison, W.~G. Hartley, K.~Herner, H.~Huang, E.~M. Huff, D.~Huterer,
+  N.~Kuropatkin, P.-F. Leget, A.~R. Liddle, J.~McCullough, J.~Muir, S.~Pandey,
+  Y.~Park, A.~Porredon, A.~Refregier, R.~P. Rollins, A.~Roodman, R.~Rosenfeld,
+  A.~J. Ross, E.~S. Rykoff, J.~Sanchez, I.~Sevilla-Noarbe, E.~Sheldon, T.~Shin,
+  A.~Troja, I.~Tutusaus, T.~N. Varga, N.~Weaverdyck, B.~Yanny, B.~Yin,
+  Y.~Zhang, J.~Zuntz, M.~Aguena, S.~Allam, J.~Annis, D.~Bacon, E.~Bertin,
+  S.~Bhargava, D.~Brooks, E.~Buckley-Geer, D.~L. Burke, J.~Carretero,
+  M.~Costanzi, L.~N. da~Costa, M.~E.~S. Pereira, J.~De~Vicente, S.~Desai, J.~P.
+  Dietrich, P.~Doel, I.~Ferrero, B.~Flaugher, J.~Frieman, J.~García-Bellido,
+  E.~Gaztanaga, D.~W. Gerdes, T.~Giannantonio, J.~Gschwend, G.~Gutierrez, S.~R.
+  Hinton, D.~L. Hollowood, K.~Honscheid, B.~Hoyle, D.~J. James, R.~Kron,
+  K.~Kuehn, O.~Lahav, M.~Lima, H.~Lin, M.~A.~G. Maia, J.~L. Marshall,
+  P.~Martini, P.~Melchior, F.~Menanteau, R.~Miquel, J.~J. Mohr, R.~Morgan,
+  R.~L.~C. Ogando, A.~Palmese, F.~Paz-Chinchón, D.~Petravick, A.~Pieres,
+  A.~A.~Plazas Malagón, A.~K. Romer, E.~Sanchez, V.~Scarpine, M.~Schubnell,
+  S.~Serrano, M.~Smith, M.~Soares-Santos, E.~Suchyta, G.~Tarle, D.~Thomas,
+  C.~To, and J.~Weller.
+\newblock Dark {Energy} {Survey} {Year} 3 {Results}: {Cosmology} from {Cosmic}
+  {Shear} and {Robustness} to {Data} {Calibration}.
+\newblock \emph{Phys. Rev. D}, 105\penalty0 (2):\penalty0 023514, January 2022.
+\newblock ISSN 2470-0010, 2470-0029.
+\newblock \doi{10.1103/PhysRevD.105.023514}.
+\newblock URL \url{http://arxiv.org/abs/2105.13543}.
+\newblock arXiv:2105.13543 [astro-ph].
+
+\bibitem[noa(2018)]{noauthor_planck_2018}
+Planck 2018 {Results}: {Cosmological} {Parameter} {Tables}.
+\newblock \emph{Phys. Rev. Lett.}, 121\penalty0 (22):\penalty0 221301, November
+  2018.
+\newblock ISSN 0031-9007, 1079-7114.
+\newblock \doi{10.1103/PhysRevLett.121.221301}.
+\newblock URL \url{http://arxiv.org/abs/1810.05216}.
+\newblock arXiv:1810.05216 [astro-ph].
+
+\bibitem[Agrahari(2021)]{agrahari_monte_2021}
+Shivam Agrahari.
+\newblock Monte {Carlo} {Markov} {Chain} ({MCMC}) explained, July 2021.
+\newblock URL
+  \url{https://towardsdatascience.com/monte-carlo-markov-chain-mcmc-explained-94e3a6c8de11}.
 
 \bibitem[Raveri and Doux(2021)]{raveri_non-gaussian_2021}
 Marco Raveri and Cyrille Doux.
@@ -231,5 +331,23 @@ Kunhao Zhong, Evan Saraivanov, Vivian Miranda, Jiachuan Xu, Tim Eifler, and
   January 2023.
 \newblock URL \url{http://arxiv.org/abs/2301.03694}.
 \newblock arXiv:2301.03694 [astro-ph].
+
+\bibitem[noa()]{noauthor_what_nodate}
+What are {Neural} {Networks}? {\textbar} {IBM}.
+\newblock URL \url{https://www.ibm.com/topics/neural-networks}.
+
+\bibitem[He et~al.(2015)He, Zhang, Ren, and Sun]{he_deep_2015}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep {Residual} {Learning} for {Image} {Recognition}, December 2015.
+\newblock URL \url{http://arxiv.org/abs/1512.03385}.
+\newblock arXiv:1512.03385 [cs].
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{vaswani_attention_2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention {Is} {All} {You} {Need}, December 2017.
+\newblock URL \url{http://arxiv.org/abs/1706.03762}.
+\newblock arXiv:1706.03762 [cs].
 
 \end{thebibliography}

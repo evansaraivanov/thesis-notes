@@ -9,7 +9,7 @@ In linear regression, one considers a model of the form $y=mx+b$. The goal is to
 \end{equation}
 In this very special case, there is an analytic way to minimize $L$, but in general that is highly non-trivial. Additionally, there are much more complicated data sets one would want to model, such as data vectors in cosmological surveys. The remaining question is: how does one intelligentally generalize this type of model to more complicated ones?
 
-We have a tool that can do this already: the brain! The brain is a large system of cells called neurons. Each neuron is connected to others by a synapse, and after accumulating a large enough electric charge, the neuron will activate, sending the electric signal to a connected neuron. 
+We have a tool that can do this already: the brain~\cite{noauthor_what_nodate}! The brain is a large system of cells called neurons. Each neuron is connected to others by a synapse, and after accumulating a large enough electric charge, the neuron will activate, sending the electric signal to a connected neuron. 
 
 Using this, lets try to construct a general model. We start with the neurons
 \begin{figure}[th]
@@ -207,7 +207,7 @@ The first graph architecture we study in the multi-layer perceptron (the name is
 	\label{fig:mlp}
 \end{figure}
 \subsection{Residual Network}
-As mentioned above, there is an issue of vanishing gradients with deep neural networks. One way we can avoid this is by changing the quantity we want to model. Note that, if the model weights approach 0, gradients can vanish, but we can avoid this by adding the input to the output (figure~\ref{fig:resblock}). Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer parameterized by $\beta_i$ so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
+As mentioned above, there is an issue of vanishing gradients with deep neural networks. To resolve this, one can add the input and output together so that gradient information is allowed to skip layers~\cite{he_deep_2015}(figure~\ref{fig:resblock}). Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer parameterized by $\beta_i$ so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
 \begin{equation}
 	\phi(\alpha_i,\chi(\beta_i,x)) = \psi(\alpha_i,\beta_i,x)+\chi(\beta_i,x)
 \end{equation}
@@ -360,7 +360,7 @@ The ResNet allows us to create much deeper networks, but the number of parameter
 \end{figure}
 In the examples drawn (figures~\ref{fig:resblock} and~\ref{fig:resbottle-block}), there are 40 parameters in the ResNet, but only 28 parameters in the ResBottle. This allows us to either simplify the model, add more layers, or make the layers much wider without blowing up the number of parameters that need to be trained.
 \subsection{Attention}
-This will be the most complicated model to test. If we look at the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors is separated into redshift bins, and within each redshift bin are bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs we encounter everyday that use sequences: chatbots! The basis for this is usually attention networks~\cite{attention_is_all_you_need}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
+This will be the most complicated model to test. If we look at the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors is separated into redshift bins, and within each redshift bin are bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs we encounter everyday that use sequences: chatbots! The basis for this is usually attention networks~\cite{vaswani_attention_2017}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
 
 suppose we are given a sequence of input vectors, $x=(x_1,x_2,\ldots,x_n)$, then we can construct dot products of the $x_i$ and use them as coefficients for the output.
 \begin{equation}

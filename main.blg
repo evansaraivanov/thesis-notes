@@ -4,18 +4,42 @@ The top-level auxiliary file: main.aux
 The style file: unsrtnat.bst
 A level-1 auxiliary file: sections/appendixSdkr.aux
 Database file #1: bib.bib
-Repeated entry---line 430 of file bib.bib
+Repeated entry---line 522 of file bib.bib
+ : @book{baez_john_gauge_1994
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 532 of file bib.bib
+ : @book{scott_dodelson_modern_2021
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 562 of file bib.bib
+ : @misc{krause_dark_2021
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 578 of file bib.bib
+ : @article{blazek_beyond_2019
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 599 of file bib.bib
+ : @article{muir_y1_2021
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 620 of file bib.bib
+ : @article{tobias_metropolis-hastings_nodate
+ :                                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 627 of file bib.bib
+ : @article{helsby_monte_nodate
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 635 of file bib.bib
  : @misc{papamakarios_masked_2018
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 445 of file bib.bib
- : @misc{germain_made_2015
- :                        ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "attention_is_all_you_need"
 Warning--empty year in webb_clusters
 Warning--empty year in planck_CMB
 Warning--empty year in hubble_lensing
+Warning--empty author in noauthor_planck_2018
 Warning--empty journal in tobias_metropolis-hastings_nodate
 Warning--empty year in tobias_metropolis-hastings_nodate
 Warning--empty year in tobias_metropolis-hastings_nodate
@@ -23,45 +47,46 @@ Warning--empty journal in helsby_monte_nodate
 Warning--there's a number but no volume in helsby_monte_nodate
 Warning--empty year in helsby_monte_nodate
 Warning--empty year in helsby_monte_nodate
-You've used 17 entries,
+Warning--empty year in noauthor_what_nodate
+You've used 26 entries,
             2481 wiz_defined-function locations,
-            663 strings with 13177 characters,
-and the built_in function-call counts, 14388 in all, are:
-= -- 505
-> -- 2235
-< -- 10
-+ -- 766
-- -- 732
-* -- 1757
-:= -- 2911
-add.period$ -- 75
-call.type$ -- 17
-change.case$ -- 32
-chr.to.int$ -- 17
-cite$ -- 27
-duplicate$ -- 282
-empty$ -- 550
-format.name$ -- 755
-if$ -- 2549
+            727 strings with 17481 characters,
+and the built_in function-call counts, 21531 in all, are:
+= -- 819
+> -- 3256
+< -- 14
++ -- 1118
+- -- 1066
+* -- 2620
+:= -- 4307
+add.period$ -- 122
+call.type$ -- 26
+change.case$ -- 50
+chr.to.int$ -- 26
+cite$ -- 40
+duplicate$ -- 433
+empty$ -- 858
+format.name$ -- 1102
+if$ -- 3851
 int.to.chr$ -- 1
-int.to.str$ -- 18
-missing$ -- 11
-newline$ -- 117
-num.names$ -- 51
-pop$ -- 160
+int.to.str$ -- 27
+missing$ -- 16
+newline$ -- 182
+num.names$ -- 72
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 26
 quote$ -- 0
-skip$ -- 173
+skip$ -- 267
 stack$ -- 0
-substring$ -- 150
-swap$ -- 44
+substring$ -- 272
+swap$ -- 70
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 113
-warning$ -- 10
-while$ -- 41
+type$ -- 176
+warning$ -- 12
+while$ -- 63
 width$ -- 0
-write$ -- 260
-(There were 2 error messages)
+write$ -- 412
+(There were 8 error messages)

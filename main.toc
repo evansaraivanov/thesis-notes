@@ -31,8 +31,8 @@
 \contentsline {subsubsection}{Metric 3: Goodness of Fit Degradation}{30}{section*.24}%
 \contentsline {subsubsection}{Metric 4: Eigentension}{31}{section*.25}%
 \contentsline {subsection}{\numberline {3.2.2}Evidence-Based Metrics}{31}{subsection.3.2.2}%
-\contentsline {subsubsection}{Interpreting the Results}{32}{section*.26}%
-\contentsline {subsection}{\numberline {3.2.3}DES v Planck Results}{32}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Interpreting the Results}{32}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}DES v Planck Results}{32}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}Normalizing Flows}{33}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Growth-Geometry Split in DES-Y3}{37}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Split Matter Power Spectrum}{37}{section.4.1}%
@@ -55,5 +55,5 @@
 \contentsline {section}{\numberline {5.3}Results}{57}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Training and Testing}{58}{subsection.5.3.1}%
 \contentsline {section}{\numberline {5.4}Application to Tension Calibration}{59}{section.5.4}%
-\contentsline {chapter}{\hbox to\@tempdima {\hfil }{Bibliography}}{65}{section*.54}%
-\contentsline {chapter}{Bibliography}{65}{chapter*.55}%
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }{Bibliography}}{65}{section*.53}%
+\contentsline {chapter}{Bibliography}{65}{chapter*.54}%

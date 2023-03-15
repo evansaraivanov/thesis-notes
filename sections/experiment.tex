@@ -251,7 +251,7 @@ As we discussed in the galaxy density section, to perform the computation one mu
 \end{equation}
 The shift $\Delta z$ must be determined before one can compute the galaxy clustering and galaxy lensing correlation functions.
 \subsubsection{Intrinsic Alignment of Galaxies}
-As can be seen in figure (fig), galaxy shapes are not completely random. In the absence of lensing, there is still some non-zero correlation between the shapes. This is referred to as Intrinsic Alignment. There are two models of intrinsic alignment that will be considered in this thesis: the Tidal Alignment Tidal Torquing (TATT) model~\cite{krause_dark_2021,blazek_beyond_2019} and the Non-linear Alignment (NLA) model. The TATT depends on the tidal tensor $s_{ij}$ which contains the information about tidal forces due to non-uniform gravitational fields. Tidal forces are a source of intrinsic alignment and shear (figure). The model is given by
+As can be seen in figure (fig), galaxy shapes are not completely random. In the absence of lensing, there is still some non-zero correlation between the shapes. This is referred to as Intrinsic Alignment~\cite{troxel_intrinsic_2015,scott_dodelson_modern_2021}. There are two models of intrinsic alignment that will be considered in this thesis: the Tidal Alignment Tidal Torquing (TATT) model~\cite{krause_dark_2021,blazek_beyond_2019} and the Non-linear Alignment (NLA) model. The TATT depends on the tidal tensor $s_{ij}$ which contains the information about tidal forces due to non-uniform gravitational fields. Tidal forces are a source of intrinsic alignment and shear (figure). The model is given by
 \begin{equation}
 	\gamma_{ij}^I = \underbrace{C_1s_{ij}}_{\text{tidal alignment}}+
 	\underbrace{b_{TA}C_1(\delta_m\times s_{ij})}_{\text{density weighting}}+
@@ -285,7 +285,7 @@ Galaxy bias is the first of many `fast' parameters. Since the bias is constant, 
 \end{equation}
 where $i$ here denotes the redshift bin
 \subsubsection{Shear Calibration}
-Observed shear is not a completely astrophysical phenomenon. For example, a major source of additional shear comes from the observation lense iteself. The exact methods for how this is handled (such as the point spread function) are beyond the scope of this thesis. This is usually modelled as a multiplicative correction to the shear componenets.
+Observed shear is not a completely astrophysical phenomenon. For example, a major source of additional shear comes from the observation lense iteself, where the observed galaxy shape is given by the true galaxy shape convolved with the point spread function of the lense~\cite{hirata_shear_2003,gillis_effects_2019}. This is usually modelled as a multiplicative correction to the shear componenets.
 \begin{equation}
 	\begin{split}
 		\xi^{ij}_{\pm} =& (1+m^i)(1+m^j) \xi^{ij}_{\pm} \\
@@ -344,7 +344,7 @@ Finally is a consideration of $H_0$, arguably the most simple case. $H_0$ affect
     \caption{Planck EE power spectrum}
     \label{fig:planck_ee}
 \end{figure}
-The other two power spectra are shown in figures (figs). The main consideration with these two power spectra is to observe the way it breaks the degeneracy between $\tau_\mathrm{rei}$ and $\mathcal{A}_s,n_s$. In the TT case,  $\tau_{\mathrm{rei}}$ suppreses the power spectrum as it suppreses the fraction of light that reaches an observer. Howver, the additional scattering actual causes anisotropies in the polarization power spectrum to increase. Thus the effects of $\mathcal{A}_s$ and $\tau_\mathrm{rei}$ are similar in the TT power spectrum but opposite in the $EE$ power spectrum. Thus, one needs all 3 power spectra to reliably infer the cosmological parameters.
+The other two power spectra are shown in figures~\ref{fig:planck_te} and~\ref{fig:planck_ee}. The main consideration with these two power spectra is to observe the way it breaks the degeneracy between $\tau_\mathrm{rei}$ and $\mathcal{A}_s,n_s$. In the TT case,  $\tau_{\mathrm{rei}}$ suppreses the power spectrum as it suppreses the fraction of light that reaches an observer. Howver, the additional scattering actual causes anisotropies in the polarization power spectrum to increase. Thus the effects of $\mathcal{A}_s$ and $\tau_\mathrm{rei}$ are similar in the TT power spectrum but opposite in the $EE$ power spectrum. Thus, one needs all 3 power spectra to reliably infer the cosmological parameters.
 \section{Tensions Between Weak Lensing and CMB}
 As seen, there are a total of five parameters needed to describe $\Lambda$CDM in weak lensing: $\Omega_m$, $\Omega_b$, $H_0$, $\mathcal{A}_s$, and $n_s$. This parameterization is not unique. Another common parameter, which tracks $\mathcal{A_s}$, is $\sigma_8$
 \begin{equation}
@@ -352,7 +352,7 @@ As seen, there are a total of five parameters needed to describe $\Lambda$CDM in
 \end{equation}
 which can be described as the amplitude of matter fluctuations at the scale $8 h^{-1}\mathrm{Mpc}$. With this parameter instead of $\mathcal{A}_s$, weak lensing gives string constraints on $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$. 
 
-The reality is, however, that CMB measurements of some of these parameters differ between the parameters measured from weak lensing. The most famous discrepancy is the $H_0$ tension (figure~\ref{fig:h0_tension}). Weak lensing measurements are significantly higher than CMB measurements; a nearly $5\sigma$ difference. The other famous tension is the $S_8$ tension at about a $3\sigma$ difference (figure~\ref{fig:s8_tension}). There have been extensive efforts to propose a model that can resolve these tensions (modified gravity, early dark energy, quintessence, etc.), but as of now no model is able to simultaneously resolve both tensions. For example, early dark energy resolves the $H_0$ tension, but the $S_8$ tension tends to either remain the same or increase. The remaining chapters will explore how to compute these tensions and demonstrate a proposed consistency test.
+The reality is, however, that CMB measurements of some of these parameters differ between the parameters measured from weak lensing (precise results can be found in~\cite{amon_dark_2022,noauthor_planck_2018}). The most famous discrepancy is the $H_0$ tension (figure~\ref{fig:h0_tension}). Weak lensing measurements are significantly higher than CMB measurements; a nearly $5\sigma$ difference. The other famous tension is the $S_8$ tension at about a $3\sigma$ difference (figure~\ref{fig:s8_tension}). There have been extensive efforts to propose a model that can resolve these tensions (modified gravity, early dark energy, quintessence, etc.), but as of now no model is able to simultaneously resolve both tensions. For example, early dark energy resolves the $H_0$ tension, but the $S_8$ tension tends to either remain the same or increase. The remaining chapters will explore how to compute these tensions and demonstrate a proposed consistency test.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{plots/h0_tension.jpg}

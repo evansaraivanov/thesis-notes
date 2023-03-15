@@ -2,7 +2,7 @@
 The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? Its clear from the complexity of the calculations that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, its clear that this computation involves conditional probability densities, thus we can use Bayes' theorem to help us determine the parameters.
 
 \section{Markov Chain Monte Carlo}
-Markov chains are a step process in which the next step only depends on the current step. Formally, a
+Markov chains are a step process in which the next step only depends on the current step~\cite{agrahari_monte_2021}. Formally, a
 sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} if the conditional distribution $X_{n+1}$ depends only on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain. This is a very abstract definition, however Markov chains play a regular role in daily life. For example, weather patterns form Markov chains, or the order of words in a sentence. The key here is that, if it rains one day, how likely is it to rain the next day? Or given a word, what is the most probable next word? For a cosmological application, the key is to start with some set of parameters, and slowly move towards the most probable set of parameters.
 
 Bayes' theorem states
@@ -111,7 +111,7 @@ The idea is that one should not include poorly measured eigenmodes in our tensio
 		\mathcal{D} = \int \mathcal{P} \log(\frac{\mathcal{P}}{\Pi})
 	\end{equation}
 \end{itemize}
-\subsubsection{Interpreting the Results}
+\subsection{Interpreting the Results}
 Given some probability $P$ of a parameter shift, the following formula can give you the number of standard deviations if the probability shift comes from a gaussian distribution
 \begin{equation}
 	n_\sigma = \sqrt{2} \text{Erf}^{-1}(P)
