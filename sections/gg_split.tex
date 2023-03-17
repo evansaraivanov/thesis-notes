@@ -126,16 +126,16 @@ To understand these choices of priors, we consider the following combinations:
 	\item Prior 3 (ALL): Emulator prior + CMBP + SNIa + BBN + BAO
 \end{itemize}
 \subsection{Software Pipeline}
-To compute the linear matter power spectrum we use \textsc{CAMB} Boltzmann code, which is capable of solving the linear Boltzmann equation and computing transfer functions. For going beyond linear scales, we use the Euclid emulator, a fast neural network based emulator for Halofit. Previous DES studies used Halofit itself, a full N-body simulation to determine the non-linear evolution of dark matter. A baseline comparison between the Euclid emulator and Halofit was done (figure~\ref{fig:euc_v_halo})
+To compute the linear matter power spectrum, we use \textsc{CAMB} Boltzmann code, which is capable of solving the linear Boltzmann equation and computing transfer functions. For going beyond linear scales, we use the Euclid emulator, a fast neural network based emulator for Halofit. Previous DES studies used Halofit itself, a full N-body simulation, to determine the non-linear evolution of dark matter. A baseline comparison between the Euclid emulator and Halofit was done (figure~\ref{fig:euc_v_halo})
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{plots/halo_vs_emu.pdf}
 	\caption{Relative difference between Euclid emulator and Halofit.}
 	\label{fig:euc_v_halo}
 \end{figure}
-We use the Cocoa (CObaya-COsmolike joint Architecture). This interfaces Cobaya, the MCMC sampler we use, with Cosmolike, the data vector calculation framework. DES-Y3 has already been implemented in Cobaya, Cosmolike, and Cocoa. To assess the convergence of the MCMC, we use the $R-1<0.02$.
+We use the Cocoa (CObaya-COsmolike joint Architecture). This interfaces Cobaya, the MCMC sampler we use, with CosmoLike, the data vector calculation framework. DES-Y3 has already been implemented in Cobaya, CosmoLike, and Cocoa. To assess the convergence of the MCMC, we use the $R-1<0.02$.
 
-One benefit of this analysis is that growth parameters are semi-fast; they do not require CAMB to recompute the matter power spectrum, they only require Cosmolike to update the data vectors. Rerunning Cosmolike with only changing the growth parameters results in a 2-fold speedup.
+One benefit of this analysis is that growth parameters are semi-fast; they do not require CAMB to recompute the matter power spectrum, they only require CosmoLike to update the data vectors. Rerunning CosmoLike with only changing the growth parameters results in a 2-fold speedup.
 \subsection{Pipeline Validation on Synthetic Data}
 To validate this method, we generate a synthetic data vector at the Planck best-fit parameters without lensing (equation~\ref{eq:planck_best_fit}), and we hope to find no difference between growth and geometry parameters and hope each parameter is equal to the fiducial value.
 \begin{equation}\label{eq:planck_best_fit}

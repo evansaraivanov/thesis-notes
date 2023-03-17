@@ -1,5 +1,5 @@
 \chapter{Computing Techniques}
-The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? From the complexity of the calculations, it's clear that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, its clear that this computation involves conditional probability densities, thus we can use Bayes' theorem to help us determine the parameters.
+The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? From the complexity of the calculations, it's clear that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, it's clear that this computation involves conditional probability densities, thus we can use Bayes' theorem to help us determine the parameters.
 
 \section{Markov Chain Monte Carlo}
 Markov chains are a step process in which the next step only depends on the current step~\cite{agrahari_monte_2021}. Formally, a
@@ -17,7 +17,7 @@ The left hand side is typically called the \textit{posterior}, while $P(d|\theta
 \begin{equation}
 	\mathcal{P}(\theta) = \frac{\mathcal{L}(\theta) \Pi(\theta)}{\mathcal{E}}
 \end{equation}
-The evidence is typically very difficult to compute. One must be able to compute an integral of a complicated function over the entire parameter space (it is possible via techniques such as nested sampling, however these usually take a very long time). Thus, with a given likelihood and prior, its not feasible to compute the posterior exactly. Markov chain Monte Carlo (MCMC) describes a probabilistic technique that can generate samples from the posterior only using the likelihood and prior and without computing the evidence.
+The evidence is typically very difficult to compute. One must be able to compute an integral of a complicated function over the entire parameter space (it is possible via techniques such as nested sampling, however these usually take a very long time). Thus, with a given likelihood and prior, it is not feasible to compute the posterior exactly. Markov chain Monte Carlo (MCMC) describes a probabilistic technique that can generate samples from the posterior only using the likelihood and prior and without computing the evidence.
 \subsection{The Metropolis-Hastings Algorithm}
 The Metropolis-Hastings algorithm~\cite{tobias_metropolis-hastings_nodate,zhao_bayesian_2021,helsby_monte_nodate} is the most common algorithm for doing MCMC. Suppose we want to sample from a distribution $p(x)$. We start with a proposal distribution $g(x_n)$. 
 Sample from the proposal distribution to find the next state $x_{n+1}$ with probability $g(x_{n+1}|x_n)$. 
@@ -25,7 +25,7 @@ This transition from state $n$ to state $n+1$ must follow the \textit{detailed b
 \begin{equation}
 	p(x_n) g(x_{n+1}|x_n) A(x_n \rightarrow x_{n+1}) = p(x_{n+1}) g(x_n|x_{n+1}) A(x_{n+1} \rightarrow x_{n})
 \end{equation}
-where $A$ is an \textit{acceptance probability} which I will define more precisely later. 
+where $A$ is an \textit{acceptance probability}, which I will define more precisely later. 
 Using Bayes' Theorem on $p(x)$, the evidence cancels out on each side, 
 and thus the detailed balance condition can be simplified to only rely on the likelihood and prior of $p(x)$, 
 which I will denote $\pi$ and $\mathcal{L}$.
@@ -40,7 +40,7 @@ which I will denote $\pi$ and $\mathcal{L}$.
 \end{equation}
 This allows us to define the acceptance probability as
 \begin{equation}
-	A(x_n \rightarrow x_{n+1}) = \min( 1, R_{n,n+1} )
+	A(x_n \rightarrow x_{n+1}) = \min( 1, R_{n,n+1} )\,.
 \end{equation}
 This probability is used to determine whether the chain moves to $x_{n+1}$ or stays at $x_n$. The chain converges when it reaches a stationary state.
 
@@ -49,15 +49,15 @@ There are a few properties that can be observed for this algorithm:
     \item Having an asymmetrical proposal $g(x)$ can allow for faster convergence of the chain.
     \item The initial sampling may not accurately reflect samples for $p(x)$. 
     This is regarded as the `burn-in' and is generally discarded from the samples.
-    \item MCMC Sampling loses sampling power for multi-modal distributions. 
+    \item MCMC sampling loses sampling power for multi-modal distributions. 
 \end{itemize}
 
 \section{Tension Metrics}
 Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a Gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, further increasing the complexity. There are many metrics used to measure tension~\cite{lemos_assessing_2021}, each with different assumptions and consequences.
 \subsection{Parameter-based Metrics}
 \subsubsection{Metric 1: Parameter Difference}
-The main idea of this metric is that if two data sets largely agree, there difference posterior will be centered at 0, so mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
-Define $\Delta\theta = \theta_A - \theta_B$. Under this reparameterization the two posteriors are $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_A-\Delta\theta)$. If the posteriors are independent one can marginalize over $\theta_A$ to get the parameter difference distribution.
+The main idea of this metric is that if two data sets largely agree, the difference posterior will be centered at 0, so the mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
+Define $\Delta\theta = \theta_A - \theta_B$. Under this reparameterization the two posteriors are $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_A-\Delta\theta)$. If the posteriors are independent, one can marginalize over $\theta_A$ to get the parameter difference distribution.
 \begin{equation}
     \mathcal{P}(\Delta\theta) = \int \mathcal{P}(\theta_A)\mathcal{P}(\theta_A - \Delta\theta) d\theta_A
 \end{equation}
@@ -73,15 +73,15 @@ As discussed above, we can compute the parameter $Q_{\mathrm{UDM}}$ by
     Q_{\mathrm{UDM}} = {(\mu_A - \mu_{A+B})}^T{(C_A-C_{A+B})}^{-1}(\mu_A - \mu_{A+B}) 
 \end{equation}
 The difference of means is precisely the mean of the parameter difference distribution, and we are using the covariance $C_A+C_{A+B}$.
-Thus it is clear $Q_{\mathrm{UDM}}$ is $\chi^2$ distributed with degrees of freedom given by $\rank(C_A-C_{A+B})$. 
-It is clear, however, that this metric relies on the parameter difference to be Gaussian distributed because of its reliance on $Q_{\mathrm{UDM}}$ being $\chi^2$ distributed. Despite this, we proceed anyway. With proper calibration this metric can be useful even for non-Gaussian posteriors.
+Thus, it is clear $Q_{\mathrm{UDM}}$ is $\chi^2$ distributed with degrees of freedom given by $\rank(C_A-C_{A+B})$. 
+It is clear, however, that this metric relies on the parameter difference to be Gaussian distributed because of its reliance on $Q_{\mathrm{UDM}}$ being $\chi^2$ distributed. Despite this, we proceed anyway. With proper calibration, this metric can be useful even for non-Gaussian posteriors.
 
 \subsubsection{Metric 3: Goodness of Fit Degradation}
-For this metric, first find the \textit{maximum a posteriori}, the point $\hat\theta$ that maximizes the posterior. Then compute the likelihood $\mathcal{L}(\hat\theta)$. Lastly compute the difference in likelihoods between the sum of chain $A$ and $B$ and the joint chain $A+B$
+For this metric, first find the \textit{maximum a posteriori}, the point $\hat\theta$ that maximizes the posterior. Then compute the likelihood $\mathcal{L}(\hat\theta)$. Lastly, compute the difference in likelihoods between the sum of chain $A$ and $B$ and the joint chain $A+B$
 \begin{equation}
 	Q_{\mathrm{DMAP}} = 2\mathcal{L}_A(\hat\theta_A) + 2\mathcal{L}_B(\hat\theta_B) - 2\mathcal{L}_{A+B}(\hat\theta_{A+B})
 \end{equation}
-$Q_{\mathrm{DMAP}}$ is again $\chi^2$-distributed. Interesting part here is how to determine the number of degrees of freedom. The likelihood function, which is on data-space, has degrees of freedom of approximately $1500$ for LSST, but we give it an input of cosmological parameters which belong to a 5 dimensional parameter space. Thus the degrees of freedom is related to the number of parameters that are constrained by the likelihood. This can be found by examining the ratio of the variance in the posterior to the variance in the prior; a large ratio of $\mathcal{O}(1)$ means a parameter in not constrained by the likelihood and a ratio $\ll 1$ means a parameter is well constrained by the likelihood. Thus we define the number of degrees of freedom as
+$Q_{\mathrm{DMAP}}$ is again $\chi^2$-distributed. The interesting part here is how to determine the number of degrees of freedom. The likelihood function, which is on data-space, has degrees of freedom of approximately $1500$ for LSST, but we give it an input of cosmological parameters which belong to a 5 dimensional parameter space. The number of degrees of freedom is related to the number of parameters that are constrained by the likelihood. This can be found by examining the ratio of the variance in the posterior to the variance in the prior; a large ratio of $\mathcal{O}(1)$ means a parameter in not constrained by the likelihood and a ratio $\ll 1$ means a parameter is well constrained by the likelihood. Thus, we define the number of degrees of freedom as
 \begin{equation}
 	d = N-\mathrm{tr}(C_\Pi^{-1}C_\mathcal{P})
 \end{equation}
@@ -115,9 +115,9 @@ The idea is that one should not include poorly measured eigenmodes in our tensio
 	\end{equation}
 \end{itemize}
 \subsection{Interpreting the Results}
-Given some probability $P$ of a parameter shift, the following formula can give you the number of standard deviations if the probability shift comes from a Gaussian distribution
+Given some probability $P$ of a parameter shift, the following formula can give you the number of standard deviations if the probability shift comes from a Gaussian distribution,
 \begin{equation}
-	n_\sigma = \sqrt{2} \text{Erf}^{-1}(P)
+	n_\sigma = \sqrt{2} \text{Erf}^{-1}(P)\,.
 \end{equation}
 However we don't have any concrete reason to believe $P$ comes from a Gaussian distribution in general. However, it does come from a Gaussian distribution when the posteriors are Gaussian, thus we can do a test of the metrics by taking two unit Gaussian posteriors and fixing the separation between them. In fact, this example can be computed analytically.
 \begin{equation}
@@ -127,17 +127,17 @@ However we don't have any concrete reason to believe $P$ comes from a Gaussian d
 				   			   &= \frac{1}{\sqrt{4\pi}}e^{-{(\Delta\theta)}^2/4}\\
     \end{split}
 \end{equation}
-The parameter difference posterior is a Gaussian with standard deviation $\sqrt{2}$. The separation is fixed by $a$, hence the shift is $\mathcal{P}(a)$. Hence the shift probability is
+The parameter difference posterior is a Gaussian with standard deviation $\sqrt{2}$. The separation is fixed by $a$, hence the shift is $\mathcal{P}(a)$. Hence, the shift probability is
 \begin{equation}
-	\Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta
+	\Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta\,.
 \end{equation}
-Thus we can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. In practice, this integral is computed with Monte-Carlo integration, where the error is evaluated using the Clopper-Pearson interval on the binomial distribution.
+We can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. In practice, this integral is computed with Monte-Carlo integration, where the error is evaluated using the Clopper-Pearson interval on the binomial distribution.
 \subsection{DES v Planck Results}
-A subset of these exercises have been performed previously by the Dark Energy Survey (DES) against the Planck results. In~\cite{lemos_assessing_2021}, Lemos et. al. generates an a-priori tension on the cosmological parameters by shifting the DES fiducial cosmology along $\sigma_8$ and $\Omega_m$. They approximate the a-priori tension using the Gaussian approximation,
+A subset of these exercises have been performed previously by the Dark Energy Survey (DES) against the Planck results. In~\cite{lemos_assessing_2021}, Lemos et al. generates an a-priori tension on the cosmological parameters by shifting the DES fiducial cosmology along $\sigma_8$ and $\Omega_m$. They approximate the a-priori tension using the Gaussian approximation,
 \begin{equation}\label{eq:a-priori}
 	\chi^2 = \delta\theta (C_\mathrm{DES}+C_\mathrm{Planck})\delta\theta
 \end{equation}
-where $\delta\theta$ is $(\sigma_8,\Omega_m)$ and $C$ the coviariance of DES and Planck respectively.
+where $\delta\theta$ is $(\sigma_8,\Omega_m)$ and $C$ the covariance of DES and Planck respectively.
 
 They then compute the tension metrics and compare to the a-priori Gaussian tension. The main result demonstrates what the resulting tension is from a fixed shift along a single parameter. Their result is presented in this thesis in figure~\ref{fig:planck_des_tension}. An additional note is that Gaussian tension tends to underestimate the tension presented in other metrics, highlighting the importance of capturing non-Gaussianities.
 \begin{figure}[tb]
@@ -153,8 +153,8 @@ The output of the map is $y_i= \mu(x_{1:i-1})+\sigma(x_{1:i-1})x_i$.
 The $\mu$ and $\sigma$ are found using neural networks which receive masked inputs $x_{1:i-1}=(x_1,\ldots,x_{i-1},0,\ldots,0)$. 
 Since the input only depends on the first $i-1$ inputs, the normalizing flow is \textit{autoregressive} and the Jacobian is triangular.
 
-The implementation in \textsc{Tensorflow} uses \textit{bijectors} which implements a local diffeomorphism between a manifold $M$ and a target manifold $N$ (which are our parameter spaces), i.e. $\phi:M\rightarrow N$ such that $\phi$ is differentiable and injective. 
-In \textsc{Tensorflow} it has three operations, forward, inverse, and log\_det\_jacobian, which are exactly the three we want. 
+The implementation in \textsc{TensorFlow} uses \textit{bijectors} which implements a local diffeomorphism between a manifold $M$ and a target manifold $N$ (which are our parameter spaces), i.e. $\phi:M\rightarrow N$ such that $\phi$ is differentiable and injective. 
+In \textsc{TensorFlow}, bijectors have three operations, forward, inverse, and log\_det\_jacobian, which are exactly the three we want. 
 By constructing a bijector for each masked input, the full normalizing map can be constructed.
 
 An intuitive way to think of normalizing flow is as a reparameterization. Consider our posterior as a manifold $X$. The manifold is constructed via the parameterization with charts $\phi_i:X\rightarrow U_i \subset \mathbb{R}^n$ for $i$ in indexing set $I$. 
@@ -165,7 +165,7 @@ Then the transition function is given by $\tau:\phi_i(Y)\rightarrow\psi_j(Y)$.
 To ensure our parameterizations are diffeomorphic, $\tau$ is required to be differentiable and its inverse differentiable 
 (in fact, we are working with smooth reparameterizations so the transition function and its inverse should be smooth).
 
-The next question one may have is `what do flows have to do with this?' Above, the concept of normalizing flows is described as a reparameterization, but there is another good description involving flows. Again, let $X$ be our parameter space, the graph $(\theta,\mathcal{P}(\theta))$, and $TX$ the tangent bundle of $X$. Each MAF can be though of as a finite sequence of vector fields $v_i:X \rightarrow TX$. Each point is moved along its integral curve determined by each $v_i$. What is great about this definition is that it immediately implies an MAF is a diffeomorphism. 
+The next question one may have is, `what do flows have to do with this?' Above, the concept of normalizing flows is described as a reparameterization, but there is another good description involving flows. Again, let $X$ be our parameter space, the graph $(\theta,\mathcal{P}(\theta))$, and $TX$ the tangent bundle of $X$. Each MAF can be though of as a finite sequence of vector fields $v_i:X \rightarrow TX$. Each point is moved along its integral curve determined by each $v_i$. What is great about this definition is that it immediately implies an MAF is a diffeomorphism. 
 \begin{prop}
 Suppose $v:X \rightarrow TX$ is a vector field on $X$ and $x \in X$. Then for any $\epsilon>0$ there exists a unique function $f:B[-\epsilon,\epsilon]\rightarrow X$ such that $f$ is an integral curve of with infinitesimal generator $v$ and with $f(0) = x$.  
 \end{prop}

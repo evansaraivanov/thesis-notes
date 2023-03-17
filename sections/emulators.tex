@@ -90,11 +90,11 @@ Next, we define which neurons receive an external signal, and which give a signa
 	\caption{Neurons, synapses, and IO.}
 	\label{fig:neurons_synapse_io}
 \end{figure}
-Finally, we have a choice to make in the activation function. This is the chance to greatly increase the modelling capability of NNs. As we will see in the future, the only requirement is that the function is continuous, thus we can use non-linear activation functions, allowing modelling of highly non-linear outputs. The goal is to define a loss function function that we want to minimize (in the linear regression, the loss is the square of the residual). The loss function is a function of the output of the NN, and the output is parameterized by the parameters of the NN. Thus, if $y=\phi(\alpha_i,x)$ represents the output of the neural network with parameters $\alpha_i$ and input $x$, the loss function is, in fact, parameterized by the neural network as well.
+Finally, we have a choice to make in the activation function. This is the chance to greatly increase the modelling capability of NNs. As we will see in the future, the only requirement is that the function is continuous, thus we can use non-linear activation functions, allowing modelling of highly non-linear outputs. The goal is to define a loss function that we want to minimize (in the linear regression, the loss is the square of the residual). The loss function is a function of the output of the NN, and the output is parameterized by the parameters of the NN. Thus, if $y=\phi(\alpha_i,x)$ represents the output of the neural network with parameters $\alpha_i$ and input $x$, the loss function is, in fact, parameterized by the neural network as well.
 \begin{equation}
 	L(y) = L(\phi(\alpha_i,x)) = \mathfrak{L}(\alpha_i,x)
 \end{equation}
-Thus, a neural network is, in simple terms, an optimization problem. The issue, however, is that neural networks generally have a large number of parameters (thousands, millions, even billions!), so this optimization is difficult in practice. Also, what may appear as a simple loss function in terms of the output can become an extremely complicated (and importantly, non-monotonic) function of $\alpha_i$.
+Thus, a neural network is, in simple terms, an optimization problem. The issue, however, is that neural networks generally have a large number of parameters (thousands, millions, even billions!), so this optimization is difficult in practice. Also, what may appear as a simple loss function in terms of the output can become an extremely complicated (and, importantly, non-monotonic) function of $\alpha_i$.
 
 The general method of optimization is called \textit{gradient descent}. The strategy is the following:
 \begin{enumerate}
@@ -110,25 +110,25 @@ This simple algorithm has one glaring flaw, it is prone to getting stuck in loca
 
 The gradient is usually computed using \textit{backpropagation}, in which the gradient is computed at each layer and the total gradient is computed according to the chain rule. This presents an issue: if the gradient is small at each layer, the gradient will be small on the order of $\epsilon^{n}$, where $n$ is the number of layers. This can lead to a misleading gradient that vanishes, or a gradient that explodes to large values. This is the problem of \textit{vanishing gradients}, and we will discuss ways to avoid this in the next section.
 
-The last issue to mention is that, given a large number of parameters, its possible to fit the training data very well, but the model is not able to fit external data sets. This is called \textit{overfitting}. There are many strategies to resolve this. The two we will use is dropout and L2 regularization. Dropout randomly sets a fraction of the weights to zero, meaning the NN will not be able to rely on individual neurons to get a reliable output. This ensures the full network is being used. L2 regularization penalizes the model for learning large weights, which again means the model relies on particular neurons. This is accomplished by modifying the loss function by adding the L2 norm of the network.
+The last issue to mention is that, given a large number of parameters, it is possible to fit the training data very well, but the model is not able to fit external data sets. This is called \textit{overfitting}. There are many strategies to resolve this. The two we will use is dropout and L2 regularization. Dropout randomly sets a fraction of the weights to zero, meaning the NN will not be able to rely on individual neurons to get a reliable output. This ensures the full network is being used. L2 regularization penalizes the model for learning large weights, which again means the model relies on particular neurons. This is accomplished by modifying the loss function by adding the L2 norm of the network.
 \begin{equation}
 	L(y) \mapsto L(y)+\sum_i \alpha_i^2
 \end{equation}
-In summary, a NN is a directed graph, where each edge has a weight and an activation function, and each node has a value that it passes along to the edge. The inputs are propagated to the output, and the goal is to minimize the loss of the output. Its important to pick a smart loss function depending on ones needs from the NN and a smart activation function depending on the values of each node. The loss function is minimized using stochastic gradient descent. It is important to also implement strategies to avoid overfitting on the training data by penalizing the model for relying to heavily on certain regions of the graph.
+In summary, a NN is a directed graph, where each edge has a weight and an activation function, and each node has a value that it passes along to the edge. The inputs are propagated to the output, and the goal is to minimize the loss of the output. Its important to pick a smart loss function depending on one's needs from the NN and a smart activation function depending on the values of each node. The loss function is minimized using stochastic gradient descent. It is also important to implement strategies to avoid overfitting on the training data by penalizing the model for relying too heavily on certain regions of the graph.
 \section{Architecture Choices}
-As discussed before, the weights, activation functions, and connections are choices we can make for a neural network. Together, they comprise the architecture. In this section we will discuss the architecture choices we have made.
+As discussed before, the weights, activation functions, and connections are choices we can make for a neural network. Together, they comprise the architecture. In this section, we will discuss the architecture choices we have made.
 
 Before discussing the graph architecture, we want to highlight the choice of activation function. Before giving any data to the neural network, we do some preprocessing to the data. The first thing we do is normalize the input and output. The input is the cosmological parameters, which we process each parameter to follow a normal distribution.
 \begin{equation}
 	x^i = \frac{\theta^i - \bar\theta^i}{\sigma_i}
 \end{equation}
-The output is the cosmic shear data vector. We prepreocess this by diagonalizing and normalizing each component.
+The output is the cosmic shear data vector. We preprocess this by diagonalizing and normalizing each component.
 \begin{equation}
 	y^i = \frac{ (P^{-1}d)^i }{\sqrt{(PCP^{-1})^{ii}}}
 \end{equation}
 Where $C$ is the covariance of the data and $P$ the change of basis matrix to the eigenbasis of $C$. This generally means we will have a lot of negative parameters, and the input and output are both symmetric about 0, thus we choose to use an antisymmetric activation function so that the symmetry around 0 can be preserved. In our case, we use $\tanh(x)$. Additionally, all of these NNs are feedforward sequential models. Sequential means we separate the neurons into layers, and feedforward means the data moves only from layer $n$ to layer $n+1$ and never backwards.
 \subsection{Multi-Layer Perceptron}
-The first graph architecture we study in the multi-layer perceptron (the name is adopted from convolutional neural networks `perceiving' image features). In this architecture a node in a given layer is connected to every node in the following layer, so this network is called `simply connected' (figure~\ref{fig:mlp}).
+The first graph architecture we study in the multi-layer perceptron (the name is adopted from convolutional neural networks `perceiving' image features). In this architecture, a node in a given layer is connected to every node in the following layer, so this network is called `simply connected' (figure~\ref{fig:mlp}).
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
@@ -207,7 +207,7 @@ The first graph architecture we study in the multi-layer perceptron (the name is
 	\label{fig:mlp}
 \end{figure}
 \subsection{Residual Network}
-As mentioned above, there is an issue of vanishing gradients with deep neural networks. To resolve this, one can add the input and output together so that gradient information is allowed to skip layers~\cite{he_deep_2015}(figure~\ref{fig:resblock}). Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer parameterized by $\beta_i$ so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
+As mentioned above, there is an issue of vanishing gradients with deep neural networks. To resolve this, one can add the input and output together so that gradient information is allowed to skip layers~\cite{he_deep_2015}(figure~\ref{fig:resblock}). Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer, parameterized by $\beta_i$, so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
 \begin{equation}
 	\phi(\alpha_i,\chi(\beta_i,x)) = \psi(\alpha_i,\beta_i,x)+\chi(\beta_i,x)
 \end{equation}
@@ -360,9 +360,9 @@ The ResNet allows us to create much deeper networks, but the number of parameter
 \end{figure}
 In the examples drawn (figures~\ref{fig:resblock} and~\ref{fig:resbottle-block}), there are 40 parameters in the ResNet, but only 28 parameters in the ResBottle. This allows us to either simplify the model, add more layers, or make the layers much wider without blowing up the number of parameters that need to be trained.
 \subsection{Attention}
-This will be the most complicated model to test. If we look at the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors is separated into redshift bins, and within each redshift bin are bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs we encounter everyday that use sequences: chatbots! The basis for this is usually attention networks~\cite{vaswani_attention_2017}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
+This will be the most complicated model to test. If we look at the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors are separated into redshift bins, and within each redshift bin are bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs we encounter every day that use sequences: chatbots! The basis for this is usually attention networks~\cite{vaswani_attention_2017}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
 
-suppose we are given a sequence of input vectors, $x=(x_1,x_2,\ldots,x_n)$, then we can construct dot products of the $x_i$ and use them as coefficients for the output.
+suppose we are given a sequence of input vectors, $x=(x_1,x_2,\ldots,x_n)$, then we can construct dot products of each $x_i$ and use them as coefficients for the output.
 \begin{equation}
 	y_k = (x_i \cdot x_j)x_k
 \end{equation}
@@ -451,19 +451,19 @@ We allow the linear matrices $W_Q$, $W_K$, and $W_V$ to contain learnable compon
 \end{figure}
 
 \section{Results}
-We present the results in two sections: the first will be about the training and testing results, and the second comparing between a cocoa chain and an emulated chain. For training and testing, we use the "train, validate, test" approach. We generate three completely independent chains, one is only for training the model, and is a high temperature chain with data well beyond the expected range. The second is used to validate that the model is not overfitting as the training proceeds. The last set is another high temperature chain (but not as high as the training) which is used to test the model as if it were being used as normal. The testing involves reintroducing specific analysis choices such as the scale cut.
+We present the results in two sections: the first will be about the training and testing results, and the second comparing between a cocoa chain and an emulated chain. For training and testing, we use the "train, validate, test" approach. We generate three completely independent chains, one is only for training the model, and is a high temperature chain with data well beyond the expected range. The second is used to validate that the model is not overfitting as the training proceeds. The last set is another high temperature chain (but not as high as the training) which is used to test the model as if it were being used as normal. The testing involves reintroducing specific analysis choices, such as the scale cut.
 
 When deciding on which model to use, we want to look at several aspects:
 \begin{itemize}
 	\item The number of parameters. The more parameters we have, the longer it takes to train, and the longer it takes to evaluate. This will make it difficult for groups without top-of-the-line equipment.
-	\item The $\Delta\chi^2$ between the emulator and accepted computational methods. Many experiments have a $\chi^2$ requirement for their emulators; for example DES requires $\Delta\chi^2<0.3$ between any approximations and Cosmolike.
+	\item The $\Delta\chi^2$ between the emulator and accepted computational methods. Many experiments have a $\chi^2$ requirement for their emulators; for example, DES requires $\Delta\chi^2<0.3$ between any approximations and CosmoLike.
 	\item Generalizability. As we increase the volume covered in the parameter space, which models are able to keep up with the growing modelling volume? Which models can handle more input parameters (which many models need, such as early dark energy with $\sim10$ extra parameters).
 \end{itemize}
-These get analyzed on the test data set. Because of the second point above, we define the loss function as the difference in $\chi^2$ between the emulator and cosmolike. This allows us to capture the covariances in the data.
+These get analyzed on the test data set. Because of the second point above, we define the loss function as the difference in $\chi^2$ between the emulator and CosmoLike. This allows us to capture the covariance of the data.
 \subsection{Training and Testing}
-We train the emulator by using a rough Gaussian approximation on the cosmological parameters. The benefit is that running MCMC chains on a simple Gaussian without the need for cosmolike is extremely fast. Given the samples, the data vector calculation is trivially parallelizable, so the entire process is significantly faster than running an MCMC in cosmolike. 
+We train the emulator by using a rough Gaussian approximation on the cosmological parameters. The benefit is that running MCMC chains on a simple Gaussian without the need for CosmoLike is extremely fast. Given the samples, the data vector calculation is trivially parallelizable, so the entire process is significantly faster than running an MCMC in CosmoLike. 
 
-First, we examine the training and validation loss at each epoch. The training loss is the average loss of all batches in an epoch. Figure~\ref{fig:train_loss_resnet} displays the training loss of a ResNet model with 3 ResNet blocks and 256 neurons in each hidden layer. In this case, we can see a consistent decline in both the training and validation loss. Additionally, we can see the points where the learning rate decreases (see epoch 50 and epoch 85 in figure~\ref{fig:train_loss_resnet}) which occur when validation loss plateaus, following the expected behaviour. This demonstrates that we are likely not overfitting the training data.
+First, we examine the training and validation loss at each epoch. The training loss is the average loss of all batches in an epoch. Figure~\ref{fig:train_loss_resnet} displays the training loss of a ResNet model with 3 ResNet blocks and 256 neurons in each hidden layer. In this case, we can see a consistent decline in both the training and validation loss. Additionally, we can see the points where the learning rate decreases (see epoch 50 and epoch 85 in figure~\ref{fig:train_loss_resnet}) which occur when validation loss plateaus, following the expected behavior. This demonstrates that we are likely not overfitting the training data.
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{plots/losses_resnet_3_256.pdf}
