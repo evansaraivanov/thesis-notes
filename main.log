@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.26)  15 MAR 2023 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.26)  15 MAR 2023 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1359,14 +1359,16 @@ Package pdftex.def Info: plots/avg_chi2_v_n_params_new.pdf  used on input line
 (pdftex.def)             Requested size: 357.73407pt x 268.3123pt.
 
 
-LaTeX Warning: Reference `section' on page 58 undefined on input line 510.
+LaTeX Warning: Reference `sec:planck_DES_tenion' on page 58 undefined on input 
+line 510.
 
 [58]
 
 LaTeX Warning: Reference `figure' on page 59 undefined on input line 512.
 
 
-LaTeX Warning: Reference `section' on page 59 undefined on input line 512.
+LaTeX Warning: Reference `sec:tenion_metrics' on page 59 undefined on input lin
+e 512.
 
 ) [59] [60] [61 <./plots/losses_resnet_3_256.pdf>] [62 <./plots/cosmic_shear_re
 snet_nlayer_3_intdim_256.pdf>] [63 <./plots/model_table_mlp.pdf> <./plots/model
@@ -1420,10 +1422,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 79AE00433A2FC5A653578A9AF00C980B;7877.
  ) 
 Here is how much of TeX's memory you used:
- 38418 strings out of 478268
- 887178 string characters out of 5846347
- 1253499 words of memory out of 5000000
- 55555 multiletter control sequences out of 15000+600000
+ 38419 strings out of 478268
+ 887212 string characters out of 5846347
+ 1254499 words of memory out of 5000000
+ 55556 multiletter control sequences out of 15000+600000
  489487 words of font info for 102 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
  114i,17n,118p,1403b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1450,7 +1452,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2022/t
 exmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (79 pages, 8614683 bytes).
+Output written on main.pdf (79 pages, 8614677 bytes).
 PDF statistics:
  2096 PDF objects out of 2487 (max. 8388607)
  1209 compressed objects within 13 object streams

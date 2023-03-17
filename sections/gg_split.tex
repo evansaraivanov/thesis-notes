@@ -1,7 +1,7 @@
 \chapter{Growth-Geometry Split in DES-Y3}
 Parameter splitting is a common method used to attempt to resolve the tensions discussed in the previous chapter. The idea is to split a parameter and choose analysis settings that restrict each split parameter to describe specific cosmological effects. One of these splits is a growth-geometry split, where we split the relative matter density $\Omega_m$ and the dark energy equation of state $w$ into two parameters. The growth parameter is designed to describe the late-time growth of structure and the geometry parameter designed to describe the background evolution. After splitting the parameters, one can do an analysis to determine how the tension changes and if the split parameters have distinct values from each other. This chapter describes the growth geometry split in $\Omega_m$ and $w$ in DES-Y1~\cite{muir_y1_2021} and DES-Y3. These results are also available in a paper written by Kunhao Zhong, another Masters student, and myself, on arXiv~\cite{zhong_growth_2023} and are pending publication to Physical Review.
 \section{Split Matter Power Spectrum}
-Since the matter density $\Omega_m$ is split into two parameters, $\Omega_m^{\text{growth}}$ and $\Omega_m^{\text{geo}}$, single growth factor and a single matter power spectrum; these are split as well. From equation (eq), the linear matter power spectrum is proportional to the square of the linear growth factor $D_+(z(a)) = G(z)/(1+z)$, so the growth and geometry power spectra are related by
+Since the matter density $\Omega_m$ is split into two parameters, $\Omega_m^{\text{growth}}$ and $\Omega_m^{\text{geo}}$, a single growth factor and a single matter power spectrum; these are split as well. From equation 2.8, the linear matter power spectrum is proportional to the square of the linear growth factor $D_+(z(a)) = G(z)/(1+z)$, so the growth and geometry power spectra are related by
 \begin{equation}
 	P^L_{\text{split}}(k,z) = P^L_{\text{geo}}(k,z) \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2
 \end{equation}
@@ -38,7 +38,7 @@ While the growth parameters are scale independent, there is a crossing for the g
 One surprising feature of figure~\ref{fig:sigma8_w} is that these effects are the exact opposite. However, this result is not surprising. Increasing $w$, where $w<0$, coincides with decreasing the pressure or increasing density.
 \section{Data and Analysis Pipeline}
 \subsection{DES Parameter Priors}
-This analysis is done on data from the Dark Energy Survey (DES), both year 1 (Y1) and year 3 (Y3), combined with CMB data. The cosmological parameters of interest and there priors are given in table~\ref{table:cosmo_prior}.
+This analysis is done on data from the Dark Energy Survey (DES), both year 1 (Y1) and year 3 (Y3), combined with CMB data. The cosmological parameters of interest and their priors are given in table~\ref{table:cosmo_prior}.
 \begin{table}
 \centering
 \begin{tabular}{lr}
@@ -141,11 +141,11 @@ To validate this method, we generate a synthetic data vector at the Planck best-
 \begin{equation}\label{eq:planck_best_fit}
 	(\mathcal{A}_s\times10^{-9}, n_s, H_0, \Omega_m, \Omega_b) = (2.101,0.965,67.32,0.317,0.049)
 \end{equation}
-Using the ALL prior and external data, there is marginal improvement between the cosmic shear constraints on $\Omega_m^\mathrm{growth}$ compared to the prior. However there is significant improvement in the 3x2pt case compared to cosmic shear. 
+Using the ALL prior and external data, there is marginal improvement between the cosmic shear constraints on $\Omega_m^\mathrm{growth}$ compared to the prior. However, there is significant improvement in the 3x2pt case compared to cosmic shear. 
 
 The constraining power of 3x2pt on $\Omega_m^\mathrm{growth}$ is identical between P1 and ALL. This is because ...
 
-In $w$CDM, there is poor constraining power on $\Omega_m^\mathrm{growth}$ and $w^{\mathrm{growth}}$, even with the most informative 3x2pt case. For this case, we give constraining power along the first principle component
+In $w$CDM, there is poor constraining power on $\Omega_m^\mathrm{growth}$ and $w^{\mathrm{growth}}$, even with the most informative 3x2pt case. For this case, we give constraining power along the first principal component
 \begin{equation}
 	\mathrm{PC}_1 \equiv 0.7071\Delta\Omega_m - 0.7071\Delta w\,.
 \end{equation}
@@ -186,7 +186,7 @@ For the most constraining case, 3x2pt with all prior, there is no evidence of a 
 	\caption{DES-Y1 and DES-Y3 posteriors for 2-point correlation functions.}
 	\label{fig:y3_2x2}
 \end{figure}
-The full results of the 1d marginalizations with each choice of prior is summarized in figure~\ref{fig:lcdm_result_1d}. Aside from the previously mention 2-point correlation functions, every $\Delta\Omega_m$ result is compatible with 0 to within 1-sigma.
+The full results of the 1d marginalizations with each choice of prior is summarized in figure~\ref{fig:lcdm_result_1d}. Aside from the 2-point correlation functions, every $\Delta\Omega_m$ result is compatible with 0 to within 1-sigma.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{plots/plot_1d_resultv5.pdf}
@@ -241,4 +241,4 @@ In the $w$CDM case, we once again see the 2x2pt has a significant shift. Contrar
 \section{Conclusion}
 We split $\Omega_m$ and $w$ into two parameters, one governing the background evolution and the other governing the late-time scale-independent growth of structure. We consider DES data together with various external data sets and priors from the CMB, supernovae, BBN, and BAO. We then run MCMC on DES-Y1 and DES-Y3 data and evaluate the difference between the growth and geometry parameters. 
 
-As demonstrated, there is little evidence of a difference between growth and geometry parameters in DES-Y1 and DES-Y3. The exception is the 2x2pt chains, however there is an internal inconsistency with the RedMaGiC samples that may source this result. Because we fixed $X_\mathrm{lens}=1$, an additional analysis can be done investigating if $X_{\mathrm{lens}}$ sources significant shift. Additionally, one can repeat the analysis with the MagLim lensing samples. In the future, additional datasets from Rubin Observatory's LSST, the Euclid mission, Dark Energy Spectroscopic Instrument, Simons Observatory, and CMB-S4 can be used to improve the constraints derived in this analysis
+As demonstrated, there is little evidence of a difference between growth and geometry parameters in DES-Y1 and DES-Y3. The exception is the 2x2pt chains, however, there is an internal inconsistency with the RedMaGiC samples that may source this result. Because we fixed $X_\mathrm{lens}=1$, an additional analysis can be done investigating if $X_{\mathrm{lens}}$ sources significant shift. Additionally, one can repeat the analysis with the MagLim lensing samples. In the future, additional datasets from Rubin Observatory's LSST, the Euclid mission, Dark Energy Spectroscopic Instrument, Simons Observatory, and CMB-S4 can be used to improve the constraints derived in this analysis
