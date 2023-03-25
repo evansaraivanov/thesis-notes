@@ -7,6 +7,7 @@ Database file #1: bib.bib
 Warning--empty year in webb_clusters
 Warning--empty year in planck_CMB
 Warning--empty year in hubble_lensing
+Warning--empty year in hu_animations_nodate
 Warning--empty author in noauthor_planck_2018
 Warning--empty journal in tobias_metropolis-hastings_nodate
 Warning--empty year in tobias_metropolis-hastings_nodate
@@ -16,45 +17,45 @@ Warning--there's a number but no volume in helsby_monte_nodate
 Warning--empty year in helsby_monte_nodate
 Warning--empty year in helsby_monte_nodate
 Warning--empty year in noauthor_what_nodate
-You've used 26 entries,
+You've used 27 entries,
             2481 wiz_defined-function locations,
-            727 strings with 17481 characters,
-and the built_in function-call counts, 21531 in all, are:
-= -- 819
-> -- 3256
-< -- 14
-+ -- 1118
-- -- 1066
-* -- 2620
-:= -- 4307
-add.period$ -- 122
-call.type$ -- 26
-change.case$ -- 50
-chr.to.int$ -- 26
-cite$ -- 40
-duplicate$ -- 433
-empty$ -- 858
-format.name$ -- 1102
-if$ -- 3851
+            731 strings with 17568 characters,
+and the built_in function-call counts, 21787 in all, are:
+= -- 840
+> -- 3263
+< -- 15
++ -- 1122
+- -- 1068
+* -- 2631
+:= -- 4345
+add.period$ -- 125
+call.type$ -- 27
+change.case$ -- 52
+chr.to.int$ -- 27
+cite$ -- 42
+duplicate$ -- 447
+empty$ -- 888
+format.name$ -- 1105
+if$ -- 3907
 int.to.chr$ -- 1
-int.to.str$ -- 27
+int.to.str$ -- 28
 missing$ -- 16
-newline$ -- 182
-num.names$ -- 72
-pop$ -- 225
+newline$ -- 187
+num.names$ -- 75
+pop$ -- 237
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 27
 quote$ -- 0
-skip$ -- 267
+skip$ -- 280
 stack$ -- 0
-substring$ -- 272
-swap$ -- 70
+substring$ -- 274
+swap$ -- 72
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 176
-warning$ -- 12
-while$ -- 63
+type$ -- 183
+warning$ -- 13
+while$ -- 65
 width$ -- 0
-write$ -- 412
-(There were 12 warnings)
+write$ -- 423
+(There were 13 warnings)

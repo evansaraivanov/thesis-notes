@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -175,6 +175,11 @@ Niall MacCrann, Jonathan Blazek, Bhuvnesh Jain, and Elisabeth Krause.
 \newblock \doi{10.1093/mnras/stz2761}.
 \newblock URL \url{http://arxiv.org/abs/1903.07101}.
 \newblock arXiv:1903.07101 [astro-ph].
+
+\bibitem[Hu()]{hu_animations_nodate}
+Wayne Hu.
+\newblock Animations.
+\newblock URL \url{http://background.uchicago.edu/~whu/metaanim.html}.
 
 \bibitem[Amon et~al.(2022)Amon, Gruen, Troxel, MacCrann, Dodelson, Choi, Doux,
   Secco, Samuroff, Krause, Cordero, Myles, DeRose, Wechsler, Gatti,

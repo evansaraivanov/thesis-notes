@@ -1,40 +1,42 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Observer freely falling with particles experience tidal forces within the observers reference frame.\relax }}{2}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Observer freely falling with particles experiencing tidal forces within the observer's reference frame.\relax }}{2}{figure.caption.5}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Definition of proper time (bold line) vs. coordinate time (dashed line).\relax }}{3}{figure.caption.6}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Example of parallel transport along a connection on a sphere. \relax }}{4}{figure.caption.7}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces An image of galaxies from the James Webb Space Telescope, showing regions of high matter density and regions of low matter density\nobreakspace {}\cite {webb_clusters}.\relax }}{6}{figure.caption.8}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces CMB TT power spectrum, emphasizing the scale of anisotropies\nobreakspace {}\cite {planck_CMB}.\relax }}{7}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Image of weak lensing taken by the Hubble Space Telescope\nobreakspace {}\cite {hubble_lensing}.\relax }}{10}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Planck TT power spectrum\relax }}{21}{figure.caption.17}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Planck TE power spectrum\relax }}{23}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Planck EE power spectrum\relax }}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Measurements of $H_0$ from different experiments.\relax }}{25}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Measurements of $S_8$ from different experiments.\relax }}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Image of weak lensing taken by the Hubble Space Telescope\nobreakspace {}\cite {hubble_lensing}.\relax }}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Planck TT power spectrum\relax }}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Planck TE power spectrum\relax }}{21}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Planck EE power spectrum\relax }}{22}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Measurements of $H_0$ from different experiments.\relax }}{24}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Measurements of $S_8$ from different experiments.\relax }}{25}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Result of tension metrics between Planck and DES (figure 6 in\nobreakspace {}\cite {lemos_assessing_2021}). A-priori tension is the Gaussian approximation described in equation\nobreakspace {}\ref {eq:a-priori}.\relax }}{33}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces An example non-Gaussian distribution (non-zero skewness).\relax }}{35}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces An example of normalizing flow as the transformation is `turned on', represented by the parameter $\lambda $. The non-Gaussian distribution at $\lambda =0$ is transformed into the Gaussian distribution at $\lambda =1$.\relax }}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Result of tension metrics between Planck and DES (figure 6 in\nobreakspace {}\cite {lemos_assessing_2021}). A-priori tension is the Gaussian approximation described in equation\nobreakspace {}\ref {eq:a-priori}.\relax }}{32}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces An example non-Gaussian distribution (non-zero skewness).\relax }}{34}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces An example of normalizing flow as the transformation is `turned on', represented by the parameter $\lambda $. The non-Gaussian distribution at $\lambda =0$ is transformed into the Gaussian distribution at $\lambda =1$.\relax }}{35}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear power spectrum from Euclid emulator. When either the geometry or growth parameters are varied, the other is kept fixed at $\Omega ^X=0.3$.\relax }}{38}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Effect of changing growth and geometry parameters on $\sigma _8(z)$.\relax }}{39}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Relative difference between Euclid emulator and Halofit.\relax }}{42}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Cosmic shear, 2x2pt combinations, and 3x2pt posteriors for DES-Y3 with the ALL prior.\relax }}{43}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparison of DES-Y1 and DES-Y3 posteriors.\relax }}{44}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Split posteriors for DES-Y3 3x2pt and ALL prior.\relax }}{45}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces DES-Y1 and DES-Y3 posteriors for 2-point correlation functions.\relax }}{46}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{47}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces $w$CDM posteriors.\relax }}{48}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{48}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{49}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear power spectrum from Euclid emulator. When either the geometry or growth parameters are varied, the other is kept fixed at $\Omega ^X=0.3$.\relax }}{37}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Effect of changing growth and geometry parameters on $\sigma _8(z)$.\relax }}{38}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Relative difference between Euclid emulator and Halofit.\relax }}{41}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Cosmic shear, 2x2pt combinations, and 3x2pt posteriors for DES-Y3 with the ALL prior.\relax }}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparison of DES-Y1 and DES-Y3 posteriors.\relax }}{43}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Split posteriors for DES-Y3 3x2pt and ALL prior.\relax }}{44}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces DES-Y1 and DES-Y3 posteriors for 2-point correlation functions.\relax }}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{46}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces $w$CDM posteriors.\relax }}{47}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Full 1d results for $\Lambda $CDM split\relax }}{47}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{48}{figure.caption.41}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arrangement of neurons.\relax }}{51}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Neurons with synapses.\relax }}{51}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Neurons, synapses, and IO.\relax }}{52}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces A multi-layer perceptron.\relax }}{55}{figure.caption.45}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces A residual block.\relax }}{55}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces A bottlenecked residual block.\relax }}{56}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces A transformer block\relax }}{60}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Loss of a ResNet model with 3 ResNet blocks and 256 neurons in each layer.\relax }}{61}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Testing loss on a $T=8$ chain.\relax }}{62}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Average $\chi ^2$ as a function of the number of parameters for each architecture.\relax }}{64}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arrangement of neurons.\relax }}{50}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Neurons with synapses.\relax }}{50}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Neurons, synapses, and IO.\relax }}{51}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces A multi-layer perceptron.\relax }}{54}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces A residual block.\relax }}{54}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces A bottlenecked residual block.\relax }}{55}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces A transformer block\relax }}{57}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Average $\Delta \chi ^2$ as a function of the number of parameters for each architecture.\relax }}{59}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Average $\Delta \chi ^2$ of a $T=64$ chain using emulators trained on a $T=128$ chain.\relax }}{59}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Marginalized distribution of $\Delta \chi ^2$ of a $T=64$ chain using the model in figure\nobreakspace {}\ref {fig:full_arch} trained on a $T=128$ chain.\relax }}{60}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Full NN architecture used for training on high temperature chains. Comprised of three ResBlocks of size 256, and a transformer block with 8 heads, each with a size of 128.\relax }}{61}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces tension metrics error\relax }}{62}{figure.caption.53}%

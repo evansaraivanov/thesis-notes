@@ -1561,36 +1561,33 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-INPUT ./plots/losses_resnet_3_256.pdf
-INPUT ./plots/losses_resnet_3_256.pdf
-INPUT plots/losses_resnet_3_256.pdf
-INPUT ./plots/losses_resnet_3_256.pdf
-INPUT ./plots/losses_resnet_3_256.pdf
-INPUT ./plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf
-INPUT ./plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf
-INPUT plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf
-INPUT ./plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf
-INPUT ./plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf
-INPUT ./plots/model_table_mlp.pdf
-INPUT ./plots/model_table_mlp.pdf
-INPUT plots/model_table_mlp.pdf
-INPUT ./plots/model_table_mlp.pdf
-INPUT ./plots/model_table_mlp.pdf
-INPUT ./plots/model_table_resnet.pdf
-INPUT ./plots/model_table_resnet.pdf
-INPUT plots/model_table_resnet.pdf
-INPUT ./plots/model_table_resnet.pdf
-INPUT ./plots/model_table_resnet.pdf
-INPUT ./plots/model_table_resbottle.pdf
-INPUT ./plots/model_table_resbottle.pdf
-INPUT plots/model_table_resbottle.pdf
-INPUT ./plots/model_table_resbottle.pdf
-INPUT ./plots/model_table_resbottle.pdf
 INPUT ./plots/avg_chi2_v_n_params_new.pdf
 INPUT ./plots/avg_chi2_v_n_params_new.pdf
 INPUT plots/avg_chi2_v_n_params_new.pdf
 INPUT ./plots/avg_chi2_v_n_params_new.pdf
 INPUT ./plots/avg_chi2_v_n_params_new.pdf
+INPUT ./plots/avg_chi2_v_n_params_T64.pdf
+INPUT ./plots/avg_chi2_v_n_params_T64.pdf
+INPUT plots/avg_chi2_v_n_params_T64.pdf
+INPUT ./plots/avg_chi2_v_n_params_T64.pdf
+INPUT ./plots/avg_chi2_v_n_params_T64.pdf
+INPUT ./plots/T64_attention_stuff.pdf
+INPUT ./plots/T64_attention_stuff.pdf
+INPUT plots/T64_attention_stuff.pdf
+INPUT ./plots/T64_attention_stuff.pdf
+INPUT ./plots/T64_attention_stuff.pdf
+INPUT ./plots/Untitled Diagram.drawio-5.pdf
+INPUT ./plots/Untitled Diagram.drawio-5.pdf
+INPUT plots/Untitled Diagram.drawio-5.pdf
+INPUT ./plots/Untitled Diagram.drawio-5.pdf
+INPUT ./plots/Untitled Diagram.drawio-5.pdf
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT ./plots/metrics_new.pdf
+INPUT ./plots/metrics_new.pdf
+INPUT plots/metrics_new.pdf
+INPUT ./plots/metrics_new.pdf
+INPUT ./plots/metrics_new.pdf
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT ./main.bbl

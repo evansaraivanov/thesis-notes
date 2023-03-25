@@ -20,96 +20,95 @@ Additionally, the formation of matter inhomogeneity comes from gravitational ins
 
 This gives us a blueprint for writing the matter power spectrum. We have the primordial curvature perturbation $\mathcal{R}$ which source the initial matter inhomogeneity that formed late-time large scale structure. Thus, we can write it as
 \begin{equation}
-	\mathcal{R} = \frac{5}{3}\Phi_{\text{large-scale}}(k,a_{\text{late}})
+	\mathcal{R} = \frac{5}{3}\Phi_{\text{large-scale}}(k,a_{\text{late}})\,.
 \end{equation} 
 Additionally, we have a transfer function which describes the transition from radiation to matter domination, defined as
 \begin{equation}
-	T(k) = \frac{\Phi(k,a_{\text{late}})}{\Phi_{\text{large-scale}(k,a_{\text{late}})}}
+	T(k) = \frac{\Phi(k,a_{\text{late}})}{\Phi_{\text{large-scale}(k,a_{\text{late}})}}\,.
 \end{equation}
 And we have a growth factor, defined as the linear growth of matter density contrast during matter domination, defined as
 \begin{equation}
-	D_+(a) = a \frac{\Phi(k,a)}{\Phi(k,a_{\text{late}})}
+	D_+(a) = a \frac{\Phi(k,a)}{\Phi(k,a_{\text{late}})}\,.
 \end{equation}
 Thus we can write the gravitational potential at all times as
 \begin{equation}
-	\Phi(k,a) = \frac{3}{5a}\mathcal{R}(k)T(k,a)D_+(a)
+	\Phi(k,a) = \frac{3}{5a}\mathcal{R}(k)T(k,a)D_+(a)\,.
 \end{equation}
 This together with the Poisson equation for the matter density contrast field gives the equation
 \begin{equation}
-	\delta_m(k) = \frac{2k^2a}{3\Omega_mH_0^2}\Phi(k,a)
+	\delta_m(k) = \frac{2k^2a}{3\Omega_mH_0^2}\Phi(k,a)\,,
 \end{equation}
 \begin{equation}
-	\delta_m(k) = \frac{2}{5}\frac{k^2}{\Omega_mH_0^2}\mathcal{R}(k)T(k,a)D_+(a)
+	\delta_m(k) = \frac{2}{5}\frac{k^2}{\Omega_mH_0^2}\mathcal{R}(k)T(k,a)D_+(a)\,,
 \end{equation}
 The power spectrum of an observable is defined as the two-point correlation function of the observable in Fourier space.
 \begin{equation}
-	P_\mathcal{O}(k) = \langle \mathcal{O}(k)\mathcal{O}(k) \rangle
+	P_\mathcal{O}(k) = \langle \mathcal{O}(k)\mathcal{O}(k) \rangle\,.
 \end{equation}
 Thus, the linear matter power spectrum (because we restricted the matter density contrast field to linear order terms in the perturbation) is given by
 \begin{equation}
 	\begin{split}
-		P_m^{L}(k,a) = \frac{8\pi^2}{25 \Omega_m^2 H_0^4} A_s D_+^2(a)T^2(k)\frac{k^{n_s}}{k_p^{(n_s-1)}}
+		P_m^{L}(k,a) = \frac{8\pi^2}{25 \Omega_m^2 H_0^4} A_s D_+^2(a)T^2(k)\frac{k^{n_s}}{k_p^{(n_s-1)}}\,.
 	\end{split}
 \end{equation}
 
 \subsection{Galaxy Density}
-In practice, we cannot measure the matter power spectrum. Dark matter prohibits direct measurement, thus one must determine observables which trace the matter distribution in the universe. The most natural option is to observe the galaxy distribution. However, large scale structures and galaxies provide many sources for non-linearities in the power spectrum and result in a non-trivial relation between the two. By taking certain data selection criteria, one can cut out the non-linear contributions. The relation between the galaxy and matter power spectra are then related by the linear bias factor.
+In practice, we cannot measure the matter power spectrum; Dark matter prohibits direct measurement. Instead, one must determine observables which trace the matter distribution in the universe. The most natural option is to observe the galaxy distribution. However, large scale structures and galaxies provide many sources for non-linearities in the power spectrum and result in a non-trivial relation between the two. By taking certain data selection criteria, one can cut out the non-linear contributions. The relation between the galaxy and matter power spectra are then related by the linear bias factor.
 \begin{equation}
 	\begin{split}
 		\delta_g(k) &= b_1 \delta_m(k) \\
-		P_g(k,a) &= (b_1)^2P_m^L(k,a)
+		P_g(k,a) &= (b_1)^2P_m^L(k,a)\,.
 	\end{split}
 \end{equation}
 Realistically, in galaxy surveys, we do not have access to exact redshifts for each observed galaxy. Rather, an image is taken of the sky in multiple color bands from which the redshift is determined. This procedure is called photometric redshift. To account for this, one can attempt to redefine the galaxy power spectrum. First, we define the distribution of distances, as
 \begin{equation}
-	W(\chi) = \frac{1}{N_g}\frac{dN_g}{d\chi}
+	W(\chi) = \frac{1}{N_g}\frac{dN_g}{d\chi}\,.
 \end{equation}
-The procedure for determining this distribution will be discussed in section (section for dz and IA). This allows us to simply write the projected density contrast as
+The procedure for determining this distribution will be discussed in sections~\ref{sec:dz} and~\ref{sec:IA}. This allows us to simply write the projected density contrast as
 \begin{equation}
-	\Delta_g = \int\limits_0^\infty W(\chi)\delta_g(x,\tau)d\chi
+	\Delta_g = \int\limits_0^\infty W(\chi)\delta_g(x,\tau)d\chi\,.
 \end{equation}
-To complete this discussion, we will make some approximations. We will only consider small scales for which $\sin(\theta)\sim \theta \sim 1/l$ where $l$ is the Fourier conjugate of $\theta$. Second is the limber approximation, which states that, as long as the galaxy power spectrum $P_g$ slowly varies over the region $\Delta k \sim 1/l\chi$, we approximate is as a constant. These approximations greatly simplify the integrals required when computing power spectrum of Fourier transformed $\Delta_g$. This power spectrum is called the angular power spectrum. Taking into account the approximations above and computing the Fourier transform, one finds an angular power spectrum of
+To complete this discussion, we will make some approximations. We will only consider small scales for which $\sin(\theta)\sim \theta \sim 1/l$ where $l$ is the Fourier conjugate of $\theta$. Second is the limber approximation, which states that, as long as the galaxy power spectrum $P_g$ slowly varies over the region $\Delta k \sim 1/l\chi$, we approximate is as a constant. These approximations greatly simplify the integrals required when computing power spectrum of the Fourier transformed $\Delta_g$. This power spectrum is called the angular power spectrum. Taking into account the approximations above and computing the Fourier transform, one finds an angular power spectrum of
 \begin{equation}
- 	C_g(l) =\int \frac{1}{\chi^2}W^2(\chi)P_g(k=(l+1/2)/\chi,\eta) d\chi
+ 	C_g(l) =\int \frac{1}{\chi^2}W^2(\chi)P_g(k=(l+1/2)/\chi,\eta) d\chi\,.
 \end{equation} 
 \subsection{Galaxy Shear}
-Photons move on null geodesics, thus $d\chi = -d\eta$, where $\eta$ is the conformal time and $\chi$ is the conformal distance. This tells us that $dx^i/d\chi = -dx^i/d\eta = -a dx^i/dt = -a dx^i/d\lambda d\lambda/dt = -a/P^0 P^\mu = -a / E * p/a \hat{p}^i = -\hat{p}^i$ (for photons and other massless particles).
-Thus, under lensing, the difference between the observed and true positions within the source plane is given by
+Photons move on null geodesics, thus $d\chi = -d\eta$, where $\eta$ is the conformal time and $\chi$ is the conformal distance. This tells us that, through some changes of variables, $dx^i/d\chi = -\hat{p}^i$ (for photons and other massless particles). Thus, under lensing, the difference between the observed and true positions within the source plane is given by
 \begin{equation}
-	\chi\mathbf{\theta}^i = x_\perp^i = -\int\limits_0^\chi \hat{p}^i_\perp(\chi'') d\chi''
+	\chi\mathbf{\theta}^i = x_\perp^i = -\int\limits_0^\chi \hat{p}^i_\perp(\chi'') d\chi''\,.
 \end{equation}
-Our goal is to write this as a function of the potential only. Thus, we look to compute $d\hat{p}^i/dt$.
-\begin{equation}
+The goal is to write this as a function of the potential only. Thus, we look to compute $d\hat{p}^i/dt$.
+\begin{equation}\label{eq:dp-hat-dt}
 	\begin{split}
 		\frac{d\hat{p}^i}{dt} %=& \frac{d}{dt}\frac{1}{p}p^i \\
-		=& \frac{1}{p^2}(\dot{p}^i p - \dot{p}p^i)
+		=& \frac{1}{p^2}(\dot{p}^i p - \dot{p}p^i)\,.
 	\end{split}
 \end{equation}
-By computing $\dot p^i$, we can find $\dot p$ as well.
+By computing $\dot p^i$, one can find $\dot p$ as well:
 \begin{equation}
 	\begin{split}
 		\frac{dp^i}{d\lambda} %=& \frac{d}{d\lambda}\left(aP^i(1+\Phi)\right) \\
-		=& P^i\frac{d}{d\lambda}(a(1+\Phi)+(1+\Phi)a\frac{d}{d\lambda}P^i
+		=& P^i\frac{d}{d\lambda}(a(1+\Phi)+(1+\Phi)a\frac{d}{d\lambda}P^i\,.
 	\end{split}
 \end{equation}
-We have $d/d\lambda = P^\mu \partial_\mu$, so the first term becomes
+Also, $d/d\lambda = P^\mu \partial_\mu$, so the first term becomes
 \begin{equation}
 	\begin{split}
 		P^i\frac{d}{d\lambda}(a(1+\Phi)) %&= P^iP^\mu \partial_\mu(a(1+\Phi)) \\
 		%&= P^iP^0(\dot a + a\dot\Phi + \dot a \Phi) + a P^iP^j \partial_j\Phi \\
-		&= a P^i (P^0(H+\dot\Phi +H\Phi) + P^j\partial_j\Phi) \\
+		&= a P^i (P^0(H+\dot\Phi +H\Phi) + P^j\partial_j\Phi)\,. \\
 	\end{split}
 \end{equation}
-The second term is evaluated by using the geodesic equation up to first order in the perturbations.
+The second term is evaluated by using the geodesic equation up to first order in the perturbations $\Phi$ and $\Psi$.
 \begin{equation}
 	\begin{split}
 		\frac{d}{d\lambda}P^i &= -\Gamma^i_{\mu\nu}P^\mu P^\nu \\
 		%&= -(P^0)^2\frac{1}{a^2}\partial^i\Psi - 2\delta^{i}_{j}(H+\dot\Phi)P^0P^j + 2P^iP^j\partial_j\Phi - P^jP_j\partial^i\Phi \\
 		%&= -E(1-\Psi)\left( \frac{E}{a^2} \partial^i\Psi + \frac{1}{a}2p^i(1-\Phi)(H+\dot\Phi) - \frac{2}{a^2E}p^ip^j\partial_j\Phi + \frac{p^2}{a^2E} \partial^i\Phi \right) \\
-		&= -E\left( \frac{E}{a^2} \partial^i\Psi + \frac{1}{a}2p^i(1-\Phi-\Psi)(H+\dot\Phi) - \frac{2}{a^2E}p^ip^j\partial_j\Phi + \frac{p^2}{a^2E} \partial^i\Phi \right)
+		&= -E\left( \frac{E}{a^2} \partial^i\Psi + \frac{1}{a}2p^i(1-\Phi-\Psi)(H+\dot\Phi) - \frac{2}{a^2E}p^ip^j\partial_j\Phi + \frac{p^2}{a^2E} \partial^i\Phi \right)\,.
 	\end{split}
 \end{equation}
-Plugging everything back in, and only keeping terms to linear order, we get
+Plugging everything back in, and only keeping terms to linear order, one gets
 \begin{equation}
 	\begin{split}
 		%=& aP^i(H+\dot\Phi+H\Phi) + aP^iP^j\partial_j\Phi \\
@@ -118,7 +117,7 @@ Plugging everything back in, and only keeping terms to linear order, we get
 		%& - \frac{E}{a^2}\partial^i\Psi -\frac{2p^i}{a}(H+\dot\Phi) + \frac{2}{a^2E}p^ip^j \partial_j\Phi - \frac{p^2}{a^2E}\partial^i\Phi \\
 		%=& p^i(H+\dot\Phi) + \frac{p^ip^j}{aE}\partial_j\Phi \\
 		%& - \frac{E}{a}\partial^i\Psi -2p^i(H+\dot\Phi) + \frac{2}{aE}p^ip^j \partial_j\Phi - \frac{p^2}{aE}\partial^i\Phi \\
-		=& -p^i(H+\dot\Phi)- \frac{1}{aE}\left(p^ip^j\partial_j\Phi - p^2\partial^i\Phi\right) -\frac{E}{a}\partial^i\Psi
+		=& -p^i(H+\dot\Phi)- \frac{1}{aE}\left(p^ip^j\partial_j\Phi - p^2\partial^i\Phi\right) -\frac{E}{a}\partial^i\Psi\,.
 	\end{split}
 \end{equation}
 The time derivative of the modulus of the momentum, $p$, is then given by
@@ -126,19 +125,19 @@ The time derivative of the modulus of the momentum, $p$, is then given by
 	\begin{split}
 		\frac{dp}{dt} =& \frac{d}{dt}\sqrt{\delta_{ij}p^ip^j} = \frac{1}{p}\delta_{ij}\dot p^i p^j \\
 		%=& -p(H+\dot\Phi) - \frac{p}{aE}(p^i\partial_i\Phi - pp^i\partial^i\Phi) - p^i\frac{E}{ap}\partial^i\Psi \\
-		=& -p(H+\dot\Phi) - \hat{p}_i\frac{E}{a}\partial^i\Psi
+		=& -p(H+\dot\Phi) - \hat{p}_i\frac{E}{a}\partial^i\Psi\,.
 	\end{split}
 \end{equation}
-Now, putting everything together, plugging these results into eq () gives
+Now, putting everything together, plugging these results into eq~\ref{eq:dp-hat-dt} gives
 \begin{equation}
 	\begin{split}
 		\frac{d\hat{p}^i}{dt} %=& -\hat{p}^i(H+\dot\Phi)- \frac{1}{aEp}\left(p^ip^j\partial_j\Phi - p\partial^i\Phi\right) -\frac{E}{ap}\partial^i\Psi + \hat{p}^i\left( (H+\dot\Phi) + \hat{p}_i\frac{E}{ap^2}\partial^i\Psi \right) \\
-		=&  \frac{E}{ap}\left( \frac{p^2}{E^2}\partial_j\Phi - \partial_j\Psi \right)(\delta^{ij}-\hat{p}^i\hat{p}^j)
+		=&  \frac{E}{ap}\left( \frac{p^2}{E^2}\partial_j\Phi - \partial_j\Psi \right)(\delta^{ij}-\hat{p}^i\hat{p}^j)\,.
 	\end{split}
 \end{equation} 
 Going back to the photon scenario, where $E=p$, this simplifies to
 \begin{equation}
-	\frac{d\hat{p}^i}{dt} = \frac{1}{a}\left( \partial_j\Phi - \partial_j\Psi \right)(\delta^{ij}-\hat{p}^i\hat{p}^j)
+	\frac{d\hat{p}^i}{dt} = \frac{1}{a}\left( \partial_j\Phi - \partial_j\Psi \right)(\delta^{ij}-\hat{p}^i\hat{p}^j)\,.
 \end{equation}
 Interestingly, $\delta^{ij}-\hat p^i \hat p^j$, is the projection operator of the $j$-th direction onto the $i$-th. So, if we orient our axes so that the photon approximately travels along the $j$-th direction, we can sum of $i$ and $k$ so that the orthogonal components of the momentum are evaluated by
 \begin{equation}
@@ -146,28 +145,28 @@ Interestingly, $\delta^{ij}-\hat p^i \hat p^j$, is the projection operator of th
 \end{equation}
 In the absence of anisotropic stress (like in the late universe where weak lensing is measured), $\Phi=-\Psi$ and 
 \begin{equation}
-	\frac{d\hat{p}^i_\perp}{d\chi} -2\partial_i\Phi
+	\frac{d\hat{p}^i_\perp}{d\chi} -2\partial_i\Phi\,.
 \end{equation}
-Integrating this equation gives us
+Integrating this equation gives
 \begin{equation}
-	\hat p_\perp (\chi'') = -2\int\limits_0^{\chi''}\partial_i\Phi(\chi') d\chi' + C_i
+	\hat p_\perp (\chi'') = -2\int\limits_0^{\chi''}\partial_i\Phi(\chi') d\chi' + C_i\,,
 \end{equation}
-where the constant $C_i$ comes from integrating a derivative, where it is only defined up to a constant. Now, plugging back in we have
+where the constant $C_i$ comes from integrating a derivative, where it is only defined up to a constant. Now, plugging this back in one finds
 \begin{equation}
-	\mathbf{\theta}^i = \frac{2}{\chi}\int\limits_0^\chi \int\limits_0^{\chi''}\partial_i\Phi(\chi') d\chi' d\chi'' - C_i
+	\mathbf{\theta}^i = \frac{2}{\chi}\int\limits_0^\chi \int\limits_0^{\chi''}\partial_i\Phi(\chi') d\chi' d\chi'' - C_i\,.
 \end{equation}
 In the absence of lensing, this should reduce to $\mathbf{\theta}^i = \theta_0$, the true source position. Hence $C^i=\theta^i_0$ and the total deflection angle is given by
 \begin{equation}
 	\begin{split}
 		\Delta\theta^i =& \frac{2}{\chi}\int\limits_0^\chi \int\limits_0^{\chi''}\partial_i\Phi(\chi') d\chi' d\chi''\\
-		=& \frac{2}{\chi}\int\limits_0^\chi \partial_i\Phi(\chi') (\chi-\chi') d\chi'
+		=& \frac{2}{\chi}\int\limits_0^\chi \partial_i\Phi(\chi') (\chi-\chi') d\chi'\,.
 	\end{split}
 \end{equation}
-Finally, since $x^i=\chi\theta^i$, we have $\partial_i = \partial_{\theta^i}/\chi$. Now we introduce the \textit{lensing potential} defined by
+Finally, since $x^i=\chi\theta^i$, $\partial_i = \partial_{\theta^i}/\chi$. Introduce the \textit{lensing potential} defined by
 \begin{equation}
 	\begin{split}
 		\Delta\theta^i =& \frac{\partial}{\partial \theta^i}\psi_L(\theta) \\
-		\psi_L(\theta) =& 2\int\limits_0^\chi \frac{1}{\chi'}\Phi(\chi') \left(1-\frac{\chi'}{\chi}\right) d\chi'
+		\psi_L(\theta) =& 2\int\limits_0^\chi \frac{1}{\chi'}\Phi(\chi') \left(1-\frac{\chi'}{\chi}\right) d\chi'\,.
 	\end{split}
 \end{equation}
 This result is great, but it's not very experimentally illuminating. Similar to the galaxy vs matter power spectrum, the absence of the observation of dark matter means we cannot reliably determine the potential $\Phi$. Again, an attempt to relate the lensing potential to some property of galaxies can give us a measurable quantity. Lensing distorts the shape of the galaxies (see figure~\ref{fig:weak_lensing}), where we assume all galaxies are elliptical. Define the galaxy shape tensor by
@@ -190,11 +189,11 @@ Shape distortion occurs when the deflection angle is not constant across a galax
 	1+\kappa - \gamma_+ & -\gamma_\times \\
 	-\gamma_\times & 1+\kappa+\gamma_+
 	\end{array}
-	\right) = \delta_{ij}+\psi_{ij}
+	\right) = \delta_{ij}+\psi_{ij}\,.
 \end{equation}
 Within this tensor, the $\gamma_+$ and $\gamma_-$ represent shear and $\kappa$ represents magnification and changes in galaxy light flux ($F$). The $E$-mode is given by
 \begin{equation}
-	E(l) = \left( \frac{l^il^j}{l^2} - \frac{1}{2}\delta^{ij} \right)(-\psi^{ij}(l))
+	E(l) = \left( \frac{l^il^j}{l^2} - \frac{1}{2}\delta^{ij} \right)(-\psi^{ij}(l))\,.
 \end{equation}
 Which relates to the shear components by
 \begin{equation}
@@ -215,7 +214,7 @@ Which relates to the shear components by
 \end{equation}
 This connects the observable shear to the theoretical lensing potential.
 \subsection{Weak Lensing Correlation Functions}
-In the previous two sections, we have derived two observables directly connected to cosmological theories. By observing the galaxies we can determine $\Omega_b$, $A_s$, $n_s$ and $H_0$. By observing shear, we can determine $\Omega_m$. The details for how to determine these parameters will be discussed in chapter (chapter). Together these two can fully determine the values of the 5 $\Lambda$CDM parameters. We are still not ready, since these two quantities themselves are not observables. Using these two quantities, however, one can construct three different two-point correlation functions which are observable.
+In the previous two sections, we have derived two observables directly connected to cosmological theories. By observing the galaxies we can determine $\Omega_b$, $A_s$, $n_s$ and $H_0$. By observing shear, we can determine $\Omega_m$. The details for how to determine these parameters will be discussed in chapter 3. Together these two can fully determine the values of the 5 $\Lambda$CDM parameters. These two quantities themselves are not observables. Using these two quantities, however, one can construct three different two-point correlation functions which are observable.
 
 The first correlation function is the autocorrelation of galaxy density, called galaxy clustering. Given a density in a particular angular position, the correlation function can be interpreted as the likelihood of observing a similar density at another close position. The galaxy clustering correlation function is given by
 \begin{equation}
@@ -223,48 +222,48 @@ The first correlation function is the autocorrelation of galaxy density, called 
 \end{equation}
 where $J_0$ is the 0-th Bessel function and $\mathcal{F}$ denotes the Fourier transform.
 
-Next is the shear autocorrelation. In this case, there are two components of shear: the tangential shear $\gamma_+$ and the cross shear $\gamma_\times$. The cross correlation $\langle \gamma_+ \gamma_\times \rangle$ vanishes, so we are left with combinations
+Next is the shear autocorrelation. In this case, there are two components of shear: the tangential shear $\gamma_+$ and the cross shear $\gamma_\times$. The cross correlation $\langle \gamma_+ \gamma_\times \rangle$ vanishes, and the remaining combinations are
 \begin{equation}
 	\begin{split}
 		\langle \gamma_+\gamma_+ \rangle \pm \langle \gamma_\times \gamma_\times \rangle = \xi_\pm
 	\end{split}
 \end{equation}
 \begin{equation}
-	\xi_{+,-} = \frac{1}{2\pi}\int\limits_0^\infty l C_{EE}(l) J_{0,4}(l\theta)C_{EE}(l)dl
+	\xi_{+,-} = \frac{1}{2\pi}\int\limits_0^\infty l C_{EE}(l) J_{0,4}(l\theta)C_{EE}(l)dl\,.
 \end{equation}
 
-Finally, we have the cross correlation between galaxy density and tangential shear. First, the angular power spectrum $C_{gE}(l)$ is given by
+The final observable is the cross correlation between galaxy density and tangential shear. First, the angular power spectrum $C_{gE}(l)$ is given by
 \begin{equation}
-	C_{gE}(l) = \frac{3}{2}\Omega_mH_0^2 \int\limits_0^\infty \frac{1}{\chi a(\chi)}W_g(\chi)P_g(k,\eta) d\chi
+	C_{gE}(l) = \frac{3}{2}\Omega_mH_0^2 \int\limits_0^\infty \frac{1}{\chi a(\chi)}W_g(\chi)P_g(k,\eta) d\chi\,.
 \end{equation}
 \begin{equation}
-	\gamma = \langle \Delta_g\gamma_+\rangle = -\frac{1}{2\pi}\int\limits_0^\infty l J_2(l\theta)C_{gE}(l)dl
+	\gamma = \langle \Delta_g\gamma_+\rangle = -\frac{1}{2\pi}\int\limits_0^\infty l J_2(l\theta)C_{gE}(l)dl\,.
 \end{equation}
 The correlation function $\langle \Delta_g\gamma_\times\rangle$ vanishes in an isotropic universe.
 
 \subsection{Systematics}
-Up to now, we have neglected any systematics of the weak lensing observables. There are two distinct types of systematics that will be discussed in this section: The ones which affect the calculation of the correlation functions, and the ones which affect the correlation functions after they have been computed. The latter type are usually referred to as `fast' parameters, and we will see why in the next chapter. In the meantime, here is an explanation of the relevant systematics.
-\subsubsection{Photometric Redshift Uncertainty}
+Up to now, we have neglected any systematics of the weak lensing observables. There are two distinct types of systematics that will be discussed in this section: The ones which affect the calculation of the correlation functions, and the ones which affect the correlation functions after they have been computed. The latter type are usually referred to as `fast' parameters, and it will become clear why that is in the next chapter. In the meantime, here is an explanation of the relevant systematics.
+\subsubsection{Photometric Redshift Uncertainty}\label{sec:dz}
 To compute the two-point correlation functions, one must determine the redshift distribution $W(\chi)$. This is a highly non-trivial task. To model the uncertainty in this distribution, one applies a constant shift to the redshift of observed galaxies.
 \begin{equation}
 	n_g(z) \mapsto n_g(z+\Delta z)
 \end{equation}
 The shift $\Delta z$ must be determined before one can compute the galaxy clustering and galaxy lensing correlation functions.
-\subsubsection{Intrinsic Alignment of Galaxies}
+\subsubsection{Intrinsic Alignment of Galaxies}\label{sec:IA}
 As can be seen in figure (fig), galaxy shapes are not completely random. In the absence of lensing, there is still some non-zero correlation between the shapes. This is referred to as Intrinsic Alignment~\cite{troxel_intrinsic_2015,scott_dodelson_modern_2021}. There are two models of intrinsic alignment that will be considered in this thesis: the Tidal Alignment Tidal Torquing (TATT) model~\cite{krause_dark_2021,blazek_beyond_2019} and the Non-linear Alignment (NLA) model. The TATT depends on the tidal tensor $s_{ij}$ which contains the information about tidal forces due to non-uniform gravitational fields. Tidal forces are a source of intrinsic alignment and shear (figure). The model is given by
 \begin{equation}
 	\gamma_{ij}^I = \underbrace{C_1s_{ij}}_{\text{tidal alignment}}+
 	\underbrace{b_{TA}C_1(\delta_m\times s_{ij})}_{\text{density weighting}}+
-	\underbrace{C_2\left( s_i^ks_{kj}-\frac{1}{3}\delta_{ij}s^2 \right)}_{\text{tidal torquing}}
+	\underbrace{C_2\left( s_i^ks_{kj}-\frac{1}{3}\delta_{ij}s^2 \right)}_{\text{tidal torquing}}\,,
 \end{equation}
-Where the coefficients $C_a$ are given by
+where the coefficients $C_a$ are given by
 \begin{equation}
 	\begin{split}
 		C_1 =& -\frac{A_1\bar{C}\Omega_m}{aG(z)}\left(\frac{1+z}{1+z_0}\right)^{\eta_1} \\
-		C_2 =& 5\frac{A_2\bar{C}\Omega_m}{(aG(z))^2}\left(\frac{1+z}{1+z_0}\right)^{\eta_2}
+		C_2 =& 5\frac{A_2\bar{C}\Omega_m}{(aG(z))^2}\left(\frac{1+z}{1+z_0}\right)^{\eta_2}\,.
 	\end{split}
 \end{equation}
-The TATT model reduces to the NLA model when $A_2=0=b_{TA}$
+The TATT model reduces to the NLA model when $A_2=0=b_{TA}$.
 \subsubsection{Galaxy Bias}
 As discussed in the galaxy clustering section, we relate the galaxy and matter density by a bias parameter $b$. However, we can pick a fiducial value to relate the two
 \begin{equation}
@@ -272,7 +271,7 @@ As discussed in the galaxy clustering section, we relate the galaxy and matter d
 \end{equation}
 then consider a multiplicative deviation
 \begin{equation}
-	\delta_g = (b\cdot b_{\text{fid}})\delta_m = b\delta_{g,\text{fid}}
+	\delta_g = (b\cdot b_{\text{fid}})\delta_m = b\delta_{g,\text{fid}}\,.
 \end{equation}
 Thus, the parameter $b$ can be found to account for different galaxy biases. 
 
@@ -280,37 +279,37 @@ Galaxy bias is the first of many `fast' parameters. Since the bias is constant, 
 \begin{equation}
 	\begin{split}
 		w^i(\theta) =& b_{(i)}^2w^i(\theta) \\
-		\gamma^i_t(\theta) =& b_{(i)}\gamma_t^i(\theta)
+		\gamma^i_t(\theta) =& b_{(i)}\gamma_t^i(\theta)\,.
 	\end{split}
 \end{equation}
-where $i$ here denotes the redshift bin
+where $i$ here denotes the redshift bin.
 \subsubsection{Shear Calibration}
 Observed shear is not a completely astrophysical phenomenon. For example, a major source of additional shear comes from the observation lens itself, where the observed galaxy shape is given by the true galaxy shape convolved with the point spread function of the lens~\cite{hirata_shear_2003,gillis_effects_2019}. This is usually modelled as a multiplicative correction to the shear components.
 \begin{equation}
 	\begin{split}
 		\xi^{ij}_{\pm} =& (1+m^i)(1+m^j) \xi^{ij}_{\pm} \\
-		\gamma^{ij}_t =& (1+m^j) \gamma_t^{ij}
+		\gamma^{ij}_t =& (1+m^j) \gamma_t^{ij}\,,
 	\end{split}
 \end{equation}
 where $i$ and $j$ denote the source and lens bin respectively. The multiplicative shear calibration is also a fast parameter.
 \subsubsection{Point Mass}
-Currently, we are unable to model the contribution of small scales to the tangential shear~\cite{maccrann_controlling_2020}. The tangential shear can be written in terms of the surface mass density $\Sigma$ in the tangential direction
+Currently, we are unable to model the contribution of small scales to the tangential shear~\cite{maccrann_controlling_2020}. The tangential shear can be written in terms of the surface mass density $\Sigma$ in the tangential direction:
 \begin{equation}
-	\gamma_t(R/D_A) = \frac{\bar\Sigma(0,R) - \Sigma(R)}{\Sigma_\mathrm{crit}} = \frac{\Delta\Sigma(R)}{\Sigma_\mathrm{crit}}
+	\gamma_t(R/D_A) = \frac{\bar\Sigma(0,R) - \Sigma(R)}{\Sigma_\mathrm{crit}} = \frac{\Delta\Sigma(R)}{\Sigma_\mathrm{crit}}\,.
 \end{equation}
 We can only model the tangential shear to $r_\mathrm{min}$, which allows us to write the point mass contribution (named for the $R^{-2}$ dependence) as
 \begin{equation}
-	\Delta\Sigma(R) = \Delta\Sigma^{\mathrm{model}}(R) + \frac{B}{R^2}
+	\Delta\Sigma(R) = \Delta\Sigma^{\mathrm{model}}(R) + \frac{B}{R^2}\,.
 \end{equation}
 \subsubsection{Lensing Magnification}
-As discussed in (section), the intrinsic shape of galaxies also gets magnified. This effect is introduced as a parameter $C_l^i$ and is fixed experimentally.
+In weak lensing, the intrinsic shape of galaxies also gets magnified. This effect is introduced as a parameter $C_l^i$ and is fixed experimentally.
 
 %Additionally, DES added a non-physical parameter called $X_{\text{lens}}$ to resolve an inconsistency between two lensing samples, RedMaGiC and MagLim. In this thesis, we only consider $X_{\text{\lens}}=1$
 
 \section{CMB}
-Although CMB data is not used very much in this thesis, it is worth discussing the measurements qualitatively. The consensus among physicists and astronomers that the universe beyond the horizon was a hot, dense plasma. As such, the mean free path of photons were much shorter than they are today, thus Compton scattering dominated photon dynamics in the early universe. As the universe cooled, atoms began to form. in a process called recombination. During this time, the universe was still opaque as photons scattered on the newly formed atoms. As the universe began to expand, the mean free path of photons increased and inter-atomic interactions decreased, meaning the atoms could be ionized by absorbing free photons in a process called reionization. The absorption of the photons caused the universe to become transparent. One can compute the optical depth of this transition from opaque to transparent as
+Although CMB data is not used very much in this thesis, it is worth discussing the measurements qualitatively. The consensus among physicists and astronomers that the universe beyond the horizon was a hot, dense plasma. As such, the mean free path of photons were much shorter than they are today, thus Compton scattering dominated photon dynamics in the early universe. As the universe cooled, atoms began to form in a process called recombination~\cite{scott_dodelson_modern_2021,hu_animations_nodate}. During this time, the universe was still opaque as photons scattered on the newly formed atoms. As the universe began to expand, the mean free path of photons increased and inter-atomic interactions decreased, meaning the atoms could be ionized by absorbing free photons in a process called reionization. The absorption of the photons caused the universe to become transparent. One can compute the optical depth of this transition from opaque to transparent as
 \begin{equation}
-	T = T_0(1-e^{-\tau_{\mathrm{rei}}})
+	T = T_0(1-e^{-\tau_{\mathrm{rei}}})\,.
 \end{equation}
 $\tau_{\mathrm{rei}}$ concludes the introduction of cosmological parameters. $\tau_{\mathrm{rei}}$ can only be determined from CMB and is usually fixed in weak lensing analysis.
 
@@ -330,7 +329,7 @@ Next is to consider a change is $\Omega_c$. The dominant effect from changing $\
 
 The remaining parameters are considered in unison: $\mathcal{A}_s$, $n_s$, and $\tau_{\mathrm{rei}}$. Naturally, $\tau_{\mathrm{rei}}$ will have an overall suppression effect, The higher the anisotropy, the higher the suppression, thus resulting in strong suppression at large scales and weak suppression at small scales. The amplitude and spectral index enter the power spectrum in a similar way they did for weak lensing. Thus, the effect of $\mathcal{A}_s$ and $n_s$ can look identical to changes in $\tau_\mathrm{rei}$.
 
-Finally, is a consideration of $H_0$, arguably the most simple case. $H_0$ affects the expansion rate of the universe, thus a larger expansion rate will shift the position of the peaks in the power spectrum. Increases in $H_0$ will shift the peaks to smaller scales (found by propagating $H_0$ backward through time), and inversely, lowering $H_0$ will shift the peaks to larger scales.
+Finally, is a consideration of $H_0$, arguably the most simple case. $H_0$ affects the expansion rate of the universe, thus a changing the value of $H_0$ will shift the position of the peaks in the power spectrum. Increases in $H_0$ will shift the peaks to smaller scales (found by propagating $H_0$ backward through time), and inversely, lowering $H_0$ will shift the peaks to larger scales. Additionally, the peaks at small scales will have a lower shift than the peaks at large scales. Hence $H_0$ can also be determined by the distance between the peaks.
 \subsection{TE and EE Power Spectra}
 \begin{figure}
     \centering

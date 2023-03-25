@@ -382,7 +382,7 @@ and $d$ is the embedding dimension (i.e $W_K\in \mathbb{R}^{d_x\times d}$).
 We allow the linear matrices $W_Q$, $W_K$, and $W_V$ to contain learnable components. We then pass each output $y_i$ to its own MLP. We also keep the skip connections describe in the residual network section. The attention together with the MLPs and skip connections is called a transformer block, drawn in figure~\ref{fig:attention}.
 \begin{figure}[ht]
 	\centering
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.9]
 		%%curved skip lines
 		\draw (8,2.5) to[out=0,in=90] (9,1.5) -- (9,-3.5) to[out=-90,in=0] (8,-4.5) -- (4.75,-4.5);
 		\draw (8,-5.5) to[out=0,in=90] (9,-6.5) -- (9,-8.5) to[out=-90,in=0] (8,-9.5) -- (4.75,-9.5);
@@ -463,56 +463,92 @@ These get analyzed on the test data set. Because of the second point above, we d
 \subsection{Training and Testing}
 We train the emulator by using a rough Gaussian approximation on the cosmological parameters. The benefit is that running MCMC chains on a simple Gaussian without the need for CosmoLike is extremely fast. Given the samples, the data vector calculation is trivially parallelizable, so the entire process is significantly faster than running an MCMC in CosmoLike. 
 
-First, we examine the training and validation loss at each epoch. The training loss is the average loss of all batches in an epoch. Figure~\ref{fig:train_loss_resnet} displays the training loss of a ResNet model with 3 ResNet blocks and 256 neurons in each hidden layer. In this case, we can see a consistent decline in both the training and validation loss. Additionally, we can see the points where the learning rate decreases (see epoch 50 and epoch 85 in figure~\ref{fig:train_loss_resnet}) which occur when validation loss plateaus, following the expected behavior. This demonstrates that we are likely not overfitting the training data.
-\begin{figure}[tb]
+% First, we examine the training and validation loss at each epoch. The training loss is the average loss of all batches in an epoch. Figure~\ref{fig:train_loss_resnet} displays the training loss of a ResNet model with 3 ResNet blocks and 256 neurons in each hidden layer. In this case, we can see a consistent decline in both the training and validation loss. Additionally, we can see the points where the learning rate decreases (see epoch 50 and epoch 85 in figure~\ref{fig:train_loss_resnet}) which occur when validation loss plateaus, following the expected behavior. This demonstrates that we are likely not overfitting the training data.
+% \begin{figure}[tb]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{plots/losses_resnet_3_256.pdf}
+% 	\caption{Loss of a ResNet model with 3 ResNet blocks and 256 neurons in each layer.}
+% 	\label{fig:train_loss_resnet}
+% \end{figure}
+% Using a trained model, we evaluate $\Delta\chi^2$ on the test data, a $T=8$ Gaussian approximated chain (figure~\ref{fig:testing_loss}). As we can see, our model is able to generalize well to a $T=8$ chain. 
+% \begin{figure}[tb]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf}
+% 	\caption{Testing loss on a $T=8$ chain.}
+% 	\label{fig:testing_loss}
+% \end{figure}
+First, we tested the different architectures by training them on a $T=16$ chain. The testing was done on a $T=8$ chain. we find that the ResNet is able to consistently perform the best of the three basic architectures. The number of layers and width of the layers makes minimal difference. An interesting result comes from the wide MLP architectures, where the testing loss suddenly spikes. This is likely due to either vanishing gradients or some poorly chosen hyperparameters of the model. Regardless of the issue, this instability is not desirable, as we would like to provide a framework for others to build emulators of their own, and fine-tuning hyperparameters adds significant difficulty to this process. The ResBottle consistently performs worse than the others, meaning the information the model learns in necessary to correctly model the final data vector. This is perhaps unsurprising for our relatively small models, but if one needs to create much wider networks, the ResBottle may be the only way to keep the number of parameters reasonable. Nevertheless, the ResBottle has a satisfactory performance overall.
+% \begin{figure}[htb]
+% 	\centering
+% 	\begin{subfigure}[b]{0.4\textwidth}
+% 		\includegraphics[width=\textwidth]{plots/model_table_mlp.pdf}
+% 		\caption{MLP average loss}
+% 		\label{fig:mlp_table}
+% 	\end{subfigure}
+% 	\begin{subfigure}[b]{0.4\textwidth}
+% 		\includegraphics[width=\textwidth]{plots/model_table_resnet.pdf}
+% 		\caption{ResNet average loss}
+% 		\label{fig:resnet_table}
+% 	\end{subfigure}
+% 	\begin{subfigure}[b]{0.8\textwidth}
+% 		\includegraphics[width=\textwidth]{plots/model_table_resbottle.pdf}
+% 		\caption{ResBottle average loss}
+% 		\label{fig:resbottle_table}
+% 	\end{subfigure}
+% 	\label{fig:model_tables}
+% \end{figure}
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.9\textwidth]{plots/losses_resnet_3_256.pdf}
-	\caption{Loss of a ResNet model with 3 ResNet blocks and 256 neurons in each layer.}
-	\label{fig:train_loss_resnet}
-\end{figure}
-Using a trained model, we evaluate $\Delta\chi^2$ on the test data, a $T=8$ Gaussian approximated chain (figure~\ref{fig:testing_loss}). As we can see, our model is able to generalize well to a $T=8$ chain. 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=0.9\textwidth]{plots/cosmic_shear_resnet_nlayer_3_intdim_256.pdf}
-	\caption{Testing loss on a $T=8$ chain.}
-	\label{fig:testing_loss}
-\end{figure}
-
-Additionally, we can test how high of a temperature we can train on and still get satisfactory performance.
-
-\begin{figure}[tb]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{plots/model_table_mlp.pdf}
-		\caption{MLP average loss}
-		\label{fig:mlp_table}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{plots/model_table_resnet.pdf}
-		\caption{ResNet average loss}
-		\label{fig:resnet_table}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.9\textwidth}
-		\includegraphics[width=\textwidth]{plots/model_table_resbottle.pdf}
-		\caption{ResBottle average loss}
-		\label{fig:resbottle_table}
-	\end{subfigure}
-	\label{fig:model_tables}
-\end{figure}
-
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=0.9\textwidth]{plots/avg_chi2_v_n_params_new.pdf}
-	\caption{Average $\chi^2$ as a function of the number of parameters for each architecture.}
+	\includegraphics[width=0.8\textwidth]{plots/avg_chi2_v_n_params_new.pdf}
+	\caption{Average $\Delta\chi^2$ as a function of the number of parameters for each architecture.}
 	\label{fig:avg_chi2_nparams}
 \end{figure}
+
+Additionally, we can test how high of a temperature we can train on and still get satisfactory performance. We noticed the MLP, ResNet, and ResBottle models fail to train on a $T=128$ chain (figure~\ref{fig:avg_chi2_nparams_t128}).
+\begin{figure}[!tb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{plots/avg_chi2_v_n_params_T64.pdf}
+	\caption{Average $\Delta\chi^2$ of a $T=64$ chain using emulators trained on a $T=128$ chain.}
+	\label{fig:avg_chi2_nparams_t128}
+\end{figure} 
+We added the transformer block to the $T=128$ training to see the gain in performance attributed to the complex model. We find adding a transformer block to the end of the 3 ResBlock model (figure~\ref{fig:full_arch}) is able to give satisfactory performance when training on $T=128$ and testing on $T=64$ chains.
+\begin{figure}[!tb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{plots/T64_attention_stuff.pdf}
+	\caption{Marginalized distribution of $\Delta\chi^2$ of a $T=64$ chain using the model in figure~\ref{fig:full_arch} trained on a $T=128$ chain.}
+	\label{fig:testing_attention_t128}
+\end{figure}
+
+\begin{figure}[!tb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{plots/Untitled Diagram.drawio-5.pdf}
+	\caption{Full NN architecture used for training on high temperature chains. Comprised of three ResBlocks of size 256, and a transformer block with 8 heads, each with a size of 128.}
+	\label{fig:full_arch}
+\end{figure}
+
+This demonstrates the importance of making an intelligent choice for emulator architecture. By implementing the self attention, we were able to greatly increase the amount of the $\Lambda$CDM parameter space covered by the emulator. The additional volume will allow one to use emulators, even on real data, where the data vectors can be shifted greatly from things such as baryon contamination. We would like to continue this to see how this architecture will hold for more complex extensions to $\Lambda$CDM, such as early dark energy, which adds $\sim10$ parameters. We are also working with a team on using this architecture to model much larger data vectors.
+
 \section{Application to Tension Calibration}
-As mentioned in section~\ref{sec:planck_DES_tenion}, tension metrics require calibration between experiments. In this section, I will apply the use of emulators to do a first study of tension metric error. By shifting the parameters and generating noise realizations on the data, we can get a sense of how the error in the data propagates to error in the tension. This will provide additional information as to which tension metrics perform best, as well as adding context to how tension may vary given new measurements. Additionally, given that $n_\sigma=0$ means no tension, the error are tension metrics will allow us to gauge how reasonable it may be for the tension to be resolved by additional identical measurements.
+In this section, I will apply the use of emulators to do a first study of tension metric error. By shifting the parameters and generating noise realizations on the data, we can get a sense of how the error in the data propagates to error in the tension. This will provide additional information as to which tension metrics perform best, as well as adding context to how tension may vary given new measurements. Additionally, given that $n_\sigma=0$ means no tension, the error are tension metrics will allow us to gauge how reasonable it may be for the tension to be resolved by additional identical measurements.
 
-I will be shifting the LSST fiducial cosmology to $\pm5\sigma$ in both the $\sigma_8$ and $\Omega_m$ directions (figure~\ref{figure}). At each of these shifts, I will compute 1000 noise realizations on LSST cosmic shear using the data covariance. Finally, the tension will be computed using the methods described in section~\ref{sec:tenion_metrics}.
+I will be shifting the LSST fiducial cosmology to $\pm5\sigma$ in both the $\sigma_8$ and $\Omega_m$ directions. At each of these shifts, I will compute 256 noise realizations on LSST cosmic shear and Planck TTTEEE using the respective data covariances. Finally, the tension will be computed using the methods described in section~\ref{sec:tension_metrics}. Due to time constraints, the chains for the shifts will not be presented in this thesis. I will, however, demonstrate this method using the fiducial cosmologies of LSST and Planck.
 
-I chose to use the ResNet model with 3 ResBlocks and $256$ neurons in each hidden layer. This model provides good stability in the predictions, and is sufficiently small that running chains on the noise realizations is tractable.
+The autocorrelation $\tau$ for the MCMC sampler was measured to be $\tau\sim1000$, thus we need to run the chain for about 50000 steps ($50\tau$) using the enseble sampler in $\textsc{Emcee}$. Each chain has 120 walkers, resulting in a total runtime of just 8 hours on a single 40 core CPU. The joint chains used for $Q_{\mathrm{UDM}}$ were run for just 5000 steps, since that is sufficient for the mean and covariance to converge. 
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{plots/metrics_new.pdf}
+	\caption{tension metrics error}
+	\label{fig:tension_metrics_error}
+\end{figure}
 
+We see that, up to noise realizations, the different tension metrics are nearly indistinguishable. Both Planck and LSST are nearly gaussian, but for more non-gaussian posteriors (such as DES), the difference between the parameter difference and other metrics may be more significant. We also see that the tension can be reduced by the experimental noise, but cannot be reduced to 0. It remains to compute the tension for noise realizations on the cosmologies with shifted $\Omega_m$ and $\sigma_8$.
+
+The result for $Q_{\mathrm{UDM}}$ is significantly lower than the other metrics. This is likely becuase it makes the assumption that the posteriors are Gaussian, where as the tension can hide in the non-Gaussian parts of the posterior. Additionally, the error bar on $Q_{\mathrm{DMAP}}$ is much smaller. This requires some investigation into the distribution of the maximum-a-posteriori of the noise realizations. While noise realizations on the data generate large shifts in the posterior, the same is not necessarily true for the maximum-a-posteriori.
+
+\section{Conclusion}
+We are able to implement a NN emulator that works on temperatures as high as 128 by using the chatGPT inspired transformer block. Using the emulators, we can ensure that the posteriors are robust for noise realizations on the data. Using these noise realizations we can compute the error on the tension metrics.
+
+A future study will be done creating emulators for different extension models which push the number of input parameters, as well as different data sets which push the number of output parameters. Using this baseline framework, we can also rapidly analyze smaller extensions, such as the geometry and growth split detailed in chapter 4.
 
 
 
