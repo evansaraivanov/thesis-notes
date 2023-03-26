@@ -1,19 +1,19 @@
 \chapter{Computing Techniques}
-The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? From the complexity of the calculations, it's clear that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, it's clear that this computation involves conditional probability densities, thus we can use Bayes' theorem to help us determine the parameters.
+The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? From the complexity of the calculations, it's clear that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, it's clear that this computation involves conditional probability densities, so we can use Bayes' theorem to help us determine the parameters.
 
 \section{Markov Chain Monte Carlo}
-Markov chains are a step process in which the next step only depends on the current step~\cite{agrahari_monte_2021}. Formally, a
-sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} if the conditional distribution $X_{n+1}$ depends only on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain. This is a very abstract definition, however Markov chains play a regular role in daily life. For example, weather patterns form Markov chains, or the order of words in a sentence. The key here is that, if it rains one day, how likely is it to rain the next day? Or given a word, what is the most probable next word? For a cosmological application, the key is to start with some set of parameters, and slowly move towards the most probable set of parameters.
+Markov chains are a step process in which the next step depends solely on the current step~\cite{agrahari_monte_2021}. Formally, a
+sequence $X_1,\hdots,X_n$ of random elements is a \textit{Markov Chain} if the conditional distribution  of $X_{n+1}$ depends solely on $X_n$. The set in which $X_i$ take values is called the \textit{state space} of the chain. This is a very abstract definition. However, Markov chains play a regular role in daily life. For example, weather patterns form Markov chains, or the order of words in a sentence. The key here is that, if it rains one day, how likely is it to rain the next day? Or given a word, what is the most probable next word? For a cosmological application, the key is to start with some set of parameters, and slowly move towards the most probable set of parameters.
 
 Bayes' theorem states
 \begin{equation}
 	P(x|y) = \frac{P(y|x) P(x)}{P(y)}
 \end{equation}
-Lets set $x=\theta$, the cosmological parameters, and $y=d$, the data vector representing the $3\times 2$ correlation functions. Then
+Lets set $x=\theta$, the cosmological parameters, and $y=d$, the data vector representing the $3\times 2$ correlation functions, for example. Then
 \begin{equation}
 	P(\theta|d) = \frac{P(d|\theta) P(\theta)}{P(d)}
 \end{equation}
-The left hand side is typically called the \textit{posterior}, while $P(d|\theta)$ is called the likelihood, $P(\theta)$ the prior, and $P(d)$ the evidence. In cosmological notation~\cite{raveri_non-gaussian_2021}, this is usually written
+The left-hand side is typically called the \textit{posterior}, while $P(d|\theta)$ is called the likelihood, $P(\theta)$ the prior, and $P(d)$ the evidence. In cosmological notation~\cite{raveri_non-gaussian_2021}, this is usually written
 \begin{equation}
 	\mathcal{P}(\theta) = \frac{\mathcal{L}(\theta) \Pi(\theta)}{\mathcal{E}}
 \end{equation}
@@ -27,7 +27,7 @@ This transition from state $n$ to state $n+1$ must follow the \textit{detailed b
 \end{equation}
 where $A$ is an \textit{acceptance probability}, which I will define more precisely later. 
 Using Bayes' Theorem on $p(x)$, the evidence cancels out on each side, 
-and thus the detailed balance condition can be simplified to only rely on the likelihood and prior of $p(x)$, 
+and thus the detailed balance condition can be simplified to rely solely on the likelihood and prior of $p(x)$, 
 which I will denote $\pi$ and $\mathcal{L}$.
 \begin{equation}
 	\begin{split}
@@ -57,15 +57,15 @@ Given the 5-dimensional parameter space, there is great difficulty in computing 
 \subsection{Parameter-based Metrics}
 \subsubsection{Metric 1: Parameter Difference}
 The main idea of this metric is that if two data sets largely agree, the difference posterior will be centered at 0, so the mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
-Define $\Delta\theta = \theta_A - \theta_B$. Under this reparameterization the two posteriors are $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_A-\Delta\theta)$. If the posteriors are independent, one can marginalize over $\theta_A$ to get the parameter difference distribution.
+Define $\Delta\theta = \theta_A - \theta_B$. Under this reparameterization, the two posteriors are $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_A-\Delta\theta)$. If the posteriors are independent, one can marginalize over $\theta_A$ to get the parameter difference distribution.
 \begin{equation}
     \mathcal{P}(\Delta\theta) = \int \mathcal{P}(\theta_A)\mathcal{P}(\theta_A - \Delta\theta) d\theta_A
 \end{equation}
-Thus we can approximate the tension as the volume of the posterior contours with $\mathcal{P}(\Delta\theta)>\mathcal{P}(0)$.
+Thus, we can approximate the tension as the volume of the posterior contours with $\mathcal{P}(\Delta\theta)>\mathcal{P}(0)$.
 \begin{equation}
     \mathrm{PTE} = \int\limits_{\mathcal{P}(\Delta\theta)>\mathcal{P}(0)}\mathcal{P}(\Delta\theta) d\Delta\theta
 \end{equation}
-This has the benefit of only requiring independent parameter sampling. It makes no assumption of the Gaussianity of the posterior or the likelihood. The difficulty here, however, is actually determining $\mathcal{P}(\theta)$. There are multiple methods used, the most novel of which is discussed later.
+This comes with the benefit of only requiring independent parameter sampling. It makes no assumption of the Gaussianity of the posterior or the likelihood. The difficulty here, however, is actually determining $\mathcal{P}(\theta)$. There are multiple methods used, the most novel of which is discussed later.
 
 \subsubsection{Metric 2: Parameter Difference in Update Form}
 As discussed above, we can compute the parameter $Q_{\mathrm{UDM}}$ by
@@ -119,7 +119,7 @@ Given some probability $P$ of a parameter shift, the following formula can give 
 \begin{equation}
 	n_\sigma = \sqrt{2} \text{Erf}^{-1}(P)\,.
 \end{equation}
-However we don't have any concrete reason to believe $P$ comes from a Gaussian distribution in general. However, it does come from a Gaussian distribution when the posteriors are Gaussian, thus we can do a test of the metrics by taking two unit Gaussian posteriors and fixing the separation between them. In fact, this example can be computed analytically.
+However we don't have any concrete reason to believe $P$ comes from a Gaussian distribution in general. However, it does come from a Gaussian distribution when the posteriors are Gaussian; thus we can do a test of the metrics by taking two unit Gaussian posteriors and fixing the separation between them. In fact, this example can be computed analytically.
 \begin{equation}
     \begin{split}
 	\mathcal{P}(\Delta \theta) &= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} e^{-\theta^2/2} e^{-{(\theta-\Delta\theta)}^2/2}  d\theta \\
@@ -132,12 +132,12 @@ The parameter difference posterior is a Gaussian with standard deviation $\sqrt{
 	\Delta = \int\limits_{-a}^{a} e^{-{(\Delta\theta)}^2/4} d\Delta\theta\,.
 \end{equation}
 We can compare the analytic result to the computational result for each of the metrics to see which ones are most accurate. In practice, this integral is computed with Monte-Carlo integration, where the error is evaluated using the Clopper-Pearson interval on the binomial distribution.
-\subsection{DES v Planck Results}
+\subsection{DES versus Planck Results}
 A subset of these exercises have been performed previously by the Dark Energy Survey (DES) against the Planck results. In~\cite{lemos_assessing_2021}, Lemos et al. generates an a-priori tension on the cosmological parameters by shifting the DES fiducial cosmology along $\sigma_8$ and $\Omega_m$. They approximate the a-priori tension using the Gaussian approximation,
 \begin{equation}\label{eq:a-priori}
 	\chi^2 = \delta\theta (C_\mathrm{DES}+C_\mathrm{Planck})\delta\theta
 \end{equation}
-where $\delta\theta$ is $(\sigma_8,\Omega_m)$ and $C$ the covariance of DES and Planck respectively.
+where $\delta\theta$ is $(\sigma_8,\Omega_m)$ and $C$ the covariance of DES and Planck, respectively.
 
 They then compute the tension metrics and compare to the a-priori Gaussian tension. The main result demonstrates what the resulting tension is from a fixed shift along a single parameter. Their result is presented in this thesis in figure~\ref{fig:planck_des_tension}. An additional note is that Gaussian tension tends to underestimate the tension presented in other metrics, highlighting the importance of capturing non-Gaussianities.
 \begin{figure}[tb]
@@ -151,10 +151,10 @@ The method of normalizing flows (MAF) implemented here uses Masked Autoencoders 
 Suppose we have an input to the flow $x_i$. 
 The output of the map is $y_i= \mu(x_{1:i-1})+\sigma(x_{1:i-1})x_i$. 
 The $\mu$ and $\sigma$ are found using neural networks which receive masked inputs $x_{1:i-1}=(x_1,\ldots,x_{i-1},0,\ldots,0)$. 
-Since the input only depends on the first $i-1$ inputs, the normalizing flow is \textit{autoregressive} and the Jacobian is triangular.
+Since the input depends solely on the first $i-1$ inputs, the normalizing flow is \textit{autoregressive} and the Jacobian is triangular.
 
-The implementation in \textsc{TensorFlow} uses \textit{bijectors} which implements a local diffeomorphism between a manifold $M$ and a target manifold $N$ (which are our parameter spaces), i.e. $\phi:M\rightarrow N$ such that $\phi$ is differentiable and injective. 
-In \textsc{TensorFlow}, bijectors have three operations, forward, inverse, and log\_det\_jacobian, which are exactly the three we want. 
+The implementation in \textsc{TensorFlow} uses \textit{bijectors}, a local diffeomorphism between a manifold $M$ and a target manifold $N$ (which are our parameter spaces), i.e., $\phi:M\rightarrow N$ such that $\phi$ is differentiable and injective. 
+In \textsc{TensorFlow}, bijectors have three operations, forward, inverse, and log\_det\_jacobian, which are precisely the three we want. 
 By constructing a bijector for each masked input, the full normalizing map can be constructed.
 
 An intuitive way to think of normalizing flow is as a reparameterization. Consider our posterior as a manifold $X$. The manifold is constructed via the parameterization with charts $\phi_i:X\rightarrow U_i \subset \mathbb{R}^n$ for $i$ in indexing set $I$. 
