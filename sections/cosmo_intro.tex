@@ -1,8 +1,8 @@
 \chapter{General Relativity and Cosmology}
 \section{Motivation}
-With Einstein's formulation of special relativity came a beautiful expansion of physics into the high energy and large scale regime. A postulate of special relativity was that light is a universal speed limit, and with this postulate, a plethora of established physical theories became problematic. Fortunately, for theories such as electromagnetism, no incompatibilities were introduced. However, for gravity, this was not the case. The gravitational field had no wave equation to establish a speed of propagation, meaning changes to the gravitational field were felt instantaneously everywhere. Attempts to reconcile this, such as using a retarded propagator or promoting the Newtonian potential to a scalar field theory, proved incapable of correcting for special relativistic effects. Nevertheless, Newtonian gravity has stood the test of time to be accurate in the non-relativistic limit. Thus, any theory of gravity should reduce to the Newtonian theory for speeds $v \ll c$.
+With Einstein's formulation of special relativity came a beautiful expansion of physics into the high-energy and large-scale regime. A postulate of special relativity was that light is a universal speed limit, and with this postulate, a plethora of established physical theories became problematic. Fortunately, for theories such as electromagnetism, no incompatibilities were introduced. However, for gravity, this was not the case. The gravitational field had no wave equation to establish a speed of propagation, meaning changes to the gravitational field were felt instantaneously everywhere. Attempts to reconcile this, such as using a retarded propagator or promoting the Newtonian potential to a scalar field theory, proved incapable of correcting for special relativistic effects. Nevertheless, Newtonian gravity has stood the test of time to be accurate in the non-relativistic limit. Thus, any theory of gravity should reduce to the Newtonian theory for speeds much lower than the speed of light.
 
-The famous thought experiment of an Einstein elevator demonstrates a striking inconsistency within Newtonian gravity. Consider an observer freely falling in a spherical gravitational field. With nothing to look at, this person would not be able to determine they were in a gravitational field rather than just linearly accelerating. Now suppose this observer has point particles nearby, one to each side, one above, and one below (fig~\ref{fig:tidal_forces}). What the observer will see is the particles below and above them will move farther away because the gravitational force scales as $1/r^2$. They will see the particles to the side of them moving towards them due to the spherical symmetry of the gravitational field. These fictitious forces are referred to as the tidal forces, as they also give rise to the tides twice per day on earth. This interesting thought experiment shows how freely falling reference frames are not inertial frames, the first inconsistency recognized by Einstein. 
+The famous thought experiment of an Einstein elevator demonstrates a striking inconsistency within Newtonian gravity. Consider an observer freely falling in a spherical gravitational field pointing toward the center. With nothing to look at, this person would not be able to determine they were in a gravitational field rather than just linearly accelerating. Now suppose this observer has point particles nearby, one to each side, one above, and one below (figure~\ref{fig:tidal_forces}). What the observer will see is the particles below and above them will move farther away because the gravitational force scales as $1/r^2$. They will see the particles to the side of them moving towards them due to the spherical symmetry of the gravitational field. These fictitious forces are referred to as the tidal forces, as they also give rise to the tides twice per day on earth. This interesting thought experiment shows how freely falling reference frames are not inertial frames, the first inconsistency recognized by Einstein. 
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -26,7 +26,7 @@ The famous thought experiment of an Einstein elevator demonstrates a striking in
     \label{fig:tidal_forces}
 \end{figure}
 
-In the early 1900s, Einstein published his first paper on special relativity. In special relativity, physical space is enhanced to a four-dimensional space, typically denoted $\mathbb{M}^4$ or $\mathbb{R}^{3,1}$. Setting $c=1$ (which is done in the rest of this thesis), the metric is given by
+In the early 1900s, Einstein published his first paper on special relativity. In special relativity, physical space is enhanced to a four-dimensional space, typically denoted $\mathbb{M}^4$ or $\mathbb{R}^{3,1}$. Setting the speed of light $c=1$ (which is done in the rest of this thesis), the metric is given by
 \begin{equation}
     g = \mathrm{diag}(-1,1,1,1)\,.
 \end{equation}
@@ -34,7 +34,7 @@ This space is typically called \textit{Minkowski space} (thus the notation $\mat
 \begin{equation}\label{eq:proper-time}
     -d\tau^2 = -dt^2 + dx^2 + dy^2 + dz^2
 \end{equation}
-Proper time represents the amount of time it that passes for an observer travelling on a path with 0 spatial displacement. Naturally, this quantity should be invariant even for an observer in a different reference frame. For such an observer, the time that elapses will be different from $\tau$, and will be accounted for in the spatial displacement as seen by equation~\ref{eq:proper-time}. The set of transformations that leave $\tau$ invariant are the Lorentz transformations.
+Proper time represents the amount of time that passes for an observer travelling on a path with 0 spatial displacement. Naturally, this quantity should be invariant even for an observer in a different reference frame. For such an observer, the time that elapses will be different from $\tau$, and will be accounted for in the spatial displacement as seen by equation~\ref{eq:proper-time}. The set of transformations that leave $\tau$ invariant are the Lorentz transformations.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -94,10 +94,10 @@ Naturally, computing derivatives on curved surfaces is non-trivial, as there is 
 \end{figure}
 In general relativity, a special connection is used called the \textit{Levi-Civita connection}, denoted $\nabla$, which is torsionless and metric preserving. That is, for all vector fields $u,v,w$ on $M$
 \begin{equation}
-    \begin{split}
-        u g(v,w) =& g(\nabla_u v, w)+g(v,\nabla_uw) \,,\quad \text{(metric preserving)} \,,\\
-        [u,v] =& \nabla_u v - \nabla_v u \,,\quad \text{(torsion free)}\,.
-    \end{split}
+    \begin{array}{lr}
+        u g(v,w) = g(\nabla_u v, w)+g(v,\nabla_u w) \,, & \text{(metric preserving)} \,, \\
+        u,v = \nabla_u v - \nabla_v u \,, & \text{(torsion free)}\,. \\
+    \end{array}
 \end{equation}
 
 The only remaining geometric property for the Levi-Civita connection is curvature, which can be neatly described using the Christoffel symbols defined by
@@ -130,7 +130,7 @@ Additionally, the metric itself is divergenceless. Putting these all together gi
 \end{equation}
 
 \section{Cosmology}
-We can see in Einstein's equation the constant $\Lambda$, called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps to form halos) and dark energy acts as the cosmological constant~\cite{scott_dodelson_modern_2021}.
+We can see in Einstein's equation the constant $\Lambda$, which is called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps to form halos) and dark energy acts as the cosmological constant~\cite{scott_dodelson_modern_2021}.
 
 When discussing $\Lambda$CDM (or cosmology in general), there are two main assumptions that are made on a global scale:
 \begin{itemize}
@@ -147,17 +147,17 @@ Both of these assumptions should sound strange; Our universe clearly does not fo
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{plots/Planck_CMB.jpg}
-    \caption{CMB TT power spectrum, emphasizing the scale of anisotropies~\cite{planck_CMB}.}
+    \caption{CMB temperature map, emphasizing the scale of anisotropies~\cite{planck_CMB}.}
     \label{fig:cmb_tt_map}
 \end{figure}
 
-With Edwin Hubble's discovery of the expanding universe, any metric assigned to the universe must include homogeneous spatial expansion. Together with the above assumptions results in the FLRW metric,
+With Edwin Hubble's discovery of the expanding universe, any metric assigned to the universe must include homogeneous spatial expansion. Together with the above assumptions, one arrives at the FLRW metric in the Newtonian gauge,
 \begin{equation}
-    g = \mathrm{diag}(-1,a^2,a^2,a^2)\,.
+    g = -dt^2 + a(t)^2 ds^2\,,
 \end{equation}
-To perturb this metric around a homogeneous universe, it requires two fields. The first, denoted $\Psi$, is the Newtonian gravitational potential. Because Newtonian gravity works in the non-relativistic limit, it enters the time component of the metric. The second field, denoted $\Phi$, represents spatial curvature perturbations. The perturbed metric is given by
+where $s$ represents spatial coordinates. Working in the Newtonian gauge is chosen to best illuminate the physics discussed throughout this thesis. To perturb this metric around a homogeneous universe, it requires two fields. The first, denoted $\Psi$, is the Newtonian gravitational potential. Because Newtonian gravity works in the non-relativistic limit, it enters the time component of the metric. The second field, denoted $\Phi$, represents spatial curvature perturbations. The perturbed metric is given by
 \begin{equation}
-    g = \mathrm{diag}(-1-2\Psi,a^2(1-2\Phi),a^2(1-2\Phi),a^2(1-2\Phi))\,.
+    g = -(1+2\Psi)dt^2 + a^2(1-2\Phi)ds^2\,.
 \end{equation}
 By computing the Christoffel symbols, one finds
 \begin{equation}
@@ -175,27 +175,28 @@ What can be done with this is to convert the curvature $k$ and the cosmological 
 \begin{equation}
     H^2(t) = \frac{8\pi G}{3}\rho\,,
 \end{equation}
-and the critical density is defined by the density associated with $H_0$,
+and the critical density today is defined by the density associated with $H_0$,
 \begin{equation}
     H_0^2 \equiv \frac{8\pi G}{3}\rho_{\mathrm{crit}}\,.
 \end{equation}
-The desirable property of this formulation is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If we define the relative densities by
+The desirable property of this formulation is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If we define the relative densities today by
 \begin{equation}
-    \Omega_i = \frac{\rho_i}{\rho_\mathrm{crit}}\,,
+    \Omega_{i,0} = \frac{\rho_{i,0}}{\rho_\mathrm{crit}}\,,
 \end{equation}
 the relation becomes
 \begin{equation}
     \Omega + \Omega_k = 1 \,,
 \end{equation}
-meaning if the non-curvature relative densities are less than 1, then the universe is curved with sign equal to the sign of $\Omega_k$. This relates to the way we determine distances in the universe. The corresponding distance is called the \textit{angular distance}, relating the angle subtended by two rays to the distance between them. This depends on the geometry of the universe.
-\begin{equation}
-    D_A = \left\{ \begin{array}{cc}
-        R & K=0 \\
-        R\sin(D/R) & K>0 \\
-        R\sinh(D/R) & K<0
-    \end{array}
-    \right.\,.
-\end{equation}
+meaning if the non-curvature relative densities are less than 1, then the universe is curved with sign equal to the sign of $\Omega_k$. 
+% This relates to the way we determine distances in the universe. The corresponding distance is called the \textit{angular distance}, relating the angle subtended by two rays to the distance between them. This depends on the geometry of the universe and depends on the physical distance $D$ and the radius of curvature $R$.
+% \begin{equation}
+%     D_A = \left\{ \begin{array}{cc}
+%         R & K=0 \\
+%         R\sin(D/R) & K>0 \\
+%         R\sinh(D/R) & K<0
+%     \end{array}
+%     \right.\,.
+% \end{equation}
 The second Friedman equation comes from the trace of Einstein's equation,
 \begin{equation}
     \frac{\ddot a}{a} = -\frac{4\pi G}{3}(\rho + 3P)\,.
@@ -206,7 +207,7 @@ If we look at a coordinate function $x^\mu$ at $t=t_0$, at a later time the coor
 \begin{equation}
     \chi = \int\limits^{t}_{t_0} \frac{1}{a(t')} dt'
 \end{equation}
-with the standard Minkowski metric. This can be taken a step further by determining how far light has travelled since $t=0$,
+with the standard Minkowski metric multiplied by the scale factor $a$. This can be taken a step further by determining how far light has travelled since $t=0$,
 \begin{equation}
     \eta = \int\limits^t_0 \frac{1}{a(t')}dt'\,.
 \end{equation}

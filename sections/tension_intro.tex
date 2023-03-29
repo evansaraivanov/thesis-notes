@@ -1,5 +1,5 @@
 \chapter{Computing Techniques}
-The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? From the complexity of the calculations, it's clear that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of observing the data given the set of parameters. Using this language, it's clear that this computation involves conditional probability densities, so we can use Bayes' theorem to help us determine the parameters.
+The previous chapter demonstrated how the cosmological parameters go into computing the data vectors. But given some data, how does one find the cosmological parameters? From the complexity of the calculations, it's clear that one cannot simply invert the functions to find the associated cosmological parameters. Instead, one would generate a set of cosmological parameters, calculate the data associated with those parameters, then compute the probability of the observables given the set of parameters. Using this language, it's clear that this computation involves conditional probability densities, so we can use Bayes' theorem to help us determine the parameters.
 
 \section{Markov Chain Monte Carlo}
 Markov chains are a step process in which the next step depends solely on the current step~\cite{agrahari_monte_2021}. Formally, a
@@ -42,7 +42,9 @@ This allows us to define the acceptance probability as
 \begin{equation}
 	A(x_n \rightarrow x_{n+1}) = \min( 1, R_{n,n+1} )\,.
 \end{equation}
-This probability is used to determine whether the chain moves to $x_{n+1}$ or stays at $x_n$. The chain converges when it reaches a stationary state.
+This probability is used to determine whether the chain moves to $x_{n+1}$ or stays at $x_n$.
+
+To assess whether the chain has converged, there are two common methods. The first is the Gelman-Rubin method. This defines the number $R$ as the ratio between the variance of a walker to the variance across all walkers. $R$ approaches one as the chain converges. The second is the autocorrelation time $\tau$. Although Markov chains depend explicitly on the previous state, there is an implicit dependence of all previous states. The autocorrelation time attempts to measure how many steps are required for a walker to forget its initial position. $\tau$ thus tells one how many samples are required to get independent samples of the posterior.
 
 There are a few properties that can be observed for this algorithm:
 \begin{itemize}
@@ -53,7 +55,7 @@ There are a few properties that can be observed for this algorithm:
 \end{itemize}
 
 \section{Tension Metrics}\label{sec:tension_metrics}
-Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a Gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, further increasing the complexity. There are many metrics used to measure tension~\cite{lemos_assessing_2021}, each with different assumptions and consequences.
+Given the 5-dimensional parameter space, there is great difficulty in computing the tension between two measurements. If the data is projected onto one parameter, this can hide the true separation in parameter space (see figure for a Gaussian example). Thus, one needs a method to compute the tension in the full parameter space. In addition, posterior distributions are not generally Gaussian, further increasing the complexity. There are many metrics used to measure tension~\cite{lemos_assessing_2021,seehars_quantifying_2016}, each with different assumptions and consequences.
 \subsection{Parameter-based Metrics}
 \subsubsection{Metric 1: Parameter Difference}
 The main idea of this metric is that if two data sets largely agree, the difference posterior will be centered at 0, so the mass of the posterior above $\mathcal{P}(0)$ will be close to zero. To formalize this notion, start by sampling from the posteriors $\mathcal{P}(\theta_A)$ and $\mathcal{P}(\theta_B)$.
@@ -166,10 +168,9 @@ To ensure our parameterizations are diffeomorphic, $\tau$ is required to be diff
 (in fact, we are working with smooth reparameterizations so the transition function and its inverse should be smooth).
 
 The next question one may have is, `what do flows have to do with this?' Above, the concept of normalizing flows is described as a reparameterization, but there is another good description involving flows. Again, let $X$ be our parameter space, the graph $(\theta,\mathcal{P}(\theta))$, and $TX$ the tangent bundle of $X$. Each MAF can be though of as a finite sequence of vector fields $v_i:X \rightarrow TX$. Each point is moved along its integral curve determined by each $v_i$. What is great about this definition is that it immediately implies an MAF is a diffeomorphism. 
-\begin{prop}
-Suppose $v:X \rightarrow TX$ is a vector field on $X$ and $x \in X$. Then for any $\epsilon>0$ there exists a unique function $f:B[-\epsilon,\epsilon]\rightarrow X$ such that $f$ is an integral curve of with infinitesimal generator $v$ and with $f(0) = x$.  
-\end{prop}
-\begin{proof}
+
+In formal terms~\cite{john_lee_smooth_nodate}, suppose $v:X \rightarrow TX$ is a vector field on $X$ and $x \in X$. Then for any $\epsilon>0$ there exists a unique function $f:B[-\epsilon,\epsilon]\rightarrow X$ such that $f$ is an integral curve of with infinitesimal generator $v$ and with $f(0) = x$.  
+
 Given a vector $v_x:U\rightarrow T_x X$ with $x\in U$, for it to be in the tangent space $T_pX$ it must have a curve with $f(0)=x$ and $f'(0)=v_x$. This follows from the definition of $T_xX$.
 
 Suppose there are two such curves, $\alpha$ and $\beta$ both mapping from $I=(-\epsilon,\epsilon)$ to $X$ and with $\alpha(0) = x = \beta(0)$ and both with $\alpha'(0) = v_x = \beta'(0)$. Then they both solve the system of autonomous ODEs for $i=1,\dots,n$
@@ -180,17 +181,17 @@ Suppose there are two such curves, $\alpha$ and $\beta$ both mapping from $I=(-\
 \end{split}
 \end{equation}
 This can be solved by $\gamma^i(t) = \int\limits_{U\subset X}v^i(\gamma(t))\text{vol.}$. Since $v$ is a tangent vector field, there exists a curve $\phi$ with $\phi' = v$, so the solution is $\gamma^i(t) = \phi^i(t)+C^i$. The integration constants are fixed by the initial condition $C^i=-c^i$, hence any two functions satisfying this system of ODE's, including $\alpha$ and $\beta$, are equivalent for all $t\in I$.
-\end{proof}
+
 Autoregressive models have several pitfalls that we would like to avoid in this project. Namely, autoregressive models are sensitive to the order of the input, however our result does not have any dependence. 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{plots/t=1.png}
+	\includegraphics[width=0.9\textwidth]{plots/non_gauss.pdf}
 	\caption{An example non-Gaussian distribution (non-zero skewness).}
 	\label{fig:non-gauss}
 \end{figure}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{plots/3d_flow.png}
+	\includegraphics[width=\textwidth]{plots/flow_3d.pdf}
 	\caption{An example of normalizing flow as the transformation is `turned on', represented by the parameter $\lambda$. The non-Gaussian distribution at $\lambda=0$ is transformed into the Gaussian distribution at $\lambda=1$.}
 	\label{fig:NF}
 \end{figure}
