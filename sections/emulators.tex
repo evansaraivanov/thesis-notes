@@ -1,7 +1,7 @@
 \chapter{Data Emulators}
 As can be seen from the growth-geometry split analysis, an enormous amount of time and computing resources are needed to do a comprehensive analysis of novel cosmological models and extensions to $\Lambda$CDM. There are a growing number of proposed extension theories, and more data sets that can test them. One of the ways to improve the efficiency of data and theory analysis is to create a faster way to compute data vectors when doing MCMC sampling. In this chapter, I will describe how one can use neural networks (NN) to learn this mapping, bypassing the need for expensive programs such as Comsolike.
 \section{Neural Networks}
-Although the term `neural network' is almost synonymous with magic in the modern world, the concept is very natural from elementary mathematics. We start with the most basic example: linear regression. 
+Although the term `neural network' is almost synonymous with magic in the modern world, the concept is very natural from elementary mathematics. There is a basic example: linear regression. 
 
 In linear regression, one considers a model of the form $y=mx+b$. The goal is to find the values of $m$ and $b$ that minimizes the square of the residual
 \begin{equation}
@@ -9,9 +9,9 @@ In linear regression, one considers a model of the form $y=mx+b$. The goal is to
 \end{equation}
 In this exceptional case, there is an analytic way to minimize $L$, but in general, it is a highly non-trivial task. Additionally, there are much more complicated data sets one would want to model, such as data vectors in cosmological surveys. The remaining question is: how does one intelligently generalize this type of model to more complicated ones?
 
-We have a tool that can do this already: the brain~\cite{noauthor_what_nodate}! The brain is a large system of cells called neurons. Each neuron is connected to others by a synapse, and after accumulating a large enough electric charge, the neuron will activate, sending the electric signal to a connected neuron. 
+We, as humans, have a tool that can do this already: the brain~\cite{noauthor_what_nodate}! The brain is a large system of cells called neurons. Each neuron is connected to others by a synapse, and after accumulating a large enough electric charge, the neuron will activate, sending the electric signal to a connected neuron. 
 
-Using this, let's try to construct a general model. We start with the neurons
+Using this, one can attempt to construct a general model, starting with the neurons~\ref{fig:neurons}.
 \begin{figure}[th]
 	\centering
 	\begin{tikzpicture}
@@ -26,7 +26,7 @@ Using this, let's try to construct a general model. We start with the neurons
 	\caption{Arrangement of neurons.}
 	\label{fig:neurons}
 \end{figure}
-Now we add in the synapses, the connections between neurons. In general, not every neuron is connected to each other. It should be noted, along each synapse is an activation function. Rather than having a threshold potential like a real synapse, NNs use functions that represent the activation of the neuron. Furthermore, each synapse has a weight that represents the strength of the connection.
+Next, add in the synapses, the connections between neurons~\ref{fig:neurons_synapse}. In general, not every neuron is connected to each other. It should be noted, along each synapse is an activation function. Rather than having a threshold potential like a real synapse, NNs use functions that represent the activation of the neuron. Furthermore, each synapse has a weight that represents the strength of the connection.
 \begin{figure}[th]
 	\centering
 	\begin{tikzpicture}
@@ -55,7 +55,7 @@ Now we add in the synapses, the connections between neurons. In general, not eve
 	\caption{Neurons with synapses.}
 	\label{fig:neurons_synapse}
 \end{figure}
-Next, we define which neurons receive an external signal, and which give a signal to the outside. These act as our input and output.
+Next, define which neurons receive an external signal, and which give a signal to the outside~\ref{fig:neurons_synapse_io}. These act as the input and output.
 \begin{figure}[th]
 	\centering
 	\begin{tikzpicture}
@@ -87,10 +87,12 @@ Next, we define which neurons receive an external signal, and which give a signa
 		\draw[fill=white] (1,-1.41) circle (5pt);
 		\draw[fill=white] (-1,-1.41) circle (5pt);
 	\end{tikzpicture}
-	\caption{Neurons, synapses, and IO.}
+	\caption{Neurons, synapses, and the input/output.}
 	\label{fig:neurons_synapse_io}
 \end{figure}
-Finally, we have a choice to make in the activation function. This is the chance to greatly increase the modelling capability of NNs. As we will see in the future, the only requirement is that the function is continuous; thus we can use non-linear activation functions, allowing modelling of highly non-linear outputs. The goal is to define a loss function that we want to minimize (in the linear regression, the loss is the square of the residual). The loss function is a function of the output of the NN, and the output is parameterized by the parameters of the NN. Thus, if $y=\phi(\alpha_i,x)$ represents the output of the neural network with parameters $\alpha_i$ and input $x$, the loss function is, in fact, parameterized by the neural network as well.
+Finally, there is a choice to make in the activation function. This is the chance to greatly increase the modelling capability of NNs. The only requirement is that the function is continuous; thus one can use non-linear activation functions, allowing modelling of highly non-linear outputs. 
+
+The goal is to define a loss function that will be minimized (in the linear regression, the loss is the square of the residual). The loss is a function of the output of the NN, and the output is parameterized by the parameters of the NN. Thus, if $y=\phi(\alpha_i,x)$ represents the output of the neural network with parameters $\alpha_i$ and input $x$, the loss function is, in fact, parameterized by the neural network as well.
 \begin{equation}
 	L(y) = L(\phi(\alpha_i,x)) = \mathfrak{L}(\alpha_i,x)
 \end{equation}
@@ -106,27 +108,30 @@ The general method of optimization is called \textit{gradient descent}. The stra
 	\item Update the parameters according to the gradient.
 	\item Repeat until the gradient is 0.
 \end{enumerate}
-This simple algorithm has one glaring flaw, it is susceptible to converging in a local minimum. Ideally, we want to search for the global minimum for the loss function. The way around this is to add some stochasticity to the gradient descent so that the network does not simply search for zero gradient. Instead, the parameters are updated probabilistically from the gradient.
+This simple algorithm has one glaring flaw: it is susceptible to converging in a local minimum. Ideally, gradient descent will converge to the global minimum of the loss function. The way around this is to add some stochasticity to the gradient descent so that the network does not simply search for zero gradient. Instead, the parameters are updated probabilistically from the gradient.
 
-The gradient is usually computed using \textit{backpropagation}, in which the gradient is computed at each layer and the total gradient is computed according to the chain rule. This presents an issue: if the gradient is small at each layer, the gradient will be small on the order of $\epsilon^{n}$, where $n$ is the number of layers. This can lead to a misleading gradient that vanishes, or a gradient that explodes to large values. This is the problem of \textit{vanishing gradients}, and we will discuss ways to avoid this in the next section.
+The gradient is usually computed using \textit{backpropagation}, in which the gradient is computed at each layer and the total gradient is computed according to the chain rule. This presents an issue: if the gradient is small at each layer, the gradient will be small on the order of $\epsilon^{n}$, where $n$ is the number of layers. This can lead to a misleading gradient that vanishes, or a gradient that explodes to large values. This is the problem of \textit{vanishing gradients}, and methods to avoid this are discussed in the next section.
 
-The last issue to mention is that, given numerous parameters, it is possible to fit the training data very well, but the model cannot fit external data sets. This is called \textit{overfitting}. There are many strategies to resolve this. The two we will use are dropout and L2 regularization. Dropout randomly sets a fraction of the weights to zero, meaning the NN will not be able to rely on individual neurons to get a reliable output. This ensures the full network is being used. L2 regularization penalizes the model for learning large weights, which again means the model relies on particular neurons. This is accomplished by modifying the loss function by adding the L2 norm of the network.
+The last issue to mention is that, given numerous parameters, it is possible to fit the training data very well, but the model cannot fit external data sets. This is called \textit{overfitting}. There are many strategies to resolve this. The two used in this project are dropout and L2 regularization. Dropout randomly sets a fraction of the weights to zero, meaning the NN will not be able to rely on individual neurons to get a reliable output. This ensures the full network is being used. L2 regularization penalizes the model for learning large weights, which again means the model relies on particular neurons. This is accomplished by modifying the loss function by adding the L2 norm of the network.
 \begin{equation}
 	L(y) \mapsto L(y)+\sum_i \alpha_i^2
 \end{equation}
 In summary, a NN is a directed graph, where each edge has a weight and an activation function, and each node has a value that it passes along to the edge. The inputs are propagated to the output, and the goal is to minimize the loss of the output. It is important to pick a smart loss function depending on one's needs from the NN and a smart activation function depending on the values of each node. The loss function is minimized using stochastic gradient descent. It is also important to implement strategies to avoid overfitting on the training data by penalizing the model for relying too heavily on certain regions of the graph.
-\section{Architecture Choices}
-As discussed before, the weights, activation functions, and connections are choices we can make for a neural network. Together, they comprise the architecture. In this section, we will discuss the architecture choices we have made.
 
-Before discussing the graph architecture, we want to highlight the choice of activation function. Before giving any data to the neural network, we do some preprocessing to the data. The first thing we do is normalize the input and output. The input is the cosmological parameters, which we process each parameter to follow a normal distribution.
+Using NNs to compute data vectors is not a new technique~\cite{boruah_accelerating_2022,to_linna_2023}. The previous methods typically use an iterative approach, where they start by training on a Latin hypercube, and use the trained model to generate new training points from an MCMC that are added to the hypercube points. This process is repeated until the loss function passes some threshold. The claim that this method gives satisfactory results on the entire Latin hypercube is somewhat misleading. While the hypercube points remain in the training data, the points become diluted until they have minimal contribution to the training loss. Testing with the emulator in~\cite{boruah_accelerating_2022}, the emulator begins to fail at around $4\sigma$ shifts. Our goal is to greatly improve the region where the emulators are useful. This will allow other scientists to use emulators to analyze real data, where the fiducial cosmology is not known.
+
+\section{Architecture Choices}
+As discussed before, the weights, activation functions, and connections are choices one can make when designing a neural network. Together, they comprise the architecture. This section discusses the architecture choices we have made.
+
+Before discussing the graph architecture, we want to highlight the choice of activation function. Before giving any data to the neural network, we do some preprocessing to the data. The first thing we do is normalize the input and output. The input is the cosmological parameters, which we process each parameter to follow a normal distribution:
 \begin{equation}
-	x^i = \frac{\theta^i - \bar\theta^i}{\sigma_i}
+	x^i = \frac{\theta^i - \bar\theta^i}{\sigma_i}\,.
 \end{equation}
-The output is the cosmic shear data vector. We preprocess this by diagonalizing and normalizing each component.
+The output is the cosmic shear data vector. We preprocess this by diagonalizing and normalizing each component,
 \begin{equation}
-	y^i = \frac{ (P^{-1}d)^i }{\sqrt{(PCP^{-1})^{ii}}}
+	y^i = \frac{ (P^{-1}d)^i }{\sqrt{(PCP^{-1})^{ii}}}\,,
 \end{equation}
-Where $C$ is the covariance of the data and $P$ the change of basis matrix to the eigenbasis of $C$. This generally means we will have many negative parameters, and the input and output are both symmetric about 0, and thus we choose to use an antisymmetric activation function so that the symmetry around 0 can be preserved. In our case, we use $\tanh(x)$. Additionally, all of these NNs are feedforward sequential models. Sequential means we separate the neurons into layers, and feedforward means the data moves only from layer $n$ to layer $n+1$ and never backwards.
+where $C$ is the covariance of the data and $P$ is the change of basis matrix to the eigenbasis of $C$. This generally means we will have many negative parameters, and the input and output are both symmetric about 0, and thus we choose to use an antisymmetric activation function so that the symmetry around 0 can be preserved. In our case, we use $\tanh(x)$. Additionally, all of these NNs are feedforward sequential models. Sequential means we separate the neurons into layers, and feedforward means the data moves only from layer $n$ to layer $n+1$ and never backwards.
 \subsection{Multi-Layer Perceptron}
 The first graph architecture we study in the multi-layer perceptron (the name is adopted from convolutional neural networks `perceiving' image features). In this architecture, a node in a given layer is connected to every node in the following layer, so this network is called `simply connected' (figure~\ref{fig:mlp}).
 \begin{figure}[ht]
@@ -209,11 +214,11 @@ The first graph architecture we study in the multi-layer perceptron (the name is
 \subsection{Residual Network}
 As mentioned above, there is an issue of vanishing gradients with deep neural networks. To resolve this, one can add the input and output together so that gradient information is allowed to skip layers~\cite{he_deep_2015}(figure~\ref{fig:resblock}). Suppose we have a block of layers parameterized by $\alpha_i$, and its input is from another layer, parameterized by $\beta_i$, so that $w=\chi(\beta_i,x)$ for an input $x$. Then the block of layers, whose map is denoted $\phi$, will be
 \begin{equation}
-	\phi(\alpha_i,\chi(\beta_i,x)) = \psi(\alpha_i,\beta_i,x)+\chi(\beta_i,x)
+	\phi(\alpha_i,\chi(\beta_i,x)) = \psi(\alpha_i,\beta_i,x)+\chi(\beta_i,x)\,.
 \end{equation}
 This section of the model is going to attempt to learn
 \begin{equation}
-	\psi(\alpha_i,\beta_i,x)-\chi(\beta_i,x)
+	\psi(\alpha_i,\beta_i,x)-\chi(\beta_i,x)\,.
 \end{equation}
 This allows gradients with respect to the parameters $\beta_i$ to propagate to the output without the multiplication by the gradients of $\alpha_i$, which usually solves the vanishing gradient problem. This is called a \textit{residual neural network} (ResNet).
 \begin{figure}[ht]
@@ -360,26 +365,26 @@ The ResNet allows us to create much deeper networks, but the number of parameter
 \end{figure}
 In the examples drawn (figures~\ref{fig:resblock} and~\ref{fig:resbottle-block}), there are 40 parameters in the ResNet, but only 28 parameters in the ResBottle. This allows us to either simplify the model, add more layers, or make the layers much wider without blowing up the number of parameters that need to be trained.
 \subsection{Attention}
-This will be the most complicated model to test. If we look at the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors are separated into redshift bins, and within each redshift bin are bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs we encounter every day that use sequences: chatbots~\cite{ruby_how_2023}! The basis for this is usually attention networks~\cite{vaswani_attention_2017}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
+This will be the most complicated model to test. If one examines the structure of the data vector, there is a certain order to the data and correlation between the components. The data vectors are separated into redshift bins, and within each redshift bin are smaller bins representing different scales. Thus, a NN that can learn sequences may be useful. Fortunately, there are NNs encountered every day that use sequences: chatbots~\cite{ruby_how_2023}! The basis for this is usually attention networks~\cite{vaswani_attention_2017}. These work by examining dot products between vectors so that the output is directly related to the angle between the two vectors.
 
-suppose we are given a sequence of input vectors, $x=(x_1,x_2,\ldots,x_n)$, then we can construct dot products of each $x_i$ and use them as coefficients for the output.
+Suppose there is a given sequence of input vectors, $x=(x_1,x_2,\ldots,x_n)$, then one can construct dot products of each $x_i$ and use them as coefficients for the output.
 \begin{equation}
 	y_k = (x_i \cdot x_j)x_k
 \end{equation}
-We can introduce a generalized dot product using linear transformations. That is, we can introduce the transformation matrices $W_Q$, $W_K$, $W_V$. Let $q_i = W_Q x_i$, $k_i = W_K x_i$, and $v_i = W_V x_i$. Then we can also write a dot product as 
+One can then introduce a generalized dot product using linear transformations. That is, one can introduce the transformation matrices $W_Q$, $W_K$, $W_V$. Let $q_i = W_Q x_i$, $k_i = W_K x_i$, and $v_i = W_V x_i$. Then the dot product can be written as 
 \begin{equation}
-	y_k = (q_i^T k_j)v_k
+	y_k = (q_i^T k_j)v_k\,.
 \end{equation}
-Finally, we can introduce a non-linearity, which also keeps the output sequence $y$ normalized. By introducing the \textit{softmax} function.
+Finally, one can introduce a non-linearity, which also keeps the output sequence $y$ normalized, by introducing the \textit{softmax} function,
 \begin{equation}
-	y_k = \mathrm{softmax}(q_i^T k_j / \sqrt{d})v_k
+	y_k = \mathrm{softmax}(q_i^T k_j / \sqrt{d})v_k\,,
 \end{equation}
-where the softmax function is an exponential normalization given by
+where the softmax function is an exponential normalization, given by
 \begin{equation}
-	\mathrm{softmax}(W)_i = \frac{e^{w_i}}{e^{\sum_i{w_i}}}
+	\mathrm{softmax}(W)_i = \frac{e^{w_i}}{e^{\sum_i{w_i}}}\,,
 \end{equation}
 and $d$ is the embedding dimension (i.e $W_K\in \mathbb{R}^{d_x\times d}$).
-We allow the linear matrices $W_Q$, $W_K$, and $W_V$ to contain learnable components. We then pass each output $y_i$ to its own MLP. We also keep the skip connections for residual learning. The attention together with the MLPs and skip connections is called a transformer block, drawn in figure~\ref{fig:attention}.
+The linear matrices $W_Q$, $W_K$, and $W_V$, contain learnable components. Each output $y_i$ is then passed to its own MLP. We also keep the skip connections for residual learning. The attention together with the MLPs and skip connections is called a \textit{transformer block}, drawn in figure~\ref{fig:attention}.
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[scale=0.9]
@@ -451,17 +456,17 @@ We allow the linear matrices $W_Q$, $W_K$, and $W_V$ to contain learnable compon
 \end{figure}
 
 \section{Results}
-We present the results in two sections: the first will be about the training and testing results, and the second comparing between a cocoa chain and an emulated chain. For training and testing, we use the "train, validate, test" approach. We generate three completely independent chains, one is only for training the model, and is a high-temperature chain with data well beyond the expected range. The second is used to validate that the model is not overfitting as the training proceeds. The last set is another high-temperature chain (but not as high as the training) which is used to test the model as if it were being used as normal. The testing involves reintroducing specific analysis choices, such as the scale cut.
+We present the results in two sections: the first will be about the training and testing results, and the second comparing between a \textsc{Cocoa} chain and an emulated chain. For training and testing, we use the "train, validate, test" approach. We generate three completely independent chains, one is only for training the model, and is a high-temperature chain with data well beyond the expected range. The second is used to validate that the model is not overfitting as the training proceeds. The last set is another high-temperature chain (but not as high as the training) which is used to test the model as if it were being used as normal. The testing involves reintroducing specific analysis choices, such as the scale cut.
 
 When deciding on which model to use, we want to look at several aspects:
 \begin{itemize}
 	\item The number of parameters. The more parameters we have, the longer it takes to train, and the longer it takes to evaluate. This will make it difficult for groups without top-of-the-line equipment.
-	\item The $\Delta\chi^2$ between the emulator and accepted computational methods. Many experiments have a $\chi^2$ requirement for their emulators; for example, DES requires $\Delta\chi^2<0.3$ between any approximations and CosmoLike.
+	\item The $\Delta\chi^2$ between the emulator and accepted computational methods. Many experiments have a $\chi^2$ requirement for their emulators; for example, DES requires $\Delta\chi^2<0.3$ between any approximations and \textsc{CosmoLike}.
 	\item Generalizability. As we increase the volume covered in the parameter space, which models can keep up with the growing modelling volume? Which models can handle more input parameters (which many models need, such as early dark energy with $\sim10$ extra parameters).
 \end{itemize}
-These get analyzed on the test data set. Because of the second point above, we define the loss function as the difference in $\chi^2$ between the emulator and CosmoLike. This allows us to capture the covariance of the data.
+These get analyzed on the test data set. Because of the second point above, we define the loss function as the difference in $\chi^2$ between the emulator and \textsc{CosmoLike}. This allows us to capture the covariance of the data.
 \subsection{Training and Testing}
-We train the emulator by using a rough Gaussian approximation on the cosmological parameters. The benefit is that running MCMC chains on a simple Gaussian without the need for CosmoLike is extremely fast. Given the samples, the data vector calculation is trivially parallelizable, so the entire process is significantly faster than running an MCMC in CosmoLike. 
+We train the emulator by using a rough Gaussian approximation on the cosmological parameters. The benefit is that running MCMC chains on a simple Gaussian without the need for \textsc{CosmoLike} is extremely fast. Given the samples, the data vector calculation is trivially parallelizable, so the entire process is significantly faster than running an MCMC in \textsc{CosmoLike}. 
 
 % First, we examine the training and validation loss at each epoch. The training loss is the average loss of all batches in an epoch. Figure~\ref{fig:train_loss_resnet} displays the training loss of a ResNet model with 3 ResNet blocks and 256 neurons in each hidden layer. In this case, we can see a consistent decline in both the training and validation loss. Additionally, we can see the points where the learning rate decreases (see epoch 50 and epoch 85 in figure~\ref{fig:train_loss_resnet}) which occur when validation loss plateaus, following the expected behavior. This demonstrates that we are likely not overfitting the training data.
 % \begin{figure}[tb]
@@ -504,7 +509,7 @@ First, we tested the different architectures by training them on a $T=16$ chain.
 	\label{fig:avg_chi2_nparams}
 \end{figure}
 
-Additionally, we can test how high of a broad of a region in parameter space we can train on and still get satisfactory performance. We do this by scaling the covariance by a temperature $T$, $C\mapsto C/T$. We noticed the MLP, ResNet, and ResBottle models fail to train on a $T=128$ chain (figure~\ref{fig:avg_chi2_nparams_t128}).
+Additionally, we can test how of a broad of a region in parameter space we can train on and still get satisfactory performance. We do this by scaling the covariance by a temperature $T$, i.e $C\mapsto TC$. We noticed the MLP, ResNet, and ResBottle models fail to train on a $T=128$ chain (figure~\ref{fig:avg_chi2_nparams_t128}).
 \begin{figure}[!tb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{plots/avg_chi2_v_n_params_T64.pdf}
@@ -529,7 +534,7 @@ We added the transformer block to the $T=128$ training to see the gain in perfor
 This demonstrates the importance of making an intelligent choice for emulator architecture. By implementing the self attention, we were able to greatly increase the amount of the $\Lambda$CDM parameter space covered by the emulator. The additional volume allows one to use emulators, even on real data, where the data vectors can be shifted greatly from things such as baryon contamination. We would like to continue this to see how this architecture will hold for more complex extensions to $\Lambda$CDM, such as early dark energy, which adds $\sim10$ parameters. We are also working with a team on using this architecture to model much larger data vectors.
 
 \section{Application to Tension Calibration}
-In this section, I will apply the use of emulators to do a first study of tension metric error. By shifting the parameters and generating noise realizations on the data, we can get a sense of how the error in the data propagates to error in the tension. This will provide additional information as to which tension metrics perform best, as well as adding context to how tension may vary given new measurements. Additionally, given that $n_\sigma=0$ means no tension, the error are tension metrics will allow us to gauge how reasonable it may be for the tension to be resolved by additional identical measurements.
+In this section, I will apply the use of emulators to do a first study of tension metric error. By shifting the parameters and generating noise realizations on the data, we can get a sense of how the error in the data propagates to error in the tension. This will provide additional information as to which tension metrics perform best, as well as adding context to how tension may vary given new measurements. Additionally, given that $n_\sigma=0$ means no tension, the results of the tension metrics will allow us to gauge how reasonable it may be for the tension to be resolved by additional identical measurements.
 
 We will be shifting the LSST fiducial cosmology to $\pm5\sigma$ in both the $\sigma_8$ and $\Omega_m$ directions. At each of these shifts, we will compute 256 noise realizations on LSST cosmic shear and Planck TTTEEE using their respective data covariance. Finally, the tension will be computed using the methods described in section~\ref{sec:tension_metrics}. Due to time constraints, the chains for the shifts will not be presented in this thesis. We will, however, demonstrate this method using the fiducial cosmologies of LSST and Planck.
 
@@ -539,7 +544,7 @@ We generate noise realizations for Planck around the Planck 2018 baseline low-$\
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{plots/metrics_new.pdf}
-	\caption{tension metrics error}
+	\caption{Parameter-based tension metrics with error.}
 	\label{fig:tension_metrics_error}
 \end{figure}
 
@@ -548,7 +553,7 @@ We see that, up to noise realizations, the different tension metrics are nearly 
 The result for $Q_{\mathrm{UDM}}$ is significantly lower than the other metrics. This is likely because it makes the assumption that the posteriors are Gaussian, whereas the tension can hide in the non-Gaussian parts of the posterior. Additionally, the error bar on $Q_{\mathrm{DMAP}}$ is much smaller. This requires some investigation into the distribution of the maximum a posteriori of the noise realizations. While noise realizations on the data generate large shifts in the posterior, the same is not necessarily true for the maximum a posteriori.
 
 \section{Conclusion}
-We are able to implement a NN emulator that works on temperatures as high as 128 by using the ChatGPT inspired transformer block. Using the emulators, we can ensure that the posteriors are robust for noise realizations on the data. Using these noise realizations, we can compute the error on the tension metrics.
+We are able to implement a NN emulator that works on temperatures as high as 128 by using the ChatGPT inspired transformer block. Using the emulators, we can ensure that the posteriors are robust for noise realizations on the data. In fact, using a temperature of 128 ensures the emulator should be robust up to $10\sigma$ shifts in the data. Using these noise realizations, we can compute the error on the tension metrics.
 
 A future study will be done creating emulators for different extension models which push the number of input parameters, as well as different data sets which push the number of output parameters. Using this baseline framework, we can also rapidly analyze smaller extensions, such as the geometry and growth split detailed in chapter 4.
 

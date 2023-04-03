@@ -1,17 +1,17 @@
 \chapter{Growth-Geometry Split in DES-Y3}
 Parameter splitting is a common method used to attempt to resolve the tensions discussed in the previous chapter. The idea is to split a parameter and choose analysis settings that restrict each split parameter to describe specific cosmological effects. One of these splits is a growth-geometry split, where we split the relative matter density $\Omega_m$ and the dark energy equation of state $w$ into two parameters. The growth parameter is designed to describe the late-time growth of structure and the geometry parameter designed to describe the background evolution. After splitting the parameters, one can do an analysis to determine how the tension changes and if the split parameters have distinct values from each other. This chapter describes the growth geometry split in $\Omega_m$ and $w$ in DES-Y1~\cite{muir_y1_2021} and DES-Y3. These results are also available in a paper written by Kunhao Zhong, another Masters student, and myself, on arXiv~\cite{zhong_growth_2023} and are pending publication in Physical Review.
 \section{Split Matter Power Spectrum}
-Since the matter density $\Omega_m$ is split into two parameters, $\Omega_m^{\text{growth}}$ and $\Omega_m^{\text{geo}}$, a single growth factor and a single matter power spectrum; these are split as well. From equation 2.8, the linear matter power spectrum is proportional to the square of the linear growth factor $D_+(z(a)) = G(z)/(1+z)$, so the growth and geometry power spectra are related by
+Since the matter density $\Omega_m$ is split into two parameters, $\Omega_m^{\text{growth}}$ and $\Omega_m^{\text{geo}}$, a single growth factor and a single matter power spectrum; these are split as well. From equation~\ref{eq:power_spectrum}, the linear matter power spectrum is proportional to the square of the linear growth factor $D_+(z(a)) = G(z)/(1+z)$, so the growth and geometry power spectra are related by
 \begin{equation}
-	P^L_{\text{split}}(k,z) = P^L_{\text{geo}}(k,z) \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2
+	P^L_{\text{split}}(k,z) = P^L_{\text{geo}}(k,z) \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2\,,
 \end{equation}
 which means $\sigma_8$ is also split according to
 \begin{equation}
-	\sigma_{8,\text{split}}^2 = \sigma_{8,\text{geo}}^2 \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2
+	\sigma_{8,\text{split}}^2 = \sigma_{8,\text{geo}}^2 \left(\frac{G_{\text{growth}}(z)}{G_{\text{geo}}(z)}\right)^2\,.
 \end{equation}
 In this analysis, however, we want to go beyond linear scales. To achieve this, we use the Euclid Emulator to emulate the non-linear matter power spectrum by computing a boost factor
 \begin{equation}
-	P(k,z) = P^L(k,z) \times B(k,z)
+	P(k,z) = P^L(k,z) \times B(k,z)\,.
 \end{equation}
 \begin{figure}[ht]
 	\centering
@@ -116,7 +116,7 @@ The external data sets used are
 \begin{itemize}
 	\item CMBP: The Planck CMB TTTEEE power spectra together with the non-linear low-$\ell$ EE power spectrum. The spectra are truncated after the first peak ($35<\ell<396$). This mitigates CMB lensing effects, which affect small-scale anisotropies. It also minimizes the late time Integrated Sachs Wolfe effect, which also has a larger effect on small scales.
 	\item SNIa: Pantheon Type Ia supernova. As a distance probe, this prior constrains geometry parameters. There are growth effects that we choose not to model at this point, namely the peculiar velocity distributions of supernovae.
-	\item BBN: We use a derived constraint on $100\Omega_bh^2$ from Big Bang Nucleosynthesis as
+	\item BBN: We use a derived constraint on the baryon density from Big Bang Nucleosynthesis as $100\Omega_bh^2 = 2.208 \pm 0.052$.
 	\item BAO: BAO data is taken from the SDSS DR7 main galaxy sample, the 6dF galaxy survey, and the combined SDSS BOSS DR12 low-$z$ and CMASS galaxy samples. Again, as a distance probe, this is taken as geometry information.
 \end{itemize}
 To understand these choices of priors, we consider the following combinations:
@@ -133,9 +133,9 @@ To compute the linear matter power spectrum, we use \textsc{CAMB} Boltzmann code
 	\caption{Relative difference between Euclid emulator and Halofit.}
 	\label{fig:euc_v_halo}
 \end{figure}
-We use the Cocoa (CObaya-COsmolike joint Architecture). This interfaces Cobaya, the MCMC sampler we use, with CosmoLike, the data vector calculation framework. DES-Y3 has already been implemented in Cobaya, CosmoLike, and Cocoa. To assess the convergence of the MCMC, we use the $R-1<0.02$.
+We use the \textsc{Cocoa}\footnote{https://github.com/CosmoLike/cocoa}, which interfaces \textsc{Cobaya}~\cite{cobaya}, the MCMC sampler we use, with \textsc{CosmoLike}~\cite{cosmolike}, the data vector calculation framework. DES-Y3 has already been implemented in \textsc{Cobaya}, \textsc{CosmoLike}, and \textsc{Cocoa}. To assess the convergence of the MCMC, we use the $R-1<0.02$.
 
-One benefit of this analysis is that growth parameters are semi-fast; they do not require CAMB to recompute the matter power spectrum, they only require CosmoLike to update the data vectors. Rerunning CosmoLike with only changing the growth parameters results in a 2-fold speedup.
+One benefit of this analysis is that growth parameters are semi-fast; they do not require \textsc{CAMB} to recompute the matter power spectrum, they only require \textsc{CosmoLike} to update the data vectors. Rerunning \textsc{CosmoLike} with only changing the growth parameters results in a 2-fold speedup.
 \subsection{Pipeline Validation on Synthetic Data}
 To validate this method, we generate a synthetic data vector at the Planck best-fit parameters without lensing (equation~\ref{eq:planck_best_fit}), and we hope to find no difference between growth and geometry parameters and hope each parameter is equal to the fiducial value.
 \begin{equation}\label{eq:planck_best_fit}
@@ -184,7 +184,8 @@ For the most constraining case, $3\times2$pt with all prior, there is no evidenc
 	\caption{DES-Y1 and DES-Y3 posteriors for 2-point correlation functions.}
 	\label{fig:y3_2x2}
 \end{figure}
-The full results of the 1d marginalizations with each choice of prior is summarized in figure~\ref{fig:lcdm_result_1d}. Aside from the 2-point correlation functions, every $\Delta\Omega_m$ result is compatible with 0 to within 1-sigma.
+
+The full results of the 1-D marginalizations with each choice of prior is summarized in figure~\ref{fig:lcdm_result_1d}. Aside from the 2-point correlation functions, every $\Delta\Omega_m$ result is compatible with 0 to within 1-sigma.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{plots/plot_1d_resultv5.pdf}
@@ -193,9 +194,9 @@ The full results of the 1d marginalizations with each choice of prior is summari
 \end{figure}
 Similarly to the synthetic chains, the $3\times2$pt data chains with ALL prior have improved constraining power on $\Delta\Omega_m$ in DES-Y3 over DES-Y1. However, the improvement is around 10\%, slightly less than the 17\% observed in the synthetic data. 
 
-The mentioned 2-point correlation functions that do have significant shifts in $\Omega_m$ are determined to be at $1.75\sigma$ for the cosmic shear-galaxy clustering and $2.60\sigma$ for galaxy clustering-galaxy-galaxy lensing. Because of known inconsistencies in the RedMaGiC galaxy samples, these are not attributed to discovery.
+The mentioned 2-point correlation functions that do have significant shifts in $\Omega_m$ are determined to be at $1.75\sigma$ for the cosmic shear-galaxy clustering and $2.60\sigma$ for galaxy clustering-galaxy-galaxy lensing. Because of known inconsistencies in the \textsc{RedMaGiC} galaxy samples, these are not attributed to discovery.
 \subsection{\texorpdfstring{$w$CDM}{wCDM}}
-The results for $w$CDM are summarized in figures~\ref{fig:wcdm_post} and~\ref{fig:wcdm_result_1d}. Again, there is no evidence of a shift in $\mathrm{PC}_1$ from 0. The exception is, once again, the DES-Y3 $2\times2$pt with ALL prior. The significance of the shift is $4.48\sigma$. Again, this shift may be attributed to the RedMaGiC. 
+The results for $w$CDM are summarized in figures~\ref{fig:wcdm_post} and~\ref{fig:wcdm_result_1d}. Again, there is no evidence of a shift in $\mathrm{PC}_1$ from 0. The exception is, once again, the DES-Y3 $2\times2$pt with ALL prior. The significance of the shift is $4.48\sigma$. Again, this shift may be attributed to the \textsc{RedMaGiC}. 
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
@@ -218,7 +219,7 @@ The results for $w$CDM are summarized in figures~\ref{fig:wcdm_post} and~\ref{fi
 	\label{fig:wcdm_result_1d}
 \end{figure}
 \subsection{Tension Analysis}
-We conclude by testing the internal consistency between the Y1 and Y3 data sets independently. This is done using the parameter difference method, where we use normalizing flows to learn the posterior distribution. The results are summarized in figure~\ref{fig:tension}. The tension is computed with the parameters $(\mathcal{A}_s,n_s,H_0,\Omega_m^{\mathrm{geo}},\sigma_8^\mathrm{split})$ (with $w^{\mathrm{geo}}$ added in the $w$CDM case). Interestingly, the tension appears to be generated predominantly by $\mathcal{A}_s$. Additionally, the $2\times2$pt correlation functions have a significant degradation in the goodness of fit when CMB priors are added. This reflects the RedMaGiC inconsistency discussed above. A study allowing $X_\mathrm{lens}$ to vary is required to analyze this shift fully.
+We conclude by testing the internal consistency between the Y1 and Y3 data sets independently. This is done using the parameter difference method, where we use normalizing flows to learn the posterior distribution. The results are summarized in figure~\ref{fig:tension}. The tension is computed with the parameters $(\mathcal{A}_s,n_s,H_0,\Omega_m^{\mathrm{geo}},\sigma_8^\mathrm{split})$ (with $w^{\mathrm{geo}}$ added in the $w$CDM case). Interestingly, the tension appears to be generated predominantly by $\mathcal{A}_s$. Additionally, the $2\times2$pt correlation functions have a significant degradation in the goodness of fit when CMB priors are added. This reflects the \textsc{RedMaGiC} inconsistency discussed above. A study allowing $X_\mathrm{lens}$ to vary is required to analyze this shift fully.
 
 In the $w$CDM case, we once again see the $2\times2$pt has a significant shift. Contrary to the split $\Lambda$CDM case, the $\mathcal{A}_s$ tension is much smaller, making the detection of a shift in $\mathrm{PC}_1$ more meaningful. Once again, an analysis involving $X_\mathrm{lens}$ is required to assess the source of this detection.
 \begin{figure}[ht]
@@ -233,10 +234,10 @@ In the $w$CDM case, we once again see the $2\times2$pt has a significant shift. 
 		\caption{Internal tension in the $w$CDM split}
 		\label{fig:wcdm_tension}
 	\end{subfigure}
-	\caption{}
+	\caption{Summary of internal tensions between each probe in the $\Lambda$CDM and $w$CDM models.}
 	\label{fig:tension}
 \end{figure}
 \section{Conclusion}
 We split $\Omega_m$ and $w$ into two parameters, one governing the background evolution and the other governing the late-time scale-independent growth of structure. We consider DES data together with various external data sets and priors from the CMB, supernovae, BBN, and BAO. We then run MCMC on DES-Y1 and DES-Y3 data and evaluate the difference between the growth and geometry parameters. 
 
-As demonstrated, there is little evidence of a difference between growth and geometry parameters in DES-Y1 and DES-Y3. The exception is the $2\times2$pt chains, however, there is an internal inconsistency with the RedMaGiC samples that may source this result. Because we fixed $X_\mathrm{lens}=1$, an additional analysis can be done investigating if $X_{\mathrm{lens}}$ can source a significant shift. Additionally, one can repeat the analysis with the MagLim lensing samples. In the future, additional datasets from Rubin Observatory's LSST, the Euclid mission, Dark Energy Spectroscopic Instrument, Simons Observatory, and CMB-S4 can be used to improve the constraints derived in this analysis
+As demonstrated, there is little evidence of a difference between growth and geometry parameters in DES-Y1 and DES-Y3. The exception is the $2\times2$pt chains, however, there is an internal inconsistency with the \textsc{RedMaGiC} samples that may source this result. Because we fixed $X_\mathrm{lens}=1$, an additional analysis can be done investigating if $X_{\mathrm{lens}}$ can source a significant shift. Additionally, one can repeat the analysis with the MagLim lensing samples. In the future, additional datasets from Rubin Observatory's LSST, the Euclid mission, Dark Energy Spectroscopic Instrument, Simons Observatory, and CMB-S4 can be used to improve the constraints derived in this analysis.

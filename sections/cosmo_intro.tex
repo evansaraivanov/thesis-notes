@@ -1,8 +1,8 @@
 \chapter{General Relativity and Cosmology}
 \section{Motivation}
-With Einstein's formulation of special relativity came a beautiful expansion of physics into the high-energy and large-scale regime. A postulate of special relativity was that light is a universal speed limit, and with this postulate, a plethora of established physical theories became problematic. Fortunately, for theories such as electromagnetism, no incompatibilities were introduced. However, for gravity, this was not the case. The gravitational field had no wave equation to establish a speed of propagation, meaning changes to the gravitational field were felt instantaneously everywhere. Attempts to reconcile this, such as using a retarded propagator or promoting the Newtonian potential to a scalar field theory, proved incapable of correcting for special relativistic effects. Nevertheless, Newtonian gravity has stood the test of time to be accurate in the non-relativistic limit. Thus, any theory of gravity should reduce to the Newtonian theory for speeds much lower than the speed of light.
+With Einstein's formulation of special relativity came a beautiful expansion of physics into the high-energy and large-scale regime. A postulate of special relativity was that light is a universal speed limit, and with this postulate, a plethora of established physical theories became problematic. Fortunately, for theories such as electromagnetism, no incompatibilities were introduced. However, for gravity, this was not the case. The gravitational field had no wave equation to establish a speed of propagation, meaning changes to the gravitational field are felt instantaneously everywhere. Attempts to reconcile this, such as using a retarded propagator or promoting the Newtonian potential to a scalar field theory, proved incapable of correcting for special relativistic effects. Nevertheless, Newtonian gravity has stood the test of time to be accurate in the non-relativistic limit. Thus, any theory of gravity should reduce to the Newtonian theory for speeds much lower than the speed of light.
 
-The famous thought experiment of an Einstein elevator demonstrates a striking inconsistency within Newtonian gravity. Consider an observer freely falling in a spherical gravitational field pointing toward the center. With nothing to look at, this person would not be able to determine they were in a gravitational field rather than just linearly accelerating. Now suppose this observer has point particles nearby, one to each side, one above, and one below (figure~\ref{fig:tidal_forces}). What the observer will see is the particles below and above them will move farther away because the gravitational force scales as $1/r^2$. They will see the particles to the side of them moving towards them due to the spherical symmetry of the gravitational field. These fictitious forces are referred to as the tidal forces, as they also give rise to the tides twice per day on earth. This interesting thought experiment shows how freely falling reference frames are not inertial frames, the first inconsistency recognized by Einstein. 
+The famous thought experiment of an Einstein elevator demonstrates a striking inconsistency within Newtonian gravity. Consider an observer freely falling in a spherical gravitational field pointing toward the center. With nothing in view, this person would not be able to determine they were in a gravitational field rather than just linearly accelerating. Suppose this observer has point particles nearby, one to each side, one above, and one below (figure~\ref{fig:tidal_forces}). The observer will see the particles below and above them move farther away because the gravitational force scales as $1/r^2$. They will see the particles to the side of them moving towards them due to the spherical symmetry of the gravitational field. These fictitious forces are referred to as \textit{tidal forces}, as they also give rise to the tides twice per day on earth. This interesting thought experiment shows how freely falling reference frames are not inertial frames, the first inconsistency recognized by Einstein. 
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -22,7 +22,7 @@ The famous thought experiment of an Einstein elevator demonstrates a striking in
         \draw[->] (-0.8,0) -- (-0.65,0);
         \draw[->] (0.8,0) -- (0.65,0);
     \end{tikzpicture}
-    \caption{Observer freely falling, with particles experiencing tidal forces within the observer's reference frame.}
+    \caption{Observer in free-fall, with particles experiencing tidal forces within the observer's reference frame.}
     \label{fig:tidal_forces}
 \end{figure}
 
@@ -34,7 +34,7 @@ This space is typically called \textit{Minkowski space} (thus the notation $\mat
 \begin{equation}\label{eq:proper-time}
     -d\tau^2 = -dt^2 + dx^2 + dy^2 + dz^2
 \end{equation}
-Proper time represents the amount of time that passes for an observer travelling on a path with 0 spatial displacement. Naturally, this quantity should be invariant even for an observer in a different reference frame. For such an observer, the time that elapses will be different from $\tau$, and will be accounted for in the spatial displacement as seen by equation~\ref{eq:proper-time}. The set of transformations that leave $\tau$ invariant are the Lorentz transformations.
+Proper time represents the amount of time that passes for an observer travelling on a path with 0 spatial displacement. Naturally, this quantity should be invariant, even for an observer in a different reference frame. For such an observer, the time that elapses will be different from $\tau$, and will be accounted for in the spatial displacement as seen by equation~\ref{eq:proper-time}. The set of transformations that leave $\tau$ invariant are the \textit{Lorentz transformations}.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -56,19 +56,19 @@ Proper time represents the amount of time that passes for an observer travelling
     \caption{Definition of proper time (bold line) vs. coordinate time (dashed line).}
 \end{figure}
 
-Suppose we have two observers, one is in an inertial frame with coordinates $x$ and the other is in a non-inertial frame with coordinates $x'$. These coordinates are related $x = x(x')$. In the inertial frame, the equations of motion are given by 
+Suppose there are two observers, one is in an inertial frame with coordinates $x$ and the other is in a non-inertial frame with coordinates $x'$. These coordinates are related $x = x(x')$. In the inertial frame, the equations of motion are given by 
 \begin{equation}
     \frac{d^2x^\mu}{d\tau^2} = 0\,.
 \end{equation} 
-We can look at how this changes for the observer in a non-inertial frame:
+One can look at how this changes for the observer in a non-inertial frame:
 \begin{equation}\label{eq:sr-curves}
     \frac{d^2x'^\lambda}{d\tau^2}+\underbrace{\frac{\partial x'^\lambda}{\partial x^\rho}\frac{\partial^2 x^\rho}{\partial x'^\mu \partial x'^\nu}}_{\equiv \Gamma_{\mu\nu}^\lambda} \frac{d x'^\mu}{d \tau} \frac{d x'^\nu}{d \tau} = 0\,.
 \end{equation}
-Equation~\ref{eq:sr-curves} looks suspiciously like the geodesic equation from differential geometry. The exception is that we have defined the `Chirstoffel symbol' here, which is not the most general form of the Christoffel symbols. This gives motivation for how to search for a compatible theory of gravity by providing a clear link between gravity and geometry. 
+Equation~\ref{eq:sr-curves} looks suspiciously like the geodesic equation from differential geometry. The exception is that the `Chirstoffel symbols', as defined here, are not the most general form of the Christoffel symbols. This gives motivation for how to search for a compatible theory of gravity by providing a clear link between gravity and geometry. 
 \section{Einstein's Field Equation}
-Christoffel symbols take a very general form, where they signify the failure of derivatives to commute, which results from curvature of the space itself. Special relativity promotes the classical $\mathbb{R}^3$ space to $\mathbb{M}^4$. However, we now need to allow curved space, not simply Minkowski space. So let's take an arbitrary semi-Riemannian 4-manifold $M$. In very loose terms, a manifold is a locally Euclidean space, which is a sufficient definition for this application.
+Christoffel symbols take a very general form, where they signify the failure of derivatives to commute, which results from curvature of the space itself. Special relativity promotes the classical $\mathbb{R}^3$ space to $\mathbb{M}^4$. However, the metric must allow for curved space, not simply Minkowski space. Instead of $\mathbb{M}^4$, let space be an arbitrary semi-Riemannian 4-manifold $M$ with a metric with one negative eigenvalue.\footnote{In very loose terms, a manifold is a locally Euclidean space, which is a sufficient definition for this application.}
 
-Naturally, computing derivatives on curved surfaces is non-trivial, as there is no way to compare tangent vectors at two different points of a manifold. One can, however, use the fact that derivatives give tangent vectors and look at a single point $p\in M$ to construct the tangent space, denoted $T_pM$, which is the set of all tangent vectors at $p$. The generalization of the derivative is called a \textit{connection}~\cite{baez_john_gauge_1994}, which tells one how to connect the tangent spaces at different points infinitesimally (figure~\ref{fig:parallel_transport}). Although beyond the scope of this thesis, it is worth noting that, due to the holonomy of curved surfaces, this will generally depend on the path taken.
+Naturally, computing derivatives on curved surfaces is non-trivial, as there is no way to compare tangent vectors at two different points of a manifold. One can, however, use the fact that derivatives give tangent vectors and look at a single point $p\in M$ to construct the tangent space at $p$, denoted $T_pM$. The generalization of the derivative is called a \textit{connection}~\cite{baez_john_gauge_1994}, which tells one how to connect the tangent spaces at different points infinitesimally (figure~\ref{fig:parallel_transport}). Although beyond the scope of this thesis, it is worth noting that, due to the holonomy of curved surfaces, this will generally depend on the path taken.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -112,9 +112,9 @@ or in coordinate form by
 \begin{equation}
     R_{\mu\nu\rho}^\sigma  = \nabla_\mu \Gamma^\sigma_{\nu\rho} - \nabla_\nu\Gamma^{\sigma}_{\mu\rho}\,.
 \end{equation}
-To emphasize the elegance of Einstein's equation, it is convenient to write the Riemann curvature as a matrix valued differential 2-form $\mathcal{R}$ and the Christoffel symbols as a matrix valued differential 1-form $\mathcal{G}$~\cite{baez_john_gauge_1994}. With this notion, it is easy to see the Bianchi identity for $\mathcal{R}$ with respect to the Levi-Civita connection is
+To emphasize the elegance of Einstein's equation, it is convenient to write the Riemann curvature as a matrix valued differential 2-form $F$ and the Christoffel symbols as a matrix valued differential 1-form\footnote{Differential forms are antisymmetric contravariant tensors.} $\mathcal{G}$~\cite{baez_john_gauge_1994}. With this notion, it is easy to see the Bianchi identity for $F$ with respect to the Levi-Civita connection is
 \begin{equation}
-    d_{\nabla}\mathcal{R} = \nabla_{[\tau}R^\sigma_{\mu\nu]\rho} = 0\,,
+    d_{\nabla}F = \nabla_{[\tau}R^\sigma_{\mu\nu]\rho} = 0\,,
 \end{equation}
 where the brackets denote antisymmetric permutations of the indices. Working through the algebra gives
 \begin{equation}
@@ -130,14 +130,14 @@ Additionally, the metric itself is divergenceless. Putting these all together gi
 \end{equation}
 
 \section{Cosmology}
-We can see in Einstein's equation the constant $\Lambda$, which is called the cosmological constant. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps to form halos) and dark energy acts as the cosmological constant~\cite{scott_dodelson_modern_2021}.
+Einstein's equation includes the constant $\Lambda$, which is called the \textit{cosmological constant}. A great question in gravitational physics and cosmology is `what value does $\Lambda$ take, and what is its source'. The theory of $\Lambda$CDM, the standard model of cosmology, will be discussed, where dark matter is `cold' (so it clumps to form halos) and dark energy acts as the cosmological constant~\cite{scott_dodelson_modern_2021}.
 
 When discussing $\Lambda$CDM (or cosmology in general), there are two main assumptions that are made on a global scale:
 \begin{itemize}
-    \item The universe is homogeneous. That is, there is no preferred location in the universe.
-    \item The universe is isotropic. That is, there is no preferred direction of the universe.
+    \item The universe is \textit{homogeneous}. That is, there is no preferred location in the universe.
+    \item The universe is \textit{isotropic}. That is, there is no preferred direction of the universe.
 \end{itemize}
-Both of these assumptions should sound strange; Our universe clearly does not follow them. If we look into the night sky, we can see regions of densely packed stars and galaxies and other regions with no stars or galaxies, violating the assumption of homogeneity (figure~\ref{fig:galaxy_map}). On the other hand, if one observes the temperature of the cosmic microwave background (CMB), one finds there is an angle dependence of the observed temperature (figure~\ref{fig:cmb_tt_map}), violating the assumption of isotropy. To reconcile this, the metric will be modified by perturbations. In this thesis, only scalar perturbations are considered.
+Both of these assumptions should sound strange; Our universe clearly does not follow them. If one looks into the night sky, one can see regions of densely packed stars and galaxies and other regions with no stars or galaxies, violating the assumption of homogeneity (figure~\ref{fig:galaxy_map}). On the other hand, if one observes the temperature of the cosmic microwave background (CMB), one finds there is an angle dependence of the observed temperature (figure~\ref{fig:cmb_tt_map}), violating the assumption of isotropy. To reconcile this, the metric will be modified by perturbations. In this thesis, only scalar perturbations are considered.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{plots/weic2305a.jpg}
@@ -151,7 +151,7 @@ Both of these assumptions should sound strange; Our universe clearly does not fo
     \label{fig:cmb_tt_map}
 \end{figure}
 
-With Edwin Hubble's discovery of the expanding universe, any metric assigned to the universe must include homogeneous spatial expansion. Together with the above assumptions, one arrives at the FLRW metric in the Newtonian gauge,
+With Edwin Hubble's discovery of the expanding universe, any metric assigned to the universe must include homogeneous spatial expansion. Together with the above assumptions, one arrives at the Friedmann-Lema\^{i}tre-Robertson-Walker (FLRW) metric in the Newtonian gauge,
 \begin{equation}
     g = -dt^2 + a(t)^2 ds^2\,,
 \end{equation}
@@ -164,14 +164,14 @@ By computing the Christoffel symbols, one finds
     \begin{split}
         \Gamma^i_{00} =& \frac{1}{a^2}\partial_i\Psi \\
         \Gamma^i_{0j} =& \delta_{ij}(H+\dot\Phi) \\
-        \Gamma^i_{jk} =& (\delta_{ij} \partial_k + \delta_{ik}\partial_j - \delta_{jk}\partial_i)\Phi
+        \Gamma^i_{jk} =& (\delta_{ij} \partial_k + \delta_{ik}\partial_j - \delta_{jk}\partial_i)\Phi\,.
     \end{split}
 \end{equation}
-Given Einstein's field equations and the perturbed FLRW metric, one can find the Friedman equations. The first comes from the 00 component of Einstein's field equations.
+Given Einstein's field equations and the perturbed FLRW metric, one can find the Friedman equations. The first comes from the $00$ component of Einstein's field equations:
 \begin{equation}
-    H^2(t) = \frac{8\pi G}{3}\left(\rho + \frac{\Lambda}{8\pi G}\right) - \frac{k}{a^2}
+    H^2(t) = \frac{8\pi G}{3}\left(\rho + \frac{\Lambda}{8\pi G}\right) - \frac{k}{a^2}\,.
 \end{equation}
-What can be done with this is to convert the curvature $k$ and the cosmological constant $\Lambda$ into densities as well, denoted $\rho_k$ and $\rho_\Lambda$ respectively. If those terms are absorbed into $\rho$, one finds
+One can convert the curvature $k$ and the cosmological constant $\Lambda$ into densities as well, denoted $\rho_k$ and $\rho_\Lambda$ respectively. If those terms are absorbed into the total density $\rho$, one finds
 \begin{equation}
     H^2(t) = \frac{8\pi G}{3}\rho\,,
 \end{equation}
@@ -179,7 +179,7 @@ and the critical density today is defined by the density associated with $H_0$,
 \begin{equation}
     H_0^2 \equiv \frac{8\pi G}{3}\rho_{\mathrm{crit}}\,.
 \end{equation}
-The desirable property of this formulation is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If we define the relative densities today by
+The desirable property of this formulation is that the value of the density today can tell us about the geometry of the universe. If $\rho>\rho_{\mathrm{crit}}$ the curvature is positive (de Sitter geometry). If $\rho<\rho_{\mathrm{crit}}$ the curvature is negative (anti-de Sitter geometry). If $\rho=\rho_{\mathrm{crit}}$, the universe is flat. If one defines the relative densities today by
 \begin{equation}
     \Omega_{i,0} = \frac{\rho_{i,0}}{\rho_\mathrm{crit}}\,,
 \end{equation}
@@ -202,15 +202,14 @@ The second Friedman equation comes from the trace of Einstein's equation,
     \frac{\ddot a}{a} = -\frac{4\pi G}{3}(\rho + 3P)\,.
 \end{equation}
 In cosmology, there are other distances which can be more useful than the distance given by the FLRW metric. In the FLRW metric, the distance between two points grows in time. 
-We can avoid this by defining the \textit{comoving distance}, in which distances remain fixed through time. 
-If we look at a coordinate function $x^\mu$ at $t=t_0$, at a later time the coordinate function can be written as $x^\mu \rightarrow a(t) x^\mu$, thus by dividing by the scale factor $a(t)$ we can define the comoving coordinates as
+This can be avoided by defining the \textit{comoving distance}, in which distances remain fixed through time. 
+If one looks at a coordinate function $x^\mu$ at $t=t_0$, at a later time the coordinate function can be written as $x^\mu \rightarrow a(t) x^\mu$, thus by dividing by the scale factor $a(t)$  one can define the comoving coordinates as
 \begin{equation}
     \chi = \int\limits^{t}_{t_0} \frac{1}{a(t')} dt'
 \end{equation}
-with the standard Minkowski metric multiplied by the scale factor $a$. This can be taken a step further by determining how far light has travelled since $t=0$,
+with the standard Minkowski metric multiplied by the scale factor $a$. This can be taken a step further by determining the distance light has travelled since $t=0$, called the \textit{comoving horizon}, by
 \begin{equation}
     \eta = \int\limits^t_0 \frac{1}{a(t')}dt'\,.
 \end{equation}
-Since we can't see anything beyond this distance, it is often called the \textit{comoving horizon}. 
 
-This chapter provides a brief overview of the relevant pieces of cosmology that will be used throughout the rest of this thesis. In the next two chapters, we will use these pieces to see how we can measure cosmological parameters from cosmological surveys. The fourth chapter will be a study on a parameter splitting technique, which provides a model independent consistency check in $\Lambda$CDM. The fifth chapter provides a study of applying neural networks to cosmological analysis, and a scientific application to the evaluation of cosmological tensions.
+This chapter provides a brief overview of the relevant pieces of cosmology that will be used throughout the rest of this thesis. The next two chapters will use these pieces to see how one can measure cosmological parameters from cosmological surveys. The fourth chapter will be a study on a parameter splitting technique, which provides a model independent consistency check in $\Lambda$CDM. The fifth chapter provides a study of applying neural networks to cosmological analysis, and a scientific application to the evaluation of cosmological tensions.
